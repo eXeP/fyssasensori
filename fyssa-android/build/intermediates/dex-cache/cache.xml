@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/home/pietu/.android/build-cache/b28b7527d9339aef5518564584b059a6fad1ff01/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d695dc4247690369d66c022c6d18190155c61fcd">
+        <dex dex="/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/pre-dexed/debug/classes_639b8c32ad700823caf902aa43dd041dd1c7904b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/pietu/.android/build-cache/65b5de44786de145869ab672fbf0ee60832bac48/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="cc1683c11baff90e41b9a6bd2d0861a35b2c5735">
+        <dex dex="/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/pre-dexed/debug/classes_f08a02d11f8260d2bdc3fcbd52476cbe8342ed07.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/pietu/.android/build-cache/ca0ea3656429523305fe3eafc8514bffab7940b9/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d4ba7399a1a4f5c998b5ce4f6bf33a2e8347820c">
+        <dex dex="/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/pre-dexed/debug/classes_d626ea895155fa8ba5f0f408d22c749144a6caff.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/pietu/.android/build-cache/2c607e924ff67fd8bb9fda4d583f6ee35823dc88/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6178e31397c24ab1bfc09766832cdcf519621eb7">
+        <dex dex="/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/pre-dexed/debug/classes_f3506087a43d8fcadbfa3537cedb1b15c8641997.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/pietu/.android/build-cache/36e503bc42b2c6b36a6396b4c8980bedb32618f0/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="90095b555b72205db6f9b93aca3cb9978d1e3344">
+        <dex dex="/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/pre-dexed/debug/classes_a5c2af8f04d15fb9305e99662c03d6a535f6a2a0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/pietu/.android/build-cache/e3b721519d9e2bc0a30513de9d6568380343aa0f/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="21160c044ba984fb2e33b833c89a496becb85cfd">
+        <dex dex="/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/pre-dexed/debug/classes_b68024bd39d576fb91b187bb3d8c9210ea51e005.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/opt/android-studio/gradle/m2repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf">
+        <dex dex="/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/pre-dexed/debug/jsr305-1.3.9_c585cfc852ada8b583a7df793bb10c689a916ded.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/pietu/.android/build-cache/5ccbe66e1f0149011ac48029d91b3f87301e00c0/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a5dec445c421ff4b155abb150908c8e2b9b9586a">
+        <dex dex="/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/pre-dexed/debug/classes_eaa703588d4ab44fd864e070a5fe45990a42f0ee.jar" />
+    </item>
+
+</items>

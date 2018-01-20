@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/dfu_mode"
+        android:title="@string/dfu_mode"/>
+    <item
+        android:id="@+id/send_logs_to_google_drive"
+        android:title="@string/send_logs_to_google_drive"/>
+    <item
+        android:id="@+id/disconnect"
+        android:title="@string/disconnect"/>
+
+</menu>

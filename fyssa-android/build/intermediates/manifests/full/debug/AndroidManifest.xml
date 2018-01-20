@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.pietu.fyssasensori"
+    android:versionCode="1"
+    android:versionName="1.6" >
+
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:name="com.movesense.mds.sampleapp.SampleApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.pietu.fyssasensori.FyssaMainActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MY_ACTION" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.tests.LedTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.tests.LinearAccelerationTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.tests.HeartRateTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.tests.TemperatureTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.tests.MagneticFieldTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.tests.AngularVelocityActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.tests.MultiSubscribeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.SendLogsToGoogleDriveActivity"
+            android:screenOrientation="portrait" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.pietu.fyssasensori"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
+
+        <service
+            android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.dfu.DfuService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.adb.AdbBridge"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MOVESENSE" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.mainView.MainViewActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MY_ACTION" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.movesense.MovesenseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.multi_connection.connection.MultiConnectionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.saved_data.SavedDataActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.about.AboutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.sensors.sensors_list.SensorListActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.dfu.DfuActivity2"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.multi_connection.sensor_usage.MultiSensorUsageActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.tests.EcgActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.tests.BatteryActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.tests.AppInfoActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!--
+Service handling Google Sign-In user revocation. For apps that do not integrate with
+            Google Sign-In, this service will never be started.
+        -->
+        <service
+            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+            android:exported="true"
+            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="android.arch.lifecycle.VERSION"
+            android:value="27.0.0-SNAPSHOT" />
+    </application>
+
+</manifest>

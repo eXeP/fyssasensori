@@ -1,0 +1,131 @@
+apply plugin: 'com.android.application'
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven {
+            url "https://maven.google.com"
+        }
+        flatDir {
+            dirs './', '../../Movesense/' // Folders to look for jar & aar libraries
+        }
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.2.1'
+}
+
+android {
+    // 1. USER EXAMPLE How to add debug.keystore in gradle
+    // Default debug.keystore settings
+//    signingConfigs {
+//        config {
+//            keyAlias 'androiddebugkey'
+//            keyPassword 'android'
+//            storeFile file('C:/Users/USER/.android/debug.keystore')
+//            storePassword 'android'
+//        }
+//    }
+    compileSdkVersion 27
+    buildToolsVersion "25.0.3"
+    defaultConfig {
+        applicationId "com.pietu.fyssasensori"
+        minSdkVersion 18
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.6"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            buildConfigField "String", "MDS_VERSION", "\"1.10.0\""
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            buildConfigField "String", "MDS_VERSION", "\"1.10.0\""
+            // 2. USER EXAMPLE How to add debug.keystore in gradle
+            //  signingConfig signingConfigs.config
+        }
+    }
+
+    configurations.all {
+        resolutionStrategy.force 'com.android.support:support-annotations:27.0.0'
+    }
+
+    lintOptions {
+        abortOnError true
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:27.0.0'
+    compile 'com.android.support:recyclerview-v7:27.0.0'
+    // RxAndroidBle
+    compile 'com.polidea.rxandroidble:rxandroidble:1.4.3'
+    compile 'io.reactivex:rxandroid:1.2.1'
+
+    compile 'com.android.support:support-annotations:27.0.0'
+
+    // GSON
+    compile 'com.google.code.gson:gson:2.8.0'
+
+    testCompile 'junit:junit:4.12'
+
+    androidTestCompile "com.android.support.test:runner:1.0.0"
+
+    androidTestCompile('com.android.support.test.espresso:espresso-core:3.0.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+        // Exclude findbugs from Espresso in case of conflict with Google Api
+        exclude group: 'com.google.code.findbugs'
+    })
+    // UIAutomator
+    androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.2'
+    // Movesense .aar lib
+    compile(name: 'mdslib', version: '1.10.0(1)-release', ext: 'aar')
+    // ButterKnife
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    // GraphView
+    compile 'com.jjoe64:graphview:4.2.1'
+    // Google Drive Api
+    compile('com.google.api-client:google-api-client-android:1.22.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
+    compile('com.google.apis:google-api-services-drive:v3-rev72-1.22.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
+    compile 'com.google.android.gms:play-services-drive:11.0.1'
+    compile 'com.google.android.gms:play-services-auth:11.0.1'
+    compile 'pub.devrel:easypermissions:0.2.1'
+
+    //DFU Library
+    compile 'no.nordicsemi.android:dfu:1.6.0'
+
+    // Constraint Layout
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    // Mockito
+    testCompile "org.mockito:mockito-core:2.+"
+    androidTestCompile 'com.android.support.test.espresso:espresso-contrib:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude group: 'com.android.support', module: 'design'
+        exclude group: 'com.android.support', module: 'recyclerview-v7'
+        exclude group: 'com.google.code.findbugs'
+    }
+}
