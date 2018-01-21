@@ -4,22 +4,23 @@ import telepot
 import mysql
 import time
 import getpass
+import pgdb
 
 #TODO Connecting to server 
-def connect():
+
 	pass
 
 def getHighscore():
 	pass
 
 def broadcaster
-_username = input('Enter username for SQL: ')
-_password = getpass.getpass()
 
-try:
-    connect
-except Exception as e:
-    print(e)
+username = input('Enter username for SQL: ')
+password = getpass.getpass()
+hostname = 'localhost'
+db = ''
+connection = pgdb.connect(host = hostname, user = _username, password = _password, database = db)
+
 
 #Sets the bot up with a required token.
 with open('/opt/secrets/Hypersense_token.txt', 'r') as t:
