@@ -26,7 +26,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.movesense.mds.Mds;
+import com.movesense.mds.MdsException;
+import com.movesense.mds.MdsResponseListener;
 import com.movesense.mds.internal.connectivity.BleManager;
 import com.movesense.mds.internal.connectivity.MovesenseConnectedDevices;
 import com.movesense.mds.internal.connectivity.MovesenseDevice;
@@ -36,6 +39,7 @@ import com.movesense.mds.sampleapp.RxBle;
 import com.movesense.mds.sampleapp.ThrowableToastingAction;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.ConnectingDialog;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.mainView.MainViewActivity;
+import com.movesense.mds.sampleapp.example_app_using_mds_api.model.InfoAppResponse;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.movesense.MovesenseAdapter;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.movesense.MovesenseContract;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.movesense.MovesensePresenter;
@@ -82,7 +86,39 @@ public class FyssaMainActivity extends AppCompatActivity {
         }
 
         subscriptions = new CompositeSubscription();
+    }
 
+    private void checkSensorSoftware() {
+        Mds.builder().build(this).get(MdsRx.SCHEME_PREFIX +
+                        MovesenseConnectedDevices.getConnectedDevice(0).getSerial() + "/Info/App",
+                null, new MdsResponseListener() {
+
+                    @Override
+                    public void onSuccess(String s) {
+                        Log.d(TAG, "/Info/App onSuccess: " + s);
+                        InfoAppResponse infoAppResponse = new Gson().fromJson(s, InfoAppResponse.class);
+
+                        if (infoAppResponse.getContent() != null) {
+                            Log.d(TAG, "Name: " + infoAppResponse.getContent().getName());
+                            Log.d(TAG, "Version: " + infoAppResponse.getContent().getVersion());
+                            Log.d(TAG, "Company: " + infoAppResponse.getContent().getCompany());
+                        }
+                        if (!infoAppResponse.getContent().getCompany().equals("Pietari Kaskela")) {
+                            updateSensorSoftware();
+                        }
+                    }
+
+                    @Override
+                    public void onError(MdsException e) {
+                        Log.e(TAG, "Info onError: ", e);
+
+                    }
+                });
+    }
+
+    private void updateSensorSoftware() {
+        startActivity(new Intent(FyssaMainActivity.this, FyssaSensorUpdateActivity.class)
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
     }
 
     @Override
@@ -93,6 +129,7 @@ public class FyssaMainActivity extends AppCompatActivity {
             connectionInfoTv.setText("Serial: " + MovesenseConnectedDevices.getConnectedDevice(0).getSerial());
         } catch (Exception e) {
             startScanActivity();
+            return;
         }
 
         subscriptions.add(MdsRx.Instance.connectedDeviceObservable()
@@ -109,10 +146,10 @@ public class FyssaMainActivity extends AppCompatActivity {
                             }
 
                             startScanActivity();
-
                         }
                     }
                 }, new ThrowableToastingAction(this)));
+        checkSensorSoftware();
     }
 
     @Override
