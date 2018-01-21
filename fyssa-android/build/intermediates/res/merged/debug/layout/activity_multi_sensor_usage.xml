@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBackground"
+        android:padding="8dp"
+        tools:context="com.movesense.mds.sampleapp.example_app_using_mds_api.multi_connection.sensor_usage.MultiSensorUsageActivity">
+
+        <!--Select Device 1-->
+        <LinearLayout
+            android:id="@+id/multiSensorUsage_selectedDevice_movesense1Ll"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/green_stroke"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="8dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/movesense"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="0dp"/>
+
+            <LinearLayout
+                android:id="@+id/selectedDeviceInfo_Ll_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/selectedDeviceName_Tv_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Movesense"
+                    android:textColor="@color/colorGreen"
+                    android:textSize="18sp"
+                    android:visibility="visible"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--Select Device 2-->
+        <LinearLayout
+            android:id="@+id/multiSensorUsage_selectedDevice_movesense2Ll"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/yellow_stroke"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/multiSensorUsage_selectedDevice_movesense1Ll"
+            tools:layout_editor_absoluteX="8dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/movesense"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="0dp"/>
+
+            <LinearLayout
+                android:id="@+id/selectedDeviceInfo_Ll_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/selectedDeviceName_Tv_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Movesense"
+                    android:textColor="@color/colorRed"
+                    android:textSize="18sp"
+                    android:visibility="visible"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--Linear Text-->
+        <TextView
+            android:id="@+id/multiSensorUsage_linearAcc_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Linear Acceleration"
+            android:textColor="@color/colorText"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/multiSensorUsage_selectedDevice_movesense2Ll"/>
+
+        <!--Linear Switch-->
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/multiSensorUsage_linearAcc_switch"
+            style="@style/SwitchStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBaseline_toBaselineOf="@id/multiSensorUsage_linearAcc_textView"
+            app:layout_constraintLeft_toRightOf="@id/multiSensorUsage_linearAcc_textView"/>
+
+        <!--Linear Data container-->
+        <LinearLayout
+            android:id="@+id/multiSensorUsage_linearAcc_containerLl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/multiSensorUsage_linearAcc_textView"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/multiSensorUsage_linearAcc_device1_x_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="x:"
+                    android:textColor="@color/colorGreen"/>
+
+                <TextView
+                    android:id="@+id/multiSensorUsage_linearAcc_device1_y_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="y:"
+                    android:textColor="@color/colorGreen"/>
+
+                <TextView
+                    android:id="@+id/multiSensorUsage_linearAcc_device1_z_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="z:"
+                    android:textColor="@color/colorGreen"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/multiSensorUsage_linearAcc_device2_x_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="x:"
+                    android:textColor="@color/colorRed"/>
+
+                <TextView
+                    android:id="@+id/multiSensorUsage_linearAcc_device2_y_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="y:"
+                    android:textColor="@color/colorRed"/>
+
+                <TextView
+                    android:id="@+id/multiSensorUsage_linearAcc_device2_z_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="z:"
+                    android:textColor="@color/colorRed"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--AngularVelocity Text-->
+        <TextView
+            android:id="@+id/multiSensorUsage_angularVelocity_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Angular Velocity"
+            android:textColor="@color/colorText"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/multiSensorUsage_linearAcc_containerLl"/>
+
+        <!--AngularVelocity Switch-->
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/multiSensorUsage_angularVelocity_switch"
+            style="@style/SwitchStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBaseline_toBaselineOf="@id/multiSensorUsage_angularVelocity_textView"
+            app:layout_constraintLeft_toRightOf="@id/multiSensorUsage_angularVelocity_textView"/>
+
+        <!--AngularVelocity Data container-->
+        <LinearLayout
+            android:id="@+id/multiSensorUsage_angularVelocity_containerLl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/multiSensorUsage_angularVelocity_textView"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/multiSensorUsage_angularVelocity_device1_x_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="x:"
+                    android:textColor="@color/colorGreen"/>
+
+                <TextView
+                    android:id="@+id/multiSensorUsage_angularVelocity_device1_y_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="y:"
+                    android:textColor="@color/colorGreen"/>
+
+                <TextView
+                    android:id="@+id/multiSensorUsage_angularVelocity_device1_z_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="z:"
+                    android:textColor="@color/colorGreen"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/multiSensorUsage_angularVelocity_device2_x_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="x:"
+                    android:textColor="@color/colorRed"/>
+
+                <TextView
+                    android:id="@+id/multiSensorUsage_angularVelocity_device2_y_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="y:"
+                    android:textColor="@color/colorRed"/>
+
+                <TextView
+                    android:id="@+id/multiSensorUsage_angularVelocity_device2_z_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="z:"
+                    android:textColor="@color/colorRed"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <!--MagneticField Text-->
+        <TextView
+            android:id="@+id/multiSensorUsage_magneticField_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Magnetic Field"
+            android:textColor="@color/colorText"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/multiSensorUsage_angularVelocity_containerLl"/>
+
+        <!--MagneticField Switch-->
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/multiSensorUsage_magneticField_switch"
+            style="@style/SwitchStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBaseline_toBaselineOf="@id/multiSensorUsage_magneticField_textView"
+            app:layout_constraintLeft_toRightOf="@id/multiSensorUsage_magneticField_textView"/>
+
+        <!-- MagneticField Data container-->
+        <LinearLayout
+            android:id="@+id/multiSensorUsage_magneticField_containerLl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/multiSensorUsage_magneticField_textView"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/multiSensorUsage_magneticField_device1_x_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="x:"
+                    android:textColor="@color/colorGreen"/>
+
+                <TextView
+                    android:id="@+id/multiSensorUsage_magneticField_device1_y_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="y:"
+                    android:textColor="@color/colorGreen"/>
+
+                <TextView
+                    android:id="@+id/multiSensorUsage_magneticField_device1_z_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="z:"
+                    android:textColor="@color/colorGreen"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/multiSensorUsage_magneticField_device2_x_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="x:"
+                    android:textColor="@color/colorRed"/>
+
+                <TextView
+                    android:id="@+id/multiSensorUsage_magneticField_device2_y_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="y:"
+                    android:textColor="@color/colorRed"/>
+
+                <TextView
+                    android:id="@+id/multiSensorUsage_magneticField_device2_z_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="z:"
+                    android:textColor="@color/colorRed"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <!--Temperature Text-->
+        <TextView
+            android:id="@+id/multiSensorUsage_temperature_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Temperature"
+            android:textColor="@color/colorText"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/multiSensorUsage_magneticField_containerLl"/>
+
+        <!--Temperature Switch-->
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/multiSensorUsage_temperature_switch"
+            style="@style/SwitchStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBaseline_toBaselineOf="@id/multiSensorUsage_temperature_textView"
+            app:layout_constraintLeft_toRightOf="@id/multiSensorUsage_temperature_textView"/>
+
+        <!-- Temperature Data container-->
+        <LinearLayout
+            android:id="@+id/multiSensorUsage_temperature_containerLl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/multiSensorUsage_temperature_textView"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/multiSensorUsage_temperature_device1_value_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="temperature:"
+                    android:textColor="@color/colorGreen"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/multiSensorUsage_temperature_device2_value_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="temperature:"
+                    android:textColor="@color/colorRed"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/multisubscribe_note_text"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@id/multiSensorUsage_temperature_containerLl"/>
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

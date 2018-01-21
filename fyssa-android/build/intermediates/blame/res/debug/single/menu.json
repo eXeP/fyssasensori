@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/menu/fyssa_main_menu.xml",
+        "source": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/res/menu/fyssa_main_menu.xml"
+    },
+    {
+        "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/menu/menu.xml",
+        "source": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/res/menu/menu.xml"
+    },
+    {
+        "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/menu/send_logs_menu.xml",
+        "source": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/src/main/res/menu/send_logs_menu.xml"
+    },
+    {
+        "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/menu/menu.xml",
+        "source": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/src/main/res/menu/menu.xml"
+    },
+    {
+        "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/menu/send_logs_menu.xml",
+        "source": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/res/menu/send_logs_menu.xml"
+    }
+]

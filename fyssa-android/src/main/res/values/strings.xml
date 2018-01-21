@@ -1,0 +1,111 @@
+<resources>
+    <string name="app_name">Fyssasensori</string>
+
+    <string name="fyssa_connection_guide">Laita sensori päälle koskettamalla takaosan metalliosia ja odota että laitteen punainen valo alkaa vilkkua. Valitse oikea sensori kun se tulee näkyviin, voit tarkistaa sensorisi nimen sen takaa (outo numerosarja).</string>
+    <string name="remove_device">Vaihda sensoria</string>
+    <string name="title_location_permission">Location permission</string>
+    <string name="text_location_permission">Bluetooth LE scanning requires location permission</string>
+    <string name="btn_ok">OK</string>
+
+    <string name="serial">Serial</string>
+    <string name="path">Path</string>
+    <string name="contract">Contract</string>
+    <string name="result">Result</string>
+
+    <string name="btn_get">Get</string>
+    <string name="btn_post">Post</string>
+    <string name="btn_del">Del</string>
+    <string name="select_test">Select test:</string>
+    <string name="linear_acceleration_name">Linear Acceleration</string>
+    <string name="angular_velocity_name">Angular Velocity</string>
+    <string name="magnetic_field_name">Magnetic Field</string>
+    <string name="heart_rate_name">Heart Rate</string>
+    <string name="temperature_name">Temperature</string>
+    <string name="led_name">Led</string>
+    <string name="multi_subscription_name">Multi Subscription</string>
+    <string name="close_app">Close app</string>
+    <string name="do_you_want_to_close_application">Do You want to close application?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="please_wait">Please Wait...</string>
+    <string name="please_wait_connecting">Connecting may take 10-30s \nPlease Wait...</string>
+    <string name="connecting">Connecting</string>
+    <string name="loading_information">Loading information...</string>
+    <string name="temporary_disabled">Temporary disabled</string>
+    <string name="kelvin">kelvin:</string>
+    <string name="celsius">celsius:</string>
+    <string name="movesense">Movesense</string>
+    <string name="rate">Rate:</string>
+    <string name="y">y:</string>
+    <string name="x">x:</string>
+    <string name="z">z:</string>
+    <string name="subscribe">Subscribe</string>
+    <string name="test_magnetic_field">Test: Magnetic Field</string>
+    <string name="test_heart_rate">Test: Heart Rate</string>
+    <string name="value">Value:</string>
+    <string name="test_led">Test: Led</string>
+    <string name="off_on">OFF / ON</string>
+    <string name="response">Response:</string>
+    <string name="waiting_for_action">Waiting for action</string>
+    <string name="test_linear_acceleration">Test: Linear Acceleration</string>
+    <string name="test_multi_subscription">Test: Multi Subscription</string>
+    <string name="test_temperature">Test: Temperature</string>
+    <string name="waiting_for_response">Waiting for response</string>
+    <string name="success">Success</string>
+    <string name="error">Error</string>
+    <string name="dfu_mode">Run DFU Mode</string>
+    <string name="write_external_storage_permission_title">Write External Storage Permission</string>
+    <string name="write_external_storage_permission_text">Saving files required Write External Storage Permission</string>
+    <string name="enable_dfu_mode">Enable DFU Mode</string>
+    <string name="dfu_mode_enabled">Dfu Mode Enabled</string>
+    <string name="dfu_mode_press_button">Press button to Enable DFU Mode</string>
+    <string name="dfu_error">DFU Error</string>
+    <string name="dfu_mode_is_enabled">Dfu Mode is Enabled. Close this app and start nRF Toolbox to update a new firmware</string>
+    <string name="test_angular_velocity">Test: Angular Velocity</string>
+    <string name="read_logs_permission_title">Read Logs Permission</string>
+    <string name="read_lgos_permission_text">Saving logs to file required Read Logs Permission</string>
+    <string name="send_logs_to_google_drive">Send Logs To Google Drive</string>
+    <string name="no_network_connection_available">No network connection available.</string>
+    <string name="log_out_from_drive">Log Out From Drive</string>
+    <string name="refresh_files">Refresh Files</string>
+    <string name="change_account">Change Account</string>
+    <string name="log_in">Log In</string>
+    <string name="connection_error_title">Connection Error</string>
+    <string name="connection_error_message">Something went wrong. Please Try again</string>
+
+    <string name="dfu_file_type_title">Select file type</string>
+    <string name="uploading">Uploading....</string>
+    <string name="_0percent">0%</string>
+    <string name="dfu_status">Dfu Status:</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="Movesense">Movesense</string>
+    <string name="Multi_Connection">Multi Connection</string>
+    <string name="DFU">DFU</string>
+    <string name="Saved_Data">Saved Data</string>
+    <string name="Tests">Tests</string>
+    <string name="About">About</string>
+    <string name="we_are_working_on_it">We are working on it</string>
+    <string name="movesense_device_name">Movesense</string>
+    <string name="dfu_device_name">DfuTarg</string>
+    <string name="movesense_sw_version">Movesense Sw Version: </string>
+    <string name="dfu_zip_sw_version">DFU zip Sw Version: </string>
+    <string name="movesense_sw_version_device_must_be_connected">Movesense Sw Version: Device must be connected</string>
+    <string name="select_file_and_device">Select File and Device</string>
+    <string name="disconnect_dialog_text">Leaving from this view will disconnect You with device. Are You sure want leave?</string>
+    <string name="application_version">Application Version: %s</string>
+    <string name="library_version">Library Version: %s</string>
+    <string name="energy_value_to_low_for_update">Energy value is to low for update</string>
+    <string name="ecg">ECG</string>
+    <string name="battery_energy">Battery / Energy</string>
+    <string name="battery_value">Battery value : </string>
+    <string name="note_text">Important Note:\n  On some phones Subscripton with rate higher than 104 Hz can cause Bluetooth connection problem and restart app might be required.</string>
+    <string name="multisubscribe_note_text">Important Note:\n  On some phones Subscribing 3(and more) sensors can cause Bluetooth connection problem and restart app might be required.</string>
+    <string name="app_info_name">App Info</string>
+    <string name="exit">Exit</string>
+    <string-array name="dfu_file_type">
+        <item>Distribution packet (ZIP)</item>
+        <item>Soft Device</item>
+        <item>Bootloader</item>
+        <item>Application</item>
+    </string-array>
+</resources>
