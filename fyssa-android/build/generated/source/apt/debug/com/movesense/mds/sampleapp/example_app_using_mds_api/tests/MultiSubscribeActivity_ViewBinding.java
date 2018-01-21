@@ -16,11 +16,11 @@ import java.lang.Override;
 public class MultiSubscribeActivity_ViewBinding implements Unbinder {
   private MultiSubscribeActivity target;
 
-  private View view2131624172;
+  private View view2131624173;
 
-  private View view2131624176;
+  private View view2131624177;
 
-  private View view2131624180;
+  private View view2131624181;
 
   @UiThread
   public MultiSubscribeActivity_ViewBinding(MultiSubscribeActivity target) {
@@ -34,7 +34,7 @@ public class MultiSubscribeActivity_ViewBinding implements Unbinder {
     View view;
     view = Utils.findRequiredView(source, R.id.switchSubscriptionLinearAcc, "field 'switchSubscriptionLinearAcc' and method 'onCheckedChangedLinear'");
     target.switchSubscriptionLinearAcc = Utils.castView(view, R.id.switchSubscriptionLinearAcc, "field 'switchSubscriptionLinearAcc'", SwitchCompat.class);
-    view2131624172 = view;
+    view2131624173 = view;
     ((CompoundButton) view).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
       @Override
       public void onCheckedChanged(CompoundButton p0, boolean p1) {
@@ -46,7 +46,7 @@ public class MultiSubscribeActivity_ViewBinding implements Unbinder {
     target.zAxisLinearAccTextView = Utils.findRequiredViewAsType(source, R.id.z_axis_linearAcc_textView, "field 'zAxisLinearAccTextView'", TextView.class);
     view = Utils.findRequiredView(source, R.id.switchSubscriptionMagneticField, "field 'switchSubscriptionMagneticField' and method 'onCheckedChangedMagnetic'");
     target.switchSubscriptionMagneticField = Utils.castView(view, R.id.switchSubscriptionMagneticField, "field 'switchSubscriptionMagneticField'", SwitchCompat.class);
-    view2131624176 = view;
+    view2131624177 = view;
     ((CompoundButton) view).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
       @Override
       public void onCheckedChanged(CompoundButton p0, boolean p1) {
@@ -58,7 +58,7 @@ public class MultiSubscribeActivity_ViewBinding implements Unbinder {
     target.zAxisMagneticFieldTextView = Utils.findRequiredViewAsType(source, R.id.z_axis_magneticField_textView, "field 'zAxisMagneticFieldTextView'", TextView.class);
     view = Utils.findRequiredView(source, R.id.switchSubscriptionAngularVelocity, "field 'switchSubscriptionAngularVelocity' and method 'onCheckedChangedAngularVielocity'");
     target.switchSubscriptionAngularVelocity = Utils.castView(view, R.id.switchSubscriptionAngularVelocity, "field 'switchSubscriptionAngularVelocity'", SwitchCompat.class);
-    view2131624180 = view;
+    view2131624181 = view;
     ((CompoundButton) view).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
       @Override
       public void onCheckedChanged(CompoundButton p0, boolean p1) {
@@ -94,11 +94,11 @@ public class MultiSubscribeActivity_ViewBinding implements Unbinder {
     target.mConnectedDeviceNameTextView = null;
     target.mConnectedDeviceSwVersionTextView = null;
 
-    ((CompoundButton) view2131624172).setOnCheckedChangeListener(null);
-    view2131624172 = null;
-    ((CompoundButton) view2131624176).setOnCheckedChangeListener(null);
-    view2131624176 = null;
-    ((CompoundButton) view2131624180).setOnCheckedChangeListener(null);
-    view2131624180 = null;
+    ((CompoundButton) view2131624173).setOnCheckedChangeListener(null);
+    view2131624173 = null;
+    ((CompoundButton) view2131624177).setOnCheckedChangeListener(null);
+    view2131624177 = null;
+    ((CompoundButton) view2131624181).setOnCheckedChangeListener(null);
+    view2131624181 = null;
   }
 }

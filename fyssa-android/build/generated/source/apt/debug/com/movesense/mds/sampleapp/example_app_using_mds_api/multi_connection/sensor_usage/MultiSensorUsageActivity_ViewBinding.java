@@ -17,13 +17,13 @@ import java.lang.Override;
 public class MultiSensorUsageActivity_ViewBinding implements Unbinder {
   private MultiSensorUsageActivity target;
 
-  private View view2131624141;
+  private View view2131624142;
 
-  private View view2131624150;
+  private View view2131624151;
 
-  private View view2131624159;
+  private View view2131624160;
 
-  private View view2131624168;
+  private View view2131624169;
 
   @UiThread
   public MultiSensorUsageActivity_ViewBinding(MultiSensorUsageActivity target) {
@@ -44,7 +44,7 @@ public class MultiSensorUsageActivity_ViewBinding implements Unbinder {
     target.mMultiSensorUsageLinearAccTextView = Utils.findRequiredViewAsType(source, R.id.multiSensorUsage_linearAcc_textView, "field 'mMultiSensorUsageLinearAccTextView'", TextView.class);
     view = Utils.findRequiredView(source, R.id.multiSensorUsage_linearAcc_switch, "field 'mMultiSensorUsageLinearAccSwitch' and method 'onLinearAccCheckedChange'");
     target.mMultiSensorUsageLinearAccSwitch = Utils.castView(view, R.id.multiSensorUsage_linearAcc_switch, "field 'mMultiSensorUsageLinearAccSwitch'", SwitchCompat.class);
-    view2131624141 = view;
+    view2131624142 = view;
     ((CompoundButton) view).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
       @Override
       public void onCheckedChanged(CompoundButton p0, boolean p1) {
@@ -61,7 +61,7 @@ public class MultiSensorUsageActivity_ViewBinding implements Unbinder {
     target.mMultiSensorUsageAngularVelocityTextView = Utils.findRequiredViewAsType(source, R.id.multiSensorUsage_angularVelocity_textView, "field 'mMultiSensorUsageAngularVelocityTextView'", TextView.class);
     view = Utils.findRequiredView(source, R.id.multiSensorUsage_angularVelocity_switch, "field 'mMultiSensorUsageAngularVelocitySwitch' and method 'onAngularVelocityCheckedChange'");
     target.mMultiSensorUsageAngularVelocitySwitch = Utils.castView(view, R.id.multiSensorUsage_angularVelocity_switch, "field 'mMultiSensorUsageAngularVelocitySwitch'", SwitchCompat.class);
-    view2131624150 = view;
+    view2131624151 = view;
     ((CompoundButton) view).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
       @Override
       public void onCheckedChanged(CompoundButton p0, boolean p1) {
@@ -78,7 +78,7 @@ public class MultiSensorUsageActivity_ViewBinding implements Unbinder {
     target.mMultiSensorUsageMagneticFieldTextView = Utils.findRequiredViewAsType(source, R.id.multiSensorUsage_magneticField_textView, "field 'mMultiSensorUsageMagneticFieldTextView'", TextView.class);
     view = Utils.findRequiredView(source, R.id.multiSensorUsage_magneticField_switch, "field 'mMultiSensorUsageMagneticFieldSwitch' and method 'onMagneticFieldCheckedChange'");
     target.mMultiSensorUsageMagneticFieldSwitch = Utils.castView(view, R.id.multiSensorUsage_magneticField_switch, "field 'mMultiSensorUsageMagneticFieldSwitch'", SwitchCompat.class);
-    view2131624159 = view;
+    view2131624160 = view;
     ((CompoundButton) view).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
       @Override
       public void onCheckedChanged(CompoundButton p0, boolean p1) {
@@ -98,7 +98,7 @@ public class MultiSensorUsageActivity_ViewBinding implements Unbinder {
     target.mMultiSensorUsageTemperatureDevice2ValueTv = Utils.findRequiredViewAsType(source, R.id.multiSensorUsage_temperature_device2_value_tv, "field 'mMultiSensorUsageTemperatureDevice2ValueTv'", TextView.class);
     view = Utils.findRequiredView(source, R.id.multiSensorUsage_temperature_switch, "field 'mMultiSensorUsageTemperatureSwitch' and method 'onTemperatureCheckedChange'");
     target.mMultiSensorUsageTemperatureSwitch = Utils.castView(view, R.id.multiSensorUsage_temperature_switch, "field 'mMultiSensorUsageTemperatureSwitch'", SwitchCompat.class);
-    view2131624168 = view;
+    view2131624169 = view;
     ((CompoundButton) view).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
       @Override
       public void onCheckedChanged(CompoundButton p0, boolean p1) {
@@ -153,13 +153,13 @@ public class MultiSensorUsageActivity_ViewBinding implements Unbinder {
     target.mMultiSensorUsageTemperatureDevice2ValueTv = null;
     target.mMultiSensorUsageTemperatureSwitch = null;
 
-    ((CompoundButton) view2131624141).setOnCheckedChangeListener(null);
-    view2131624141 = null;
-    ((CompoundButton) view2131624150).setOnCheckedChangeListener(null);
-    view2131624150 = null;
-    ((CompoundButton) view2131624159).setOnCheckedChangeListener(null);
-    view2131624159 = null;
-    ((CompoundButton) view2131624168).setOnCheckedChangeListener(null);
-    view2131624168 = null;
+    ((CompoundButton) view2131624142).setOnCheckedChangeListener(null);
+    view2131624142 = null;
+    ((CompoundButton) view2131624151).setOnCheckedChangeListener(null);
+    view2131624151 = null;
+    ((CompoundButton) view2131624160).setOnCheckedChangeListener(null);
+    view2131624160 = null;
+    ((CompoundButton) view2131624169).setOnCheckedChangeListener(null);
+    view2131624169 = null;
   }
 }

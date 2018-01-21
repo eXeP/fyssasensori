@@ -16,11 +16,11 @@ import java.lang.Override;
 public class MultiConnectionActivity_ViewBinding implements Unbinder {
   private MultiConnectionActivity target;
 
-  private View view2131624122;
+  private View view2131624123;
 
-  private View view2131624127;
+  private View view2131624128;
 
-  private View view2131624132;
+  private View view2131624133;
 
   @UiThread
   public MultiConnectionActivity_ViewBinding(MultiConnectionActivity target) {
@@ -34,7 +34,7 @@ public class MultiConnectionActivity_ViewBinding implements Unbinder {
     View view;
     view = Utils.findRequiredView(source, R.id.add_movesense1Ll, "field 'mAddMovesense1Ll' and method 'onViewClicked'");
     target.mAddMovesense1Ll = Utils.castView(view, R.id.add_movesense1Ll, "field 'mAddMovesense1Ll'", LinearLayout.class);
-    view2131624122 = view;
+    view2131624123 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -43,7 +43,7 @@ public class MultiConnectionActivity_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.add_movesense2Ll, "field 'mAddMovesense2Ll' and method 'onViewClicked'");
     target.mAddMovesense2Ll = Utils.castView(view, R.id.add_movesense2Ll, "field 'mAddMovesense2Ll'", LinearLayout.class);
-    view2131624127 = view;
+    view2131624128 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -60,7 +60,7 @@ public class MultiConnectionActivity_ViewBinding implements Unbinder {
     target.mMultiConnectionSelectedDeviceInfoLl2 = Utils.findRequiredViewAsType(source, R.id.multiConnection_selectedDeviceInfo_Ll_2, "field 'mMultiConnectionSelectedDeviceInfoLl2'", LinearLayout.class);
     view = Utils.findRequiredView(source, R.id.multiConnection_connect_Tv, "field 'mMultiConnectionConnectTv' and method 'onViewClicked'");
     target.mMultiConnectionConnectTv = Utils.castView(view, R.id.multiConnection_connect_Tv, "field 'mMultiConnectionConnectTv'", TextView.class);
-    view2131624132 = view;
+    view2131624133 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -90,11 +90,11 @@ public class MultiConnectionActivity_ViewBinding implements Unbinder {
     target.mMultiConnectionConnectTv = null;
     target.mMultiConnectionStatusTv = null;
 
-    view2131624122.setOnClickListener(null);
-    view2131624122 = null;
-    view2131624127.setOnClickListener(null);
-    view2131624127 = null;
-    view2131624132.setOnClickListener(null);
-    view2131624132 = null;
+    view2131624123.setOnClickListener(null);
+    view2131624123 = null;
+    view2131624128.setOnClickListener(null);
+    view2131624128 = null;
+    view2131624133.setOnClickListener(null);
+    view2131624133 = null;
   }
 }

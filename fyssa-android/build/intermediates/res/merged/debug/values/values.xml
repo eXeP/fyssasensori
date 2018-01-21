@@ -589,7 +589,7 @@
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="angular_velocity_name">Angular Velocity</string>
     <string name="app_info_name">App Info</string>
-    <string name="app_name">Movesense Example App</string>
+    <string name="app_name">Fyssasensori</string>
     <string name="application_version">Application Version: %s</string>
     <string name="battery_energy">Battery / Energy</string>
     <string name="battery_value">Battery value : </string>

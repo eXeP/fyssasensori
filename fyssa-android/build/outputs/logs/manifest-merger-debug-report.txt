@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:2:1-133:12
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:2:1-138:12
 	package
 		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:3:11-48
 		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
@@ -54,7 +54,7 @@ ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidMani
 	android:name
 		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:15:9-53
 application
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:18:5-131:19
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:18:5-136:19
 MERGED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/pietu/.android/build-cache/62fdb71aa89df9103e84f89ed2cfc1940037efae/output/AndroidManifest.xml:16:5-53
 MERGED from [com.jjoe64:graphview:4.2.1] /home/pietu/.android/build-cache/9441c6503f09ed78d8ead1893413e360b1b64a05/output/AndroidManifest.xml:11:5-12:19
 MERGED from [com.google.android.gms:play-services-drive:11.0.1] /home/pietu/.android/build-cache/65b5de44786de145869ab672fbf0ee60832bac48/output/AndroidManifest.xml:18:5-19
@@ -99,161 +99,167 @@ category#android.intent.category.LAUNCHER
 ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:33:17-76
 	android:name
 		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:33:27-74
+activity#com.pietu.fyssasensori.FyssaScanActivity
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:37:9-40:20
+	android:screenOrientation
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:39:13-49
+	android:name
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:38:13-68
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.tests.LedTestActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:39:9-41:51
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:44:9-46:51
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:41:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:46:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:40:13-76
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:45:13-76
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.tests.LinearAccelerationTestActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:42:9-44:51
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:47:9-49:51
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:44:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:49:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:43:13-91
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:48:13-91
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.tests.HeartRateTestActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:45:9-47:51
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:50:9-52:51
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:47:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:52:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:46:13-82
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:51:13-82
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.tests.TemperatureTestActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:48:9-50:51
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:53:9-55:51
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:50:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:55:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:49:13-84
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:54:13-84
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.tests.MagneticFieldTestActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:51:9-53:51
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:56:9-58:51
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:53:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:58:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:52:13-86
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:57:13-86
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.tests.AngularVelocityActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:54:9-56:51
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:59:9-61:51
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:56:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:61:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:55:13-84
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:60:13-84
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.tests.MultiSubscribeActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:57:9-59:51
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:62:9-64:51
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:59:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:64:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:58:13-83
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:63:13-83
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.SendLogsToGoogleDriveActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:60:9-62:51
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:65:9-67:51
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:62:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:67:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:61:13-84
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:66:13-84
 provider#android.support.v4.content.FileProvider
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:64:9-72:20
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:69:9-77:20
 	android:authorities
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:66:13-51
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:71:13-51
 		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
 	android:grantUriPermissions
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:68:13-47
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:73:13-47
 	android:exported
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:67:13-37
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:72:13-37
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:65:13-67
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:70:13-67
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:69:13-71:62
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:74:13-76:62
 	android:resource
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:71:17-60
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:76:17-60
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:70:17-67
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:75:17-67
 service#com.movesense.mds.sampleapp.example_app_using_mds_api.dfu.DfuService
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:74:9-77:38
-	android:enabled
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:76:13-35
-	android:exported
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:77:13-36
-	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:75:13-69
-receiver#com.movesense.mds.sampleapp.example_app_using_mds_api.adb.AdbBridge
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:79:9-86:20
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:79:9-82:38
 	android:enabled
 		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:81:13-35
 	android:exported
 		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:82:13-36
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:80:13-68
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:80:13-69
+receiver#com.movesense.mds.sampleapp.example_app_using_mds_api.adb.AdbBridge
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:84:9-91:20
+	android:enabled
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:86:13-35
+	android:exported
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:87:13-36
+	android:name
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:85:13-68
 intent-filter#android.intent.action.MOVESENSE
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:83:13-85:29
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:88:13-90:29
 action#android.intent.action.MOVESENSE
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:84:17-73
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:89:17-73
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:84:25-71
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:89:25-71
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.mainView.MainViewActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:88:9-94:20
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:93:9-99:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:90:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:95:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:89:13-80
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:94:13-80
 intent-filter#android.intent.action.MY_ACTION
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:91:13-93:29
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:96:13-98:29
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.movesense.MovesenseActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:95:9-97:51
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:100:9-102:51
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:97:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:102:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:96:13-82
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:101:13-82
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.multi_connection.connection.MultiConnectionActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:98:9-100:51
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:103:9-105:51
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:100:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:105:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:99:13-106
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:104:13-106
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.saved_data.SavedDataActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:101:9-103:51
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:106:9-108:51
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:103:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:108:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:102:13-83
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:107:13-83
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.about.AboutActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:104:9-106:51
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:109:9-111:51
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:106:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:111:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:105:13-74
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:110:13-74
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.sensors.sensors_list.SensorListActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:107:9-110:20
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:112:9-115:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:109:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:114:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:108:13-94
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:113:13-94
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.dfu.DfuActivity2
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:111:9-114:20
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:116:9-119:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:113:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:118:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:112:13-71
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:117:13-71
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.multi_connection.sensor_usage.MultiSensorUsageActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:115:9-118:20
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:120:9-123:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:117:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:122:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:116:13-109
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:121:13-109
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.tests.EcgActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:119:9-122:20
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:124:9-127:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:121:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:126:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:120:13-72
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:125:13-72
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.tests.BatteryActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:123:9-126:20
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:128:9-131:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:125:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:130:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:124:13-76
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:129:13-76
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.tests.AppInfoActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:127:9-130:20
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:132:9-135:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:129:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:134:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:128:13-76
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:133:13-76
 uses-sdk
 INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:recyclerview-v7:27.0.0] /home/pietu/.android/build-cache/676b9d594cc9976646d389a6cf2634b813481f8c/output/AndroidManifest.xml:20:5-44

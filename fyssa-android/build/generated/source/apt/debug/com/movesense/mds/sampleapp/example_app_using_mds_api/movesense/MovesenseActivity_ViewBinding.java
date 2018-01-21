@@ -17,9 +17,9 @@ import java.lang.Override;
 public class MovesenseActivity_ViewBinding implements Unbinder {
   private MovesenseActivity target;
 
-  private View view2131624120;
-
   private View view2131624121;
+
+  private View view2131624122;
 
   @UiThread
   public MovesenseActivity_ViewBinding(MovesenseActivity target) {
@@ -34,7 +34,7 @@ public class MovesenseActivity_ViewBinding implements Unbinder {
     target.mMovesenseRecyclerView = Utils.findRequiredViewAsType(source, R.id.movesense_recyclerView, "field 'mMovesenseRecyclerView'", RecyclerView.class);
     view = Utils.findRequiredView(source, R.id.startScanningBtn, "field 'mStartScanningBtn' and method 'onStartViewClicked'");
     target.mStartScanningBtn = Utils.castView(view, R.id.startScanningBtn, "field 'mStartScanningBtn'", TextView.class);
-    view2131624120 = view;
+    view2131624121 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -43,7 +43,7 @@ public class MovesenseActivity_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.stopScanningBtn, "field 'mStopScanningBtn' and method 'onStopViewClicked'");
     target.mStopScanningBtn = Utils.castView(view, R.id.stopScanningBtn, "field 'mStopScanningBtn'", TextView.class);
-    view2131624121 = view;
+    view2131624122 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -67,9 +67,9 @@ public class MovesenseActivity_ViewBinding implements Unbinder {
     target.mMovesenseInfoTv = null;
     target.mMovesenseProgressBar = null;
 
-    view2131624120.setOnClickListener(null);
-    view2131624120 = null;
     view2131624121.setOnClickListener(null);
     view2131624121 = null;
+    view2131624122.setOnClickListener(null);
+    view2131624122 = null;
   }
 }

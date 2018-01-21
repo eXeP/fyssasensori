@@ -16,7 +16,7 @@ import java.lang.Override;
 public class SendLogsToGoogleDriveActivity_ViewBinding implements Unbinder {
   private SendLogsToGoogleDriveActivity target;
 
-  private View view2131624185;
+  private View view2131624186;
 
   @UiThread
   public SendLogsToGoogleDriveActivity_ViewBinding(SendLogsToGoogleDriveActivity target) {
@@ -32,7 +32,7 @@ public class SendLogsToGoogleDriveActivity_ViewBinding implements Unbinder {
     target.resultTextView = Utils.findRequiredViewAsType(source, R.id.resultTextView, "field 'resultTextView'", TextView.class);
     view = Utils.findRequiredView(source, R.id.logsFileListView, "field 'logsFileListView' and method 'onItemClick'");
     target.logsFileListView = Utils.castView(view, R.id.logsFileListView, "field 'logsFileListView'", ListView.class);
-    view2131624185 = view;
+    view2131624186 = view;
     ((AdapterView<?>) view).setOnItemClickListener(new AdapterView.OnItemClickListener() {
       @Override
       public void onItemClick(AdapterView<?> p0, View p1, int p2, long p3) {
@@ -51,7 +51,7 @@ public class SendLogsToGoogleDriveActivity_ViewBinding implements Unbinder {
     target.resultTextView = null;
     target.logsFileListView = null;
 
-    ((AdapterView<?>) view2131624185).setOnItemClickListener(null);
-    view2131624185 = null;
+    ((AdapterView<?>) view2131624186).setOnItemClickListener(null);
+    view2131624186 = null;
   }
 }

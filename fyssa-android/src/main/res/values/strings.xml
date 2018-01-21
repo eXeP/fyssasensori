@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Movesense Example App</string>
+    <string name="app_name">Fyssasensori</string>
 
     <string name="fyssa_connection_guide">Laita sensori päälle koskettamalla takaosan metalliosia ja odota että laitteen punainen valo alkaa vilkkua. Valitse oikea sensori kun se tulee näkyviin, voit tarkistaa sensorisi nimen sen takaa (outo numerosarja).</string>
 
