@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/menu/fyssa_main_menu.xml",
+        "source": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/res/menu/fyssa_main_menu.xml"
+    },
+    {
         "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/menu/menu.xml",
         "source": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/res/menu/menu.xml"
     },

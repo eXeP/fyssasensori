@@ -2858,7 +2858,7 @@ containing a value of this type.
         public static final int dfu_file_status_value_tv=0x7f0e0092;
         public static final int dfu_file_type_tv=0x7f0e008c;
         public static final int dfu_file_type_value_tv=0x7f0e0090;
-        public static final int dfu_mode=0x7f0e011e;
+        public static final int dfu_mode=0x7f0e011f;
         public static final int dfu_movesense_sw_version_tv=0x7f0e00a6;
         public static final int dfu_percentProgress_Tv=0x7f0e00a7;
         public static final int dfu_selectDevice_textView=0x7f0e009f;
@@ -2881,14 +2881,14 @@ containing a value of this type.
         public static final int dfu_uploading_percent_tv=0x7f0e0097;
         public static final int dfu_uploading_tv=0x7f0e0096;
         public static final int disableHome=0x7f0e001c;
-        public static final int disconnect=0x7f0e0120;
+        public static final int disconnect=0x7f0e0121;
         public static final int edit_query=0x7f0e006a;
         public static final int end=0x7f0e002f;
         public static final int expand_activities_button=0x7f0e004a;
         public static final int expanded_menu=0x7f0e005e;
         public static final int forever=0x7f0e002c;
         public static final int fyssa_conn_infoTV=0x7f0e00a8;
-        public static final int googleDriveItem=0x7f0e0121;
+        public static final int googleDriveItem=0x7f0e0122;
         public static final int graphView=0x7f0e007e;
         public static final int heart_rate_switch=0x7f0e00ad;
         public static final int heart_rate_value_textView=0x7f0e00ae;
@@ -2986,7 +2986,8 @@ containing a value of this type.
         public static final int progress_circular=0x7f0e0008;
         public static final int progress_horizontal=0x7f0e0009;
         public static final int radio=0x7f0e0061;
-        public static final int refreshFiles=0x7f0e0122;
+        public static final int refreshFiles=0x7f0e0123;
+        public static final int remove_device=0x7f0e011e;
         public static final int response_textView=0x7f0e00b0;
         public static final int resultTextView=0x7f0e00f9;
         public static final int right_icon=0x7f0e0119;
@@ -3011,7 +3012,7 @@ containing a value of this type.
         public static final int selectedDeviceInfo_Ll_2=0x7f0e00cb;
         public static final int selectedDeviceName_Tv_1=0x7f0e00c9;
         public static final int selectedDeviceName_Tv_2=0x7f0e00cc;
-        public static final int send_logs_to_google_drive=0x7f0e011f;
+        public static final int send_logs_to_google_drive=0x7f0e0120;
         public static final int sensorList_appInfo_company_tv=0x7f0e0082;
         public static final int sensorList_appInfo_name_tv=0x7f0e0080;
         public static final int sensorList_appInfo_title_tv=0x7f0e007f;
@@ -3156,8 +3157,9 @@ containing a value of this type.
         public static final int tooltip=0x7f040040;
     }
     public static final class menu {
-        public static final int menu=0x7f100000;
-        public static final int send_logs_menu=0x7f100001;
+        public static final int fyssa_main_menu=0x7f100000;
+        public static final int menu=0x7f100001;
+        public static final int send_logs_menu=0x7f100002;
     }
     public static final class mipmap {
         public static final int ic_launcher=0x7f030000;
@@ -3307,38 +3309,39 @@ containing a value of this type.
         public static final int read_lgos_permission_text=0x7f08008c;
         public static final int read_logs_permission_title=0x7f08008d;
         public static final int refresh_files=0x7f08008e;
-        public static final int response=0x7f08008f;
-        public static final int result=0x7f080090;
+        public static final int remove_device=0x7f08008f;
+        public static final int response=0x7f080090;
+        public static final int result=0x7f080091;
         public static final int search_menu_title=0x7f080022;
-        public static final int select_file_and_device=0x7f080091;
-        public static final int select_test=0x7f080092;
-        public static final int send_logs_to_google_drive=0x7f080093;
-        public static final int serial=0x7f080094;
+        public static final int select_file_and_device=0x7f080092;
+        public static final int select_test=0x7f080093;
+        public static final int send_logs_to_google_drive=0x7f080094;
+        public static final int serial=0x7f080095;
         public static final int status_bar_notification_info_overflow=0x7f080023;
-        public static final int subscribe=0x7f080095;
-        public static final int success=0x7f080096;
-        public static final int temperature_name=0x7f080097;
-        public static final int temporary_disabled=0x7f080098;
-        public static final int test_angular_velocity=0x7f080099;
-        public static final int test_heart_rate=0x7f08009a;
-        public static final int test_led=0x7f08009b;
-        public static final int test_linear_acceleration=0x7f08009c;
-        public static final int test_magnetic_field=0x7f08009d;
-        public static final int test_multi_subscription=0x7f08009e;
-        public static final int test_temperature=0x7f08009f;
-        public static final int text_location_permission=0x7f0800a0;
-        public static final int title_location_permission=0x7f0800a1;
-        public static final int uploading=0x7f0800a2;
-        public static final int value=0x7f0800a3;
-        public static final int waiting_for_action=0x7f0800a4;
-        public static final int waiting_for_response=0x7f0800a5;
-        public static final int we_are_working_on_it=0x7f0800a6;
-        public static final int write_external_storage_permission_text=0x7f0800a7;
-        public static final int write_external_storage_permission_title=0x7f0800a8;
-        public static final int x=0x7f0800a9;
-        public static final int y=0x7f0800aa;
-        public static final int yes=0x7f0800ab;
-        public static final int z=0x7f0800ac;
+        public static final int subscribe=0x7f080096;
+        public static final int success=0x7f080097;
+        public static final int temperature_name=0x7f080098;
+        public static final int temporary_disabled=0x7f080099;
+        public static final int test_angular_velocity=0x7f08009a;
+        public static final int test_heart_rate=0x7f08009b;
+        public static final int test_led=0x7f08009c;
+        public static final int test_linear_acceleration=0x7f08009d;
+        public static final int test_magnetic_field=0x7f08009e;
+        public static final int test_multi_subscription=0x7f08009f;
+        public static final int test_temperature=0x7f0800a0;
+        public static final int text_location_permission=0x7f0800a1;
+        public static final int title_location_permission=0x7f0800a2;
+        public static final int uploading=0x7f0800a3;
+        public static final int value=0x7f0800a4;
+        public static final int waiting_for_action=0x7f0800a5;
+        public static final int waiting_for_response=0x7f0800a6;
+        public static final int we_are_working_on_it=0x7f0800a7;
+        public static final int write_external_storage_permission_text=0x7f0800a8;
+        public static final int write_external_storage_permission_title=0x7f0800a9;
+        public static final int x=0x7f0800aa;
+        public static final int y=0x7f0800ab;
+        public static final int yes=0x7f0800ac;
+        public static final int z=0x7f0800ad;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f0a009b;

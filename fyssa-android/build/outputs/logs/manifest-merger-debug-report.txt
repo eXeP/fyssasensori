@@ -78,7 +78,7 @@ MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/pietu
 	android:theme
 		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:24:9-40
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:19:9-34
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:19:9-55
 activity#com.pietu.fyssasensori.FyssaMainActivity
 ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:26:9-35:20
 	android:screenOrientation

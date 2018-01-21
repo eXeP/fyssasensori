@@ -18,6 +18,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -59,12 +62,15 @@ public class FyssaMainActivity extends AppCompatActivity {
     private final String TAG = FyssaMainActivity.class.getSimpleName();
 
     private CompositeSubscription subscriptions;
+    private FyssaApp app;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fyssa_main);
         ButterKnife.bind(this);
+
+        app = (FyssaApp) getApplication();
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Fyssasensori");
@@ -102,6 +108,23 @@ public class FyssaMainActivity extends AppCompatActivity {
                         }
                     }
                 }, new ThrowableToastingAction(this)));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.fyssa_main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.remove_device) {
+            app.getMemoryTools().saveSerial(app.getMemoryTools().DEFAULT_STRING);
+            startScanActivity();
+            return true;
+        }
+        return false;
     }
 
     @Override

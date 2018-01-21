@@ -70,11 +70,15 @@ public class FyssaScanActivity extends AppCompatActivity implements MovesenseCon
     private final String TAG = FyssaScanActivity.class.getSimpleName();
     private MovesenseAdapter mMovesenseAdapter;
 
+    private FyssaApp app;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fyssa_scan);
         ButterKnife.bind(this);
+
+        app = (FyssaApp) getApplication();
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Yhdistä Movesense-laitteesi");
@@ -109,12 +113,16 @@ public class FyssaScanActivity extends AppCompatActivity implements MovesenseCon
     public void displayScanResult(RxBleDevice bluetoothDevice, int rssi) {
         Log.d(TAG, "displayScanResult: " + bluetoothDevice.getName());
         mMovesenseModels.add(bluetoothDevice);
+        Log.d(TAG, app.getMemoryTools().getSerial() + " vs " + bluetoothDevice.getMacAddress());
+        if(bluetoothDevice.getMacAddress().equals(app.getMemoryTools().getSerial())) {
+            connectToDevice(bluetoothDevice);
+        } else {
+            MovesenseAdapter movesenseAdapter = new MovesenseAdapter(mMovesenseModels, this);
+            mMovesenseRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+            mMovesenseRecyclerView.setAdapter(movesenseAdapter);
 
-        MovesenseAdapter movesenseAdapter = new MovesenseAdapter(mMovesenseModels, this);
-        mMovesenseRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mMovesenseRecyclerView.setAdapter(movesenseAdapter);
-
-        movesenseAdapter.notifyDataSetChanged();
+            movesenseAdapter.notifyDataSetChanged();
+        }
     }
 
     @Override
@@ -211,9 +219,14 @@ public class FyssaScanActivity extends AppCompatActivity implements MovesenseCon
                                 && !mMovesenseModels.contains(rxBleDevice)) {
 
                             Log.d(TAG, "call: Add to list " + rxBleScanResult.getBleDevice().getName());
-                            mMovesenseModels.add(rxBleDevice);
-                            // mView.displayScanResult(rxBleDevice, rxBleScanResult.getRssi());
-                            mMovesenseAdapter.notifyDataSetChanged();
+                            Log.d(TAG, app.getMemoryTools().getSerial() + " vs " +  rxBleScanResult.getBleDevice().getMacAddress());
+                            if( rxBleScanResult.getBleDevice().getMacAddress().equals(app.getMemoryTools().getSerial())) {
+                                connectToDevice( rxBleScanResult.getBleDevice());
+                            } else {
+                                mMovesenseModels.add(rxBleDevice);
+                                // mView.displayScanResult(rxBleDevice, rxBleScanResult.getRssi());
+                                mMovesenseAdapter.notifyDataSetChanged();
+                            }
                         }
                     }
                 }, new Action1<Throwable>() {
@@ -258,6 +271,10 @@ public class FyssaScanActivity extends AppCompatActivity implements MovesenseCon
     @Override
     public void onClick(View v) {
         final RxBleDevice rxBleDevice = (RxBleDevice) v.getTag();
+        connectToDevice(rxBleDevice);
+    }
+
+    private void connectToDevice(final RxBleDevice rxBleDevice) {
         Log.d(TAG, "Connecting to : " + rxBleDevice.getName() + " " + rxBleDevice.getMacAddress());
 
         mMovesenseProgressBar.setVisibility(View.GONE);
@@ -307,6 +324,7 @@ public class FyssaScanActivity extends AppCompatActivity implements MovesenseCon
                             connectedDevicesSubscriptions.unsubscribe();
 
                             // We have a new SdsDevice
+                            app.getMemoryTools().saveSerial(rxBleDevice.getMacAddress());
                             startMainActivity();
                         } else {
                             Log.e(TAG, "DISCONNECT");

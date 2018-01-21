@@ -7,6 +7,7 @@ import com.movesense.mds.sampleapp.MdsRx;
 import com.movesense.mds.sampleapp.R;
 import com.movesense.mds.sampleapp.RxBle;
 import com.movesense.mds.sampleapp.Util;
+import com.pietu.fyssasensori.tool.MemoryTools;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -17,6 +18,7 @@ import java.io.InputStream;
  */
 public class FyssaApp extends Application {
 
+    private MemoryTools memoryTools;
     
     @Override
     public void onCreate() {
@@ -31,6 +33,8 @@ public class FyssaApp extends Application {
         // Initialize MDS
         MdsRx.Instance.initialize(this);
 
+        memoryTools = new MemoryTools(this);
+
     }
 
     @Override
@@ -38,6 +42,11 @@ public class FyssaApp extends Application {
         super.onTerminate();
 
     }
+
+    public MemoryTools getMemoryTools() {
+        return memoryTools;
+    }
+
 
     /**
      * Copy raw resource file to file.
