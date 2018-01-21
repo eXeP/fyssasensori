@@ -424,6 +424,10 @@
         "source": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/res/layout/activity_angular_velocity.xml"
     },
     {
+        "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/layout/activity_fyssa_info.xml",
+        "source": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/res/layout/activity_fyssa_info.xml"
+    },
+    {
         "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml",
         "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/layout/select_dialog_multichoice_material.xml"
     },

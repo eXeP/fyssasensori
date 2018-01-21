@@ -39,6 +39,11 @@
             android:screenOrientation="portrait">
         </activity>
 
+        <activity
+            android:name="com.pietu.fyssasensori.FyssaInfoActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
 
 
         <activity

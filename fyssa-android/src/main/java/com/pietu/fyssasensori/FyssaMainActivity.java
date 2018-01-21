@@ -43,6 +43,7 @@ import com.movesense.mds.sampleapp.example_app_using_mds_api.sensors.sensors_lis
 import com.movesense.mds.sampleapp.model.MdsConnectedDevice;
 import com.movesense.mds.sampleapp.model.MdsDeviceInfoNewSw;
 import com.movesense.mds.sampleapp.model.MdsDeviceInfoOldSw;
+import com.pietu.fyssasensori.tool.MemoryTools;
 import com.polidea.rxandroidble.RxBleDevice;
 import com.polidea.rxandroidble.RxBleScanResult;
 
@@ -74,6 +75,10 @@ public class FyssaMainActivity extends AppCompatActivity {
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Fyssasensori");
+        }
+
+        if (app.getMemoryTools().getName().equals(MemoryTools.DEFAULT_STRING)) {
+            startInfoActivity();
         }
 
         subscriptions = new CompositeSubscription();
@@ -120,6 +125,7 @@ public class FyssaMainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.remove_device) {
+            subscriptions.clear();
             app.getMemoryTools().saveSerial(app.getMemoryTools().DEFAULT_STRING);
             startScanActivity();
             return true;
@@ -156,6 +162,11 @@ public class FyssaMainActivity extends AppCompatActivity {
 
     private void startScanActivity() {
         startActivity(new Intent(FyssaMainActivity.this, FyssaScanActivity.class)
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
+    }
+
+    private void startInfoActivity() {
+        startActivity(new Intent(FyssaMainActivity.this, FyssaInfoActivity.class)
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
     }
 }

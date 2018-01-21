@@ -506,7 +506,7 @@ public final class R {
         public static final int action_bar_subtitle = 0x7f0e0047;
         public static final int action_bar_title = 0x7f0e0046;
         public static final int action_context_bar = 0x7f0e0069;
-        public static final int action_divider = 0x7f0e011a;
+        public static final int action_divider = 0x7f0e011c;
         public static final int action_menu_divider = 0x7f0e0002;
         public static final int action_menu_presenter = 0x7f0e0003;
         public static final int action_mode_bar = 0x7f0e0065;
@@ -520,7 +520,7 @@ public final class R {
         public static final int bottom = 0x7f0e0044;
         public static final int buttonPanel = 0x7f0e004f;
         public static final int checkbox = 0x7f0e005f;
-        public static final int chronometer = 0x7f0e0117;
+        public static final int chronometer = 0x7f0e0119;
         public static final int collapseActionView = 0x7f0e003a;
         public static final int contentPanel = 0x7f0e0052;
         public static final int custom = 0x7f0e0059;
@@ -537,7 +537,7 @@ public final class R {
         public static final int icon = 0x7f0e004e;
         public static final int ifRoom = 0x7f0e003b;
         public static final int image = 0x7f0e004b;
-        public static final int info = 0x7f0e0118;
+        public static final int info = 0x7f0e011a;
         public static final int line1 = 0x7f0e0006;
         public static final int line3 = 0x7f0e0007;
         public static final int listMode = 0x7f0e0019;
@@ -581,7 +581,7 @@ public final class R {
         public static final int text = 0x7f0e000c;
         public static final int text2 = 0x7f0e000d;
         public static final int textSpacerNoButtons = 0x7f0e0056;
-        public static final int time = 0x7f0e0116;
+        public static final int time = 0x7f0e0118;
         public static final int title = 0x7f0e000e;
         public static final int title_template = 0x7f0e005b;
         public static final int top = 0x7f0e0045;
@@ -623,12 +623,12 @@ public final class R {
         public static final int abc_search_dropdown_item_icons_2line = 0x7f040017;
         public static final int abc_search_view = 0x7f040018;
         public static final int abc_select_dialog_material = 0x7f040019;
-        public static final int notification_template_part_chronometer = 0x7f040039;
-        public static final int notification_template_part_time = 0x7f04003a;
-        public static final int select_dialog_item_material = 0x7f04003c;
-        public static final int select_dialog_multichoice_material = 0x7f04003d;
-        public static final int select_dialog_singlechoice_material = 0x7f04003e;
-        public static final int support_simple_spinner_dropdown_item = 0x7f04003f;
+        public static final int notification_template_part_chronometer = 0x7f04003a;
+        public static final int notification_template_part_time = 0x7f04003b;
+        public static final int select_dialog_item_material = 0x7f04003d;
+        public static final int select_dialog_multichoice_material = 0x7f04003e;
+        public static final int select_dialog_singlechoice_material = 0x7f04003f;
+        public static final int support_simple_spinner_dropdown_item = 0x7f040040;
     }
     public static final class string {
         public static final int abc_action_bar_home_description = 0x7f080000;
