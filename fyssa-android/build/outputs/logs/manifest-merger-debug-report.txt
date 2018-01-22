@@ -1,351 +1,357 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:2:1-143:12
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:2:1-148:12
 	package
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:3:11-48
-		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
-		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:3:11-48
+		INJECTED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
+		INJECTED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
-		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
+		INJECTED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
+		INJECTED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:2:11-69
 	android:versionCode
-		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
-		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
+		INJECTED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
+		INJECTED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:5:5-80
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:5:5-80
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:5:22-78
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:5:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:6:5-79
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:6:5-79
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:6:22-77
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:6:22-77
 uses-permission#android.permission.INTERNET
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:7:5-66
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:7:5-66
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:7:22-64
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:7:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:8:5-78
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:8:5-78
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:8:22-76
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:8:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:9:5-80
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:9:5-80
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:9:22-78
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:9:22-78
 uses-permission#android.permission.GET_ACCOUNTS
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:10:5-70
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:10:5-70
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:10:22-68
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:10:22-68
 uses-permission#android.permission.BLUETOOTH
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:11:5-67
-MERGED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/pietu/.android/build-cache/62fdb71aa89df9103e84f89ed2cfc1940037efae/output/AndroidManifest.xml:11:5-68
-MERGED from [no.nordicsemi.android:dfu:1.6.0] /home/pietu/.android/build-cache/4451de960618e6dc795eb15af83dcd0524386b80/output/AndroidManifest.xml:11:5-68
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:11:5-67
+MERGED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/exep/.android/build-cache/427f508aaca818ab89bc143bc4c07fb77eb95ddd/output/AndroidManifest.xml:11:5-68
+MERGED from [no.nordicsemi.android:dfu:1.6.0] /home/exep/.android/build-cache/c50a3cb91b09cbc4db521cbc0db05cd464c62426/output/AndroidManifest.xml:11:5-68
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:11:22-65
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:11:22-65
 uses-permission#android.permission.MANAGE_DOCUMENTS
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:12:5-74
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:12:5-74
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:12:22-72
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:12:22-72
 uses-feature#android.hardware.bluetooth_le
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:14:5-16:34
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:14:5-16:34
 	android:required
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:16:9-32
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:16:9-32
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:15:9-53
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:15:9-53
 application
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:18:5-141:19
-MERGED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/pietu/.android/build-cache/62fdb71aa89df9103e84f89ed2cfc1940037efae/output/AndroidManifest.xml:16:5-53
-MERGED from [com.jjoe64:graphview:4.2.1] /home/pietu/.android/build-cache/9441c6503f09ed78d8ead1893413e360b1b64a05/output/AndroidManifest.xml:11:5-12:19
-MERGED from [com.google.android.gms:play-services-drive:11.0.1] /home/pietu/.android/build-cache/65b5de44786de145869ab672fbf0ee60832bac48/output/AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-auth:11.0.1] /home/pietu/.android/build-cache/ca0ea3656429523305fe3eafc8514bffab7940b9/output/AndroidManifest.xml:19:5-25:19
-MERGED from [com.google.android.gms:play-services-base:11.0.1] /home/pietu/.android/build-cache/b28b7527d9339aef5518564584b059a6fad1ff01/output/AndroidManifest.xml:18:5-20:19
-MERGED from [com.google.android.gms:play-services-tasks:11.0.1] /home/pietu/.android/build-cache/e3b721519d9e2bc0a30513de9d6568380343aa0f/output/AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-basement:11.0.1] /home/pietu/.android/build-cache/2c607e924ff67fd8bb9fda4d583f6ee35823dc88/output/AndroidManifest.xml:19:5-21:19
-MERGED from [com.android.support:support-v4:25.2.0] /home/pietu/.android/build-cache/ff1b9be79f99ef4e7956100aeeff5d799604bbad/output/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:25.2.0] /home/pietu/.android/build-cache/c4e17c5e236a7aff800d49b68475fc0ddf250c84/output/AndroidManifest.xml:25:5-20
-MERGED from [pub.devrel:easypermissions:0.2.1] /home/pietu/.android/build-cache/04f05124c7d35a68da11dc83bd9b6574e8871be2/output/AndroidManifest.xml:12:5-20
-MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/pietu/.android/build-cache/765ad8d33d352cbbb4a9d60ccef8df255e8752c1/output/AndroidManifest.xml:24:5-28:19
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/pietu/.android/build-cache/371cfab83647fe1c5e08e924cb5ac0a4dd5c1f33/output/AndroidManifest.xml:9:5-20
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:18:5-146:19
+MERGED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/exep/.android/build-cache/427f508aaca818ab89bc143bc4c07fb77eb95ddd/output/AndroidManifest.xml:16:5-53
+MERGED from [com.jjoe64:graphview:4.2.1] /home/exep/.android/build-cache/bebdbc8f4423b70741d09040fd36befe348eb0ea/output/AndroidManifest.xml:11:5-12:19
+MERGED from [com.google.android.gms:play-services-drive:11.0.1] /home/exep/.android/build-cache/0115e5c32efc5edd880060df61c0102770427887/output/AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.android/build-cache/f5295a2ef1232e4b5ac4d34f9d9eee47e7bdc484/output/AndroidManifest.xml:19:5-25:19
+MERGED from [com.google.android.gms:play-services-base:11.0.1] /home/exep/.android/build-cache/223f12ccb93b613a920d236ee5828a2d567cd8c1/output/AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-tasks:11.0.1] /home/exep/.android/build-cache/2ff3cc55f1e11df7410cd3e623aa3ad070d58cb7/output/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:11.0.1] /home/exep/.android/build-cache/b3bfe47846b78fe1fc60ed28cacb76c789e301ef/output/AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:support-v4:25.2.0] /home/exep/.android/build-cache/3d66fe42bb39104583352fa31509cc62d2d03bdf/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.2.0] /home/exep/.android/build-cache/f3fe5696ec946a02b024c9d28f375d6938472915/output/AndroidManifest.xml:25:5-20
+MERGED from [pub.devrel:easypermissions:0.2.1] /home/exep/.android/build-cache/1039e3d2c24d4396df4cec7a5517a1d315517d54/output/AndroidManifest.xml:12:5-20
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/exep/.android/build-cache/e3890b958414799bac07507a9caaa952994f646c/output/AndroidManifest.xml:24:5-28:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/exep/.android/build-cache/381530573727a95fafb9a842b9dfdb18552943d5/output/AndroidManifest.xml:9:5-20
 	android:label
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:22:9-41
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:22:9-41
 	android:supportsRtl
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:23:9-35
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:23:9-35
 	android:allowBackup
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:20:9-35
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:20:9-35
 	android:icon
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:21:9-43
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:21:9-43
 	android:theme
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:24:9-40
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:24:9-40
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:19:9-55
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:19:9-55
 activity#com.pietu.fyssasensori.FyssaMainActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:26:9-35:20
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:26:9-35:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:28:13-49
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:28:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:27:13-68
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:27:13-68
 intent-filter#android.intent.action.MAIN+android.intent.action.MY_ACTION+android.intent.category.LAUNCHER
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:29:13-34:29
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:29:13-34:29
 action#android.intent.action.MAIN
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:30:17-68
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:30:17-68
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:30:25-66
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:30:25-66
 action#android.intent.action.MY_ACTION
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:31:17-73
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:31:17-73
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:31:25-71
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:31:25-71
 category#android.intent.category.LAUNCHER
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:33:17-76
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:33:17-76
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:33:27-74
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:33:27-74
 activity#com.pietu.fyssasensori.FyssaScanActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:37:9-40:20
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:37:9-40:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:39:13-49
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:39:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:38:13-68
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:38:13-68
 activity#com.pietu.fyssasensori.FyssaInfoActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:42:9-45:20
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:42:9-45:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:44:13-49
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:44:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:43:13-68
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:43:13-68
+activity#com.pietu.fyssasensori.FyssaSensorUpdateActivity
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:47:9-50:20
+	android:screenOrientation
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:49:13-49
+	android:name
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:48:13-76
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.tests.LedTestActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:49:9-51:51
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:54:9-56:51
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:51:13-49
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:56:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:50:13-76
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:55:13-76
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.tests.LinearAccelerationTestActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:52:9-54:51
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:57:9-59:51
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:54:13-49
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:59:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:53:13-91
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:58:13-91
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.tests.HeartRateTestActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:55:9-57:51
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:60:9-62:51
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:57:13-49
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:62:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:56:13-82
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:61:13-82
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.tests.TemperatureTestActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:58:9-60:51
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:63:9-65:51
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:60:13-49
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:65:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:59:13-84
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:64:13-84
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.tests.MagneticFieldTestActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:61:9-63:51
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:66:9-68:51
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:63:13-49
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:68:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:62:13-86
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:67:13-86
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.tests.AngularVelocityActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:64:9-66:51
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:69:9-71:51
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:66:13-49
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:71:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:65:13-84
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:70:13-84
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.tests.MultiSubscribeActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:67:9-69:51
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:72:9-74:51
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:69:13-49
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:74:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:68:13-83
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:73:13-83
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.SendLogsToGoogleDriveActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:70:9-72:51
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:75:9-77:51
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:72:13-49
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:77:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:71:13-84
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:76:13-84
 provider#android.support.v4.content.FileProvider
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:74:9-82:20
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:79:9-87:20
 	android:authorities
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:76:13-51
-		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:81:13-51
+		INJECTED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
 	android:grantUriPermissions
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:78:13-47
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:83:13-47
 	android:exported
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:77:13-37
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:82:13-37
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:75:13-67
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:80:13-67
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:79:13-81:62
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:84:13-86:62
 	android:resource
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:81:17-60
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:86:17-60
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:80:17-67
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:85:17-67
 service#com.movesense.mds.sampleapp.example_app_using_mds_api.dfu.DfuService
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:84:9-87:38
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:89:9-92:38
 	android:enabled
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:86:13-35
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:91:13-35
 	android:exported
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:87:13-36
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:92:13-36
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:85:13-69
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:90:13-69
 receiver#com.movesense.mds.sampleapp.example_app_using_mds_api.adb.AdbBridge
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:89:9-96:20
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:94:9-101:20
 	android:enabled
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:91:13-35
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:96:13-35
 	android:exported
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:92:13-36
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:97:13-36
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:90:13-68
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:95:13-68
 intent-filter#android.intent.action.MOVESENSE
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:93:13-95:29
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:98:13-100:29
 action#android.intent.action.MOVESENSE
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:94:17-73
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:99:17-73
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:94:25-71
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:99:25-71
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.mainView.MainViewActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:98:9-104:20
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:103:9-109:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:100:13-49
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:105:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:99:13-80
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:104:13-80
 intent-filter#android.intent.action.MY_ACTION
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:101:13-103:29
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:106:13-108:29
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.movesense.MovesenseActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:105:9-107:51
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:110:9-112:51
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:107:13-49
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:112:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:106:13-82
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:111:13-82
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.multi_connection.connection.MultiConnectionActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:108:9-110:51
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:113:9-115:51
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:110:13-49
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:115:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:109:13-106
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:114:13-106
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.saved_data.SavedDataActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:111:9-113:51
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:116:9-118:51
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:113:13-49
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:118:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:112:13-83
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:117:13-83
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.about.AboutActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:114:9-116:51
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:119:9-121:51
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:116:13-49
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:121:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:115:13-74
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:120:13-74
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.sensors.sensors_list.SensorListActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:117:9-120:20
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:122:9-125:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:119:13-49
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:124:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:118:13-94
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:123:13-94
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.dfu.DfuActivity2
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:121:9-124:20
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:126:9-129:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:123:13-49
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:128:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:122:13-71
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:127:13-71
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.multi_connection.sensor_usage.MultiSensorUsageActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:125:9-128:20
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:130:9-133:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:127:13-49
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:132:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:126:13-109
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:131:13-109
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.tests.EcgActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:129:9-132:20
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:134:9-137:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:131:13-49
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:136:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:130:13-72
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:135:13-72
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.tests.BatteryActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:133:9-136:20
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:138:9-141:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:135:13-49
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:140:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:134:13-76
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:139:13-76
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.tests.AppInfoActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:137:9-140:20
+ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:142:9-145:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:139:13-49
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:144:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:138:13-76
+		ADDED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:143:13-76
 uses-sdk
-INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:recyclerview-v7:27.0.0] /home/pietu/.android/build-cache/676b9d594cc9976646d389a6cf2634b813481f8c/output/AndroidManifest.xml:20:5-44
-MERGED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/pietu/.android/build-cache/62fdb71aa89df9103e84f89ed2cfc1940037efae/output/AndroidManifest.xml:7:5-9:41
-MERGED from [com.artemzin.rxjava:proguard-rules:1.3.2.0] /home/pietu/.android/build-cache/8f435d45667617980ff1418a44477ee28991a3e6/output/AndroidManifest.xml:8:5-43
-MERGED from [io.reactivex:rxandroid:1.2.1] /home/pietu/.android/build-cache/a9c13abf5e832f93c34a970b555b8e514706cb7a/output/AndroidManifest.xml:19:5-43
-MERGED from [:mdslib:1.10.0(1)-release] /home/pietu/.android/build-cache/5ccbe66e1f0149011ac48029d91b3f87301e00c0/output/AndroidManifest.xml:8:5-10:41
-MERGED from [com.jakewharton:butterknife:8.5.1] /home/pietu/.android/build-cache/3ea0e208801fd113614dc4232a6fdf27c0e07128/output/AndroidManifest.xml:5:5-43
-MERGED from [com.jjoe64:graphview:4.2.1] /home/pietu/.android/build-cache/9441c6503f09ed78d8ead1893413e360b1b64a05/output/AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.android.gms:play-services-drive:11.0.1] /home/pietu/.android/build-cache/65b5de44786de145869ab672fbf0ee60832bac48/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-auth:11.0.1] /home/pietu/.android/build-cache/ca0ea3656429523305fe3eafc8514bffab7940b9/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-auth-base:11.0.1] /home/pietu/.android/build-cache/36e503bc42b2c6b36a6396b4c8980bedb32618f0/output/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-base:11.0.1] /home/pietu/.android/build-cache/b28b7527d9339aef5518564584b059a6fad1ff01/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-tasks:11.0.1] /home/pietu/.android/build-cache/e3b721519d9e2bc0a30513de9d6568380343aa0f/output/AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-basement:11.0.1] /home/pietu/.android/build-cache/2c607e924ff67fd8bb9fda4d583f6ee35823dc88/output/AndroidManifest.xml:17:5-43
-MERGED from [com.android.support:support-v4:25.2.0] /home/pietu/.android/build-cache/ff1b9be79f99ef4e7956100aeeff5d799604bbad/output/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-media-compat:25.2.0] /home/pietu/.android/build-cache/c4e17c5e236a7aff800d49b68475fc0ddf250c84/output/AndroidManifest.xml:21:5-23:63
-MERGED from [pub.devrel:easypermissions:0.2.1] /home/pietu/.android/build-cache/04f05124c7d35a68da11dc83bd9b6574e8871be2/output/AndroidManifest.xml:8:5-10:41
-MERGED from [com.android.support:appcompat-v7:27.0.0] /home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.0.0] /home/pietu/.android/build-cache/78522e921e69d5db58d2aed7cd37f86f04ab8718/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.0.0] /home/pietu/.android/build-cache/7bc5dd0016087e3d764c4252b8c88bafdc922853/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.0.0] /home/pietu/.android/build-cache/8e3c12d8259feddb51814638da045cd7799507f8/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.0.0] /home/pietu/.android/build-cache/5723919565f4edfcabff83ddfefae57825fb91b9/output/AndroidManifest.xml:20:5-44
-MERGED from [no.nordicsemi.android:dfu:1.6.0] /home/pietu/.android/build-cache/4451de960618e6dc795eb15af83dcd0524386b80/output/AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:support-core-utils:27.0.0] /home/pietu/.android/build-cache/40e5a504c532eed1393be11528773075acc616b9/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.0.0] /home/pietu/.android/build-cache/fb0faec34f61b9ffc4b7766c75e2bfc3589ec8f3/output/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/pietu/.android/build-cache/765ad8d33d352cbbb4a9d60ccef8df255e8752c1/output/AndroidManifest.xml:20:5-22:41
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/pietu/.android/build-cache/371cfab83647fe1c5e08e924cb5ac0a4dd5c1f33/output/AndroidManifest.xml:5:5-7:41
+INJECTED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:recyclerview-v7:27.0.0] /home/exep/.android/build-cache/ff67447d3e98e4241ab377218051c7f3ff028bcd/output/AndroidManifest.xml:20:5-44
+MERGED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/exep/.android/build-cache/427f508aaca818ab89bc143bc4c07fb77eb95ddd/output/AndroidManifest.xml:7:5-9:41
+MERGED from [com.artemzin.rxjava:proguard-rules:1.3.2.0] /home/exep/.android/build-cache/48db2d26fd4a9897d41b4c18e6624ec6e3f9c35b/output/AndroidManifest.xml:8:5-43
+MERGED from [io.reactivex:rxandroid:1.2.1] /home/exep/.android/build-cache/ebffe60a1f00ad8f08e053b67c201d213759b261/output/AndroidManifest.xml:19:5-43
+MERGED from [:mdslib:1.10.0(1)-release] /home/exep/.android/build-cache/43fcfff510e2a46f567d0013477f1208f41e9f50/output/AndroidManifest.xml:8:5-10:41
+MERGED from [com.jakewharton:butterknife:8.5.1] /home/exep/.android/build-cache/50869ade6a686dcbb1e7034cc8fe5b76ceb38c2b/output/AndroidManifest.xml:5:5-43
+MERGED from [com.jjoe64:graphview:4.2.1] /home/exep/.android/build-cache/bebdbc8f4423b70741d09040fd36befe348eb0ea/output/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.gms:play-services-drive:11.0.1] /home/exep/.android/build-cache/0115e5c32efc5edd880060df61c0102770427887/output/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.android/build-cache/f5295a2ef1232e4b5ac4d34f9d9eee47e7bdc484/output/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-auth-base:11.0.1] /home/exep/.android/build-cache/3f53bfcc73781a674768208599441f1196f6cc5b/output/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-base:11.0.1] /home/exep/.android/build-cache/223f12ccb93b613a920d236ee5828a2d567cd8c1/output/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-tasks:11.0.1] /home/exep/.android/build-cache/2ff3cc55f1e11df7410cd3e623aa3ad070d58cb7/output/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-basement:11.0.1] /home/exep/.android/build-cache/b3bfe47846b78fe1fc60ed28cacb76c789e301ef/output/AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:support-v4:25.2.0] /home/exep/.android/build-cache/3d66fe42bb39104583352fa31509cc62d2d03bdf/output/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:25.2.0] /home/exep/.android/build-cache/f3fe5696ec946a02b024c9d28f375d6938472915/output/AndroidManifest.xml:21:5-23:63
+MERGED from [pub.devrel:easypermissions:0.2.1] /home/exep/.android/build-cache/1039e3d2c24d4396df4cec7a5517a1d315517d54/output/AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:appcompat-v7:27.0.0] /home/exep/.android/build-cache/542ad10e6d33a5139737fd5683691075cf7b1edf/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.0] /home/exep/.android/build-cache/e7c3923ea0aa773c58a8805c9437c4bf64aa2058/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.0] /home/exep/.android/build-cache/d40a75f156fdb2362832789fafbfb0fce876e2f8/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.0] /home/exep/.android/build-cache/bf885e8617574b6d9757f4d239869b20f138a8a8/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.0] /home/exep/.android/build-cache/1b94e9adaa9d07b987a4292a6394c5040cf94acd/output/AndroidManifest.xml:20:5-44
+MERGED from [no.nordicsemi.android:dfu:1.6.0] /home/exep/.android/build-cache/c50a3cb91b09cbc4db521cbc0db05cd464c62426/output/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-core-utils:27.0.0] /home/exep/.android/build-cache/3fa686ff13843a9e2a15b24f7cb2ce2bed549162/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.0] /home/exep/.android/build-cache/6f877af2c59bf5178f0dfc9083bbe4656b45f590/output/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/exep/.android/build-cache/e3890b958414799bac07507a9caaa952994f646c/output/AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/exep/.android/build-cache/381530573727a95fafb9a842b9dfdb18552943d5/output/AndroidManifest.xml:5:5-7:41
 	tools:overrideLibrary
-		ADDED from [com.android.support:support-v4:25.2.0] /home/pietu/.android/build-cache/ff1b9be79f99ef4e7956100aeeff5d799604bbad/output/AndroidManifest.xml:23:9-51
+		ADDED from [com.android.support:support-v4:25.2.0] /home/exep/.android/build-cache/3d66fe42bb39104583352fa31509cc62d2d03bdf/output/AndroidManifest.xml:23:9-51
 	android:targetSdkVersion
-		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
-		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
+		INJECTED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
+		INJECTED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
-		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
+		INJECTED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
+		INJECTED from /home/exep/code/suunto/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
 uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/pietu/.android/build-cache/62fdb71aa89df9103e84f89ed2cfc1940037efae/output/AndroidManifest.xml:12:5-74
-MERGED from [no.nordicsemi.android:dfu:1.6.0] /home/pietu/.android/build-cache/4451de960618e6dc795eb15af83dcd0524386b80/output/AndroidManifest.xml:12:5-74
+ADDED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/exep/.android/build-cache/427f508aaca818ab89bc143bc4c07fb77eb95ddd/output/AndroidManifest.xml:12:5-74
+MERGED from [no.nordicsemi.android:dfu:1.6.0] /home/exep/.android/build-cache/c50a3cb91b09cbc4db521cbc0db05cd464c62426/output/AndroidManifest.xml:12:5-74
 	android:name
-		ADDED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/pietu/.android/build-cache/62fdb71aa89df9103e84f89ed2cfc1940037efae/output/AndroidManifest.xml:12:22-71
+		ADDED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/exep/.android/build-cache/427f508aaca818ab89bc143bc4c07fb77eb95ddd/output/AndroidManifest.xml:12:22-71
 uses-permission-sdk-23
-ADDED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/pietu/.android/build-cache/62fdb71aa89df9103e84f89ed2cfc1940037efae/output/AndroidManifest.xml:14:5-88
+ADDED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/exep/.android/build-cache/427f508aaca818ab89bc143bc4c07fb77eb95ddd/output/AndroidManifest.xml:14:5-88
 	android:name
-		ADDED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/pietu/.android/build-cache/62fdb71aa89df9103e84f89ed2cfc1940037efae/output/AndroidManifest.xml:14:29-85
+		ADDED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/exep/.android/build-cache/427f508aaca818ab89bc143bc4c07fb77eb95ddd/output/AndroidManifest.xml:14:29-85
 activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
-ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/pietu/.android/build-cache/ca0ea3656429523305fe3eafc8514bffab7940b9/output/AndroidManifest.xml:20:9-189
+ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.android/build-cache/f5295a2ef1232e4b5ac4d34f9d9eee47e7bdc484/output/AndroidManifest.xml:20:9-189
 	android:excludeFromRecents
-		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/pietu/.android/build-cache/ca0ea3656429523305fe3eafc8514bffab7940b9/output/AndroidManifest.xml:20:129-162
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.android/build-cache/f5295a2ef1232e4b5ac4d34f9d9eee47e7bdc484/output/AndroidManifest.xml:20:129-162
 	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/pietu/.android/build-cache/ca0ea3656429523305fe3eafc8514bffab7940b9/output/AndroidManifest.xml:20:163-187
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.android/build-cache/f5295a2ef1232e4b5ac4d34f9d9eee47e7bdc484/output/AndroidManifest.xml:20:163-187
 	android:theme
-		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/pietu/.android/build-cache/ca0ea3656429523305fe3eafc8514bffab7940b9/output/AndroidManifest.xml:20:69-128
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.android/build-cache/f5295a2ef1232e4b5ac4d34f9d9eee47e7bdc484/output/AndroidManifest.xml:20:69-128
 	android:name
-		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/pietu/.android/build-cache/ca0ea3656429523305fe3eafc8514bffab7940b9/output/AndroidManifest.xml:20:19-68
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.android/build-cache/f5295a2ef1232e4b5ac4d34f9d9eee47e7bdc484/output/AndroidManifest.xml:20:19-68
 service#com.google.android.gms.auth.api.signin.RevocationBoundService
-ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/pietu/.android/build-cache/ca0ea3656429523305fe3eafc8514bffab7940b9/output/AndroidManifest.xml:24:9-184
+ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.android/build-cache/f5295a2ef1232e4b5ac4d34f9d9eee47e7bdc484/output/AndroidManifest.xml:24:9-184
 	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/pietu/.android/build-cache/ca0ea3656429523305fe3eafc8514bffab7940b9/output/AndroidManifest.xml:24:64-87
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.android/build-cache/f5295a2ef1232e4b5ac4d34f9d9eee47e7bdc484/output/AndroidManifest.xml:24:64-87
 	android:permission
-		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/pietu/.android/build-cache/ca0ea3656429523305fe3eafc8514bffab7940b9/output/AndroidManifest.xml:24:88-182
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.android/build-cache/f5295a2ef1232e4b5ac4d34f9d9eee47e7bdc484/output/AndroidManifest.xml:24:88-182
 	android:name
-		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/pietu/.android/build-cache/ca0ea3656429523305fe3eafc8514bffab7940b9/output/AndroidManifest.xml:24:18-63
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.android/build-cache/f5295a2ef1232e4b5ac4d34f9d9eee47e7bdc484/output/AndroidManifest.xml:24:18-63
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/pietu/.android/build-cache/b28b7527d9339aef5518564584b059a6fad1ff01/output/AndroidManifest.xml:19:9-172
+ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/exep/.android/build-cache/223f12ccb93b613a920d236ee5828a2d567cd8c1/output/AndroidManifest.xml:19:9-172
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/pietu/.android/build-cache/b28b7527d9339aef5518564584b059a6fad1ff01/output/AndroidManifest.xml:19:146-170
+		ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/exep/.android/build-cache/223f12ccb93b613a920d236ee5828a2d567cd8c1/output/AndroidManifest.xml:19:146-170
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/pietu/.android/build-cache/b28b7527d9339aef5518564584b059a6fad1ff01/output/AndroidManifest.xml:19:86-145
+		ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/exep/.android/build-cache/223f12ccb93b613a920d236ee5828a2d567cd8c1/output/AndroidManifest.xml:19:86-145
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/pietu/.android/build-cache/b28b7527d9339aef5518564584b059a6fad1ff01/output/AndroidManifest.xml:19:19-85
+		ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/exep/.android/build-cache/223f12ccb93b613a920d236ee5828a2d567cd8c1/output/AndroidManifest.xml:19:19-85
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:11.0.1] /home/pietu/.android/build-cache/2c607e924ff67fd8bb9fda4d583f6ee35823dc88/output/AndroidManifest.xml:20:9-121
+ADDED from [com.google.android.gms:play-services-basement:11.0.1] /home/exep/.android/build-cache/b3bfe47846b78fe1fc60ed28cacb76c789e301ef/output/AndroidManifest.xml:20:9-121
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:11.0.1] /home/pietu/.android/build-cache/2c607e924ff67fd8bb9fda4d583f6ee35823dc88/output/AndroidManifest.xml:20:66-119
+		ADDED from [com.google.android.gms:play-services-basement:11.0.1] /home/exep/.android/build-cache/b3bfe47846b78fe1fc60ed28cacb76c789e301ef/output/AndroidManifest.xml:20:66-119
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:11.0.1] /home/pietu/.android/build-cache/2c607e924ff67fd8bb9fda4d583f6ee35823dc88/output/AndroidManifest.xml:20:20-65
+		ADDED from [com.google.android.gms:play-services-basement:11.0.1] /home/exep/.android/build-cache/b3bfe47846b78fe1fc60ed28cacb76c789e301ef/output/AndroidManifest.xml:20:20-65
 meta-data#android.arch.lifecycle.VERSION
-ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/pietu/.android/build-cache/765ad8d33d352cbbb4a9d60ccef8df255e8752c1/output/AndroidManifest.xml:25:9-27:47
+ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/exep/.android/build-cache/e3890b958414799bac07507a9caaa952994f646c/output/AndroidManifest.xml:25:9-27:47
 	android:value
-		ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/pietu/.android/build-cache/765ad8d33d352cbbb4a9d60ccef8df255e8752c1/output/AndroidManifest.xml:27:13-44
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/exep/.android/build-cache/e3890b958414799bac07507a9caaa952994f646c/output/AndroidManifest.xml:27:13-44
 	android:name
-		ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/pietu/.android/build-cache/765ad8d33d352cbbb4a9d60ccef8df255e8752c1/output/AndroidManifest.xml:26:13-58
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/exep/.android/build-cache/e3890b958414799bac07507a9caaa952994f646c/output/AndroidManifest.xml:26:13-58

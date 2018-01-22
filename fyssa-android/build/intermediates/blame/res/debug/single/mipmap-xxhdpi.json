@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
+        "source": "/home/exep/code/suunto/fyssasensori/fyssa-android/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
         "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
         "source": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },

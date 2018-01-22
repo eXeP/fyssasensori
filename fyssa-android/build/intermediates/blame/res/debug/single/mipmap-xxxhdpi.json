@@ -6,5 +6,9 @@
     {
         "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher.png",
         "source": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher.png",
+        "source": "/home/exep/code/suunto/fyssasensori/fyssa-android/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     }
 ]

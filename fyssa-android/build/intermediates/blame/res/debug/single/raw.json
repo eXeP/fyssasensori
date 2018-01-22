@@ -4,6 +4,10 @@
         "source": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/src/main/res/raw/kompostisettings.xml"
     },
     {
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/raw/kompostisettings.xml",
+        "source": "/home/exep/code/suunto/fyssasensori/fyssa-android/src/main/res/raw/kompostisettings.xml"
+    },
+    {
         "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/raw/kompostisettings.xml",
         "source": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/res/raw/kompostisettings.xml"
     }
