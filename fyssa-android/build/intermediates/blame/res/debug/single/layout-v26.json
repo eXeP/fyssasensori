@@ -6,5 +6,9 @@
     {
         "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/layout-v26/abc_screen_toolbar.xml",
         "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/layout-v26/abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/layout-v26/abc_screen_toolbar.xml",
+        "source": "/home/exep/.android/build-cache/542ad10e6d33a5139737fd5683691075cf7b1edf/output/res/layout-v26/abc_screen_toolbar.xml"
     }
 ]

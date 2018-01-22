@@ -6,5 +6,9 @@
     {
         "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/layout-v16/notification_template_custom_big.xml",
         "source": "/home/pietu/.android/build-cache/fb0faec34f61b9ffc4b7766c75e2bfc3589ec8f3/output/res/layout-v16/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/layout-v16/notification_template_custom_big.xml",
+        "source": "/home/exep/.android/build-cache/6f877af2c59bf5178f0dfc9083bbe4656b45f590/output/res/layout-v16/notification_template_custom_big.xml"
     }
 ]

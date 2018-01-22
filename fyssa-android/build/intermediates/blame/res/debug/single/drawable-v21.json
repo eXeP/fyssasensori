@@ -8,6 +8,10 @@
         "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/drawable-v21/abc_edit_text_material.xml"
     },
     {
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
+        "source": "/home/exep/.android/build-cache/542ad10e6d33a5139737fd5683691075cf7b1edf/output/res/drawable-v21/abc_edit_text_material.xml"
+    },
+    {
         "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
         "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/drawable-v21/abc_btn_colored_material.xml"
     },
@@ -20,8 +24,20 @@
         "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/drawable-v21/abc_btn_colored_material.xml"
     },
     {
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
+        "source": "/home/exep/.android/build-cache/6f877af2c59bf5178f0dfc9083bbe4656b45f590/output/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/home/exep/.android/build-cache/542ad10e6d33a5139737fd5683691075cf7b1edf/output/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
         "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
         "source": "/home/pietu/.android/build-cache/fb0faec34f61b9ffc4b7766c75e2bfc3589ec8f3/output/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/home/exep/.android/build-cache/542ad10e6d33a5139737fd5683691075cf7b1edf/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
     },
     {
         "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",

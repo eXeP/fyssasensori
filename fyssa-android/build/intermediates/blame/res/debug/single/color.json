@@ -4,19 +4,19 @@
         "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_primary_text_material_dark.xml"
     },
     {
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
+        "source": "/home/exep/.android/build-cache/542ad10e6d33a5139737fd5683691075cf7b1edf/output/res/color/abc_secondary_text_material_dark.xml"
+    },
+    {
         "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
         "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_secondary_text_material_dark.xml"
     },
     {
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_dark.xml",
+        "source": "/home/exep/.android/build-cache/542ad10e6d33a5139737fd5683691075cf7b1edf/output/res/color/abc_hint_foreground_material_dark.xml"
+    },
+    {
         "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
-        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/switch_thumb_material_light.xml"
-    },
-    {
-        "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color/abc_btn_colored_text_material.xml",
-        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_btn_colored_text_material.xml"
-    },
-    {
-        "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
         "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/switch_thumb_material_light.xml"
     },
     {
@@ -24,36 +24,32 @@
         "source": "/home/pietu/.android/build-cache/b28b7527d9339aef5518564584b059a6fad1ff01/output/res/color/common_google_signin_btn_tint.xml"
     },
     {
-        "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_light.xml",
-        "source": "/home/pietu/.android/build-cache/b28b7527d9339aef5518564584b059a6fad1ff01/output/res/color/common_google_signin_btn_text_light.xml"
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_tint_btn_checkable.xml",
+        "source": "/home/exep/.android/build-cache/542ad10e6d33a5139737fd5683691075cf7b1edf/output/res/color/abc_tint_btn_checkable.xml"
     },
     {
-        "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
-        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_primary_text_disable_only_material_dark.xml"
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_tint_default.xml",
+        "source": "/home/exep/.android/build-cache/542ad10e6d33a5139737fd5683691075cf7b1edf/output/res/color/abc_tint_default.xml"
     },
     {
         "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
         "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_primary_text_material_light.xml"
     },
     {
-        "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml",
-        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_secondary_text_material_light.xml"
-    },
-    {
         "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_tint_switch_track.xml",
         "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_tint_switch_track.xml"
     },
     {
-        "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
-        "source": "/home/pietu/.android/build-cache/b28b7527d9339aef5518564584b059a6fad1ff01/output/res/color/common_google_signin_btn_text_dark.xml"
-    },
-    {
-        "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_light.xml",
-        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_hint_foreground_material_light.xml"
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_tint_spinner.xml",
+        "source": "/home/exep/.android/build-cache/542ad10e6d33a5139737fd5683691075cf7b1edf/output/res/color/abc_tint_spinner.xml"
     },
     {
         "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color/abc_tint_seek_thumb.xml",
         "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
+        "source": "/home/exep/.android/build-cache/542ad10e6d33a5139737fd5683691075cf7b1edf/output/res/color/abc_search_url_text.xml"
     },
     {
         "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color/abc_tint_default.xml",
@@ -64,6 +60,10 @@
         "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_search_url_text.xml"
     },
     {
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_tint_seek_thumb.xml",
+        "source": "/home/exep/.android/build-cache/542ad10e6d33a5139737fd5683691075cf7b1edf/output/res/color/abc_tint_seek_thumb.xml"
+    },
+    {
         "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml",
         "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_secondary_text_material_light.xml"
     },
@@ -72,12 +72,8 @@
         "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_tint_spinner.xml"
     },
     {
-        "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
-        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_secondary_text_material_dark.xml"
-    },
-    {
-        "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_tint_btn_checkable.xml",
-        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_tint_btn_checkable.xml"
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
+        "source": "/home/exep/.android/build-cache/542ad10e6d33a5139737fd5683691075cf7b1edf/output/res/color/abc_primary_text_material_dark.xml"
     },
     {
         "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_light.xml",
@@ -88,20 +84,16 @@
         "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_hint_foreground_material_dark.xml"
     },
     {
-        "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
-        "source": "/home/pietu/.android/build-cache/b28b7527d9339aef5518564584b059a6fad1ff01/output/res/color/common_google_signin_btn_text_dark.xml"
-    },
-    {
-        "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
-        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_primary_text_disable_only_material_light.xml"
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_light.xml",
+        "source": "/home/exep/.android/build-cache/223f12ccb93b613a920d236ee5828a2d567cd8c1/output/res/color/common_google_signin_btn_text_light.xml"
     },
     {
         "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
         "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_primary_text_disable_only_material_light.xml"
     },
     {
-        "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/common_google_signin_btn_tint.xml",
-        "source": "/home/pietu/.android/build-cache/b28b7527d9339aef5518564584b059a6fad1ff01/output/res/color/common_google_signin_btn_tint.xml"
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
+        "source": "/home/exep/.android/build-cache/223f12ccb93b613a920d236ee5828a2d567cd8c1/output/res/color/common_google_signin_btn_text_dark.xml"
     },
     {
         "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_tint_edittext.xml",
@@ -116,12 +108,120 @@
         "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_btn_colored_borderless_text_material.xml"
     },
     {
-        "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
-        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_primary_text_material_light.xml"
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
+        "source": "/home/exep/.android/build-cache/542ad10e6d33a5139737fd5683691075cf7b1edf/output/res/color/abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_btn_colored_borderless_text_material.xml",
+        "source": "/home/exep/.android/build-cache/542ad10e6d33a5139737fd5683691075cf7b1edf/output/res/color/abc_btn_colored_borderless_text_material.xml"
     },
     {
         "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_btn_colored_text_material.xml",
         "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_tint_edittext.xml",
+        "source": "/home/exep/.android/build-cache/542ad10e6d33a5139737fd5683691075cf7b1edf/output/res/color/abc_tint_edittext.xml"
+    },
+    {
+        "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color/abc_tint_btn_checkable.xml",
+        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_dark.xml",
+        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_hint_foreground_material_dark.xml"
+    },
+    {
+        "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
+        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
+        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color/abc_btn_colored_text_material.xml",
+        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
+        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_light.xml",
+        "source": "/home/pietu/.android/build-cache/b28b7527d9339aef5518564584b059a6fad1ff01/output/res/color/common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
+        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml",
+        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
+        "source": "/home/pietu/.android/build-cache/b28b7527d9339aef5518564584b059a6fad1ff01/output/res/color/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
+        "source": "/home/exep/.android/build-cache/542ad10e6d33a5139737fd5683691075cf7b1edf/output/res/color/switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_light.xml",
+        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_hint_foreground_material_light.xml"
+    },
+    {
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_light.xml",
+        "source": "/home/exep/.android/build-cache/542ad10e6d33a5139737fd5683691075cf7b1edf/output/res/color/abc_hint_foreground_material_light.xml"
+    },
+    {
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml",
+        "source": "/home/exep/.android/build-cache/542ad10e6d33a5139737fd5683691075cf7b1edf/output/res/color/switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
+        "source": "/home/exep/.android/build-cache/542ad10e6d33a5139737fd5683691075cf7b1edf/output/res/color/abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
+        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_tint_btn_checkable.xml",
+        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/common_google_signin_btn_tint.xml",
+        "source": "/home/exep/.android/build-cache/223f12ccb93b613a920d236ee5828a2d567cd8c1/output/res/color/common_google_signin_btn_tint.xml"
+    },
+    {
+        "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
+        "source": "/home/pietu/.android/build-cache/b28b7527d9339aef5518564584b059a6fad1ff01/output/res/color/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_btn_colored_text_material.xml",
+        "source": "/home/exep/.android/build-cache/542ad10e6d33a5139737fd5683691075cf7b1edf/output/res/color/abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
+        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/common_google_signin_btn_tint.xml",
+        "source": "/home/pietu/.android/build-cache/b28b7527d9339aef5518564584b059a6fad1ff01/output/res/color/common_google_signin_btn_tint.xml"
+    },
+    {
+        "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
+        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
+        "source": "/home/exep/.android/build-cache/542ad10e6d33a5139737fd5683691075cf7b1edf/output/res/color/abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_tint_switch_track.xml",
+        "source": "/home/exep/.android/build-cache/542ad10e6d33a5139737fd5683691075cf7b1edf/output/res/color/abc_tint_switch_track.xml"
     },
     {
         "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
@@ -132,16 +232,8 @@
         "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_tint_seek_thumb.xml"
     },
     {
-        "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color/abc_tint_btn_checkable.xml",
-        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_tint_btn_checkable.xml"
-    },
-    {
         "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml",
         "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/switch_thumb_material_dark.xml"
-    },
-    {
-        "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_dark.xml",
-        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_hint_foreground_material_dark.xml"
     },
     {
         "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color/abc_btn_colored_borderless_text_material.xml",
@@ -152,12 +244,8 @@
         "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_tint_edittext.xml"
     },
     {
-        "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
-        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_primary_text_material_dark.xml"
-    },
-    {
-        "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
-        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color/abc_primary_text_disable_only_material_dark.xml"
+        "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml",
+        "source": "/home/exep/.android/build-cache/542ad10e6d33a5139737fd5683691075cf7b1edf/output/res/color/abc_secondary_text_material_light.xml"
     },
     {
         "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml",

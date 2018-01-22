@@ -51,6 +51,10 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
+            android:name="com.pietu.fyssasensori.FyssaSensorUpdateActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.tests.LedTestActivity"
             android:screenOrientation="portrait" />
         <activity

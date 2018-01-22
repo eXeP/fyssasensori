@@ -82,6 +82,8 @@ public class DfuActivity2 extends AppCompatActivity implements DfuContract.View,
     protected void onResume() {
         super.onResume();
         mDfuPresenter.onResume();
+
+
     }
 
     @Override
