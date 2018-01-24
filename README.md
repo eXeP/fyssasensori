@@ -7,7 +7,7 @@
 - [ ] Python skripti jossa flask osaa ottaa vastaa POST:in jolla on parametrit name, timestamp ja amount.
 
 ### Eemil
-- [ ] Tee python skripti joka 2-10 sec välein laittaa random handwave dataa testidb handwave tablee.
+- [x] Tee python skripti joka 2-10 sec välein laittaa random handwave dataa testidb handwave tablee.
 - [ ] Käytä ylempää ja tee botti joka päivittää tg-kanaville aina kun joku saa suurimman käsienheiluttelijan tittelin.
 
 ### Pietu
