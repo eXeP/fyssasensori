@@ -46,7 +46,7 @@ def get_highscore():
 def get_user(input_name):
     cur.execute("SELECT * FROM %s WHERE name = '%s' \
                 ORDER BY %s DESC LIMIT 1" % (table, input_name, mname))
-    result = cur.fetchone
+    result = cur.fetchone()
     if result is None:
         return -1
     else:
@@ -108,7 +108,7 @@ def handler(msg):
                                 reply_to_message_id=msg['message_id']
                                 )
             else:
-                value = get_user(data[1])
+                value = get_user(str(data[1]))
                 if value == -1:
                     bot.sendMessage(chat_id,
                                     'En ole havainnut tämän jäbän heilutelleen \
@@ -116,13 +116,13 @@ def handler(msg):
                                     reply_to_message_id=msg['message_id']
                                     )
                 else:
-                    message = data[1] + ' on heilutellut käsiänsä ' + \
-                        str(value) + ' yksikköä.'
+                    message = value.name + ' on parhaimmillaan heilutellut \
+                            käsiänsä ' + str(value.amount) + ' yksikköä.'
                     bot.sendMessage(chat_id,
                                     message,
                                     reply_to_message_id=msg['message_id']
                                     )
-        elif text.lower() == '\liikemittari_help':
+        elif text == '/liikemittari_help':
             bot.sendMessage(chat_id,
                             "Aloitan ennätysspämmin komennolla /(^^), ja \
 lopetan sen /Stahp komennolla. Kuuntelen höpinöitänne muutenkin! Ennätyksen \
