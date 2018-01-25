@@ -2,7 +2,8 @@
 
 import telepot
 import time
-import unidecode
+# For python 2
+# import unidecode
 import pgdb
 from datetime import timedelta
 
@@ -18,7 +19,7 @@ with open('/opt/secrets/liikemittari_config.txt', 'r') as config:
     hostname = content[content.index('hostname') + 1]
     dbase = content[content.index('database') + 1]
     table = content[content.index('table') + 1]
-
+    
 
 # Set up necessary variables and connect
 started = False
@@ -86,25 +87,25 @@ def handler(msg):
         chat_id = msg['chat']['id']
         if text.lower().find('käsien heiluttelija') + 1:
             send_highscore(chat_id, print_hs_data(False, 1))
-        else:
-            if text == '/(^^)':
-                with open('./stored_id.txt', 'w+') as memory:
-                    started = True
-                    text = memory.read()
-                    if chat_id not in stored_id    
-                        stored_id.append(chat_id)
-                    bot.sendMessage(chat_id,
-                                    'Moro!',
-                                    reply_to_message_id=msg['message_id']
-                                    )
-            elif text == '/Stahp':
-                started = False
+        elif text == '/(^^)':
+            print('Initialising into ' + str(chat_id))
+            with open('./stored_id.txt', 'w+') as memory:
+                started = True
+                text = memory.read()
+                if chat_id not in stored_id:    
+                    stored_id.append(chat_id)
                 bot.sendMessage(chat_id,
-                                "Ookoo.",
+                                'Moro!',
                                 reply_to_message_id=msg['message_id']
                                 )
-            elif text.lower().find('kuinka paljon') + 1 and 
-            text.lower.find('heiluttelee') + 1:
+        elif text == '/Stahp':
+            started = False
+            bot.sendMessage(chat_id,
+                            "Ookoo.",
+                            reply_to_message_id=msg['message_id']
+                            )
+        elif text.lower().find('kuinka paljon') + 1 and \
+        text.lower().find('heiluttelee') + 1:
             data = text.split("'")
             if len(data) != 3:
                 bot.sendMessage(chat_id,
@@ -119,13 +120,13 @@ def handler(msg):
                                 reply_to_message_id=msg['message_id']
                                 )
                 else:
-                    message = data[1]" on heilutellut käsiänsä " str(value) " yksikköä."
+                    message = data[1] + ' on heilutellut käsiänsä ' + str(value) + ' yksikköä.'
                     bot.sendMessage(chat_id,
                                     message,
                                     reply_to_message_id=msg['message_id']
                                     )
     except Exception as e:
-        pass
+        print(e)
 
 
 def send_highscore(ch_id, text):
@@ -144,4 +145,4 @@ while 1:
     time.sleep(10)
     if started:
         for i in stored_id:
-            send_highscore(stored_id, print_hs_data(True, 2))
+            send_highscore(i, print_hs_data(True, 2))
