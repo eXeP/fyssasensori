@@ -2,9 +2,9 @@
 
 ## TODO
 ### Tommi
-- [ ] Tee käyttäjä testidb ja tiedot secrets kansioon servulle.
-- [ ] Python skripti joka ottaa yhteyden postgresql.
-- [ ] Python skripti jossa flask osaa ottaa vastaa POST:in jolla on parametrit name, timestamp ja amount.
+- [X] Tee käyttäjä testidb ja tiedot secrets kansioon servulle.
+- [X] Python skripti joka ottaa yhteyden postgresql.
+- [X] Python skripti jossa flask osaa ottaa vastaa POST:in jolla on parametrit name, timestamp ja amount.
 
 ### Eemil
 - [x] Tee python skripti joka 2-10 sec välein laittaa random handwave dataa testidb handwave tablee.
