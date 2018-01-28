@@ -1,7 +1,7 @@
 [
     {
         "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color-v23/abc_tint_btn_checkable.xml",
-        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color-v23/abc_tint_btn_checkable.xml"
+        "source": "/home/exep/.android/build-cache/9d0a96710629409b8bf4d600dc37880980303f99/output/res/color-v23/abc_tint_btn_checkable.xml"
     },
     {
         "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color-v23/abc_tint_seek_thumb.xml",
@@ -17,7 +17,7 @@
     },
     {
         "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_track.xml",
-        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color-v23/abc_tint_switch_track.xml"
+        "source": "/home/exep/.android/build-cache/9d0a96710629409b8bf4d600dc37880980303f99/output/res/color-v23/abc_tint_switch_track.xml"
     },
     {
         "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color-v23/abc_tint_edittext.xml",
@@ -29,15 +29,15 @@
     },
     {
         "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color-v23/abc_tint_seek_thumb.xml",
-        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color-v23/abc_tint_seek_thumb.xml"
+        "source": "/home/exep/.android/build-cache/9d0a96710629409b8bf4d600dc37880980303f99/output/res/color-v23/abc_tint_seek_thumb.xml"
     },
     {
         "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_text_material.xml",
-        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color-v23/abc_btn_colored_text_material.xml"
+        "source": "/home/exep/.android/build-cache/9d0a96710629409b8bf4d600dc37880980303f99/output/res/color-v23/abc_btn_colored_text_material.xml"
     },
     {
         "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color-v23/abc_tint_edittext.xml",
-        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color-v23/abc_tint_edittext.xml"
+        "source": "/home/exep/.android/build-cache/9d0a96710629409b8bf4d600dc37880980303f99/output/res/color-v23/abc_tint_edittext.xml"
     },
     {
         "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color-v23/abc_tint_default.xml",
@@ -45,7 +45,7 @@
     },
     {
         "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_borderless_text_material.xml",
-        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color-v23/abc_btn_colored_borderless_text_material.xml"
+        "source": "/home/exep/.android/build-cache/9d0a96710629409b8bf4d600dc37880980303f99/output/res/color-v23/abc_btn_colored_borderless_text_material.xml"
     },
     {
         "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_track.xml",
@@ -57,11 +57,11 @@
     },
     {
         "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color-v23/abc_tint_default.xml",
-        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color-v23/abc_tint_default.xml"
+        "source": "/home/exep/.android/build-cache/9d0a96710629409b8bf4d600dc37880980303f99/output/res/color-v23/abc_tint_default.xml"
     },
     {
         "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml",
-        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color-v23/abc_color_highlight_material.xml"
+        "source": "/home/exep/.android/build-cache/9d0a96710629409b8bf4d600dc37880980303f99/output/res/color-v23/abc_color_highlight_material.xml"
     },
     {
         "merged": "/mnt/w/code/Projektit/fyssasensorimuut/movesense-mobile-lib/android/samples/sampleapp/build/intermediates/res/merged/debug/color-v23/abc_tint_default.xml",
@@ -85,7 +85,7 @@
     },
     {
         "merged": "/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color-v23/abc_tint_spinner.xml",
-        "source": "/home/pietu/.android/build-cache/ad3c111d37a0f175b7d165b94c608eed4502b08f/output/res/color-v23/abc_tint_spinner.xml"
+        "source": "/home/exep/.android/build-cache/9d0a96710629409b8bf4d600dc37880980303f99/output/res/color-v23/abc_tint_spinner.xml"
     },
     {
         "merged": "/home/exep/code/suunto/fyssasensori/fyssa-android/build/intermediates/res/merged/debug/color-v23/abc_tint_edittext.xml",

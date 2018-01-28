@@ -4,11 +4,15 @@ import android.app.LoaderManager;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Loader;
+import android.content.res.AssetManager;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.movesense.mds.internal.connectivity.BleManager;
 import com.movesense.mds.internal.connectivity.MovesenseConnectedDevices;
@@ -17,12 +21,20 @@ import com.movesense.mds.sampleapp.example_app_using_mds_api.dfu.DfuContract;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.dfu.DfuPresenter;
 import com.pietu.fyssasensori.tool.MemoryTools;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import rx.subscriptions.CompositeSubscription;
 
 public class FyssaSensorUpdateActivity extends AppCompatActivity implements DfuContract.View, LoaderManager.LoaderCallbacks<Cursor> {
     private final String TAG = FyssaSensorUpdateActivity.class.getSimpleName();
 
+    @BindView(R.id.fyssa_update_infoTV) TextView statusTV;
     private CompositeSubscription subscriptions;
     private FyssaApp app;
     private DfuPresenter mDfuPresenter;
@@ -48,7 +60,43 @@ public class FyssaSensorUpdateActivity extends AppCompatActivity implements DfuC
         mDfuPresenter.registerDfuServiceProgressListener(this);
         mDfuPresenter.registerConnectedDeviceObservable(this);
         mDfuPresenter.onDeviceSelected(MovesenseConnectedDevices.getRxMovesenseConnectedDevices().get(0));
+        try {
+            // Initialize streams
+            InputStream in = getAssets().open("movesense_dfu.zip");
+            OutputStream out = new FileOutputStream(Environment.getExternalStorageDirectory() + "/movesense_dfu.zip");
+            copyAssetFiles(in, out);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.d(TAG, "change fail");
+        }
+        mDfuPresenter.setUploadFile(Uri.fromFile(new File(Environment.getExternalStorageDirectory()+"/movesense_dfu.zip")), null);
+    }
 
+    private final static int BUFFER_SIZE = 1024;
+
+    private static void copyAssetFiles(InputStream in, OutputStream out) {
+        try {
+
+            byte[] buffer = new byte[BUFFER_SIZE];
+            int read;
+
+            while ((read = in.read(buffer)) != -1) {
+                out.write(buffer, 0, read);
+            }
+
+            in.close();
+            in = null;
+            out.flush();
+            out.close();
+            out = null;
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -83,7 +131,13 @@ public class FyssaSensorUpdateActivity extends AppCompatActivity implements DfuC
 
     @Override
     public void loadSelectedFileInfo(String fileName, String fileSize, String fileType) {
+        if (Long.parseLong(fileSize) <= 0) {
+            Log.e(TAG, "validateFileAndDevice: mFileSize <= 0");
+        } else if (MovesenseConnectedDevices.getRxMovesenseConnectedDevices().get(0) != null) {
+            Log.e(TAG, "validateFileAndDevice: mRxBleDevice != null");
 
+            mDfuPresenter.onStartUploadClick(this, this);
+        }
     }
 
     @Override
@@ -94,7 +148,7 @@ public class FyssaSensorUpdateActivity extends AppCompatActivity implements DfuC
 
     @Override
     public void setDfuStatus(String status) {
-
+        statusTV.setText(status);
     }
 
     @Override
@@ -119,7 +173,7 @@ public class FyssaSensorUpdateActivity extends AppCompatActivity implements DfuC
 
     @Override
     public void setDfuPercentValue(String value) {
-
+        statusTV.setText(statusTV.getText() + " " + value);
     }
 
     @Override
@@ -136,12 +190,12 @@ public class FyssaSensorUpdateActivity extends AppCompatActivity implements DfuC
 
     @Override
     public void onUploadCanceled() {
-
+        statusTV.setText("Canceled");
     }
 
     @Override
     public void displayError(String error) {
-
+        statusTV.setText(error);
     }
 
     @Override

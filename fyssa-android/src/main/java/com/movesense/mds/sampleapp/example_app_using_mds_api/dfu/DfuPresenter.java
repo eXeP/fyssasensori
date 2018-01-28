@@ -171,12 +171,12 @@ public class DfuPresenter implements DfuContract.Presenter {
 
         mView.setDfuStatus("Connecting");
 
-        if (mRxBleDevice.getName().contains(context.getString(R.string.movesense_device_name))) {
+       /* if (mRxBleDevice.getName().contains(context.getString(R.string.movesense_device_name))) {
             // Connect to the device -> Run DFU -> Update
             Mds.builder().build(mContext).connect(mRxBleDevice.getMacAddress(), null);
             isIncrementationNeeded = true;
 
-        } else if (mRxBleDevice.getName().contains(context.getString(R.string.dfu_device_name))) {
+        } else if (mRxBleDevice.getName().contains(context.getString(R.string.dfu_device_name))) {*/
             // Update
             new AlertDialog.Builder(context)
                     .setTitle("Update")
@@ -193,7 +193,7 @@ public class DfuPresenter implements DfuContract.Presenter {
                     dialog.dismiss();
                 }
             }).show();
-        }
+        //}
     }
 
     private void startUpdatingProcess(final Context context, boolean isIncrementationNeeded) {
@@ -320,42 +320,45 @@ public class DfuPresenter implements DfuContract.Presenter {
         Log.d(TAG, "onActivityResult: requestCode: " + requestCode + " resultCode: " + resultCode);
         if (resultCode == RESULT_OK) {
             if (requestCode == SELECT_FILE_REQUEST_CODE) {
-                // clear previous data
-                // mFileType = mFileTypeTmp;
-                mFilePath = null;
-                mFileStreamUri = null;
+                setUploadFile(data.getData(), null);
+            }
+        }
+    }
 
-                mPaused = false;
+    public void setUploadFile(Uri uri, Uri mFileStreamUri2) {
+        // clear previous data
+        // mFileType = mFileTypeTmp;
+        mFilePath = null;
+        mFileStreamUri = null;
 
-                // and read new one
-                final Uri uri = data.getData();
-            /*
+        mPaused = false;
+        // and read new one
+        /*
              * The URI returned from application may be in 'file' or 'content' schema. 'File' schema allows us to create a File object and read details from if
 			 * directly. Data from 'Content' schema must be read by Content Provider. To do that we are using a Loader.
 			 */
-                if (uri.getScheme().equals("file")) {
-                    // the direct path to the file has been returned
-                    final String path = uri.getPath();
-                    mFile = new File(path);
-                    mFilePath = path;
+        if (uri.getScheme().equals("file")) {
+            // the direct path to the file has been returned
+            final String path = uri.getPath();
+            mFile = new File(path);
+            mFilePath = path;
 
-                    Log.e(TAG, "loadSelectedFileInfo: 1");
-                    loadSelectedFileInfo(mFile.getName(), mFile.length());
-                } else if (uri.getScheme().equals("content")) {
-                    // an Uri has been returned
-                    mFileStreamUri = uri;
-                    // if application returned Uri for streaming, let's us it. Does it works?
-                    // FIXME both Uris works with Google Drive app. Why both? What's the difference? How about other apps like DropBox?
-                    final Bundle extras = data.getExtras();
-                    if (extras != null && extras.containsKey(Intent.EXTRA_STREAM))
-                        mFileStreamUri = extras.getParcelable(Intent.EXTRA_STREAM);
+            Log.d(TAG, "File " + mFile + " " + mFile.length());
 
-                    // file name and size must be obtained from Content Provider
-                    final Bundle bundle = new Bundle();
-                    bundle.putParcelable(EXTRA_URI, uri);
-                    mView.restartLoader(SELECT_FILE_REQ, bundle);
-                }
-            }
+            Log.e(TAG, "loadSelectedFileInfo: 1");
+            loadSelectedFileInfo(mFile.getName(), mFile.length());
+        } else if (uri.getScheme().equals("content")) {
+            // an Uri has been returned
+            mFileStreamUri = uri;
+            // if application returned Uri for streaming, let's us it. Does it works?
+            // FIXME both Uris works with Google Drive app. Why both? What's the difference? How about other apps like DropBox?
+            if (mFileStreamUri2 != null)
+                mFileStreamUri = mFileStreamUri2;
+
+            // file name and size must be obtained from Content Provider
+            final Bundle bundle = new Bundle();
+            bundle.putParcelable(EXTRA_URI, uri);
+            mView.restartLoader(SELECT_FILE_REQ, bundle);
         }
     }
 

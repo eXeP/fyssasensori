@@ -19,7 +19,7 @@ import java.lang.Override;
 public class TemperatureTestActivity_ViewBinding implements Unbinder {
   private TemperatureTestActivity target;
 
-  private View view2131624194;
+  private View view2131624195;
 
   private View view2131624068;
 
@@ -37,7 +37,7 @@ public class TemperatureTestActivity_ViewBinding implements Unbinder {
     target.mConnectedDeviceSwVersionTextView = Utils.findRequiredViewAsType(source, R.id.connected_device_swVersion_textView, "field 'mConnectedDeviceSwVersionTextView'", TextView.class);
     view = Utils.findRequiredView(source, R.id.temperature_switch, "field 'temperatureSwitch' and method 'onCheckedChange'");
     target.temperatureSwitch = Utils.castView(view, R.id.temperature_switch, "field 'temperatureSwitch'", SwitchCompat.class);
-    view2131624194 = view;
+    view2131624195 = view;
     ((CompoundButton) view).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
       @Override
       public void onCheckedChanged(CompoundButton p0, boolean p1) {
@@ -73,8 +73,8 @@ public class TemperatureTestActivity_ViewBinding implements Unbinder {
     target.temperatureKelvinTextView = null;
     target.temperatureCelsiusTextView = null;
 
-    ((CompoundButton) view2131624194).setOnCheckedChangeListener(null);
-    view2131624194 = null;
+    ((CompoundButton) view2131624195).setOnCheckedChangeListener(null);
+    view2131624195 = null;
     view2131624068.setOnClickListener(null);
     view2131624068 = null;
   }

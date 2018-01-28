@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -75,6 +76,8 @@ public class DfuActivity2 extends AppCompatActivity implements DfuContract.View,
         mDfuPresenter.registerDfuServiceProgressListener(this);
 
         mDfuPresenter.registerConnectedDeviceObservable(this);
+
+
 
     }
 
@@ -156,6 +159,8 @@ public class DfuActivity2 extends AppCompatActivity implements DfuContract.View,
             mDfuStatusTv.setText(R.string.select_file_and_device);
             mDfuStartUploadBtn.setEnabled(true);
             mDfuStartUploadBtn.setBackground(ContextCompat.getDrawable(this, R.drawable.white_stroke));
+
+
         }
     }
 

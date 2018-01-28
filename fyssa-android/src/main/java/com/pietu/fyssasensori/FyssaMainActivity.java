@@ -39,6 +39,7 @@ import com.movesense.mds.sampleapp.RxBle;
 import com.movesense.mds.sampleapp.ThrowableToastingAction;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.ConnectingDialog;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.mainView.MainViewActivity;
+import com.movesense.mds.sampleapp.example_app_using_mds_api.model.EnergyGetModel;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.model.InfoAppResponse;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.movesense.MovesenseAdapter;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.movesense.MovesenseContract;
@@ -52,6 +53,7 @@ import com.polidea.rxandroidble.RxBleDevice;
 import com.polidea.rxandroidble.RxBleScanResult;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -69,6 +71,8 @@ public class FyssaMainActivity extends AppCompatActivity {
     private CompositeSubscription subscriptions;
     private FyssaApp app;
 
+    private final String HANDWAVING_PATH_GET = "/Fyssa/Handwaving";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +87,7 @@ public class FyssaMainActivity extends AppCompatActivity {
 
         if (app.getMemoryTools().getName().equals(MemoryTools.DEFAULT_STRING)) {
             startInfoActivity();
+            finish();
         }
 
         subscriptions = new CompositeSubscription();
@@ -97,13 +102,13 @@ public class FyssaMainActivity extends AppCompatActivity {
                     public void onSuccess(String s) {
                         Log.d(TAG, "/Info/App onSuccess: " + s);
                         InfoAppResponse infoAppResponse = new Gson().fromJson(s, InfoAppResponse.class);
-
+                        Log.d(TAG, "Company: " + infoAppResponse.getContent().getCompany());
                         if (infoAppResponse.getContent() != null) {
                             Log.d(TAG, "Name: " + infoAppResponse.getContent().getName());
                             Log.d(TAG, "Version: " + infoAppResponse.getContent().getVersion());
                             Log.d(TAG, "Company: " + infoAppResponse.getContent().getCompany());
                         }
-                        if (!infoAppResponse.getContent().getCompany().equals("Pietari Kaskela")) {
+                        if (!infoAppResponse.getContent().getCompany().equals("Fyysikkokilta")) {
                             updateSensorSoftware();
                         }
                     }
@@ -111,7 +116,9 @@ public class FyssaMainActivity extends AppCompatActivity {
                     @Override
                     public void onError(MdsException e) {
                         Log.e(TAG, "Info onError: ", e);
-
+                        if (e.toString().contains("404")) {
+                            updateSensorSoftware();
+                        }
                     }
                 });
     }
@@ -150,6 +157,20 @@ public class FyssaMainActivity extends AppCompatActivity {
                     }
                 }, new ThrowableToastingAction(this)));
         checkSensorSoftware();
+
+        Mds.builder().build(this).get(MdsRx.SCHEME_PREFIX +
+                        MovesenseConnectedDevices.getConnectedDevice(0).getSerial() + HANDWAVING_PATH_GET,
+                null, new MdsResponseListener() {
+                    @Override
+                    public void onSuccess(String s) {
+                        connectionInfoTv.setText(s);
+                    }
+
+                    @Override
+                    public void onError(MdsException e) {
+                        Log.e(TAG, "onError: ", e);
+                    }
+                });
     }
 
     @Override

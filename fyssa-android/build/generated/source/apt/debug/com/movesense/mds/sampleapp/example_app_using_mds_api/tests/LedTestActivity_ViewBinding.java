@@ -16,7 +16,7 @@ import java.lang.Override;
 public class LedTestActivity_ViewBinding implements Unbinder {
   private LedTestActivity target;
 
-  private View view2131624113;
+  private View view2131624114;
 
   @UiThread
   public LedTestActivity_ViewBinding(LedTestActivity target) {
@@ -30,7 +30,7 @@ public class LedTestActivity_ViewBinding implements Unbinder {
     View view;
     view = Utils.findRequiredView(source, R.id.led_on_off_switch, "field 'ledOnOffSwitch' and method 'onCheckedChanged'");
     target.ledOnOffSwitch = Utils.castView(view, R.id.led_on_off_switch, "field 'ledOnOffSwitch'", SwitchCompat.class);
-    view2131624113 = view;
+    view2131624114 = view;
     ((CompoundButton) view).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
       @Override
       public void onCheckedChanged(CompoundButton p0, boolean p1) {
@@ -54,7 +54,7 @@ public class LedTestActivity_ViewBinding implements Unbinder {
     target.mConnectedDeviceNameTextView = null;
     target.mConnectedDeviceSwVersionTextView = null;
 
-    ((CompoundButton) view2131624113).setOnCheckedChangeListener(null);
-    view2131624113 = null;
+    ((CompoundButton) view2131624114).setOnCheckedChangeListener(null);
+    view2131624114 = null;
   }
 }
