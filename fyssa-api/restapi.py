@@ -6,7 +6,6 @@ import psycopg2
 app = Flask(__name__)
 
 pgsql_conn = psycopg2.connect('dbname={} user={} host={} password={}'.format(PGSQL_DATABASE, PGSQL_USER, PGSQL_HOST, PGSQL_PASSWORD))
-
 cursor = pgsql_conn.cursor()
 
 @app.route('/handwave', methods=['POST'])
@@ -14,12 +13,12 @@ def handwave():
     name = request.args.get('name')
     amount = request.args.get('amount')
     timestamp = strftime("%Y-%m-%d %H:%M:%S %z", gmtime())
-
-
+    
     query = 'INSERT INTO testtable2(name, amount, date) VALUES (%s, %s, %s::TIMESTAMP WITH TIME ZONE);'
-    params = (name, int(amount), timestamp)
+    params = (name, int(amount), str(timestamp))
 
-    print(query, params)
+    print(query, params)                                #debug
+
     cursor.execute(query, params)
     pgsql_conn.commit()
     return ('', 200)
