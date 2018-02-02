@@ -170,13 +170,13 @@ public class DfuPresenter implements DfuContract.Presenter {
         Log.e(TAG, "onStartUploadClick: mFile: " + mFile);
 
         mView.setDfuStatus("Connecting");
+        Log.d(TAG, "device name " + mRxBleDevice.getName());
+        //if (mRxBleDevice.getName().contains(context.getString(R.string.movesense_device_name))) {
+        //    // Connect to the device -> Run DFU -> Update
+        //    Mds.builder().build(mContext).connect(mRxBleDevice.getMacAddress(), null);
+        //    isIncrementationNeeded = true;
 
-       /* if (mRxBleDevice.getName().contains(context.getString(R.string.movesense_device_name))) {
-            // Connect to the device -> Run DFU -> Update
-            Mds.builder().build(mContext).connect(mRxBleDevice.getMacAddress(), null);
-            isIncrementationNeeded = true;
-
-        } else if (mRxBleDevice.getName().contains(context.getString(R.string.dfu_device_name))) {*/
+         //else if (mRxBleDevice.getName().contains(context.getString(R.string.dfu_device_name))) {
             // Update
             new AlertDialog.Builder(context)
                     .setTitle("Update")

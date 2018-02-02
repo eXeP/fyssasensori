@@ -108,7 +108,7 @@ public class FyssaMainActivity extends AppCompatActivity {
                             Log.d(TAG, "Version: " + infoAppResponse.getContent().getVersion());
                             Log.d(TAG, "Company: " + infoAppResponse.getContent().getCompany());
                         }
-                        if (!infoAppResponse.getContent().getCompany().equals("Fyysikkokilta")) {
+                        if (infoAppResponse.getContent().getCompany().equals("Fyysikkokilta")) {
                             updateSensorSoftware();
                         }
                     }
