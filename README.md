@@ -11,6 +11,6 @@
 - [x] Käytä ylempää ja tee botti joka päivittää tg-kanaville aina kun joku saa suurimman käsienheiluttelijan tittelin.
 
 ### Pietu
-- [ ] Sensori DFU automaattinen päivitys jos softa vanhaa.
+- [x] Sensori DFU automaattinen päivitys jos softa vanhaa.
 - [ ] Käsienheiluttelun hakeminen sensorilta.
 - [ ] POST lähetys tommin servulle.
