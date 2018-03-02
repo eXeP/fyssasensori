@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.pietu.fyssasensori"
+    package="com.fyssasensori"
     android:versionCode="1"
-    android:versionName="1.6" >
+    android:versionName="1.7" >
 
     <uses-sdk
         android:minSdkVersion="18"
@@ -16,24 +16,25 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <uses-feature
         android:name="android.hardware.bluetooth_le"
         android:required="true" />
 
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-
     <uses-permission-sdk-23 android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
-        android:name="com.pietu.fyssasensori.FyssaApp"
+        android:name="com.fyssasensori.FyssaApp"
         android:allowBackup="true"
+        android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.pietu.fyssasensori.FyssaMainActivity"
+            android:name="com.fyssasensori.FyssaMainActivity"
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,15 +44,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.pietu.fyssasensori.FyssaScanActivity"
+            android:name="com.fyssasensori.FyssaScanActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.pietu.fyssasensori.FyssaInfoActivity"
+            android:name="com.fyssasensori.FyssaInfoActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.pietu.fyssasensori.FyssaSensorUpdateActivity"
+            android:name="com.fyssasensori.FyssaSensorUpdateActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
@@ -81,7 +82,7 @@
 
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.pietu.fyssasensori"
+            android:authorities="com.fyssasensori"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -106,9 +107,6 @@
         <activity
             android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.mainView.MainViewActivity"
             android:screenOrientation="portrait" >
-            <intent-filter>
-                <action android:name="android.intent.action.MY_ACTION" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.movesense.MovesenseActivity"
@@ -147,6 +145,22 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
+            android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.tests.ImuActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <receiver
+            android:name="com.movesense.mds.sampleapp.BluetoothStatusReceiver"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name="com.movesense.mds.sampleapp.example_app_using_mds_api.device_settings.DeviceSettingsActivity" >
+        </activity>
+        <activity
             android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -173,8 +187,8 @@ Service handling Google Sign-In user revocation. For apps that do not integrate 
             android:value="27.0.0-SNAPSHOT" />
 
         <provider
-            android:name="com.android.tools.fd.runtime.InstantRunContentProvider"
-            android:authorities="com.pietu.fyssasensori.com.android.tools.fd.runtime.InstantRunContentProvider"
+            android:name="com.android.tools.ir.server.InstantRunContentProvider"
+            android:authorities="com.fyssasensori.com.android.tools.ir.server.InstantRunContentProvider"
             android:multiprocess="true" />
     </application>
 

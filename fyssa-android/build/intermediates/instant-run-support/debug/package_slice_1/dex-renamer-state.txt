@@ -1,4 +1,4 @@
-#Sun Jan 28 17:06:44 EET 2018
-base.0=/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1
+#Fri Mar 02 21:23:25 EET 2018
+base.0=/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/transforms/dexMerger/debug/2
+path.0=classes.dex
 renamed.0=classes.dex
-file.0=/mnt/w/code/Projektit/fyssasensori/fyssa-android/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex

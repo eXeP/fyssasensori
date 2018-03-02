@@ -6,11 +6,10 @@ import android.support.annotation.UiThread;
 import android.support.v7.widget.SwitchCompat;
 import android.view.View;
 import android.widget.CompoundButton;
-import android.widget.Spinner;
 import android.widget.TextView;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
-import com.jjoe64.graphview.GraphView;
+import com.github.mikephil.charting.charts.LineChart;
 import com.movesense.mds.sampleapp.R;
 import java.lang.IllegalStateException;
 import java.lang.Override;
@@ -18,7 +17,7 @@ import java.lang.Override;
 public class EcgActivity_ViewBinding implements Unbinder {
   private EcgActivity target;
 
-  private View view2131624057;
+  private View view2131231000;
 
   @UiThread
   public EcgActivity_ViewBinding(EcgActivity target) {
@@ -32,16 +31,15 @@ public class EcgActivity_ViewBinding implements Unbinder {
     View view;
     view = Utils.findRequiredView(source, R.id.switchSubscription, "field 'mSwitchSubscription' and method 'onCheckedChanged'");
     target.mSwitchSubscription = Utils.castView(view, R.id.switchSubscription, "field 'mSwitchSubscription'", SwitchCompat.class);
-    view2131624057 = view;
+    view2131231000 = view;
     ((CompoundButton) view).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
       @Override
       public void onCheckedChanged(CompoundButton p0, boolean p1) {
         target.onCheckedChanged(p0, p1);
       }
     });
-    target.mSpinner = Utils.findRequiredViewAsType(source, R.id.spinner, "field 'mSpinner'", Spinner.class);
     target.mXAxisTextView = Utils.findRequiredViewAsType(source, R.id.x_axis_textView, "field 'mXAxisTextView'", TextView.class);
-    target.mGraphView = Utils.findRequiredViewAsType(source, R.id.graphView, "field 'mGraphView'", GraphView.class);
+    target.mChart = Utils.findRequiredViewAsType(source, R.id.ecg_lineChart, "field 'mChart'", LineChart.class);
     target.mConnectedDeviceNameTextView = Utils.findRequiredViewAsType(source, R.id.connected_device_name_textView, "field 'mConnectedDeviceNameTextView'", TextView.class);
     target.mConnectedDeviceSwVersionTextView = Utils.findRequiredViewAsType(source, R.id.connected_device_swVersion_textView, "field 'mConnectedDeviceSwVersionTextView'", TextView.class);
   }
@@ -54,13 +52,12 @@ public class EcgActivity_ViewBinding implements Unbinder {
     this.target = null;
 
     target.mSwitchSubscription = null;
-    target.mSpinner = null;
     target.mXAxisTextView = null;
-    target.mGraphView = null;
+    target.mChart = null;
     target.mConnectedDeviceNameTextView = null;
     target.mConnectedDeviceSwVersionTextView = null;
 
-    ((CompoundButton) view2131624057).setOnCheckedChangeListener(null);
-    view2131624057 = null;
+    ((CompoundButton) view2131231000).setOnCheckedChangeListener(null);
+    view2131231000 = null;
   }
 }

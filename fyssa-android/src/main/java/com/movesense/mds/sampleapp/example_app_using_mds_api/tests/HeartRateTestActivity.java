@@ -1,10 +1,7 @@
 package com.movesense.mds.sampleapp.example_app_using_mds_api.tests;
 
-import android.Manifest;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
 import android.util.Log;
@@ -21,7 +18,7 @@ import com.movesense.mds.internal.connectivity.MovesenseConnectedDevices;
 import com.movesense.mds.sampleapp.ConnectionLostDialog;
 import com.movesense.mds.sampleapp.R;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.FormatHelper;
-import com.movesense.mds.sampleapp.example_app_using_mds_api.logs.LogsManager;
+import com.movesense.mds.sampleapp.example_app_using_mds_api.csv.CsvLogger;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.model.HeartRate;
 import com.polidea.rxandroidble.RxBleDevice;
 
@@ -39,7 +36,7 @@ public class HeartRateTestActivity extends AppCompatActivity implements BleManag
     @BindView(R.id.connected_device_name_textView) TextView mConnectedDeviceNameTextView;
     @BindView(R.id.connected_device_swVersion_textView) TextView mConnectedDeviceSwVersionTextView;
     private MdsSubscription mdsSubscription;
-    private LogsManager logsManager;
+    private CsvLogger mCsvLogger;
 
     @BindView(R.id.heart_rate_switch) SwitchCompat heartRateSwitch;
     @BindView(R.id.heart_rate_value_textView) TextView heartRateValueTextView;
@@ -54,7 +51,7 @@ public class HeartRateTestActivity extends AppCompatActivity implements BleManag
             getSupportActionBar().setTitle("Heart Rate");
         }
 
-        logsManager = new LogsManager(this);
+        mCsvLogger = new CsvLogger();
 
         BleManager.INSTANCE.addBleConnectionMonitorListener(this);
 
@@ -69,8 +66,7 @@ public class HeartRateTestActivity extends AppCompatActivity implements BleManag
     public void onCheckedChange(CompoundButton compoundButton, boolean isChecked) {
         if (isChecked) {
 
-            // Clear Logcat
-            logsManager.clearAdbLogcat();
+            mCsvLogger.checkRuntimeWriteExternalStoragePermission(this, this);
 
             mdsSubscription = Mds.builder().build(this).subscribe(URI_EVENTLISTENER,
                     FormatHelper.formatContractToJson(MovesenseConnectedDevices.getConnectedDevice(0).getSerial(),
@@ -84,6 +80,9 @@ public class HeartRateTestActivity extends AppCompatActivity implements BleManag
                             if (heartRate != null) {
                                 heartRateValueTextView.setText(String.format(Locale.getDefault(),
                                         "Value: %d", heartRate.body.rrData[0]));
+
+                                mCsvLogger.appendLine(String.format(Locale.getDefault(),
+                                        "%d", heartRate.body.rrData[0]));
                             }
                         }
 
@@ -95,22 +94,19 @@ public class HeartRateTestActivity extends AppCompatActivity implements BleManag
 
         } else {
             unSubscribe();
-
-            // Save logs
-            saveAdbLogsToFile(LOG_TAG);
         }
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-
-        unSubscribe();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+
+        unSubscribe();
 
         BleManager.INSTANCE.removeBleConnectionMonitorListener(this);
     }
@@ -120,31 +116,21 @@ public class HeartRateTestActivity extends AppCompatActivity implements BleManag
             mdsSubscription.unsubscribe();
             mdsSubscription = null;
         }
-    }
-
-    private void saveAdbLogsToFile(String logTag) {
-        if (!logsManager.checkRuntimeWriteExternalStoragePermission(this, this)) {
-            return;
-        }
-
-        logsManager.saveLogsToSdCard(logTag);
+        mCsvLogger.finishSavingLogs(LOG_TAG);
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
-        if (requestCode == LogsManager.REQUEST_WRITE_EXTERNAL_STORAGE_PERMISSION) {
-            // if request is cancelled grantResults array is empty
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                        == PackageManager.PERMISSION_GRANTED) {
-
-                    // Save logs
-                    saveAdbLogsToFile(LOG_TAG);
-                }
-            }
-        }
+//        if (requestCode == LogsManager.REQUEST_WRITE_EXTERNAL_STORAGE_PERMISSION) {
+//            // if request is cancelled grantResults array is empty
+//            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//
+//                if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+//                        == PackageManager.PERMISSION_GRANTED) {
+//                }
+//            }
+//        }
     }
 
     @Override

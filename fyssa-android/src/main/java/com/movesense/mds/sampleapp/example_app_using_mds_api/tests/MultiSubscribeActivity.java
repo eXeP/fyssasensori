@@ -17,6 +17,7 @@ import com.movesense.mds.internal.connectivity.MovesenseConnectedDevices;
 import com.movesense.mds.sampleapp.ConnectionLostDialog;
 import com.movesense.mds.sampleapp.R;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.FormatHelper;
+import com.movesense.mds.sampleapp.example_app_using_mds_api.csv.CsvLogger;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.model.AngularVelocity;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.model.LinearAcceleration;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.model.MagneticField;
@@ -54,11 +55,15 @@ public class MultiSubscribeActivity extends AppCompatActivity implements BleMana
     private MdsSubscription mdsSubscriptionMagneticField;
     private MdsSubscription mdsSubscriptionAngularVelocity;
 
+    private CsvLogger mCsvLogger;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_multi_subscribe);
         ButterKnife.bind(this);
+
+        mCsvLogger = new CsvLogger();
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Multi Subscribe");
@@ -71,6 +76,8 @@ public class MultiSubscribeActivity extends AppCompatActivity implements BleMana
                 .getSwVersion());
 
         BleManager.INSTANCE.addBleConnectionMonitorListener(this);
+
+        mCsvLogger.checkRuntimeWriteExternalStoragePermission(this, this);
     }
 
     @Override
@@ -78,6 +85,8 @@ public class MultiSubscribeActivity extends AppCompatActivity implements BleMana
         super.onDestroy();
 
         BleManager.INSTANCE.removeBleConnectionMonitorListener(this);
+
+        mCsvLogger.finishSavingLogs(LOG_TAG);
     }
 
     @OnCheckedChanged(R.id.switchSubscriptionLinearAcc)
@@ -97,6 +106,9 @@ public class MultiSubscribeActivity extends AppCompatActivity implements BleMana
                             if (linearAccelerationData != null) {
 
                                 LinearAcceleration.Array arrayData = linearAccelerationData.body.array[0];
+
+                                mCsvLogger.appendLine(String.format(Locale.getDefault(),
+                                        "LinearAcc,%.6f,%.6f,%.6f, ", arrayData.x, arrayData.y, arrayData.z));
 
                                 xAxisLinearAccTextView.setText(String.format(Locale.getDefault(),
                                         "x: %.6f", arrayData.x));
@@ -138,6 +150,9 @@ public class MultiSubscribeActivity extends AppCompatActivity implements BleMana
 
                                 MagneticField.Array arrayData = magneticField.body.array[0];
 
+                                mCsvLogger.appendLine(String.format(Locale.getDefault(),
+                                        "MagneticField,%.6f,%.6f,%.6f, ", arrayData.x, arrayData.y, arrayData.z));
+
                                 xAxisMagneticFieldTextView.setText(String.format(Locale.getDefault(),
                                         "x: %.6f", arrayData.x));
                                 yAxisMagneticFieldTextView.setText(String.format(Locale.getDefault(),
@@ -177,6 +192,9 @@ public class MultiSubscribeActivity extends AppCompatActivity implements BleMana
 
                                 AngularVelocity.Array arrayData = angularVelocity.body.array[0];
 
+                                mCsvLogger.appendLine(String.format(Locale.getDefault(),
+                                        "AngularVelocity,%.6f,%.6f,%.6f, ", arrayData.x, arrayData.y, arrayData.z));
+
                                 xAxisAngularVelocityTextView.setText(String.format(Locale.getDefault(),
                                         "x: %.6f", arrayData.x));
                                 yAxisAngularVelocityTextView.setText(String.format(Locale.getDefault(),
@@ -197,6 +215,14 @@ public class MultiSubscribeActivity extends AppCompatActivity implements BleMana
             mdsSubscriptionAngularVelocity.unsubscribe();
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        mCsvLogger.finishSavingLogs(LOG_TAG);
+    }
+
 
     @Override
     public void onDisconnect(String s) {

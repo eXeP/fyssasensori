@@ -12,7 +12,7 @@ import java.io.InputStream;
  */
 public class SampleApp extends Application {
 
-    
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -26,6 +26,7 @@ public class SampleApp extends Application {
         // Initialize MDS
         MdsRx.Instance.initialize(this);
 
+        BluetoothStatusMonitor.INSTANCE.initBluetoothStatus();
     }
 
     @Override

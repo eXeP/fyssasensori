@@ -1,13 +1,9 @@
 package com.movesense.mds.sampleapp.example_app_using_mds_api.tests;
 
-import android.Manifest;
 import android.app.Dialog;
-import android.content.pm.PackageManager;
-import android.graphics.Paint;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.ColorRes;
 import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
@@ -20,11 +16,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.google.gson.Gson;
-import com.jjoe64.graphview.DefaultLabelFormatter;
-import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.series.DataPoint;
-import com.jjoe64.graphview.series.LineGraphSeries;
 import com.movesense.mds.Mds;
 import com.movesense.mds.MdsException;
 import com.movesense.mds.MdsNotificationListener;
@@ -36,7 +34,7 @@ import com.movesense.mds.sampleapp.ConnectionLostDialog;
 import com.movesense.mds.sampleapp.MdsRx;
 import com.movesense.mds.sampleapp.R;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.FormatHelper;
-import com.movesense.mds.sampleapp.example_app_using_mds_api.logs.LogsManager;
+import com.movesense.mds.sampleapp.example_app_using_mds_api.csv.CsvLogger;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.model.AngularVelocity;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.model.InfoResponse;
 import com.polidea.rxandroidble.RxBleDevice;
@@ -62,19 +60,15 @@ public class AngularVelocityActivity extends AppCompatActivity implements BleMan
     private String rate;
     private MdsSubscription mdsSubscription;
 
-    private LineGraphSeries seriesX = new LineGraphSeries();
-    private LineGraphSeries seriesY = new LineGraphSeries();
-    private LineGraphSeries seriesZ = new LineGraphSeries();
 
     @BindView(R.id.switchSubscription) SwitchCompat switchSubscription;
     @BindView(R.id.spinner) Spinner spinner;
     @BindView(R.id.x_axis_textView) TextView xAxisTextView;
     @BindView(R.id.y_axis_textView) TextView yAxisTextView;
     @BindView(R.id.z_axis_textView) TextView zAxisTextView;
-    @BindView(R.id.graphView) GraphView graphView;
+    @BindView(R.id.angularVelocity_lineChart) LineChart mChart;
     private Dialog alertDialog;
-    private LogsManager logsManager;
-    private GraphView mAngularGraphView;
+    private CsvLogger mCsvLogger;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,7 +80,7 @@ public class AngularVelocityActivity extends AppCompatActivity implements BleMan
             getSupportActionBar().setTitle("Angular Velocity");
         }
 
-        logsManager = new LogsManager(this);
+        mCsvLogger = new CsvLogger();
 
         alertDialog = new AlertDialog.Builder(this)
                 .setTitle(R.string.please_wait)
@@ -104,8 +98,12 @@ public class AngularVelocityActivity extends AppCompatActivity implements BleMan
         yAxisTextView.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
         zAxisTextView.setTextColor(getResources().getColor(android.R.color.holo_blue_dark));
 
-        mAngularGraphView = (GraphView) findViewById(R.id.graphView);
-        setUpGraphView();
+        // Init Empty Chart
+        mChart.setData(new LineData());
+        mChart.getDescription().setText("Angular Velocity");
+        mChart.setTouchEnabled(false);
+        mChart.setAutoScaleMinMaxEnabled(true);
+        mChart.invalidate();
 
         final ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_dropdown_item_1line, spinnerRates);
@@ -156,8 +154,22 @@ public class AngularVelocityActivity extends AppCompatActivity implements BleMan
         if (isChecked) {
             disableSpinner();
 
-            // Clear Logcat
-            logsManager.clearAdbLogcat();
+            mCsvLogger.checkRuntimeWriteExternalStoragePermission(this, this);
+
+            final LineData mLineData = mChart.getData();
+
+            ILineDataSet xSet = mLineData.getDataSetByIndex(0);
+            ILineDataSet ySet = mLineData.getDataSetByIndex(1);
+            ILineDataSet zSet = mLineData.getDataSetByIndex(2);
+
+            if (xSet == null) {
+                xSet = createSet("Data x", getResources().getColor(android.R.color.holo_red_dark));
+                ySet = createSet("Data y", getResources().getColor(android.R.color.holo_green_dark));
+                zSet = createSet("Data z", getResources().getColor(android.R.color.holo_blue_dark));
+                mLineData.addDataSet(xSet);
+                mLineData.addDataSet(ySet);
+                mLineData.addDataSet(zSet);
+            }
 
             mdsSubscription = Mds.builder().build(this).subscribe(URI_EVENTLISTENER,
                     FormatHelper.formatContractToJson(MovesenseConnectedDevices.getConnectedDevice(0)
@@ -173,6 +185,9 @@ public class AngularVelocityActivity extends AppCompatActivity implements BleMan
 
                                 AngularVelocity.Array arrayData = angularVelocity.body.array[0];
 
+                                mCsvLogger.appendLine(String.format(Locale.getDefault(),
+                                        "%.6f,%.6f,%.6f, ", arrayData.x, arrayData.y, arrayData.z));
+
                                 xAxisTextView.setText(String.format(Locale.getDefault(),
                                         "x: %.6f", arrayData.x));
                                 yAxisTextView.setText(String.format(Locale.getDefault(),
@@ -180,19 +195,19 @@ public class AngularVelocityActivity extends AppCompatActivity implements BleMan
                                 zAxisTextView.setText(String.format(Locale.getDefault(),
                                         "z: %.6f", arrayData.z));
 
-                                try {
-                                    seriesX.appendData(
-                                            new DataPoint(angularVelocity.body.timestamp, arrayData.x), false,
-                                            200);
-                                    seriesY.appendData(
-                                            new DataPoint(angularVelocity.body.timestamp, arrayData.y), true,
-                                            200);
-                                    seriesZ.appendData(
-                                            new DataPoint(angularVelocity.body.timestamp, arrayData.z), true,
-                                            200);
-                                } catch (IllegalArgumentException e) {
-                                    Log.e(LOG_TAG, "GraphView error ", e);
-                                }
+                                mLineData.addEntry(new Entry(angularVelocity.body.timestamp / 100, (float) arrayData.x), 0);
+                                mLineData.addEntry(new Entry(angularVelocity.body.timestamp / 100, (float) arrayData.y), 1);
+                                mLineData.addEntry(new Entry(angularVelocity.body.timestamp / 100, (float) arrayData.z), 2);
+                                mLineData.notifyDataChanged();
+
+                                // let the chart know it's data has changed
+                                mChart.notifyDataSetChanged();
+
+                                // limit the number of visible entries
+                                mChart.setVisibleXRangeMaximum(50);
+
+                                // move to the latest entry
+                                mChart.moveViewToX(angularVelocity.body.timestamp / 100);
                             }
                         }
 
@@ -208,25 +223,12 @@ public class AngularVelocityActivity extends AppCompatActivity implements BleMan
         } else {
             enableSpinner();
             unSubscribe();
-
-            // Save logs
-            saveAdbLogsToFile(LOG_TAG);
         }
     }
 
     @OnItemSelected(R.id.spinner)
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         rate = spinnerRates.get(position);
-    }
-
-
-    private void setSeriesColor(@ColorRes int colorRes, LineGraphSeries series) {
-        int color = getResources().getColor(colorRes);
-        Paint paint = new Paint();
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(5);
-        paint.setColor(color);
-        series.setCustomPaint(paint);
     }
 
     @Override
@@ -248,6 +250,7 @@ public class AngularVelocityActivity extends AppCompatActivity implements BleMan
             mdsSubscription.unsubscribe();
             mdsSubscription = null;
         }
+        mCsvLogger.finishSavingLogs(LOG_TAG);
     }
 
     private void disableSpinner() {
@@ -258,59 +261,19 @@ public class AngularVelocityActivity extends AppCompatActivity implements BleMan
         spinner.setEnabled(true);
     }
 
-    private void saveAdbLogsToFile(String logTag) {
-        if (!logsManager.checkRuntimeWriteExternalStoragePermission(this, this)) {
-            return;
-        }
-
-        logsManager.saveLogsToSdCard(logTag);
-    }
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
-        if (requestCode == LogsManager.REQUEST_WRITE_EXTERNAL_STORAGE_PERMISSION) {
-            // if request is cancelled grantResults array is empty
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                        == PackageManager.PERMISSION_GRANTED) {
-
-                    // Save logs
-                    saveAdbLogsToFile(LOG_TAG);
-                }
-            }
-        }
-    }
-
-    private void setUpGraphView() {
-        mAngularGraphView.addSeries(seriesX);
-        mAngularGraphView.addSeries(seriesY);
-        mAngularGraphView.addSeries(seriesZ);
-        seriesX.setDrawAsPath(true);
-        seriesY.setDrawAsPath(true);
-        seriesZ.setDrawAsPath(true);
-        mAngularGraphView.getViewport().setXAxisBoundsManual(true);
-        mAngularGraphView.getViewport().setMinX(0);
-        mAngularGraphView.getViewport().setMaxX(10000);
-
-        // Disable X axis label
-        mAngularGraphView.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter() {
-            @Override
-            public String formatLabel(double value, boolean isValueX) {
-                if (isValueX) {
-                    return "";
-                } else {
-                    // show currency for y values
-                    return super.formatLabel(value, isValueX);
-                }
-            }
-        });
-
-        setSeriesColor(android.R.color.holo_red_dark, seriesX);
-        setSeriesColor(android.R.color.holo_green_dark, seriesY);
-        setSeriesColor(android.R.color.holo_blue_dark, seriesZ);
-
+//        if (requestCode == LogsManager.REQUEST_WRITE_EXTERNAL_STORAGE_PERMISSION) {
+//            // if request is cancelled grantResults array is empty
+//            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//
+//                if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+//                        == PackageManager.PERMISSION_GRANTED) {
+//
+//                }
+//            }
+//        }
     }
 
     @Override
@@ -319,7 +282,6 @@ public class AngularVelocityActivity extends AppCompatActivity implements BleMan
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                setUpGraphView();
                 ConnectionLostDialog.INSTANCE.showDialog(AngularVelocityActivity.this);
             }
         });
@@ -329,10 +291,25 @@ public class AngularVelocityActivity extends AppCompatActivity implements BleMan
     public void onConnect(RxBleDevice rxBleDevice) {
         Log.e(LOG_TAG, "onConnect: " + rxBleDevice.getName() + " " + rxBleDevice.getMacAddress());
         ConnectionLostDialog.INSTANCE.dismissDialog();
+        mChart.getData().clearValues();
     }
 
     @Override
     public void onConnectError(String s, Throwable throwable) {
 
+    }
+
+    private LineDataSet createSet(String name, int color) {
+        LineDataSet set = new LineDataSet(null, name);
+        set.setLineWidth(2.5f);
+        set.setColor(color);
+        set.setDrawCircleHole(false);
+        set.setDrawCircles(false);
+        set.setMode(LineDataSet.Mode.LINEAR);
+        set.setHighLightColor(Color.rgb(190, 190, 190));
+        set.setAxisDependency(YAxis.AxisDependency.LEFT);
+        set.setValueTextSize(0f);
+
+        return set;
     }
 }

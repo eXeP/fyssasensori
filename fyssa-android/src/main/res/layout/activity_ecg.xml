@@ -60,22 +60,6 @@
     </LinearLayout>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/rate"/>
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/note_text"/>
-
-    <TextView
         android:id="@+id/x_axis_textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -83,14 +67,9 @@
         android:text="@string/x"
         android:textSize="16sp"/>
 
-    <FrameLayout
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/ecg_lineChart"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_height="match_parent"/>
 
-    <com.jjoe64.graphview.GraphView
-        android:id="@+id/graphView"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_gravity="bottom"/>
 </LinearLayout>

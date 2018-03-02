@@ -1,18 +1,62 @@
 -- Merging decision tree log ---
+provider#android.support.v4.content.FileProvider
+INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:79:9-87:20
+	android:grantUriPermissions
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:83:13-47
+	android:authorities
+		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:81:13-51
+	android:exported
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:82:13-37
+	android:name
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:80:13-67
 manifest
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:2:1-148:12
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:2:1-161:12
+INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:2:1-161:12
+INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:2:1-161:12
+INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:2:1-161:12
+MERGED from [pub.devrel:easypermissions:0.2.1] /home/exep/.gradle/caches/transforms-1/files-1.1/easypermissions-0.2.1.aar/82cccd2d5c906805e2a0da25853b2645/AndroidManifest.xml:2:1-14:12
+MERGED from [com.android.support:appcompat-v7:27.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/21c53f1f66842ca05af552ca9cca4b05/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.0.0.aar/5a15fe569d9229d9989096d72dbc1f32/AndroidManifest.xml:17:1-22:12
+MERGED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/exep/.gradle/caches/transforms-1/files-1.1/rxandroidble-1.4.3.aar/849053d58318f4745273045ee9467596/AndroidManifest.xml:2:1-18:12
+MERGED from [io.reactivex:rxandroid:1.2.1] /home/exep/.gradle/caches/transforms-1/files-1.1/rxandroid-1.2.1.aar/d0c929407e84080e0da1af59b4b72ae7/AndroidManifest.xml:15:1-21:12
+MERGED from [com.jakewharton:butterknife:8.5.1] /home/exep/.gradle/caches/transforms-1/files-1.1/butterknife-8.5.1.aar/2ef019b6a6bc61fe375b870a8eb1ecd3/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-drive:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-drive-11.0.1.aar/9a38c3f280bc2e45ef7d568a92ff2522/AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/afa2894818833c4fc9a38024f0d73fcc/AndroidManifest.xml:16:1-26:12
+MERGED from [com.google.android.gms:play-services-auth-base:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-11.0.1.aar/621c717a493349e431411d5730cdc297/AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-base:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.1.aar/8f2dc7f757716203f37508e45d25e46e/AndroidManifest.xml:16:1-21:12
+MERGED from [com.google.android.gms:play-services-tasks:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.0.1.aar/89a3e31ac41e8cec19b175fbfa56fa39/AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-basement:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.1.aar/fc61c57e6f4c662d9dc34824b2dc73e2/AndroidManifest.xml:16:1-23:12
+MERGED from [com.android.support:support-v4:25.2.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/4b51d6d11c25ecc8095033a6d63dd8bb/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-media-compat:25.2.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.2.0.aar/491c2dd460411d1a80a23817e881e812/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:animated-vector-drawable:27.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.0.aar/07abeeeaa241fe477f1f4d119394dceb/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.0.aar/8daa3c83ca5166a2b1bb4bd0eef09b71/AndroidManifest.xml:17:1-22:12
+MERGED from [no.nordicsemi.android:dfu:1.6.0] /home/exep/.gradle/caches/transforms-1/files-1.1/dfu-1.6.0.aar/d3cf42b331d427682276fa8b507ee838/AndroidManifest.xml:2:1-14:12
+MERGED from [com.android.support:support-fragment:27.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.0.aar/4d351f30954ff85ceed07c9d85176281/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.0.aar/59261348470e49935e78034c2e34b6f7/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.0.aar/53fa655b7aac648eca577654ad8b4f03/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.0.aar/8ff889e66cd6a497f162d5b85480439f/AndroidManifest.xml:17:1-22:12
+MERGED from [:mdslib:1.13.0(1)-release] /home/exep/.gradle/caches/transforms-1/files-1.1/mdslib-1.13.0(1)-release.aar/dd18fd7ebe0358bfe0a208e8a8719d9e/AndroidManifest.xml:2:1-12:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/exep/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/cd869ab5a75880f0419fafae41c298c3/AndroidManifest.xml:2:1-11:12
+MERGED from [com.artemzin.rxjava:proguard-rules:1.3.2.0] /home/exep/.gradle/caches/transforms-1/files-1.1/proguard-rules-1.3.2.0.aar/27abbf0b9bd15e4fc352a819fcaab12f/AndroidManifest.xml:2:1-10:12
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/114de800cd6ea827dfa516fa898b2ac5/AndroidManifest.xml:17:1-30:12
+INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:2:1-161:12
+INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:2:1-161:12
+INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:2:1-161:12
 	package
 		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:3:11-48
 		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
 		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:2:1-161:12
+		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:2:1-161:12
 		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:2:11-69
-	android:versionCode
-		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
-		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:5:5-80
 	android:name
@@ -39,84 +83,104 @@ ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidMani
 		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:10:22-68
 uses-permission#android.permission.BLUETOOTH
 ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:11:5-67
-MERGED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/exep/.android/build-cache/001e535efa382e3d76d086503c1ad043dcf90d81/output/AndroidManifest.xml:11:5-68
-MERGED from [no.nordicsemi.android:dfu:1.6.0] /home/exep/.android/build-cache/8723d86a5b815267180286b10ac851f339ee3324/output/AndroidManifest.xml:11:5-68
+MERGED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/exep/.gradle/caches/transforms-1/files-1.1/rxandroidble-1.4.3.aar/849053d58318f4745273045ee9467596/AndroidManifest.xml:11:5-68
+MERGED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/exep/.gradle/caches/transforms-1/files-1.1/rxandroidble-1.4.3.aar/849053d58318f4745273045ee9467596/AndroidManifest.xml:11:5-68
+MERGED from [no.nordicsemi.android:dfu:1.6.0] /home/exep/.gradle/caches/transforms-1/files-1.1/dfu-1.6.0.aar/d3cf42b331d427682276fa8b507ee838/AndroidManifest.xml:11:5-68
+MERGED from [no.nordicsemi.android:dfu:1.6.0] /home/exep/.gradle/caches/transforms-1/files-1.1/dfu-1.6.0.aar/d3cf42b331d427682276fa8b507ee838/AndroidManifest.xml:11:5-68
 	android:name
 		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:11:22-65
 uses-permission#android.permission.MANAGE_DOCUMENTS
 ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:12:5-74
 	android:name
 		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:12:22-72
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:13:5-73
+MERGED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/exep/.gradle/caches/transforms-1/files-1.1/rxandroidble-1.4.3.aar/849053d58318f4745273045ee9467596/AndroidManifest.xml:12:5-74
+MERGED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/exep/.gradle/caches/transforms-1/files-1.1/rxandroidble-1.4.3.aar/849053d58318f4745273045ee9467596/AndroidManifest.xml:12:5-74
+MERGED from [no.nordicsemi.android:dfu:1.6.0] /home/exep/.gradle/caches/transforms-1/files-1.1/dfu-1.6.0.aar/d3cf42b331d427682276fa8b507ee838/AndroidManifest.xml:12:5-74
+MERGED from [no.nordicsemi.android:dfu:1.6.0] /home/exep/.gradle/caches/transforms-1/files-1.1/dfu-1.6.0.aar/d3cf42b331d427682276fa8b507ee838/AndroidManifest.xml:12:5-74
+	android:name
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:13:22-71
 uses-feature#android.hardware.bluetooth_le
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:14:5-16:34
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:15:5-17:34
 	android:required
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:16:9-32
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:17:9-32
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:15:9-53
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:16:9-53
 application
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:18:5-146:19
-MERGED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/exep/.android/build-cache/001e535efa382e3d76d086503c1ad043dcf90d81/output/AndroidManifest.xml:16:5-53
-MERGED from [com.jjoe64:graphview:4.2.1] /home/exep/.android/build-cache/62036cb546fc68a3125dbe208116a5fa38482a81/output/AndroidManifest.xml:11:5-12:19
-MERGED from [com.google.android.gms:play-services-drive:11.0.1] /home/exep/.android/build-cache/75c6df73895ca5061f4d4a8ef914372f43c80b3d/output/AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.android/build-cache/a68d4e787b319b066e1c88db341e8118e005412b/output/AndroidManifest.xml:19:5-25:19
-MERGED from [com.google.android.gms:play-services-base:11.0.1] /home/exep/.android/build-cache/648761e154316f73ce60347deb671cbe48797ac4/output/AndroidManifest.xml:18:5-20:19
-MERGED from [com.google.android.gms:play-services-tasks:11.0.1] /home/exep/.android/build-cache/856d9a85f72aaba5cb0d5929c2b345aaea49db33/output/AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-basement:11.0.1] /home/exep/.android/build-cache/df6bb9f3bae11e0cf0085779b07127933300ff31/output/AndroidManifest.xml:19:5-21:19
-MERGED from [com.android.support:support-v4:25.2.0] /home/exep/.android/build-cache/95cf247d9fd74d0b99383d0a88af8e5534dfd52f/output/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:25.2.0] /home/exep/.android/build-cache/1331306af98dff0156872e19d77724f0e0bc84f5/output/AndroidManifest.xml:25:5-20
-MERGED from [pub.devrel:easypermissions:0.2.1] /home/exep/.android/build-cache/36befdc1d6b3fde3b7bf664428d4bb7594dc0cb0/output/AndroidManifest.xml:12:5-20
-MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/exep/.android/build-cache/4aa4179052c77287b3ced30b717d34163731541a/output/AndroidManifest.xml:24:5-28:19
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/exep/.android/build-cache/175194cf1c530a285f98ec1967e86207cbf2d85c/output/AndroidManifest.xml:9:5-20
-	android:label
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:22:9-41
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:19:5-159:19
+MERGED from [pub.devrel:easypermissions:0.2.1] /home/exep/.gradle/caches/transforms-1/files-1.1/easypermissions-0.2.1.aar/82cccd2d5c906805e2a0da25853b2645/AndroidManifest.xml:12:5-20
+MERGED from [pub.devrel:easypermissions:0.2.1] /home/exep/.gradle/caches/transforms-1/files-1.1/easypermissions-0.2.1.aar/82cccd2d5c906805e2a0da25853b2645/AndroidManifest.xml:12:5-20
+MERGED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/exep/.gradle/caches/transforms-1/files-1.1/rxandroidble-1.4.3.aar/849053d58318f4745273045ee9467596/AndroidManifest.xml:16:5-53
+MERGED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/exep/.gradle/caches/transforms-1/files-1.1/rxandroidble-1.4.3.aar/849053d58318f4745273045ee9467596/AndroidManifest.xml:16:5-53
+MERGED from [com.google.android.gms:play-services-drive:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-drive-11.0.1.aar/9a38c3f280bc2e45ef7d568a92ff2522/AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-drive:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-drive-11.0.1.aar/9a38c3f280bc2e45ef7d568a92ff2522/AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/afa2894818833c4fc9a38024f0d73fcc/AndroidManifest.xml:19:5-25:19
+MERGED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/afa2894818833c4fc9a38024f0d73fcc/AndroidManifest.xml:19:5-25:19
+MERGED from [com.google.android.gms:play-services-base:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.1.aar/8f2dc7f757716203f37508e45d25e46e/AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-base:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.1.aar/8f2dc7f757716203f37508e45d25e46e/AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-tasks:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.0.1.aar/89a3e31ac41e8cec19b175fbfa56fa39/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-tasks:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.0.1.aar/89a3e31ac41e8cec19b175fbfa56fa39/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.1.aar/fc61c57e6f4c662d9dc34824b2dc73e2/AndroidManifest.xml:19:5-21:19
+MERGED from [com.google.android.gms:play-services-basement:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.1.aar/fc61c57e6f4c662d9dc34824b2dc73e2/AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:support-v4:25.2.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/4b51d6d11c25ecc8095033a6d63dd8bb/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:25.2.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/4b51d6d11c25ecc8095033a6d63dd8bb/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.2.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.2.0.aar/491c2dd460411d1a80a23817e881e812/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.2.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.2.0.aar/491c2dd460411d1a80a23817e881e812/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/exep/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/cd869ab5a75880f0419fafae41c298c3/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/exep/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/cd869ab5a75880f0419fafae41c298c3/AndroidManifest.xml:9:5-20
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/114de800cd6ea827dfa516fa898b2ac5/AndroidManifest.xml:24:5-28:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/114de800cd6ea827dfa516fa898b2ac5/AndroidManifest.xml:24:5-28:19
 	android:supportsRtl
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:23:9-35
-	android:allowBackup
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:20:9-35
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:24:9-35
+	android:label
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:23:9-41
 	android:icon
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:21:9-43
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:22:9-43
+	android:allowBackup
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:21:9-35
 	android:theme
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:24:9-40
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:25:9-40
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:19:9-55
-activity#com.pietu.fyssasensori.FyssaMainActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:26:9-35:20
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:20:9-49
+activity#com.fyssasensori.FyssaMainActivity
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:27:9-36:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:28:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:29:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:27:13-68
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:28:13-62
 intent-filter#android.intent.action.MAIN+android.intent.action.MY_ACTION+android.intent.category.LAUNCHER
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:29:13-34:29
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:30:13-35:29
 action#android.intent.action.MAIN
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:30:17-68
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:31:17-68
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:30:25-66
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:31:25-66
 action#android.intent.action.MY_ACTION
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:31:17-73
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:32:17-73
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:31:25-71
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:32:25-71
 category#android.intent.category.LAUNCHER
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:33:17-76
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:34:17-76
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:33:27-74
-activity#com.pietu.fyssasensori.FyssaScanActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:37:9-40:20
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:34:27-74
+activity#com.fyssasensori.FyssaScanActivity
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:38:9-41:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:39:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:40:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:38:13-68
-activity#com.pietu.fyssasensori.FyssaInfoActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:42:9-45:20
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:39:13-62
+activity#com.fyssasensori.FyssaInfoActivity
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:43:9-46:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:44:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:45:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:43:13-68
-activity#com.pietu.fyssasensori.FyssaSensorUpdateActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:47:9-50:20
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:44:13-62
+activity#com.fyssasensori.FyssaSensorUpdateActivity
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:48:9-51:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:49:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:50:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:48:13-76
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:49:13-70
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.tests.LedTestActivity
 ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:54:9-56:51
 	android:screenOrientation
@@ -165,23 +229,6 @@ ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidMani
 		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:77:13-49
 	android:name
 		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:76:13-84
-provider#android.support.v4.content.FileProvider
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:79:9-87:20
-	android:authorities
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:81:13-51
-		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
-	android:grantUriPermissions
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:83:13-47
-	android:exported
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:82:13-37
-	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:80:13-67
-meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:84:13-86:62
-	android:resource
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:86:17-60
-	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:85:17-67
 service#com.movesense.mds.sampleapp.example_app_using_mds_api.dfu.DfuService
 ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:89:9-92:38
 	android:enabled
@@ -205,153 +252,206 @@ ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidMani
 	android:name
 		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:99:25-71
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.mainView.MainViewActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:103:9-109:20
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:103:9-106:20
 	android:screenOrientation
 		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:105:13-49
 	android:name
 		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:104:13-80
-intent-filter#android.intent.action.MY_ACTION
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:106:13-108:29
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.movesense.MovesenseActivity
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:107:9-109:51
+	android:screenOrientation
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:109:13-49
+	android:name
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:108:13-82
+activity#com.movesense.mds.sampleapp.example_app_using_mds_api.multi_connection.connection.MultiConnectionActivity
 ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:110:9-112:51
 	android:screenOrientation
 		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:112:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:111:13-82
-activity#com.movesense.mds.sampleapp.example_app_using_mds_api.multi_connection.connection.MultiConnectionActivity
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:111:13-106
+activity#com.movesense.mds.sampleapp.example_app_using_mds_api.saved_data.SavedDataActivity
 ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:113:9-115:51
 	android:screenOrientation
 		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:115:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:114:13-106
-activity#com.movesense.mds.sampleapp.example_app_using_mds_api.saved_data.SavedDataActivity
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:114:13-83
+activity#com.movesense.mds.sampleapp.example_app_using_mds_api.about.AboutActivity
 ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:116:9-118:51
 	android:screenOrientation
 		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:118:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:117:13-83
-activity#com.movesense.mds.sampleapp.example_app_using_mds_api.about.AboutActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:119:9-121:51
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:117:13-74
+activity#com.movesense.mds.sampleapp.example_app_using_mds_api.sensors.sensors_list.SensorListActivity
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:119:9-122:20
 	android:screenOrientation
 		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:121:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:120:13-74
-activity#com.movesense.mds.sampleapp.example_app_using_mds_api.sensors.sensors_list.SensorListActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:122:9-125:20
-	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:124:13-49
-	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:123:13-94
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:120:13-94
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.dfu.DfuActivity2
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:126:9-129:20
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:123:9-126:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:128:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:125:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:127:13-71
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:124:13-71
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.multi_connection.sensor_usage.MultiSensorUsageActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:130:9-133:20
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:127:9-130:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:132:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:129:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:131:13-109
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:128:13-109
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.tests.EcgActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:134:9-137:20
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:131:9-134:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:136:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:133:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:135:13-72
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:132:13-72
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.tests.BatteryActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:138:9-141:20
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:135:9-138:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:140:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:137:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:139:13-76
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:136:13-76
 activity#com.movesense.mds.sampleapp.example_app_using_mds_api.tests.AppInfoActivity
-ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:142:9-145:20
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:139:9-142:20
 	android:screenOrientation
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:144:13-49
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:141:13-49
 	android:name
-		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:143:13-76
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:140:13-76
+activity#com.movesense.mds.sampleapp.example_app_using_mds_api.tests.ImuActivity
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:143:9-146:20
+	android:screenOrientation
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:145:13-49
+	android:name
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:144:13-72
+receiver#com.movesense.mds.sampleapp.BluetoothStatusReceiver
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:148:9-155:20
+	android:enabled
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:150:13-35
+	android:exported
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:151:13-37
+	android:name
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:149:13-52
+intent-filter#android.bluetooth.adapter.action.STATE_CHANGED
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:152:13-154:29
+action#android.bluetooth.adapter.action.STATE_CHANGED
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:153:17-88
+	android:name
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:153:25-86
+activity#com.movesense.mds.sampleapp.example_app_using_mds_api.device_settings.DeviceSettingsActivity
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:157:9-158:20
+	android:name
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:157:19-99
 uses-sdk
 INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:recyclerview-v7:27.0.0] /home/exep/.android/build-cache/69dc40e6a91ede026a616e52f1baa334c95da5ed/output/AndroidManifest.xml:20:5-44
-MERGED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/exep/.android/build-cache/001e535efa382e3d76d086503c1ad043dcf90d81/output/AndroidManifest.xml:7:5-9:41
-MERGED from [com.artemzin.rxjava:proguard-rules:1.3.2.0] /home/exep/.android/build-cache/ab6b48eaca43b25717f637490a36741bbce6f117/output/AndroidManifest.xml:8:5-43
-MERGED from [io.reactivex:rxandroid:1.2.1] /home/exep/.android/build-cache/1db302b46a1b8034137753f61c2bbf27767032ee/output/AndroidManifest.xml:19:5-43
-MERGED from [:mdslib:1.10.0(1)-release] /home/exep/.android/build-cache/5ccbe66e1f0149011ac48029d91b3f87301e00c0/output/AndroidManifest.xml:8:5-10:41
-MERGED from [com.jakewharton:butterknife:8.5.1] /home/exep/.android/build-cache/22d7f0dca54d7e198d76e49f4d1df8e3323f752a/output/AndroidManifest.xml:5:5-43
-MERGED from [com.jjoe64:graphview:4.2.1] /home/exep/.android/build-cache/62036cb546fc68a3125dbe208116a5fa38482a81/output/AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.android.gms:play-services-drive:11.0.1] /home/exep/.android/build-cache/75c6df73895ca5061f4d4a8ef914372f43c80b3d/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.android/build-cache/a68d4e787b319b066e1c88db341e8118e005412b/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-auth-base:11.0.1] /home/exep/.android/build-cache/aeb9863f2097154e5cada1258cd04c52ff9b1e14/output/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-base:11.0.1] /home/exep/.android/build-cache/648761e154316f73ce60347deb671cbe48797ac4/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-tasks:11.0.1] /home/exep/.android/build-cache/856d9a85f72aaba5cb0d5929c2b345aaea49db33/output/AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-basement:11.0.1] /home/exep/.android/build-cache/df6bb9f3bae11e0cf0085779b07127933300ff31/output/AndroidManifest.xml:17:5-43
-MERGED from [com.android.support:support-v4:25.2.0] /home/exep/.android/build-cache/95cf247d9fd74d0b99383d0a88af8e5534dfd52f/output/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-media-compat:25.2.0] /home/exep/.android/build-cache/1331306af98dff0156872e19d77724f0e0bc84f5/output/AndroidManifest.xml:21:5-23:63
-MERGED from [pub.devrel:easypermissions:0.2.1] /home/exep/.android/build-cache/36befdc1d6b3fde3b7bf664428d4bb7594dc0cb0/output/AndroidManifest.xml:8:5-10:41
-MERGED from [com.android.support:appcompat-v7:27.0.0] /home/exep/.android/build-cache/9d0a96710629409b8bf4d600dc37880980303f99/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.0.0] /home/exep/.android/build-cache/ae901b15b332c27606533c28e42633a78cd963f9/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.0.0] /home/exep/.android/build-cache/d610cdfa8cf1229b4e0b4e7f9f889a1cd8cd266b/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.0.0] /home/exep/.android/build-cache/44edd67ba188d1719579cace34058df054db8d14/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.0.0] /home/exep/.android/build-cache/56ccedde37f5974324ac832ed57238812d4d163c/output/AndroidManifest.xml:20:5-44
-MERGED from [no.nordicsemi.android:dfu:1.6.0] /home/exep/.android/build-cache/8723d86a5b815267180286b10ac851f339ee3324/output/AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:support-core-utils:27.0.0] /home/exep/.android/build-cache/459103dacfcb66b0192bb0d9ece401a28d12b127/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.0.0] /home/exep/.android/build-cache/c4d9787ec2befaec5f4b03f3e590ffa204554f69/output/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/exep/.android/build-cache/4aa4179052c77287b3ced30b717d34163731541a/output/AndroidManifest.xml:20:5-22:41
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/exep/.android/build-cache/175194cf1c530a285f98ec1967e86207cbf2d85c/output/AndroidManifest.xml:5:5-7:41
+INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
+INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
+MERGED from [pub.devrel:easypermissions:0.2.1] /home/exep/.gradle/caches/transforms-1/files-1.1/easypermissions-0.2.1.aar/82cccd2d5c906805e2a0da25853b2645/AndroidManifest.xml:8:5-10:41
+MERGED from [pub.devrel:easypermissions:0.2.1] /home/exep/.gradle/caches/transforms-1/files-1.1/easypermissions-0.2.1.aar/82cccd2d5c906805e2a0da25853b2645/AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:appcompat-v7:27.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/21c53f1f66842ca05af552ca9cca4b05/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/21c53f1f66842ca05af552ca9cca4b05/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.0.0.aar/5a15fe569d9229d9989096d72dbc1f32/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.0.0.aar/5a15fe569d9229d9989096d72dbc1f32/AndroidManifest.xml:20:5-44
+MERGED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/exep/.gradle/caches/transforms-1/files-1.1/rxandroidble-1.4.3.aar/849053d58318f4745273045ee9467596/AndroidManifest.xml:7:5-9:41
+MERGED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/exep/.gradle/caches/transforms-1/files-1.1/rxandroidble-1.4.3.aar/849053d58318f4745273045ee9467596/AndroidManifest.xml:7:5-9:41
+MERGED from [io.reactivex:rxandroid:1.2.1] /home/exep/.gradle/caches/transforms-1/files-1.1/rxandroid-1.2.1.aar/d0c929407e84080e0da1af59b4b72ae7/AndroidManifest.xml:19:5-43
+MERGED from [io.reactivex:rxandroid:1.2.1] /home/exep/.gradle/caches/transforms-1/files-1.1/rxandroid-1.2.1.aar/d0c929407e84080e0da1af59b4b72ae7/AndroidManifest.xml:19:5-43
+MERGED from [com.jakewharton:butterknife:8.5.1] /home/exep/.gradle/caches/transforms-1/files-1.1/butterknife-8.5.1.aar/2ef019b6a6bc61fe375b870a8eb1ecd3/AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton:butterknife:8.5.1] /home/exep/.gradle/caches/transforms-1/files-1.1/butterknife-8.5.1.aar/2ef019b6a6bc61fe375b870a8eb1ecd3/AndroidManifest.xml:5:5-43
+MERGED from [com.google.android.gms:play-services-drive:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-drive-11.0.1.aar/9a38c3f280bc2e45ef7d568a92ff2522/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-drive:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-drive-11.0.1.aar/9a38c3f280bc2e45ef7d568a92ff2522/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/afa2894818833c4fc9a38024f0d73fcc/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/afa2894818833c4fc9a38024f0d73fcc/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-auth-base:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-11.0.1.aar/621c717a493349e431411d5730cdc297/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-auth-base:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-11.0.1.aar/621c717a493349e431411d5730cdc297/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-base:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.1.aar/8f2dc7f757716203f37508e45d25e46e/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-base:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.1.aar/8f2dc7f757716203f37508e45d25e46e/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-tasks:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.0.1.aar/89a3e31ac41e8cec19b175fbfa56fa39/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-tasks:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.0.1.aar/89a3e31ac41e8cec19b175fbfa56fa39/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-basement:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.1.aar/fc61c57e6f4c662d9dc34824b2dc73e2/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-basement:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.1.aar/fc61c57e6f4c662d9dc34824b2dc73e2/AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:support-v4:25.2.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/4b51d6d11c25ecc8095033a6d63dd8bb/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:25.2.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/4b51d6d11c25ecc8095033a6d63dd8bb/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:25.2.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.2.0.aar/491c2dd460411d1a80a23817e881e812/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:25.2.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.2.0.aar/491c2dd460411d1a80a23817e881e812/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:animated-vector-drawable:27.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.0.aar/07abeeeaa241fe477f1f4d119394dceb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.0.aar/07abeeeaa241fe477f1f4d119394dceb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.0.aar/8daa3c83ca5166a2b1bb4bd0eef09b71/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.0.aar/8daa3c83ca5166a2b1bb4bd0eef09b71/AndroidManifest.xml:20:5-44
+MERGED from [no.nordicsemi.android:dfu:1.6.0] /home/exep/.gradle/caches/transforms-1/files-1.1/dfu-1.6.0.aar/d3cf42b331d427682276fa8b507ee838/AndroidManifest.xml:7:5-9:41
+MERGED from [no.nordicsemi.android:dfu:1.6.0] /home/exep/.gradle/caches/transforms-1/files-1.1/dfu-1.6.0.aar/d3cf42b331d427682276fa8b507ee838/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-fragment:27.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.0.aar/4d351f30954ff85ceed07c9d85176281/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.0.aar/4d351f30954ff85ceed07c9d85176281/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.0.aar/59261348470e49935e78034c2e34b6f7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.0.aar/59261348470e49935e78034c2e34b6f7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.0.aar/53fa655b7aac648eca577654ad8b4f03/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.0.aar/53fa655b7aac648eca577654ad8b4f03/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.0.aar/8ff889e66cd6a497f162d5b85480439f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.0.aar/8ff889e66cd6a497f162d5b85480439f/AndroidManifest.xml:20:5-44
+MERGED from [:mdslib:1.13.0(1)-release] /home/exep/.gradle/caches/transforms-1/files-1.1/mdslib-1.13.0(1)-release.aar/dd18fd7ebe0358bfe0a208e8a8719d9e/AndroidManifest.xml:8:5-10:41
+MERGED from [:mdslib:1.13.0(1)-release] /home/exep/.gradle/caches/transforms-1/files-1.1/mdslib-1.13.0(1)-release.aar/dd18fd7ebe0358bfe0a208e8a8719d9e/AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/exep/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/cd869ab5a75880f0419fafae41c298c3/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/exep/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/cd869ab5a75880f0419fafae41c298c3/AndroidManifest.xml:5:5-7:41
+MERGED from [com.artemzin.rxjava:proguard-rules:1.3.2.0] /home/exep/.gradle/caches/transforms-1/files-1.1/proguard-rules-1.3.2.0.aar/27abbf0b9bd15e4fc352a819fcaab12f/AndroidManifest.xml:8:5-43
+MERGED from [com.artemzin.rxjava:proguard-rules:1.3.2.0] /home/exep/.gradle/caches/transforms-1/files-1.1/proguard-rules-1.3.2.0.aar/27abbf0b9bd15e4fc352a819fcaab12f/AndroidManifest.xml:8:5-43
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/114de800cd6ea827dfa516fa898b2ac5/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/114de800cd6ea827dfa516fa898b2ac5/AndroidManifest.xml:20:5-22:41
+INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
+INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
 	tools:overrideLibrary
-		ADDED from [com.android.support:support-v4:25.2.0] /home/exep/.android/build-cache/95cf247d9fd74d0b99383d0a88af8e5534dfd52f/output/AndroidManifest.xml:23:9-51
+		ADDED from [com.android.support:support-v4:25.2.0] /home/exep/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/4b51d6d11c25ecc8095033a6d63dd8bb/AndroidManifest.xml:23:9-51
 	android:targetSdkVersion
 		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
 		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
 		INJECTED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml
-uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/exep/.android/build-cache/001e535efa382e3d76d086503c1ad043dcf90d81/output/AndroidManifest.xml:12:5-74
-MERGED from [no.nordicsemi.android:dfu:1.6.0] /home/exep/.android/build-cache/8723d86a5b815267180286b10ac851f339ee3324/output/AndroidManifest.xml:12:5-74
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:84:13-86:62
+	android:resource
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:86:17-60
 	android:name
-		ADDED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/exep/.android/build-cache/001e535efa382e3d76d086503c1ad043dcf90d81/output/AndroidManifest.xml:12:22-71
-uses-permission-sdk-23
-ADDED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/exep/.android/build-cache/001e535efa382e3d76d086503c1ad043dcf90d81/output/AndroidManifest.xml:14:5-88
+		ADDED from /mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml:85:17-67
+uses-permission-sdk-23#android.permission.ACCESS_COARSE_LOCATION
+ADDED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/exep/.gradle/caches/transforms-1/files-1.1/rxandroidble-1.4.3.aar/849053d58318f4745273045ee9467596/AndroidManifest.xml:14:5-88
 	android:name
-		ADDED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/exep/.android/build-cache/001e535efa382e3d76d086503c1ad043dcf90d81/output/AndroidManifest.xml:14:29-85
+		ADDED from [com.polidea.rxandroidble:rxandroidble:1.4.3] /home/exep/.gradle/caches/transforms-1/files-1.1/rxandroidble-1.4.3.aar/849053d58318f4745273045ee9467596/AndroidManifest.xml:14:29-85
 activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
-ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.android/build-cache/a68d4e787b319b066e1c88db341e8118e005412b/output/AndroidManifest.xml:20:9-189
+ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/afa2894818833c4fc9a38024f0d73fcc/AndroidManifest.xml:20:9-189
 	android:excludeFromRecents
-		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.android/build-cache/a68d4e787b319b066e1c88db341e8118e005412b/output/AndroidManifest.xml:20:129-162
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/afa2894818833c4fc9a38024f0d73fcc/AndroidManifest.xml:20:129-162
 	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.android/build-cache/a68d4e787b319b066e1c88db341e8118e005412b/output/AndroidManifest.xml:20:163-187
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/afa2894818833c4fc9a38024f0d73fcc/AndroidManifest.xml:20:163-187
 	android:theme
-		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.android/build-cache/a68d4e787b319b066e1c88db341e8118e005412b/output/AndroidManifest.xml:20:69-128
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/afa2894818833c4fc9a38024f0d73fcc/AndroidManifest.xml:20:69-128
 	android:name
-		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.android/build-cache/a68d4e787b319b066e1c88db341e8118e005412b/output/AndroidManifest.xml:20:19-68
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/afa2894818833c4fc9a38024f0d73fcc/AndroidManifest.xml:20:19-68
 service#com.google.android.gms.auth.api.signin.RevocationBoundService
-ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.android/build-cache/a68d4e787b319b066e1c88db341e8118e005412b/output/AndroidManifest.xml:24:9-184
+ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/afa2894818833c4fc9a38024f0d73fcc/AndroidManifest.xml:24:9-184
 	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.android/build-cache/a68d4e787b319b066e1c88db341e8118e005412b/output/AndroidManifest.xml:24:64-87
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/afa2894818833c4fc9a38024f0d73fcc/AndroidManifest.xml:24:64-87
 	android:permission
-		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.android/build-cache/a68d4e787b319b066e1c88db341e8118e005412b/output/AndroidManifest.xml:24:88-182
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/afa2894818833c4fc9a38024f0d73fcc/AndroidManifest.xml:24:88-182
 	android:name
-		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.android/build-cache/a68d4e787b319b066e1c88db341e8118e005412b/output/AndroidManifest.xml:24:18-63
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/afa2894818833c4fc9a38024f0d73fcc/AndroidManifest.xml:24:18-63
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/exep/.android/build-cache/648761e154316f73ce60347deb671cbe48797ac4/output/AndroidManifest.xml:19:9-172
+ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.1.aar/8f2dc7f757716203f37508e45d25e46e/AndroidManifest.xml:19:9-172
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/exep/.android/build-cache/648761e154316f73ce60347deb671cbe48797ac4/output/AndroidManifest.xml:19:146-170
+		ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.1.aar/8f2dc7f757716203f37508e45d25e46e/AndroidManifest.xml:19:146-170
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/exep/.android/build-cache/648761e154316f73ce60347deb671cbe48797ac4/output/AndroidManifest.xml:19:86-145
+		ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.1.aar/8f2dc7f757716203f37508e45d25e46e/AndroidManifest.xml:19:86-145
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/exep/.android/build-cache/648761e154316f73ce60347deb671cbe48797ac4/output/AndroidManifest.xml:19:19-85
+		ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.1.aar/8f2dc7f757716203f37508e45d25e46e/AndroidManifest.xml:19:19-85
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:11.0.1] /home/exep/.android/build-cache/df6bb9f3bae11e0cf0085779b07127933300ff31/output/AndroidManifest.xml:20:9-121
+ADDED from [com.google.android.gms:play-services-basement:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.1.aar/fc61c57e6f4c662d9dc34824b2dc73e2/AndroidManifest.xml:20:9-121
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:11.0.1] /home/exep/.android/build-cache/df6bb9f3bae11e0cf0085779b07127933300ff31/output/AndroidManifest.xml:20:66-119
+		ADDED from [com.google.android.gms:play-services-basement:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.1.aar/fc61c57e6f4c662d9dc34824b2dc73e2/AndroidManifest.xml:20:66-119
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:11.0.1] /home/exep/.android/build-cache/df6bb9f3bae11e0cf0085779b07127933300ff31/output/AndroidManifest.xml:20:20-65
+		ADDED from [com.google.android.gms:play-services-basement:11.0.1] /home/exep/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.1.aar/fc61c57e6f4c662d9dc34824b2dc73e2/AndroidManifest.xml:20:20-65
 meta-data#android.arch.lifecycle.VERSION
-ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/exep/.android/build-cache/4aa4179052c77287b3ced30b717d34163731541a/output/AndroidManifest.xml:25:9-27:47
+ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/114de800cd6ea827dfa516fa898b2ac5/AndroidManifest.xml:25:9-27:47
 	android:value
-		ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/exep/.android/build-cache/4aa4179052c77287b3ced30b717d34163731541a/output/AndroidManifest.xml:27:13-44
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/114de800cd6ea827dfa516fa898b2ac5/AndroidManifest.xml:27:13-44
 	android:name
-		ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/exep/.android/build-cache/4aa4179052c77287b3ced30b717d34163731541a/output/AndroidManifest.xml:26:13-58
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/exep/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/114de800cd6ea827dfa516fa898b2ac5/AndroidManifest.xml:26:13-58

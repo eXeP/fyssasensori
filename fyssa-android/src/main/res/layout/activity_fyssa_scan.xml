@@ -7,7 +7,7 @@
     android:background="@color/colorBackground"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context="com.pietu.fyssasensori.FyssaMainActivity">
+    tools:context="com.fyssasensori.FyssaMainActivity">
 
     <TextView
         android:id="@+id/movesense_infoTv"

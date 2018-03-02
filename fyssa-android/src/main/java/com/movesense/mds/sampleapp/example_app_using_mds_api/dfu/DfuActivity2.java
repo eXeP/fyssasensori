@@ -2,11 +2,11 @@ package com.movesense.mds.sampleapp.example_app_using_mds_api.dfu;
 
 import android.app.LoaderManager;
 import android.app.NotificationManager;
+import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -17,12 +17,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.movesense.mds.internal.connectivity.BleManager;
+import com.movesense.mds.sampleapp.BluetoothStatusMonitor;
 import com.movesense.mds.sampleapp.R;
 import com.polidea.rxandroidble.RxBleDevice;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
+import rx.schedulers.Schedulers;
 import rx.subscriptions.CompositeSubscription;
 
 public class DfuActivity2 extends AppCompatActivity implements DfuContract.View, LoaderManager.LoaderCallbacks<Cursor>, ScannerFragment.DeviceSelectionListener {
@@ -77,16 +81,35 @@ public class DfuActivity2 extends AppCompatActivity implements DfuContract.View,
 
         mDfuPresenter.registerConnectedDeviceObservable(this);
 
+        BluetoothStatusMonitor.INSTANCE.bluetoothStatusSubject
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Action1<Integer>() {
+                    @Override
+                    public void call(Integer integer) {
+                        if (integer == BluetoothAdapter.STATE_ON) {
+                            Log.d(TAG, "call: BluetoothAdapter.STATE_ON");
 
+                        } else if (integer == BluetoothAdapter.STATE_OFF) {
+                            Log.d(TAG, "call: BluetoothAdapter.STATE_OFF");
 
+                            mDfuStatusTv.setText("ERROR: Bluetooth Disabled. Please try again when Bluetooth will be enabled");
+
+                            Toast.makeText(DfuActivity2.this, "Error: Blouetooth Turned Off", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }, new Action1<Throwable>() {
+                    @Override
+                    public void call(Throwable throwable) {
+                        Log.e(TAG, "call bluetoothStatusSubject: ", throwable );
+                    }
+                });
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         mDfuPresenter.onResume();
-
-
     }
 
     @Override
@@ -159,8 +182,6 @@ public class DfuActivity2 extends AppCompatActivity implements DfuContract.View,
             mDfuStatusTv.setText(R.string.select_file_and_device);
             mDfuStartUploadBtn.setEnabled(true);
             mDfuStartUploadBtn.setBackground(ContextCompat.getDrawable(this, R.drawable.white_stroke));
-
-
         }
     }
 

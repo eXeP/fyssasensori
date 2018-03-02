@@ -1,10 +1,7 @@
 package com.movesense.mds.sampleapp.example_app_using_mds_api.tests;
 
-import android.Manifest;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
@@ -26,10 +23,12 @@ import com.movesense.mds.internal.connectivity.MovesenseConnectedDevices;
 import com.movesense.mds.sampleapp.ConnectionLostDialog;
 import com.movesense.mds.sampleapp.R;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.FormatHelper;
-import com.movesense.mds.sampleapp.example_app_using_mds_api.logs.LogsManager;
+import com.movesense.mds.sampleapp.example_app_using_mds_api.csv.CsvLogger;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.model.Temperature;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.model.TemperatureSubscribeModel;
 import com.polidea.rxandroidble.RxBleDevice;
+
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -53,7 +52,7 @@ public class TemperatureTestActivity extends AppCompatActivity implements BleMan
     @BindView(R.id.temperature_kelvin_textView) TextView temperatureKelvinTextView;
     @BindView(R.id.temperature_celsius_textView) TextView temperatureCelsiusTextView;
     private AlertDialog alertDialog;
-    private LogsManager logsManager;
+    private CsvLogger mCsvLogger;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +64,7 @@ public class TemperatureTestActivity extends AppCompatActivity implements BleMan
             getSupportActionBar().setTitle("Temperature");
         }
 
-        logsManager = new LogsManager(this);
+        mCsvLogger = new CsvLogger();
 
         alertDialog = new AlertDialog.Builder(this)
                 .setTitle(R.string.please_wait)
@@ -86,8 +85,7 @@ public class TemperatureTestActivity extends AppCompatActivity implements BleMan
     public void onCheckedChange(final CompoundButton compoundButton, boolean isChecked) {
         if (isChecked) {
 
-            // Clear Logcat
-            logsManager.clearAdbLogcat();
+            mCsvLogger.checkRuntimeWriteExternalStoragePermission(this, this);
 
             mdsSubscription = Mds.builder().build(this).subscribe(URI_EVENTLISTENER,
                     FormatHelper.formatContractToJson(MovesenseConnectedDevices.getConnectedDevice(0).getSerial(),
@@ -101,6 +99,9 @@ public class TemperatureTestActivity extends AppCompatActivity implements BleMan
                             if (temperature.getBody() != null) {
                                 temperatureKelvinTextView.setText(String.format(getString(R.string.kelvin) + " %.6f", temperature.getBody().measurement));
                                 temperatureCelsiusTextView.setText(String.format(getString(R.string.celsius) + " %.6f", (temperature.getBody().measurement - KELVIN_ABSOLUTE_ZERO)));
+
+                                mCsvLogger.appendLine(String.format(Locale.getDefault(),
+                                        "%.6f Kelvins",  temperature.getBody().measurement));
                             }
                         }
 
@@ -114,9 +115,6 @@ public class TemperatureTestActivity extends AppCompatActivity implements BleMan
                     });
         } else {
             unSubscribe();
-
-            // Save logs
-            saveAdbLogsToFile(LOG_TAG);
         }
     }
 
@@ -168,31 +166,22 @@ public class TemperatureTestActivity extends AppCompatActivity implements BleMan
             mdsSubscription.unsubscribe();
             mdsSubscription = null;
         }
-    }
-
-    private void saveAdbLogsToFile(String logTag) {
-        if (!logsManager.checkRuntimeWriteExternalStoragePermission(this, this)) {
-            return;
-        }
-
-        logsManager.saveLogsToSdCard(logTag);
+        mCsvLogger.finishSavingLogs(LOG_TAG);
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
-        if (requestCode == LogsManager.REQUEST_WRITE_EXTERNAL_STORAGE_PERMISSION) {
-            // if request is cancelled grantResults array is empty
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                        == PackageManager.PERMISSION_GRANTED) {
-
-                    // Save logs
-                    saveAdbLogsToFile(LOG_TAG);
-                }
-            }
-        }
+//        if (requestCode == LogsManager.REQUEST_WRITE_EXTERNAL_STORAGE_PERMISSION) {
+//            // if request is cancelled grantResults array is empty
+//            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//
+//                if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+//                        == PackageManager.PERMISSION_GRANTED) {
+//
+//                }
+//            }
+//        }
     }
 
     @Override

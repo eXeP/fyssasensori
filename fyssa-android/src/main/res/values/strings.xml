@@ -75,6 +75,7 @@
 
     <string name="dfu_file_type_title">Select file type</string>
     <string name="uploading">Uploading....</string>
+    <string name="imu_name">Imu</string>
     <string name="_0percent">0%</string>
     <string name="dfu_status">Dfu Status:</string>
     <string name="disconnect">Disconnect</string>

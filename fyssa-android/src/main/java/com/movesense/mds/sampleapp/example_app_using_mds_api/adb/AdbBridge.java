@@ -219,6 +219,21 @@ public class AdbBridge extends BroadcastReceiver {
                             Log.e(LOG_TAG, "onError()", error);
                         }
                     });
+
+        } else if (type.equals("delete")) {
+            build.delete(MdsRx.SCHEME_PREFIX + MovesenseConnectedDevices.getConnectedDevice(0).getSerial() + "/" + path,
+                    value, new MdsResponseListener() {
+                        @Override
+                        public void onSuccess(String data) {
+                            Log.d(LOG_TAG, "ID:" + id + " " + path + " OUTPUT: " + data);
+                        }
+
+                        @Override
+                        public void onError(MdsException error) {
+                            Log.e(LOG_TAG, "onError()", error);
+                        }
+                    });
+            
         } else if (type.equals("connect")) {
             try {
                 mScanningCompositeSubscription.add(RxBle.Instance.getClient().scanBleDevices()

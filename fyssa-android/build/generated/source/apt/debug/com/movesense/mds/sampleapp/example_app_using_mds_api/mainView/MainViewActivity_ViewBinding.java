@@ -16,17 +16,17 @@ import java.lang.Override;
 public class MainViewActivity_ViewBinding implements Unbinder {
   private MainViewActivity target;
 
-  private View view2131624116;
+  private View view2131230875;
 
-  private View view2131624117;
+  private View view2131230876;
 
-  private View view2131624118;
+  private View view2131230873;
 
-  private View view2131624119;
+  private View view2131230877;
 
-  private View view2131624120;
+  private View view2131230878;
 
-  private View view2131624121;
+  private View view2131230871;
 
   @UiThread
   public MainViewActivity_ViewBinding(MainViewActivity target) {
@@ -40,7 +40,7 @@ public class MainViewActivity_ViewBinding implements Unbinder {
     View view;
     view = Utils.findRequiredView(source, R.id.mainView_movesense_Ll, "field 'mMainViewMovesenseLl' and method 'onViewClicked'");
     target.mMainViewMovesenseLl = Utils.castView(view, R.id.mainView_movesense_Ll, "field 'mMainViewMovesenseLl'", LinearLayout.class);
-    view2131624116 = view;
+    view2131230875 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -49,7 +49,7 @@ public class MainViewActivity_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.mainView_multiConnection_Ll, "field 'mMainViewMultiConnectionLl' and method 'onViewClicked'");
     target.mMainViewMultiConnectionLl = Utils.castView(view, R.id.mainView_multiConnection_Ll, "field 'mMainViewMultiConnectionLl'", LinearLayout.class);
-    view2131624117 = view;
+    view2131230876 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -58,7 +58,7 @@ public class MainViewActivity_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.mainView_dfu_Ll, "field 'mMainViewDfuLl' and method 'onViewClicked'");
     target.mMainViewDfuLl = Utils.castView(view, R.id.mainView_dfu_Ll, "field 'mMainViewDfuLl'", LinearLayout.class);
-    view2131624118 = view;
+    view2131230873 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -67,7 +67,7 @@ public class MainViewActivity_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.mainView_savedData_Ll, "field 'mMainViewSavedDataLl' and method 'onViewClicked'");
     target.mMainViewSavedDataLl = Utils.castView(view, R.id.mainView_savedData_Ll, "field 'mMainViewSavedDataLl'", LinearLayout.class);
-    view2131624119 = view;
+    view2131230877 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -76,7 +76,7 @@ public class MainViewActivity_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.mainView_tests_Ll, "field 'mMainViewTestsLl' and method 'onViewClicked'");
     target.mMainViewTestsLl = Utils.castView(view, R.id.mainView_tests_Ll, "field 'mMainViewTestsLl'", LinearLayout.class);
-    view2131624120 = view;
+    view2131230878 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -85,7 +85,7 @@ public class MainViewActivity_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.mainView_about_Ll, "field 'mMainViewAboutLl' and method 'onViewClicked'");
     target.mMainViewAboutLl = Utils.castView(view, R.id.mainView_about_Ll, "field 'mMainViewAboutLl'", LinearLayout.class);
-    view2131624121 = view;
+    view2131230871 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -112,17 +112,17 @@ public class MainViewActivity_ViewBinding implements Unbinder {
     target.mMainViewAppVersionTv = null;
     target.mMainViewLibraryVersionTv = null;
 
-    view2131624116.setOnClickListener(null);
-    view2131624116 = null;
-    view2131624117.setOnClickListener(null);
-    view2131624117 = null;
-    view2131624118.setOnClickListener(null);
-    view2131624118 = null;
-    view2131624119.setOnClickListener(null);
-    view2131624119 = null;
-    view2131624120.setOnClickListener(null);
-    view2131624120 = null;
-    view2131624121.setOnClickListener(null);
-    view2131624121 = null;
+    view2131230875.setOnClickListener(null);
+    view2131230875 = null;
+    view2131230876.setOnClickListener(null);
+    view2131230876 = null;
+    view2131230873.setOnClickListener(null);
+    view2131230873 = null;
+    view2131230877.setOnClickListener(null);
+    view2131230877 = null;
+    view2131230878.setOnClickListener(null);
+    view2131230878 = null;
+    view2131230871.setOnClickListener(null);
+    view2131230871 = null;
   }
 }

@@ -19,9 +19,9 @@ import java.lang.Override;
 public class TemperatureTestActivity_ViewBinding implements Unbinder {
   private TemperatureTestActivity target;
 
-  private View view2131624195;
+  private View view2131231009;
 
-  private View view2131624068;
+  private View view2131231007;
 
   @UiThread
   public TemperatureTestActivity_ViewBinding(TemperatureTestActivity target) {
@@ -37,7 +37,7 @@ public class TemperatureTestActivity_ViewBinding implements Unbinder {
     target.mConnectedDeviceSwVersionTextView = Utils.findRequiredViewAsType(source, R.id.connected_device_swVersion_textView, "field 'mConnectedDeviceSwVersionTextView'", TextView.class);
     view = Utils.findRequiredView(source, R.id.temperature_switch, "field 'temperatureSwitch' and method 'onCheckedChange'");
     target.temperatureSwitch = Utils.castView(view, R.id.temperature_switch, "field 'temperatureSwitch'", SwitchCompat.class);
-    view2131624195 = view;
+    view2131231009 = view;
     ((CompoundButton) view).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
       @Override
       public void onCheckedChanged(CompoundButton p0, boolean p1) {
@@ -47,7 +47,7 @@ public class TemperatureTestActivity_ViewBinding implements Unbinder {
     target.temperatureSwitchLayout = Utils.findRequiredViewAsType(source, R.id.temperature_switch_layout, "field 'temperatureSwitchLayout'", LinearLayout.class);
     view = Utils.findRequiredView(source, R.id.temperature_get_button, "field 'temperatureGetButton' and method 'onClick'");
     target.temperatureGetButton = Utils.castView(view, R.id.temperature_get_button, "field 'temperatureGetButton'", Button.class);
-    view2131624068 = view;
+    view2131231007 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -73,9 +73,9 @@ public class TemperatureTestActivity_ViewBinding implements Unbinder {
     target.temperatureKelvinTextView = null;
     target.temperatureCelsiusTextView = null;
 
-    ((CompoundButton) view2131624195).setOnCheckedChangeListener(null);
-    view2131624195 = null;
-    view2131624068.setOnClickListener(null);
-    view2131624068 = null;
+    ((CompoundButton) view2131231009).setOnCheckedChangeListener(null);
+    view2131231009 = null;
+    view2131231007.setOnClickListener(null);
+    view2131231007 = null;
   }
 }

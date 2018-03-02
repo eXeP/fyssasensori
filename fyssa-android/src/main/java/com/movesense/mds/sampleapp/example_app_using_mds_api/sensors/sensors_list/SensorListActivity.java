@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -16,12 +18,14 @@ import com.movesense.mds.internal.connectivity.MovesenseConnectedDevices;
 import com.movesense.mds.sampleapp.MdsRx;
 import com.movesense.mds.sampleapp.R;
 import com.movesense.mds.sampleapp.ThrowableToastingAction;
+import com.movesense.mds.sampleapp.example_app_using_mds_api.device_settings.DeviceSettingsActivity;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.mainView.MainViewActivity;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.tests.AngularVelocityActivity;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.tests.AppInfoActivity;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.tests.BatteryActivity;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.tests.EcgActivity;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.tests.HeartRateTestActivity;
+import com.movesense.mds.sampleapp.example_app_using_mds_api.tests.ImuActivity;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.tests.LedTestActivity;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.tests.LinearAccelerationTestActivity;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.tests.MagneticFieldTestActivity;
@@ -71,6 +75,7 @@ public class SensorListActivity extends AppCompatActivity implements View.OnClic
         sensorListItemModels.add(new SensorListItemModel(getString(R.string.multi_subscription_name), R.drawable.magnetic_field2));
         sensorListItemModels.add(new SensorListItemModel(getString(R.string.ecg), R.drawable.magnetic_field2));
         sensorListItemModels.add(new SensorListItemModel(getString(R.string.battery_energy), R.drawable.magnetic_field2));
+        sensorListItemModels.add(new SensorListItemModel(getString(R.string.imu_name), R.drawable.magnetic_field2));
 
         SensorsListAdapter sensorsListAdapter = new SensorsListAdapter(sensorListItemModels, this);
         mSensorListRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -78,6 +83,25 @@ public class SensorListActivity extends AppCompatActivity implements View.OnClic
 
         sensorsListAdapter.notifyDataSetChanged();
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_device_settings:
+                startActivity(new Intent(SensorListActivity.this, DeviceSettingsActivity.class));
+                break;
+
+                default:
+                    return super.onOptionsItemSelected(item);
+        }
+        return true;
     }
 
     @Override
@@ -150,6 +174,9 @@ public class SensorListActivity extends AppCompatActivity implements View.OnClic
             return;
         } else if (getString(R.string.app_info_name).equals(sensorName)) {
             startActivity(new Intent(SensorListActivity.this, AppInfoActivity.class));
+            return;
+        }  else if (getString(R.string.imu_name).equals(sensorName)) {
+            startActivity(new Intent(SensorListActivity.this, ImuActivity.class));
         }
     }
 

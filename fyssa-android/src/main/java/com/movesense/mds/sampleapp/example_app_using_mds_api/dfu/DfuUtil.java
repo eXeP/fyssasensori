@@ -5,6 +5,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Build;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.movesense.mds.Mds;
 import com.movesense.mds.MdsException;
@@ -75,6 +76,12 @@ public class DfuUtil {
                                            Uri fileStreamUri, String filePath) {
         Log.d(TAG, "runDfuServiceUpdate: macAddress: " + macAddress + " deviceName: " + deviceName
                 + " fileStreamUri: " + fileStreamUri + " filePath: " + filePath);
+
+        if (macAddress == null || macAddress.equals("")) {
+            Toast.makeText(context, "Mac address not valid", Toast.LENGTH_LONG).show();
+            Log.e(TAG, "runDfuServiceUpdate: Mac address not valid");
+            return;
+        }
 
         DfuServiceInitiator mServiceInitiator = new DfuServiceInitiator(macAddress)
                 .setDeviceName(deviceName)

@@ -24,8 +24,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="4dp">
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/connected_device_name_textView"
@@ -82,9 +82,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
-        android:weightSum="3"
-        android:layout_marginTop="10dp">
+        android:weightSum="3">
 
         <TextView
             android:id="@+id/x_axis_textView"
@@ -112,11 +112,9 @@
 
     </LinearLayout>
 
-    <com.jjoe64.graphview.GraphView
-        android:id="@+id/graphView"
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/linearAcc_lineChart"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="bottom"
-        android:layout_marginTop="4dp"/>
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

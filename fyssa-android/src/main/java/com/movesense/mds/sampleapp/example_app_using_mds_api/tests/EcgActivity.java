@@ -1,24 +1,22 @@
 package com.movesense.mds.sampleapp.example_app_using_mds_api.tests;
 
-import android.Manifest;
-import android.content.pm.PackageManager;
-import android.graphics.Paint;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.ColorRes;
 import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
 import android.util.Log;
 import android.widget.CompoundButton;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.google.gson.Gson;
-import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.series.DataPoint;
-import com.jjoe64.graphview.series.LineGraphSeries;
 import com.movesense.mds.Mds;
 import com.movesense.mds.MdsException;
 import com.movesense.mds.MdsNotificationListener;
@@ -28,7 +26,7 @@ import com.movesense.mds.internal.connectivity.MovesenseConnectedDevices;
 import com.movesense.mds.sampleapp.ConnectionLostDialog;
 import com.movesense.mds.sampleapp.R;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.FormatHelper;
-import com.movesense.mds.sampleapp.example_app_using_mds_api.logs.LogsManager;
+import com.movesense.mds.sampleapp.example_app_using_mds_api.csv.CsvLogger;
 import com.movesense.mds.sampleapp.example_app_using_mds_api.model.EcgModel;
 import com.polidea.rxandroidble.RxBleDevice;
 
@@ -41,9 +39,8 @@ import butterknife.OnCheckedChanged;
 public class EcgActivity extends AppCompatActivity implements BleManager.IBleConnectionMonitor {
 
     @BindView(R.id.switchSubscription) SwitchCompat mSwitchSubscription;
-    @BindView(R.id.spinner) Spinner mSpinner;
     @BindView(R.id.x_axis_textView) TextView mXAxisTextView;
-    @BindView(R.id.graphView) GraphView mGraphView;
+    @BindView(R.id.ecg_lineChart) LineChart mChart;
     @BindView(R.id.connected_device_name_textView) TextView mConnectedDeviceNameTextView;
     @BindView(R.id.connected_device_swVersion_textView) TextView mConnectedDeviceSwVersionTextView;
 
@@ -53,12 +50,11 @@ public class EcgActivity extends AppCompatActivity implements BleManager.IBleCon
     private final String ECG_VELOCITY_INFO_PATH = "/Meas/ECG/Info";
     public static final String URI_EVENTLISTENER = "suunto://MDS/EventListener";
 
-    private LineGraphSeries seriesX = new LineGraphSeries();
     private MdsSubscription mdsSubscription;
     int xValue = 0;
     boolean graphReady = true;
 
-    private LogsManager logsManager;
+    private CsvLogger mCsvLogger;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +62,7 @@ public class EcgActivity extends AppCompatActivity implements BleManager.IBleCon
         setContentView(R.layout.activity_ecg);
         ButterKnife.bind(this);
 
-        logsManager = new LogsManager(this);
+        mCsvLogger = new CsvLogger();
 
         mConnectedDeviceNameTextView.setText("Serial: " + MovesenseConnectedDevices.getConnectedDevice(0)
                 .getSerial());
@@ -74,7 +70,12 @@ public class EcgActivity extends AppCompatActivity implements BleManager.IBleCon
         mConnectedDeviceSwVersionTextView.setText("Sw version: " + MovesenseConnectedDevices.getConnectedDevice(0)
                 .getSwVersion());
 
-        setUpGraphView();
+        // Init Empty Chart
+        mChart.setData(new LineData());
+        mChart.getDescription().setText("Ecg");
+        mChart.setTouchEnabled(false);
+        mChart.setAutoScaleMinMaxEnabled(true);
+        mChart.invalidate();
 
         BleManager.INSTANCE.addBleConnectionMonitorListener(this);
 
@@ -84,8 +85,16 @@ public class EcgActivity extends AppCompatActivity implements BleManager.IBleCon
     public void onCheckedChanged(final CompoundButton buttonView, boolean isChecked) {
         if (isChecked) {
 
-            // Clear Logcat
-            logsManager.clearAdbLogcat();
+            mCsvLogger.checkRuntimeWriteExternalStoragePermission(this, this);
+
+            final LineData mLineData = mChart.getData();
+
+            ILineDataSet xSet = mLineData.getDataSetByIndex(0);
+
+            if (xSet == null) {
+                xSet = createSet("Data x", getResources().getColor(android.R.color.holo_red_dark));
+                mLineData.addDataSet(xSet);
+            }
 
             mdsSubscription = Mds.builder().build(this).subscribe(URI_EVENTLISTENER,
                     FormatHelper.formatContractToJson(MovesenseConnectedDevices.getConnectedDevice(0)
@@ -107,15 +116,20 @@ public class EcgActivity extends AppCompatActivity implements BleManager.IBleCon
                                         double cloneY = ecgModel.getBody().getData()[i];
 
                                         if (cloneY <= 320 && cloneY >= -320) {
-                                            try {
-                                                Log.d(TAG, "onNotification: xvalue: " + xValue + " data: " + ecgModel.getBody().getData()[i]);
-                                                seriesX.appendData(
-                                                        new DataPoint(xValue++, ecgModel.getBody().getData()[i]), true,
-                                                        Integer.MAX_VALUE);
 
-                                            } catch (IllegalArgumentException e) {
-                                                Log.e(TAG, "GraphView error ", e);
-                                            }
+                                            Log.d(TAG, "onNotification: xvalue: " + xValue + " data: " + ecgModel.getBody().getData()[i]);
+                                            mLineData.addEntry(new Entry(xValue++, ecgModel.getBody().getData()[i]), 0);
+
+                                            mLineData.notifyDataChanged();
+
+                                            // let the chart know it's data has changed
+                                            mChart.notifyDataSetChanged();
+
+                                            // limit the number of visible entries
+                                            mChart.setVisibleXRangeMaximum(200);
+
+                                            // move to the latest entry
+                                            mChart.moveViewToX(xValue);
                                         }
                                     }
 
@@ -135,9 +149,6 @@ public class EcgActivity extends AppCompatActivity implements BleManager.IBleCon
                     });
         } else {
             unSubscribe();
-
-            // Save logs
-            saveAdbLogsToFile(TAG);
         }
     }
 
@@ -146,6 +157,7 @@ public class EcgActivity extends AppCompatActivity implements BleManager.IBleCon
             mdsSubscription.unsubscribe();
             mdsSubscription = null;
         }
+        mCsvLogger.finishSavingLogs(TAG);
     }
 
     @Override
@@ -157,46 +169,17 @@ public class EcgActivity extends AppCompatActivity implements BleManager.IBleCon
         BleManager.INSTANCE.removeBleConnectionMonitorListener(this);
     }
 
-    private void saveAdbLogsToFile(String logTag) {
-        if (!logsManager.checkRuntimeWriteExternalStoragePermission(this, this)) {
-            return;
-        }
-        logsManager.saveLogsToSdCard(logTag);
-    }
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if (requestCode == LogsManager.REQUEST_WRITE_EXTERNAL_STORAGE_PERMISSION) {
-            // if request is cancelled grantResults array is empty
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                        == PackageManager.PERMISSION_GRANTED) {
-
-                    // Save logs
-                    saveAdbLogsToFile(TAG);
-                }
-            }
-        }
-    }
-
-    private void setUpGraphView() {
-        mGraphView.addSeries(seriesX);
-        seriesX.setDrawAsPath(true);
-        mGraphView.getViewport().setXAxisBoundsManual(true);
-        mGraphView.getViewport().setMinX(0);
-        mGraphView.getViewport().setMaxX(300);
-
-        setSeriesColor(android.R.color.holo_red_dark, seriesX);
-    }
-
-    private void setSeriesColor(@ColorRes int colorRes, LineGraphSeries series) {
-        int color = getResources().getColor(colorRes);
-        Paint paint = new Paint();
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(5);
-        paint.setColor(color);
-        series.setCustomPaint(paint);
+//        if (requestCode == LogsManager.REQUEST_WRITE_EXTERNAL_STORAGE_PERMISSION) {
+//            // if request is cancelled grantResults array is empty
+//            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//
+//                if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+//                        == PackageManager.PERMISSION_GRANTED) {
+//                }
+//            }
+//        }
     }
 
     @Override
@@ -205,7 +188,7 @@ public class EcgActivity extends AppCompatActivity implements BleManager.IBleCon
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                setUpGraphView();
+
                 ConnectionLostDialog.INSTANCE.showDialog(EcgActivity.this);
             }
         });
@@ -220,5 +203,19 @@ public class EcgActivity extends AppCompatActivity implements BleManager.IBleCon
     @Override
     public void onConnectError(String s, Throwable throwable) {
 
+    }
+
+    private LineDataSet createSet(String name, int color) {
+        LineDataSet set = new LineDataSet(null, name);
+        set.setLineWidth(2.5f);
+        set.setColor(color);
+        set.setDrawCircleHole(false);
+        set.setDrawCircles(false);
+        set.setMode(LineDataSet.Mode.LINEAR);
+        set.setHighLightColor(Color.rgb(190, 190, 190));
+        set.setAxisDependency(YAxis.AxisDependency.LEFT);
+        set.setValueTextSize(0f);
+
+        return set;
     }
 }
