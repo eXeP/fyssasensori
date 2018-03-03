@@ -32,10 +32,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FyssaSensorUpdateActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FyssaSensorUpdateActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fyssasensori/FyssaSensorUpdateActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="514">
+            <state relative-caret-position="1007">
               <caret line="417" column="55" lean-forward="false" selection-start-line="417" selection-start-column="55" selection-end-line="417" selection-end-column="55" />
               <folding>
                 <element signature="e#4287#4288#0" expanded="true" />
@@ -50,8 +50,31 @@
       <file leaf-file-name="FyssaScanActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fyssasensori/FyssaScanActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1220">
-              <caret line="244" column="69" lean-forward="false" selection-start-line="244" selection-start-column="69" selection-end-line="244" selection-end-column="69" />
+            <state relative-caret-position="276">
+              <caret line="332" column="0" lean-forward="false" selection-start-line="332" selection-start-column="0" selection-end-line="332" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
+          <provider editor-type-id="android-manifest">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="24" column="36" lean-forward="false" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/res/values/styles.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="49" lean-forward="false" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -119,26 +142,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DfuUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/sampleapp/example_app_using_mds_api/dfu/DfuUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1617#1618#0" expanded="false" />
-                <element signature="e#1697#1698#0" expanded="false" />
-                <element signature="e#1790#1791#0" expanded="false" />
-                <element signature="e#1869#1870#0" expanded="false" />
-                <element signature="e#4639#4640#0" expanded="false" />
-                <element signature="e#4719#4720#0" expanded="false" />
-                <element signature="e#4812#4813#0" expanded="false" />
-                <element signature="e#4891#4892#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="NotificationActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/sampleapp/example_app_using_mds_api/dfu/NotificationActivity.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -163,7 +166,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>start</find>
       <find>service</find>
       <find>dfuco</find>
       <find>dfu service not found</find>
@@ -193,6 +195,7 @@
       <find>Connected</find>
       <find>runDfu</find>
       <find>Log.e(TAG</find>
+      <find>the</find>
     </findStrings>
     <replaceStrings>
       <replace>FyssaMainActivity</replace>
@@ -1199,7 +1202,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/pietu/fyssasensori/FyssaScanActivity.java" />
         <option value="$PROJECT_DIR$/src/main/res/menu/fyssa_main_menu.xml" />
         <option value="$PROJECT_DIR$/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/pietu/fyssasensori/FyssaInfoActivity.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_fyssa_info.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_fyssa_update.xml" />
@@ -1215,6 +1217,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/fyssasensori/tool/MemoryTools.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fyssasensori/FyssaScanActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fyssasensori/FyssaSensorUpdateActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/res/values/styles.xml" />
       </list>
     </option>
   </component>
@@ -1254,6 +1257,152 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidBuildScriptsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fyssa-android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fyssa-android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xml" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fyssa-android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fyssa-android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fyssa-android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fyssa-android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="raw" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fyssa-android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fyssa-android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mipmap" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ic_launcher.png" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fyssa-android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fyssa-android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menu" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fyssa-android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fyssa-android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fyssa-android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fyssa-android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fyssa-android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fyssa-android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fyssa-android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fyssa-android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -1262,7 +1411,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../sampleapp" />
     <property name="show.do.not.ask.upgrade.gradle.plugin" value="2.3.3" />
     <property name="device.picker.selection" value="LGD855302b3f10" />
-    <property name="SearchEverywhereHistoryKey" value="fyssasca&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/java/com/fyssasensori/FyssaScanActivity.java&#10;fyssam&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/java/com/fyssasensori/FyssaMainActivity.java&#10;fyssasc&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/java/com/fyssasensori/FyssaScanActivity.java&#10;fyssamain&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/java/com/fyssasensori/FyssaMainActivity.java&#10;dfuprese&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/java/com/movesense/mds/sampleapp/example_app_using_mds_api/dfu/DfuPresenter.java&#10;build.g&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/build.gradle&#10;movesense&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/java/com/movesense/mds/sampleapp/example_app_using_mds_api/movesense/MovesenseActivity.java&#10;androidma&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml&#10;fyssama&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/java/com/pietu/fyssasensori/FyssaMainActivity.java&#10;dfubase&#9;PSI&#9;JAVA://no.nordicsemi.android.dfu.DfuBaseService&#10;dfupre&#9;PSI&#9;JAVA://com.movesense.mds.sampleapp.example_app_using_mds_api.dfu.DfuPresenter&#10;mainac&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/java/com/movesense/mds/sampleapp/example_app_using_mds_api/mainView/MainViewActivity.java&#10;dfuu&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/java/com/movesense/mds/sampleapp/example_app_using_mds_api/dfu/DfuUtil.java&#10;strings&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/res/values/strings.xml&#10;fyssaupd&#9;PSI&#9;JAVA://com.pietu.fyssasensori.FyssaSensorUpdateActivity&#10;fyssamai&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/java/com/pietu/fyssasensori/FyssaMainActivity.java&#10;androidman&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml&#10;colors&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/res/values/colors.xml&#10;andr&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml&#10;styles&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/res/values/styles.xml&#10;BleManager&#9;PSI&#9;JAVA://com.movesense.mds.sampleapp.MdsRx#bleManager" />
+    <property name="SearchEverywhereHistoryKey" value="androidma&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml&#10;theme.&#9;FILE&#9;file:///mnt/w/programs/android/platforms/android-27/data/res/values/themes.xml&#10;themes&#9;FILE&#9;file:///mnt/w/programs/android/platforms/android-27/data/res/values/themes.xml&#10;fyssasca&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/java/com/fyssasensori/FyssaScanActivity.java&#10;fyssam&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/java/com/fyssasensori/FyssaMainActivity.java&#10;fyssasc&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/java/com/fyssasensori/FyssaScanActivity.java&#10;fyssamain&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/java/com/fyssasensori/FyssaMainActivity.java&#10;dfuprese&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/java/com/movesense/mds/sampleapp/example_app_using_mds_api/dfu/DfuPresenter.java&#10;build.g&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/build.gradle&#10;movesense&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/java/com/movesense/mds/sampleapp/example_app_using_mds_api/movesense/MovesenseActivity.java&#10;fyssama&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/java/com/pietu/fyssasensori/FyssaMainActivity.java&#10;dfubase&#9;PSI&#9;JAVA://no.nordicsemi.android.dfu.DfuBaseService&#10;dfupre&#9;PSI&#9;JAVA://com.movesense.mds.sampleapp.example_app_using_mds_api.dfu.DfuPresenter&#10;mainac&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/java/com/movesense/mds/sampleapp/example_app_using_mds_api/mainView/MainViewActivity.java&#10;dfuu&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/java/com/movesense/mds/sampleapp/example_app_using_mds_api/dfu/DfuUtil.java&#10;strings&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/res/values/strings.xml&#10;fyssaupd&#9;PSI&#9;JAVA://com.pietu.fyssasensori.FyssaSensorUpdateActivity&#10;fyssamai&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/java/com/pietu/fyssasensori/FyssaMainActivity.java&#10;androidman&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml&#10;colors&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/res/values/colors.xml&#10;andr&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/AndroidManifest.xml&#10;styles&#9;FILE&#9;file:///mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/res/values/styles.xml&#10;BleManager&#9;PSI&#9;JAVA://com.movesense.mds.sampleapp.MdsRx#bleManager" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
     <property name="android.project.structure.last.selected" value="fyssa-android" />
     <property name="android.project.structure.proportion" value="0.15" />
@@ -1358,7 +1507,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520086156821" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520088813415" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -1406,7 +1555,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520086156821" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520088813415" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1568,7 +1717,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520086156822" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520088813416" />
       </method>
     </configuration>
     <configuration default="false" name="fyssa-android" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
@@ -1617,7 +1766,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520086156822" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520088813416" />
       </method>
     </configuration>
     <list size="2">
@@ -1661,6 +1810,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="2566" height="1402" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1673,7 +1823,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286495" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39812645" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39812645" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1706,20 +1856,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/sampleapp/example_app_using_mds_api/sensors/sensors_list/SensorListActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2329">
-          <caret line="173" column="5" lean-forward="false" selection-start-line="155" selection-start-column="4" selection-end-line="173" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="56" lean-forward="false" selection-start-line="3" selection-start-column="56" selection-end-line="3" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/menu/menu.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -1900,17 +2036,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="52" lean-forward="true" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -2072,17 +2197,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fyssasensori/FyssaScanActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1220">
-          <caret line="244" column="69" lean-forward="false" selection-start-line="244" selection-start-column="69" selection-end-line="244" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fyssasensori/FyssaSensorUpdateActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
+        <state relative-caret-position="1007">
           <caret line="417" column="55" lean-forward="false" selection-start-line="417" selection-start-column="55" selection-end-line="417" selection-end-column="55" />
           <folding>
             <element signature="e#4287#4288#0" expanded="true" />
@@ -2090,6 +2207,41 @@
             <element signature="e#9070#9114#0" expanded="true" />
             <element signature="e#10167#10211#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../programs/android/platforms/android-27/data/res/values/themes.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1717">
+          <caret line="7" column="52" lean-forward="true" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fyssasensori/FyssaScanActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="332" column="0" lean-forward="false" selection-start-line="332" selection-start-column="0" selection-end-line="332" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="24" column="36" lean-forward="false" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="49" lean-forward="false" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>

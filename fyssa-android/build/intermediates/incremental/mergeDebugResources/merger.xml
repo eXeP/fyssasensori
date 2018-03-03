@@ -1750,7 +1750,7 @@
         <item>Soft Device</item>
         <item>Bootloader</item>
         <item>Application</item>
-    </string-array></file><file path="/mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/res/values/styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    </string-array></file><file path="/mnt/w/code/Projektit/fyssasensori/fyssa-android/src/main/res/values/styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
