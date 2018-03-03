@@ -2,11 +2,13 @@ package com.fyssasensori;
 
 import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
@@ -280,11 +282,13 @@ public class FyssaSensorUpdateActivity extends AppCompatActivity {
             public void onDfuCompleted(String deviceAddress) {
                 setStatus("Dfu completed " + deviceAddress);
                 startMainActivity();
+                isDfuInProgress = false;
             }
 
             @Override
             public void onDfuAborted(String deviceAddress) {
                 setStatus("Dfu aborted " + deviceAddress);
+                isDfuInProgress = false;
             }
 
             @Override
@@ -404,6 +408,24 @@ public class FyssaSensorUpdateActivity extends AppCompatActivity {
     public void onDestroy() {
         super.onDestroy();
         mCompositeSubscription.unsubscribe();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (isDfuInProgress) {
+            new AlertDialog.Builder(this)
+                    .setTitle("Really Exit?")
+                    .setMessage("Dfu update in progress")
+                    .setNegativeButton(android.R.string.no, null)
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            FyssaSensorUpdateActivity.super.onBackPressed();
+                        }
+                    }).create().show();
+        } else {
+            super.onBackPressed();
+        }
     }
 
     private void startMainActivity() {
