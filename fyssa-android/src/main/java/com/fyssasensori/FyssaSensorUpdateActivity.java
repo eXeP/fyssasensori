@@ -58,6 +58,7 @@ public class FyssaSensorUpdateActivity extends AppCompatActivity {
     private FyssaApp app;
 
     private File updateFile;
+    private File updateFileWithBootloader;
     private List<MdsAddressModel> mMdsAddressModelList;
     private Boolean isDfuInProgress = false;
     private RxBleDevice updateThis;
@@ -94,7 +95,7 @@ public class FyssaSensorUpdateActivity extends AppCompatActivity {
         DfuUtil.getDfuAddress(this, new MdsResponseListener() {
             @Override
             public void onSuccess(String s) {
-                Log.e(TAG, "getDfuAddress() onSuccess: " + s);
+                Log.d(TAG, "getDfuAddress() onSuccess: " + s);
 
                 MdsInfo mdsInfo = new Gson().fromJson(s, MdsInfo.class);
 
@@ -112,7 +113,7 @@ public class FyssaSensorUpdateActivity extends AppCompatActivity {
 
             @Override
             public void onError(MdsException e) {
-
+                runDfuMode();
             }
         });
 
@@ -120,29 +121,36 @@ public class FyssaSensorUpdateActivity extends AppCompatActivity {
     }
 
     private void runDfuMode(){
-        DfuUtil.runDfuModeOnConnectedDevice(this, new MdsResponseListener() {
-            @Override
-            public void onSuccess(String s) {
-                Log.e(TAG, "runDfuModeOnConnectedDevice() onSuccess(): " + s);
+        if (MovesenseConnectedDevices.getConnectedDevices().size() > 0 && MovesenseConnectedDevices.getConnectedDevice(0).getName().equals("DfuTarg")) {
+            statusTV.setText("Dfu Mode already enabled. Starting update.");
+            BleManager.INSTANCE.disconnect(MovesenseConnectedDevices.getConnectedRxDevice(0));
+            BleManager.INSTANCE.isReconnectToLastConnectedDeviceEnable = false;
+        } else {
+            DfuUtil.runDfuModeOnConnectedDevice(this, new MdsResponseListener() {
+                @Override
+                public void onSuccess(String s) {
+                    Log.d(TAG, "runDfuModeOnConnectedDevice() onSuccess(): " + s);
 
-                statusTV.setText("Dfu Mode enabled. Starting update.");
+                    statusTV.setText("Dfu Mode enabled. Starting update.");
 
-                BleManager.INSTANCE.disconnect(MovesenseConnectedDevices.getConnectedRxDevice(0));
-                BleManager.INSTANCE.isReconnectToLastConnectedDeviceEnable = false;
-            }
+                    BleManager.INSTANCE.disconnect(MovesenseConnectedDevices.getConnectedRxDevice(0));
+                    BleManager.INSTANCE.isReconnectToLastConnectedDeviceEnable = false;
+                }
 
-            @Override
-            public void onError(MdsException e) {
-                Log.e(TAG, "onError(): ", e);
-                statusTV.setText("DFU failed. Please try again");
-            }
-        });
+                @Override
+                public void onError(MdsException e) {
+                    Log.e(TAG, "onError(): ", e);
+                    statusTV.setText("DFU failed. Please try again");
+                }
+            });
+        }
     }
 
     private void loadUpdateFile() {
+        updateFileWithBootloader = app.getMemoryTools().getAssetsFile(getAssets(), "movesense_dfu_w_bootloader.zip");
         updateFile = app.getMemoryTools().getAssetsFile(getAssets(), "movesense_dfu.zip");
         Log.d(TAG, "Update file length " + updateFile.length() + " exists: " + updateFile.exists());
-        if (updateFile.length() == 0 || !updateFile.exists()) {
+        if (updateFile.length() == 0 || !updateFile.exists() || updateFileWithBootloader.length() == 0 || !updateFileWithBootloader.exists()) {
             startMainActivity();
             finish();
         }
@@ -215,7 +223,7 @@ public class FyssaSensorUpdateActivity extends AppCompatActivity {
                             //getBatteryStatus(context);
 
                         } else {
-                            Log.e(TAG, "Disconnected");
+                            Log.d(TAG, "Disconnected");
 
                             // Start DFU update after disconnect(DFU mode)
                             startFileUpdate();
@@ -328,6 +336,50 @@ public class FyssaSensorUpdateActivity extends AppCompatActivity {
                                     public void run() {
                                         DfuUtil.runDfuServiceUpdate(FyssaSensorUpdateActivity.this, dfuAddressForConnection, updateThis.getBluetoothDevice().getName(),
                                                 Uri.fromFile(updateFile), updateFile.getPath());
+
+                                        if (MovesenseConnectedDevices.getConnectedDevices().size() == 1) {
+                                            MovesenseConnectedDevices.getConnectedDevices().remove(0);
+                                        } else {
+                                            Log.e(TAG, "ERROR: Wrong MovesenseConnectedDevices list size");
+                                        }
+                                    }
+                                }, 2000);
+                            }
+                        }
+                    }, new Action1<Throwable>() {
+                        @Override
+                        public void call(Throwable throwable) {
+                            Log.e(TAG, "BEFORE CONNECT YOU NEED GRANT LOCATION PERMISSION !!!");
+                            Log.e(TAG, "Connect Error: ", throwable);
+                        }
+                    }));
+        } else {
+            // Standard incrementation by one
+            Log.e(TAG, "startUpdatingProcess: MANUFACTURE DATA ADDRESS EMPTY: ");
+            //This mac address is WRONG
+            String usedMacAdress = DfuUtil.incrementMacAddress(updateThis.getMacAddress());
+
+            // FIXME: There is additional scanning in case of problem with BT DFU ?
+            scanningSubscription.add(RxBle.Instance.getClient().scanBleDevices()
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(new Action1<RxBleScanResult>() {
+                        @Override
+                        public void call(final RxBleScanResult scanResult) {
+                            Log.d(TAG, "scanResult: " + scanResult.getBleDevice().getName() + " : " +
+                                    scanResult.getBleDevice().getMacAddress() + " vs " + usedMacAdress);
+                            if (!isDfuInProgress && scanResult.getBleDevice().getName().equals("DfuTarg")) {
+                                Log.e(TAG, "scanResult: FOUND DEVICE FROM INTENT Connecting..." + scanResult.getBleDevice().getName() + " : " +
+                                        scanResult.getBleDevice().getMacAddress());
+
+                                scanningSubscription.unsubscribe();
+
+                                isDfuInProgress = true;
+
+                                new Handler().postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        DfuUtil.runDfuServiceUpdate(FyssaSensorUpdateActivity.this, scanResult.getBleDevice().getMacAddress(), updateThis.getBluetoothDevice().getName(),
+                                                Uri.fromFile(updateFileWithBootloader), updateFileWithBootloader.getPath());
 
                                         if (MovesenseConnectedDevices.getConnectedDevices().size() == 1) {
                                             MovesenseConnectedDevices.getConnectedDevices().remove(0);

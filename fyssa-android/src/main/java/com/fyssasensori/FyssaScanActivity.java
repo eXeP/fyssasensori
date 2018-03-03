@@ -214,8 +214,7 @@ public class FyssaScanActivity extends AppCompatActivity implements MovesenseCon
                         Log.d(TAG, "call: SCANNED: " + rxBleScanResult.getBleDevice().getName() + " " + rxBleScanResult.getBleDevice().getMacAddress());
                         RxBleDevice rxBleDevice = rxBleScanResult.getBleDevice();
 
-                        if (rxBleDevice.getName() != null && rxBleDevice.getName().contains("Movesense")
-                                && !mMovesenseModels.contains(rxBleDevice)) {
+                        if (rxBleDevice.getName() != null && !mMovesenseModels.contains(rxBleDevice)) {
 
                             Log.d(TAG, "call: Add to list " + rxBleScanResult.getBleDevice().getName());
                             Log.d(TAG, app.getMemoryTools().getSerial() + " vs " +  rxBleScanResult.getBleDevice().getMacAddress());
