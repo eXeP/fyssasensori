@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/colorBackground"
     android:orientation="vertical"
     tools:context="com.movesense.mds.handwave.fyssa_app.FyssaMainActivity">
@@ -12,21 +11,22 @@
     <TextView
         android:id="@+id/fyssa_conn_infoTV"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="63dp"
         android:layout_centerInParent="true"
         android:gravity="center"
         android:padding="10dp"
         android:text=""
         android:textColor="@color/colorText"
-        android:textSize="18sp"/>
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/get_handwave_button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="78dp"
+        android:text="GET HANDWAVE"
         android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textStyle="bold"
-        tools:text="@string/get_current_calue" />
+        android:textColor="@color/colorText"
+        android:textStyle="bold" />
 
     <Space
         android:layout_width="match_parent"
@@ -38,26 +38,40 @@
 
         <Button
             android:id="@+id/start_service_button"
+            style="@android:style/Widget.Button"
             android:layout_width="170dp"
-            android:layout_height="50dp"
+            android:layout_height="90dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:fontFamily="sans-serif"
+            android:textColor="@color/colorText"
+            android:visibility="visible"
             app:layout_constraintEnd_toStartOf="@+id/stop_service_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@string/start_service" />
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="&#xA;" />
+
         <Button
             android:id="@+id/stop_service_button"
+            style="@android:style/Widget.Button"
             android:layout_width="170dp"
-            android:layout_height="50dp"
+            android:layout_height="90dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:fontFamily="sans-serif"
             android:textAlignment="textStart"
+            android:textColor="@color/colorText"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/start_service_button"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@string/stop_service" />
     </android.support.constraint.ConstraintLayout>

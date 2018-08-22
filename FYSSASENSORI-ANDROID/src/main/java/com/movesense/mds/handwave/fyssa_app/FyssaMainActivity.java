@@ -48,7 +48,6 @@ public class FyssaMainActivity extends AppCompatActivity {
     private FyssaApp app;
 
     private final String HANDWAVING_PATH_GET = "/Fyssa/Handwaving/Data";
-    private final String HANDWAVING_PATH_START = "/Fyssa/Handwaving/Start";
 
     public static final String URI_EVENTLISTENER = "suunto://MDS/EventListener";
 
@@ -133,8 +132,6 @@ public class FyssaMainActivity extends AppCompatActivity {
 
         try {
             connectionInfoTv.setText("Serial: " + MovesenseConnectedDevices.getConnectedDevice(0).getSerial());
-            subscribeDebug();
-            runSensor();
         } catch (Exception e) {
             startScanActivity();
             return;
@@ -152,10 +149,10 @@ public class FyssaMainActivity extends AppCompatActivity {
                 getHandwave();
                 break;
             case R.id.start_service_button:
-                runSensor();
+                subscribeDebug();
                 break;
             case R.id.stop_service_button:
-                stopSensor();
+                unsubscribeDebug();
                 break;
 
         }
@@ -214,37 +211,6 @@ public class FyssaMainActivity extends AppCompatActivity {
         }
 
 
-    private void runSensor() {
-        Mds.builder().build(this).post(MdsRx.SCHEME_PREFIX +
-                        MovesenseConnectedDevices.getConnectedDevice(0).getSerial() + HANDWAVING_PATH_START,
-                null, new MdsResponseListener() {
-                    @Override
-                    public void onSuccess(String s) {
-                        Log.d(TAG, "Movesense handwaves measured! " + s);
-                    }
-
-                    @Override
-                    public void onError(MdsException e) {
-                        Log.e(TAG, "Error on handwaving.", e);
-                    }
-                });
-    }
-
-    private void stopSensor() {
-        Mds.builder().build(this).delete(MdsRx.SCHEME_PREFIX +
-                        MovesenseConnectedDevices.getConnectedDevice(0).getSerial() + HANDWAVING_PATH_START,
-                null, new MdsResponseListener() {
-                    @Override
-                    public void onSuccess(String s) {
-                        Log.d(TAG, "Movesense handwaves stopped! " + s);
-                    }
-
-                    @Override
-                    public void onError(MdsException e) {
-                        Log.e(TAG, "Error on stopping handwaving.", e);
-                    }
-                });
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -275,7 +241,7 @@ public class FyssaMainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         unsubscribeDebug();
-        stopSensor();
+
         startActivity(new Intent(FyssaMainActivity.this, SelectTestActivity.class)
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
     }
