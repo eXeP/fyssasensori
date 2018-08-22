@@ -19,6 +19,11 @@ OPTIONAL_CORE_MODULE(IndicationService, true)
 OPTIONAL_CORE_MODULE(BleService, true)
 OPTIONAL_CORE_MODULE(EepromService, true)
 OPTIONAL_CORE_MODULE(BypassService, false)
+OPTIONAL_CORE_MODULE(BleStandardHRS, false)
+OPTIONAL_CORE_MODULE(BleNordicUART, false)
+
+//Debug!
+OPTIONAL_CORE_MODULE(DebugService, true)
 
 APPINFO_NAME("Fyssasensori");
 APPINFO_VERSION("0.0.1");

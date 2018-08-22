@@ -29,10 +29,10 @@ private:
     virtual bool startModule() OVERRIDE;
 
     /** @see whiteboard::ILaunchableModule::stopModule */
-    virtual void stopModule() OVERRIDE { mModuleState = WB_RES::ModuleStateValues::STOPPED; }
+    virtual void stopModule() OVERRIDE;
 
     /**
-    *   GET request handler.
+    *   GET POST and DELETE request handlers.
     *
     *   @param requestId ID of the request
     *   @param clientId ID of the client that should receive the result
@@ -102,6 +102,13 @@ private:
                                    whiteboard::ResourceId resourceId,
                                    whiteboard::Result resultCode,
                                    const whiteboard::Value& rResultData);
+protected:
+    /**
+    *	Timer callback.
+    *
+    *	@param timerId Id of timer that triggered
+    */
+    virtual void onTimer(whiteboard::TimerId timerId) OVERRIDE;
 
 private:
     whiteboard::Result startRunning(whiteboard::RequestId& remoteRequestId);
@@ -112,4 +119,6 @@ private:
     bool isRunning;
     size_t mSamplesIncluded;
     float mMaxAccelerationSq;
+    whiteboard::TimerId mTimer;
+    uint32_t shutdownCounter;
 };

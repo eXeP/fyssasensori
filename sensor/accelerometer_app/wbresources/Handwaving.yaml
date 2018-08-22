@@ -10,11 +10,11 @@ info:
     This file defines API for Fyysikkokilta handwaving measurement service.
   termsOfService:
   contact:
-    name: Pietari Kaskela
+    name: Eemil Visakorpi
     url: http://fyysikkokilta.fi
 # Paths
 paths:
-  /Fyssa/Handwaving:
+  /Fyssa/Handwaving/Data:
     get:
       description: |
         Get a Data value.
@@ -22,8 +22,8 @@ paths:
         200:
           schema:
               description: Biggest handwave
-              type: integer
-              format: uint16
+              type: number
+              format: float
 
         204:
           description: Measurement source is unavailable

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="mdslib:1.3.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/mdslib-1.3.1.aar/61696be869a92744874bfb291395a64f/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/mdslib-1.3.1.aar/61696be869a92744874bfb291395a64f/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
