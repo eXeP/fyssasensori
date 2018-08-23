@@ -12,6 +12,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -23,6 +25,7 @@ import com.movesense.mds.MdsSubscription;
 import com.movesense.mds.handwave.BleManager;
 import com.movesense.mds.handwave.app_using_mds_api.FyssaSensorUpdateActivity;
 import com.movesense.mds.handwave.app_using_mds_api.SelectTestActivity;
+import com.movesense.mds.handwave.app_using_mds_api.model.HandwaveResponse;
 import com.movesense.mds.handwave.app_using_mds_api.model.MovesenseConnectedDevices;
 import com.movesense.mds.handwave.MdsRx;
 import com.movesense.mds.handwave.R;
@@ -33,6 +36,7 @@ import com.movesense.mds.handwave.tool.MemoryTools;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 import rx.subscriptions.CompositeSubscription;
 
@@ -40,7 +44,7 @@ public class FyssaMainActivity extends AppCompatActivity {
 
     @BindView(R.id.fyssa_conn_infoTV) TextView connectionInfoTv;
     @BindView(R.id.get_handwave_button) Button getButton;
-
+    @BindView(R.id.subscription_switch) Switch subSwitch;
 
     private final String TAG = FyssaMainActivity.class.getSimpleName();
 
@@ -52,12 +56,14 @@ public class FyssaMainActivity extends AppCompatActivity {
     public static final String URI_EVENTLISTENER = "suunto://MDS/EventListener";
 
     private MdsSubscription mdsSubscription;
+    private MdsSubscription mHandwaveSubscription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fyssa_main);
         ButterKnife.bind(this);
+
 
         app = (FyssaApp) getApplication();
 
@@ -142,7 +148,7 @@ public class FyssaMainActivity extends AppCompatActivity {
         getHandwave();
     }
 
-    @OnClick({R.id.get_handwave_button, R.id.start_service_button, R.id.stop_service_button})
+    @OnClick({R.id.get_handwave_button, R.id.start_service_button, R.id.stop_service_button, R.id.subscription_switch})
     public void onViewClicked(View view) {
         switch(view.getId()) {
             case R.id.get_handwave_button:
@@ -156,8 +162,13 @@ public class FyssaMainActivity extends AppCompatActivity {
                 break;
 
         }
-
-
+    }
+    @OnCheckedChanged({R.id.subscription_switch})
+    public void onCheckedChanged(boolean isChecked) {
+        if (isChecked) {
+            subscribeHandwaves();
+        }
+        else unSubscribeHandwave();
     }
 
     private void getHandwave() {
@@ -178,6 +189,7 @@ public class FyssaMainActivity extends AppCompatActivity {
                 });
     }
 
+
     private void subscribeDebug() {
         Mds.builder().build(this).get(MdsRx.SCHEME_PREFIX +
                         MovesenseConnectedDevices.getConnectedDevice(0).getSerial() + "/System/Debug/Config",
@@ -197,7 +209,7 @@ public class FyssaMainActivity extends AppCompatActivity {
                         new MdsNotificationListener() {
                     @Override
                     public void onNotification(String s) {
-                        Log.d(TAG, "D/SENSORI: " + s);
+                        Log.d(TAG, s);
                     }
 
                     @Override
@@ -206,11 +218,36 @@ public class FyssaMainActivity extends AppCompatActivity {
                     }
                 });
     }
+
+
     private void unsubscribeDebug() {
         mdsSubscription.unsubscribe();
         }
 
 
+    private void subscribeHandwaves() {
+        Log.d(TAG, "Subscribing.");
+        mHandwaveSubscription = Mds.builder().build(this).subscribe(URI_EVENTLISTENER, "{\"Uri\": \"" +
+                        MovesenseConnectedDevices.getConnectedDevice(0).getSerial() + HANDWAVING_PATH_GET + "\"}",
+                new MdsNotificationListener() {
+                    @Override
+                    public void onNotification(String s){
+                        Log.d(TAG, s);
+                        //TODO: Fix Handwave response to not include "Content"
+                        HandwaveResponse response = new Gson().fromJson("{\"Content\": " +s + "}", HandwaveResponse.class);
+                        connectionInfoTv.setText(response.content.getHandwave());
+                    }
+
+                    @Override
+                    public void onError(MdsException e) {
+                        Log.e(TAG, "Error on subscribing handwaves:", e);
+                    }
+                });
+    }
+
+    private void unSubscribeHandwave() {
+        mHandwaveSubscription.unsubscribe();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

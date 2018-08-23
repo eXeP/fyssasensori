@@ -36,7 +36,8 @@ HandwavingService::HandwavingService()
     : ResourceClient(WBDEBUG_NAME(__FUNCTION__), sExecutionContextId),
       ResourceProvider(WBDEBUG_NAME(__FUNCTION__), sExecutionContextId),
       LaunchableModule(LAUNCHABLE_NAME, sExecutionContextId),
-      isRunning(false)
+      isRunning(false),
+      dataSubscription(false)
 {
 
     mTimer = whiteboard::ID_INVALID_TIMER;
@@ -56,6 +57,7 @@ bool HandwavingService::initModule()
         return false;
     }
 
+
     mModuleState = WB_RES::ModuleStateValues::INITIALIZED;
     return true;
 }
@@ -72,8 +74,7 @@ bool HandwavingService::startModule()
     shutdownCounter = 0;
     mModuleState = WB_RES::ModuleStateValues::STARTED;
     mTimer = whiteboard::ResourceProvider::startTimer((size_t) LED_BLINKING_PERIOD, true);
-    whiteboard::RequestId remoteRequestId;
-    whiteboard::Result result = startRunning(remoteRequestId);
+    whiteboard::Result result = startRunning(mRemoteRequestId);
     return true;
 }
 
@@ -89,7 +90,7 @@ void HandwavingService::stopModule()
 void HandwavingService::onGetRequest(const whiteboard::Request& request,
                                       const whiteboard::ParameterList& parameters)
 {
-    DEBUGLOG("HandwavingService::onGetRequest() called.");
+    DEBUGLOG("D/SENSOR/HandwavingService::onGetRequest() called.");
 
     if (mModuleState != WB_RES::ModuleStateValues::STARTED)
     {
@@ -114,12 +115,64 @@ void HandwavingService::onGetRequest(const whiteboard::Request& request,
     }
 }
 
+
+void HandwavingService::onSubscribe(const whiteboard::Request& request,
+                                     const whiteboard::ParameterList& parameters)
+{
+    DEBUGLOG("D/SENSOR/HandwavingService::onSubscribe()");
+    
+    switch (request.getResourceConstId())
+    {
+    case WB_RES::LOCAL::FYSSA_HANDWAVING_DATA::ID:
+    {
+        DEBUGLOG("D/SENSOR/Subscription for handwaves");
+        /*
+        bool queueResult = mOngoingRequests.put(mRemoteRequestId, request);
+        if (!queueResult) DEBUGLOG("D/SENSOR/Request not put into the map!?");
+
+        //WB_ASSERT(queueResult);
+*/
+        dataSubscription = true;
+        return returnResult(request, whiteboard::HTTP_CODE_OK);
+       
+        break;
+    }
+    default:
+        DEBUGLOG("D/SENSOR/Shouldn't happen!");
+        return returnResult(request, whiteboard::HTTP_CODE_BAD_REQUEST);
+        //return ResourceProvider::onSubscribe(request, parameters);
+        break;
+    }
+}
+
+
+void HandwavingService::onUnsubscribe(const whiteboard::Request& request,
+                                       const whiteboard::ParameterList& parameters)
+{
+    DEBUGLOG("D/SENSOR/HandwavingService::onUnsubscribe()");
+
+    switch (request.getResourceConstId())
+    {
+    case WB_RES::LOCAL::FYSSA_HANDWAVING_DATA::ID:
+        dataSubscription = false;
+        returnResult(request, wb::HTTP_CODE_OK);
+        break;
+
+    default:
+        DEBUGLOG("D/SENSOR/Shouldnt happen!");
+        return returnResult(request, whiteboard::HTTP_CODE_BAD_REQUEST);
+        //ResourceProvider::onUnsubscribe(request, parameters);
+        break;
+    }
+}
+
+
 void HandwavingService::onUnsubscribeResult(whiteboard::RequestId requestId,
                                                      whiteboard::ResourceId resourceId,
                                                      whiteboard::Result resultCode,
                                                      const whiteboard::Value& rResultData)
 {
-    DEBUGLOG("HandwavingService::onUnsubscribeResult() called.");
+    DEBUGLOG("D/SENSOR/HandwavingService::onUnsubscribeResult() called.");
 }
 
 void HandwavingService::onSubscribeResult(whiteboard::RequestId requestId,
@@ -127,7 +180,7 @@ void HandwavingService::onSubscribeResult(whiteboard::RequestId requestId,
                                                    whiteboard::Result resultCode,
                                                    const whiteboard::Value& rResultData)
 {
-    DEBUGLOG("HandwavingService::onSubscribeResult() called. resourceId: %u, result: %d", resourceId.localResourceId, (uint32_t)resultCode);
+    DEBUGLOG("D/SENSOR/HandwavingService::onSubscribeResult() called. resourceId: %u, result: %d", resourceId.localResourceId, (uint32_t)resultCode);
 
     whiteboard::Request relatedIncomingRequest;
     bool relatedRequestFound = mOngoingRequests.get(requestId, relatedIncomingRequest);
@@ -146,16 +199,18 @@ whiteboard::Result HandwavingService::startRunning(whiteboard::RequestId& remote
         return whiteboard::HTTP_CODE_OK;
     }
 
-    DEBUGLOG("HandwavingService::startRunning()");
+    DEBUGLOG("D/SENSOR/HandwavingService::startRunning()");
 
     // Reset max acceleration members
     reset();
+
+
 
     // Subscribe to LinearAcceleration resource (updates at 13Hz), when subscribe is done, we get callback
     wb::Result result = asyncSubscribe(WB_RES::LOCAL::MEAS_ACC_SAMPLERATE::ID, AsyncRequestOptions(&remoteRequestId, 0, true), SAMPLE_RATE);
     if (!wb::RETURN_OKC(result))
     {
-        DEBUGLOG("asyncSubscribe threw error: %u", result);
+        DEBUGLOG("D/SENSOR/asyncSubscribe threw error: %u", result);
         return whiteboard::HTTP_CODE_BAD_REQUEST;
     }
     isRunning = true;
@@ -171,13 +226,13 @@ whiteboard::Result HandwavingService::stopRunning()
         return whiteboard::HTTP_CODE_OK;
     }
 
-    DEBUGLOG("HandwavingService::stopRunning()");
+    DEBUGLOG("D/SENSOR/HandwavingService::stopRunning()");
 
     // Unsubscribe the LinearAcceleration resource, when unsubscribe is done, we get callback
     wb::Result result = asyncUnsubscribe(WB_RES::LOCAL::MEAS_ACC_SAMPLERATE::ID, NULL, SAMPLE_RATE);
     if (!wb::RETURN_OKC(result))
     {
-        DEBUGLOG("asyncUnsubscribe threw error: %u", result);
+        DEBUGLOG("D/SENSOR/asyncUnsubscribe threw error: %u", result);
     }
     isRunning = false;
     return whiteboard::HTTP_CODE_OK;
@@ -213,7 +268,7 @@ void HandwavingService::onNotify(whiteboard::ResourceId resourceId, const whiteb
  
             float accelerationSq = (accValue.mX * accValue.mX +
                                    accValue.mY * accValue.mY +
-                                   accValue.mZ * accValue.mZ) - (9.81*9.81);
+                                   accValue.mZ * accValue.mZ) - (100);
             float earlier = 0;
             for (size_t j = ACCELERATION_AVERAGING_SIZE-1; j >= 1; j--) {
                 previousAcc[j] = previousAcc[j-1];
@@ -221,7 +276,15 @@ void HandwavingService::onNotify(whiteboard::ResourceId resourceId, const whiteb
             }
             previousAcc[0] = (earlier + accelerationSq) / ACCELERATION_AVERAGING_SIZE; 
             if (mMaxAccelerationSq < previousAcc[0])
+            {
+                DEBUGLOG("D/SENSOR/New value!");
                 mMaxAccelerationSq = previousAcc[0];
+                if (dataSubscription)     {
+                    DEBUGLOG("D/SENSORNotifying subscribers");
+                    updateResource(WB_RES::LOCAL::FYSSA_HANDWAVING_DATA(),
+                        ResponseOptions::Empty, mMaxAccelerationSq);
+                }
+            }
         }
     }
     break;
@@ -234,8 +297,8 @@ void HandwavingService::onTimer(whiteboard::TimerId timerId)
     {
         return;
     }
-
-    shutdownCounter = shutdownCounter + LED_BLINKING_PERIOD;
+    if (!dataSubscription) shutdownCounter = shutdownCounter + LED_BLINKING_PERIOD;
+    else shutdownCounter = 0;
     if (shutdownCounter >= AVAILABILITY_TIME) 
     {
             // Prepare AFE to wake-up mode
@@ -269,12 +332,12 @@ void HandwavingService::reset()
 
 void HandwavingService::onRemoteWhiteboardDisconnected(whiteboard::WhiteboardId whiteboardId)
 {
-    DEBUGLOG("HandwavingService::onRemoteWhiteboardDisconnected()");
+    DEBUGLOG("D/SENSOR/HandwavingService::onRemoteWhiteboardDisconnected()");
     stopRunning();
 }
 
 void HandwavingService::onClientUnavailable(whiteboard::ClientId clientId)
 {
-    DEBUGLOG("HandwavingService::onClientUnavailable()");
+    DEBUGLOG("D/SENSOR/HandwavingService::onClientUnavailable()");
     stopRunning();
 }

@@ -45,6 +45,25 @@ private:
     virtual void onGetRequest(const whiteboard::Request& request,
                               const whiteboard::ParameterList& parameters) OVERRIDE;
 
+
+    /**
+    *	Subscribe notification callback.
+    *
+    *	@param request Request information
+    *	@param parameters List of parameters
+    */
+    virtual void onSubscribe(const whiteboard::Request& request,
+                             const whiteboard::ParameterList& parameters) OVERRIDE;
+
+    /**
+    *	Unsubscribe notification callback.
+    *
+    *	@param request Request information
+    *	@param parameters List of parameters
+    */
+    virtual void onUnsubscribe(const whiteboard::Request& request,
+                               const whiteboard::ParameterList& parameters) OVERRIDE;
+
     /**
     *  Whiteboard disconnect notification handler.
     *
@@ -117,9 +136,11 @@ private:
     whiteboard::Result stopRunning();
     void reset();
 
+    whiteboard::RequestId mRemoteRequestId;
     whiteboard::RequestMap<2, void> mOngoingRequests; // For storing relations of incoming & outgoing requests
 
     bool isRunning;
+    bool dataSubscription;
     float previousAcc[ACCELERATION_AVERAGING_SIZE] = {0.0};
     float mMaxAccelerationSq;
     whiteboard::TimerId mTimer;

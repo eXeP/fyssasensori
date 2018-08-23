@@ -4,7 +4,7 @@ swagger: '2.0'
 
 # Document metadata
 info:
-  version: "0.0.0"
+  version: "0.0.5"
   title: Movesense Accelerometer sample app API 
   description: |
     This file defines API for Fyysikkokilta handwaving measurement service.
@@ -27,7 +27,32 @@ paths:
 
         204:
           description: Measurement source is unavailable
-
+  /Fyssa/Handwaving/Data/Subscription:
+    post:
+      description: |
+        Subscribe to periodic Data values.
+        See documentation on product-specific measurement periods at
+        http://XXX.suunto.com/XXX. If measurement source is unavailable, the
+        Measurement member will be empty. If present, Measurement member
+        contains single measurement result.
+      responses:
+        200:
+          description: Operation completed successfully
+        x-std-errors:
+          description: See common error codes http://developer.suunto.com/api/std-errors#subscribe
+        x-notification:
+          schema:
+              description: Detected jump count
+              type: integer
+              format: uint16
+    delete:
+      description: |
+        Unsubscribe from jump count updates
+      responses:
+        200:
+          description: Operation completed successfully
+        x-std-errors:
+          description: See common error codes http://developer.suunto.com/api/std-errors#unsubscribe
 definitions:
   SampleDataValue:
     required:
