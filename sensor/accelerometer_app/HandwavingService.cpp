@@ -13,7 +13,7 @@
 #define ASSERT WB_DEBUG_ASSERT
 
 // Time between wake-up and going to power-off mode
-#define AVAILABILITY_TIME 120000
+#define AVAILABILITY_TIME 180000
 
 // Time between turn on AFE wake circuit to power off
 // (must be LED_BLINKING_PERIOD multiple)
@@ -41,8 +41,7 @@ HandwavingService::HandwavingService()
 
     mTimer = whiteboard::ID_INVALID_TIMER;
     // Reset max acceleration members
-    mMaxAccelerationSq = FLT_MIN;
-    mSamplesIncluded = 0;
+    reset();
 
 }
 
@@ -150,8 +149,7 @@ whiteboard::Result HandwavingService::startRunning(whiteboard::RequestId& remote
     DEBUGLOG("HandwavingService::startRunning()");
 
     // Reset max acceleration members
-    mMaxAccelerationSq = 0.0;
-    mSamplesIncluded = 0;
+    reset();
 
     // Subscribe to LinearAcceleration resource (updates at 13Hz), when subscribe is done, we get callback
     wb::Result result = asyncSubscribe(WB_RES::LOCAL::MEAS_ACC_SAMPLERATE::ID, AsyncRequestOptions(&remoteRequestId, 0, true), SAMPLE_RATE);
@@ -212,13 +210,18 @@ void HandwavingService::onNotify(whiteboard::ResourceId resourceId, const whiteb
         for (size_t i = 0; i < arrayData.size(); i++)
         {
             whiteboard::FloatVector3D accValue = arrayData[i];
-            DEBUGLOG("X, y ,z acc:", accValue.mX, accValue.mY, accValue.mZ);
+ 
             float accelerationSq = (accValue.mX * accValue.mX +
                                    accValue.mY * accValue.mY +
                                    accValue.mZ * accValue.mZ) - (9.81*9.81);
-
-            if (mMaxAccelerationSq < accelerationSq)
-                mMaxAccelerationSq = accelerationSq;
+            float earlier = 0;
+            for (size_t j = ACCELERATION_AVERAGING_SIZE-1; j >= 1; j--) {
+                previousAcc[j] = previousAcc[j-1];
+                earlier += previousAcc[j];
+            }
+            previousAcc[0] = (earlier + accelerationSq) / ACCELERATION_AVERAGING_SIZE; 
+            if (mMaxAccelerationSq < previousAcc[0])
+                mMaxAccelerationSq = previousAcc[0];
         }
     }
     break;
@@ -252,6 +255,16 @@ void HandwavingService::onTimer(whiteboard::TimerId timerId)
     }
 
 
+}
+
+void HandwavingService::reset()
+{
+    mMaxAccelerationSq = 0;
+    for (int i = 0; i < ACCELERATION_AVERAGING_SIZE; i++) {
+        previousAcc[i] = 0.0;
+    }
+    shutdownCounter = 0;
+    
 }
 
 void HandwavingService::onRemoteWhiteboardDisconnected(whiteboard::WhiteboardId whiteboardId)

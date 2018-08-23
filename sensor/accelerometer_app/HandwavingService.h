@@ -7,6 +7,8 @@
 
 #include "wb-resources/resources.h"
 
+static const int ACCELERATION_AVERAGING_SIZE = 3;
+
 class HandwavingService FINAL : private whiteboard::ResourceClient,
                                          private whiteboard::ResourceProvider,
                                          public whiteboard::LaunchableModule
@@ -113,11 +115,12 @@ protected:
 private:
     whiteboard::Result startRunning(whiteboard::RequestId& remoteRequestId);
     whiteboard::Result stopRunning();
+    void reset();
 
     whiteboard::RequestMap<2, void> mOngoingRequests; // For storing relations of incoming & outgoing requests
 
     bool isRunning;
-    size_t mSamplesIncluded;
+    float previousAcc[ACCELERATION_AVERAGING_SIZE] = {0.0};
     float mMaxAccelerationSq;
     whiteboard::TimerId mTimer;
     uint32_t shutdownCounter;
