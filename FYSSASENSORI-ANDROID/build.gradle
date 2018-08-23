@@ -4,9 +4,10 @@ apply plugin: 'com.android.application'
 buildscript {
     repositories {
         jcenter()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.1.4'
     }
 }
 
@@ -35,11 +36,12 @@ allprojects {
         flatDir {
             dirs './'
         }
+        google()
     }
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '3.2.1'
+    gradleVersion = '4.0.0'
 }
 
 android {
@@ -53,10 +55,10 @@ android {
 //            storePassword 'android'
 //        }
 //    }
-    compileSdkVersion 24
-    buildToolsVersion "26.0.2"
+    compileSdkVersion 26
+    buildToolsVersion '27.0.3'
     defaultConfig {
-        applicationId "com.movesense.mds.crossfit"
+        applicationId "com.movesense.mds.handwave"
         minSdkVersion 18
         targetSdkVersion 24
         versionCode 1
@@ -108,16 +110,13 @@ dependencies {
     compile 'com.google.android.gms:play-services-drive:11.0.1'
     compile 'com.google.android.gms:play-services-auth:11.0.1'
     compile 'pub.devrel:easypermissions:0.2.1'
-
     //DFU Library
     compile 'no.nordicsemi.android:dfu:1.3.0'
-
     // Constraint Layout
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-
-    compile (project(':org.eclipse.paho.android.service')){
+    compile(project(':org.eclipse.paho.android.service')) {
         //exclude module: "org.eclipse.paho.client.mqttv3"
-        transitive=true
+        transitive = true
     }
 }
 

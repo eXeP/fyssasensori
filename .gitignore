@@ -41,6 +41,12 @@ fyssa-android/.idea/gradle.xml
 fyssa-android/.idea/dictionaries
 fyssa-android/.idea/libraries
 
+FYSSASENSORI-ANDROID/.idea
+FYSSASENSORI-ANDROID/.idea/workspace.xml
+FYSSASENSORI-ANDROID/.idea/tasks.xml
+FYSSASENSORI-ANDROID/.idea/gradle.xml
+FYSSASENSORI-ANDROID/.idea/dictionaries
+FYSSASENSORI-ANDROID/.idea/libraries
 # Keystore files
 # Uncomment the following line if you do not want to check your keystore files in.
 #*.jks

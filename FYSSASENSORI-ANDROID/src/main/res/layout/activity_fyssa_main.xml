@@ -23,14 +23,14 @@
         android:id="@+id/get_handwave_button"
         android:layout_width="match_parent"
         android:layout_height="78dp"
-        android:text="GET HANDWAVE"
+        android:text="@string/get_current_calue"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="@color/colorText"
         android:textStyle="bold" />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="77dp" />
+        android:layout_height="230dp" />
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -50,7 +50,7 @@
             app:layout_constraintEnd_toStartOf="@+id/stop_service_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/start_service" />
+            android:text="@string/start_service" />
 
         <TextView
             android:id="@+id/textView2"
@@ -73,7 +73,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/start_service_button"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/stop_service" />
+            android:text="@string/stop_service" />
     </android.support.constraint.ConstraintLayout>
 
 

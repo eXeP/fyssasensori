@@ -206,12 +206,13 @@ void HandwavingService::onNotify(whiteboard::ResourceId resourceId, const whiteb
         }
 
         const whiteboard::Array<whiteboard::FloatVector3D>& arrayData = linearAccelerationValue.arrayAcc;
-
+        
         uint32_t relativeTime = linearAccelerationValue.timestamp;
 
         for (size_t i = 0; i < arrayData.size(); i++)
         {
             whiteboard::FloatVector3D accValue = arrayData[i];
+            DEBUGLOG("X, y ,z acc:", accValue.mX, accValue.mY, accValue.mZ);
             float accelerationSq = (accValue.mX * accValue.mX +
                                    accValue.mY * accValue.mY +
                                    accValue.mZ * accValue.mZ) - (9.81*9.81);
