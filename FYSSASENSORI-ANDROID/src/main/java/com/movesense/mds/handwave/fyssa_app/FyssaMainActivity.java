@@ -25,6 +25,7 @@ import com.movesense.mds.MdsSubscription;
 import com.movesense.mds.handwave.BleManager;
 import com.movesense.mds.handwave.app_using_mds_api.FyssaSensorUpdateActivity;
 import com.movesense.mds.handwave.app_using_mds_api.SelectTestActivity;
+import com.movesense.mds.handwave.app_using_mds_api.model.HandwaveGetResponse;
 import com.movesense.mds.handwave.app_using_mds_api.model.HandwaveResponse;
 import com.movesense.mds.handwave.app_using_mds_api.model.MovesenseConnectedDevices;
 import com.movesense.mds.handwave.MdsRx;
@@ -45,6 +46,8 @@ public class FyssaMainActivity extends AppCompatActivity {
     @BindView(R.id.fyssa_conn_infoTV) TextView connectionInfoTv;
     @BindView(R.id.get_handwave_button) Button getButton;
     @BindView(R.id.subscription_switch) Switch subSwitch;
+
+    @BindView(R.id.nimi_tv) TextView nimiTv;
 
     private final String TAG = FyssaMainActivity.class.getSimpleName();
 
@@ -74,6 +77,8 @@ public class FyssaMainActivity extends AppCompatActivity {
         if (app.getMemoryTools().getName().equals(MemoryTools.DEFAULT_STRING)) {
             startInfoActivity();
             finish();
+        } else {
+            nimiTv.setText("Heiluttelija: " + app.getMemoryTools().getName());
         }
         checkSensorSoftware();
         subscriptions = new CompositeSubscription();
@@ -179,7 +184,7 @@ public class FyssaMainActivity extends AppCompatActivity {
                     public void onSuccess(String s) {
                         Log.d(TAG, "Found a value from: " + MdsRx.SCHEME_PREFIX +
                                 MovesenseConnectedDevices.getConnectedDevice(0).getSerial() + HANDWAVING_PATH_GET);
-                        connectionInfoTv.setText(s);
+                        connectionInfoTv.setText(( new Gson().fromJson(s, HandwaveGetResponse.class)).getHandwave());
                     }
 
                     @Override
@@ -221,7 +226,8 @@ public class FyssaMainActivity extends AppCompatActivity {
 
 
     private void unsubscribeDebug() {
-        mdsSubscription.unsubscribe();
+        if (mdsSubscription != null) mdsSubscription.unsubscribe();
+
         }
 
 
@@ -234,8 +240,8 @@ public class FyssaMainActivity extends AppCompatActivity {
                     public void onNotification(String s){
                         Log.d(TAG, s);
                         //TODO: Fix Handwave response to not include "Content"
-                        HandwaveResponse response = new Gson().fromJson("{\"Content\": " +s + "}", HandwaveResponse.class);
-                        connectionInfoTv.setText(response.content.getHandwave());
+                        HandwaveResponse response = new Gson().fromJson(s, HandwaveResponse.class);
+                        connectionInfoTv.setText(response.getHandwave());
                     }
 
                     @Override
@@ -246,7 +252,7 @@ public class FyssaMainActivity extends AppCompatActivity {
     }
 
     private void unSubscribeHandwave() {
-        mHandwaveSubscription.unsubscribe();
+        if (mHandwaveSubscription != null) mHandwaveSubscription.unsubscribe();
     }
 
     @Override
@@ -278,7 +284,7 @@ public class FyssaMainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         unsubscribeDebug();
-
+        unSubscribeHandwave();
         startActivity(new Intent(FyssaMainActivity.this, SelectTestActivity.class)
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
     }
