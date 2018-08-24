@@ -1,6 +1,7 @@
 package com.movesense.mds.handwave.fyssa_app;
 
 
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -55,11 +56,14 @@ public class FyssaMainActivity extends AppCompatActivity {
     private FyssaApp app;
 
     private final String HANDWAVING_PATH_GET = "/Fyssa/Handwaving/Data";
+    private final String SERVER_URL = "http://kalja.kjeh.fi/handwave";
 
     public static final String URI_EVENTLISTENER = "suunto://MDS/EventListener";
 
     private MdsSubscription mdsSubscription;
     private MdsSubscription mHandwaveSubscription;
+
+    private Integer currentScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -153,7 +157,7 @@ public class FyssaMainActivity extends AppCompatActivity {
         getHandwave();
     }
 
-    @OnClick({R.id.get_handwave_button, R.id.start_service_button, R.id.stop_service_button, R.id.subscription_switch})
+    @OnClick({R.id.get_handwave_button, R.id.start_service_button, R.id.stop_service_button, R.id.subscription_switch, R.id.post_button})
     public void onViewClicked(View view) {
         switch(view.getId()) {
             case R.id.get_handwave_button:
@@ -165,7 +169,9 @@ public class FyssaMainActivity extends AppCompatActivity {
             case R.id.stop_service_button:
                 unsubscribeDebug();
                 break;
-
+            case R.id.post_button:
+                sendData();
+                break;
         }
     }
     @OnCheckedChanged({R.id.subscription_switch})
@@ -184,7 +190,9 @@ public class FyssaMainActivity extends AppCompatActivity {
                     public void onSuccess(String s) {
                         Log.d(TAG, "Found a value from: " + MdsRx.SCHEME_PREFIX +
                                 MovesenseConnectedDevices.getConnectedDevice(0).getSerial() + HANDWAVING_PATH_GET);
-                        connectionInfoTv.setText(( new Gson().fromJson(s, HandwaveGetResponse.class)).getHandwave());
+                        String value = ( new Gson().fromJson(s, HandwaveGetResponse.class)).getHandwave();
+                        connectionInfoTv.setText(value);
+                        currentScore = (int)Float.parseFloat(value);
                     }
 
                     @Override
@@ -242,6 +250,7 @@ public class FyssaMainActivity extends AppCompatActivity {
                         //TODO: Fix Handwave response to not include "Content"
                         HandwaveResponse response = new Gson().fromJson(s, HandwaveResponse.class);
                         connectionInfoTv.setText(response.getHandwave());
+                        currentScore = (int)Float.parseFloat(response.getHandwave());
                     }
 
                     @Override
@@ -254,6 +263,15 @@ public class FyssaMainActivity extends AppCompatActivity {
     private void unSubscribeHandwave() {
         if (mHandwaveSubscription != null) mHandwaveSubscription.unsubscribe();
     }
+
+    // Data is sent as a json.
+    private void sendData() {
+        DataSender sender = new DataSender();
+        String data = "{" + "\"name\":\"" + app.getMemoryTools().getName() + "\",\"amount\":"+ currentScore + "}";
+
+        sender.execute(SERVER_URL, data);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -275,6 +293,8 @@ public class FyssaMainActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
+        unsubscribeDebug();
+        unSubscribeHandwave();
         super.onDestroy();
 
         subscriptions.clear();

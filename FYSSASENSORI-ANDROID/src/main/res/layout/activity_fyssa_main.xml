@@ -75,9 +75,30 @@
         android:textColor="@color/colorText"
         android:textSize="18sp" />
 
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="89dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/post_button"
+            android:layout_width="235dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="148dp"
+            android:layout_marginStart="148dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/post_result"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
     <Space
         android:layout_width="match_parent"
-        android:layout_height="261dp" />
+        android:layout_height="153dp" />
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"

@@ -97,4 +97,5 @@
     <string name="start_service">Start debugging</string>
     <string name="stop_service">Stop</string>
     <string name="subs_switch">Subscribe</string>
+    <string name="post_result">Post to server</string>
 </resources>
