@@ -26,7 +26,7 @@ OPTIONAL_CORE_MODULE(BleNordicUART, false)
 OPTIONAL_CORE_MODULE(DebugService, true)
 
 APPINFO_NAME("Fyssasensori");
-APPINFO_VERSION("0.0.1");
+APPINFO_VERSION("1.0.0.HW");
 APPINFO_COMPANY("Fyysikkokilta");
 
 SERIAL_COMMUNICATION(false) // Warning: enabling this feature will increase power consumption

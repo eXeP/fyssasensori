@@ -19,7 +19,7 @@ import java.io.InputStream;
 public class FyssaApp extends Application {
 
     private MemoryTools memoryTools;
-
+    public static String deviceVersion = "1.0.0.HW";
     @Override
     public void onCreate() {
         super.onCreate();

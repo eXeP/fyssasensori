@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -17,6 +18,16 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.android.volley.Cache;
+import com.android.volley.Network;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.BasicNetwork;
+import com.android.volley.toolbox.DiskBasedCache;
+import com.android.volley.toolbox.HurlStack;
+import com.android.volley.toolbox.StringRequest;
 import com.google.gson.Gson;
 import com.movesense.mds.Mds;
 import com.movesense.mds.MdsException;
@@ -42,6 +53,7 @@ import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 import rx.subscriptions.CompositeSubscription;
 
+
 public class FyssaMainActivity extends AppCompatActivity {
 
     @BindView(R.id.fyssa_conn_infoTV) TextView connectionInfoTv;
@@ -56,7 +68,7 @@ public class FyssaMainActivity extends AppCompatActivity {
     private FyssaApp app;
 
     private final String HANDWAVING_PATH_GET = "/Fyssa/Handwaving/Data";
-    private final String SERVER_URL = "http://kalja.kjeh.fi/handwave";
+    private final String SERVER_URL = "http://kalja.kjeh.fi:5000/handwave";
 
     public static final String URI_EVENTLISTENER = "suunto://MDS/EventListener";
 
@@ -104,17 +116,19 @@ public class FyssaMainActivity extends AppCompatActivity {
                             Log.d(TAG, "Version: " + infoAppResponse.getContent().getVersion());
                             Log.d(TAG, "Company: " + infoAppResponse.getContent().getCompany());
                         }
-                        AlertDialog.Builder builder = new AlertDialog.Builder(FyssaMainActivity.this);
-                        /*builder.setMessage("Update?").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                switch (which){
-                                    case DialogInterface.BUTTON_POSITIVE:
-                                        updateSensorSoftware();
-                                        break;
+                        if (!infoAppResponse.getContent().getVersion().equals(FyssaApp.deviceVersion)) {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(FyssaMainActivity.this);
+                            builder.setMessage("Update?").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    switch (which) {
+                                        case DialogInterface.BUTTON_POSITIVE:
+                                            updateSensorSoftware();
+                                            break;
+                                    }
                                 }
-                            }
-                        }).show();*/
+                            }).show();
+                        }
                     }
 
                     @Override
@@ -251,6 +265,7 @@ public class FyssaMainActivity extends AppCompatActivity {
                         HandwaveResponse response = new Gson().fromJson(s, HandwaveResponse.class);
                         connectionInfoTv.setText(response.getHandwave());
                         currentScore = (int)Float.parseFloat(response.getHandwave());
+                        if (currentScore > 5000) sendData();
                     }
 
                     @Override
@@ -267,10 +282,10 @@ public class FyssaMainActivity extends AppCompatActivity {
     // Data is sent as a json.
     private void sendData() {
         DataSender sender = new DataSender();
-        String data = "{" + "\"name\":\"" + app.getMemoryTools().getName() + "\",\"amount\":"+ currentScore + "}";
 
-        sender.execute(SERVER_URL, data);
+        sender.send(SERVER_URL + "?name=" + app.getMemoryTools().getName() + "&amount=" + currentScore);
     }
+
 
 
     @Override
@@ -317,5 +332,46 @@ public class FyssaMainActivity extends AppCompatActivity {
     private void startInfoActivity() {
         startActivity(new Intent(FyssaMainActivity.this, FyssaInfoActivity.class)
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
+    }
+
+
+    public class DataSender {
+        RequestQueue mRequestQueue;
+        Cache cache;
+
+        DataSender() {
+            // Instantiate the cache
+            cache = new DiskBasedCache(FyssaMainActivity.this.getCacheDir(), 1024 * 1024); // 1MB cap
+
+            // Set up the network to use HttpURLConnection as the HTTP client.
+            Network network = new BasicNetwork(new HurlStack());
+
+            // Instantiate the RequestQueue with the cache and network.
+            mRequestQueue = new RequestQueue(cache, network);
+            // Start the queue
+            mRequestQueue.start();
+        }
+
+        void send(String url) {
+            // Formulate the request and handle the response.
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            Log.d(TAG, response);
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Log.e(TAG, "Fail!", error);
+                        }
+                    });
+
+
+            // Add the request to the RequestQueue.
+            mRequestQueue.add(stringRequest);
+        }
+
     }
 }

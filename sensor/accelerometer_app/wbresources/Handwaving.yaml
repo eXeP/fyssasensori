@@ -4,7 +4,7 @@ swagger: '2.0'
 
 # Document metadata
 info:
-  version: "0.0.5"
+  version: "1.0.0.HW"
   title: Movesense Accelerometer sample app API 
   description: |
     This file defines API for Fyysikkokilta handwaving measurement service.
