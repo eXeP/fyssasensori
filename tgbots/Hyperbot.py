@@ -132,10 +132,14 @@ def handler(msg):
                                     reply_to_message_id=msg['message_id']
                                     )
         elif text == '/liikemittari_lista':
-            res_text = "Tässä heiluttelijat:\n"
-            for t in get_all():
-                res_text += str(t.name) + ": " + str(t.amount) + "\n"
-            bot.sendMessage(chat_id, res_text, reply_to_message_id=msg['message_id'])
+            wavers = get_all()
+            if wavers is None or len(wavers) == 0:
+                bot.sendMessage(chat_id, "En  löytäny yhtään mitään servulta.",reply_to_message_id=msg['message_id'])
+            else:
+                res_text = "Tässä heiluttelijat:\n"
+                for t in wavers:
+                    res_text += str(t.name) + ": " + str(t.amount) + "\n"
+                bot.sendMessage(chat_id, res_text, reply_to_message_id=msg['message_id'])
         elif text == '/liikemittari_help':
             bot.sendMessage(chat_id,
                             "Aloitan ennätysspämmin komennolla /(^^), ja \
