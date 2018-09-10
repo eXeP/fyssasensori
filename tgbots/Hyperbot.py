@@ -52,6 +52,15 @@ def get_user(input_name):
     else:
         return result
 
+def get_all():
+    cur.execute("SELECT * FROM %s" % (table))
+    result = cur.fetchall()
+    if len(result) == 0:
+        return []
+    else:
+        return result
+
+
 
 # @param conditional checks whether the found highscore
 # is higher than the known one.
@@ -122,6 +131,11 @@ def handler(msg):
                                     message,
                                     reply_to_message_id=msg['message_id']
                                     )
+        elif text == '/liikemittari_lista':
+            res_text = "Tässä heiluttelijat:\n"
+            for t in get_all():
+                res_text += str(t.name) + ": " + str(t.amount) + "\n"
+            bot.sendMessage(chat_id, res_text, reply_to_message_id=msg['message_id'])
         elif text == '/liikemittari_help':
             bot.sendMessage(chat_id,
                             "Aloitan ennätysspämmin komennolla /(^^), ja \
