@@ -71,18 +71,21 @@ texts = ['Huh huh mitä käsienheiluttelua!\nTää jäbä (%s) heilutti arvon %s
 def print_hs_data(conditional, t_index):
     global highscore
     result = get_highscore()
-    if conditional:
-        if highscore >= result.amount:
-            return ''
-    score = result.amount
-    highscore = score
-    time = result.date + timedelta(hours=2)
-    if t_index == 1:
-        text = 'Kovin heiluttelija on %s indeksin arvolla %s.\n \
+    if result is not None:
+        if conditional:
+            if highscore >= result.amount:
+                return ''
+        score = result.amount
+        highscore = score
+        time = result.date + timedelta(hours=2)
+        if t_index == 1:
+            text = 'Kovin heiluttelija on %s indeksin arvolla %s.\n \
 Saavutus  tehtiin %s.' % (result.name, score, time)
+        else:
+            text = texts[random.randint(0, 2)] % (result.name, score, time)
+        return text
     else:
-        text = texts[random.randInt(0, 2)] % (result.name, score, time)
-    return text
+        return 'Tietokanta on tyhjä.'
 
 
 def handler(msg):
