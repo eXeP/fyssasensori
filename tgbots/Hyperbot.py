@@ -1,8 +1,9 @@
-# Raaka pohja
+
 
 import telepot
 import time
 
+import random
 import pgdb
 from datetime import timedelta
 
@@ -60,6 +61,9 @@ def get_all():
     else:
         return result
 
+texts = ['Huh huh mitä käsienheiluttelua!\nTää jäbä (%s) heilutti arvon %s (%s)',
+        'Uskomatonta! %s heilutteli arvon %s %s.',
+        'Tää on jo tuta-tason pöhinää! %s heilutti %s %s']
 
 
 # @param conditional checks whether the found highscore
@@ -77,8 +81,7 @@ def print_hs_data(conditional, t_index):
         text = 'Kovin heiluttelija on %s indeksin arvolla %s.\n \
 Saavutus  tehtiin %s.' % (result.name, score, time)
     else:
-        text = 'Uskomatonta! %s heilutteli \
-arvon %s %s.' % (result.name, score, time)
+        text = texts[random.randInt(0, 2)] % (result.name, score, time)
     return text
 
 
