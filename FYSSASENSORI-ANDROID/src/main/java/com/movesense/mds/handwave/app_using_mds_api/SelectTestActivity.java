@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.movesense.mds.handwave.BleManager;
 import com.movesense.mds.handwave.ConnectionLostDialog;
@@ -71,8 +72,9 @@ public class SelectTestActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.d("ONCLICK", "Start the app");
-                startActivity(new Intent(SelectTestActivity.this, FyssaMainActivity.class)
-                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
+                    startActivity(new Intent(SelectTestActivity.this, FyssaMainActivity.class)
+                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+
             }
         });
 
@@ -145,6 +147,10 @@ public class SelectTestActivity extends AppCompatActivity {
         super.onDestroy();
 
         subscriptions.unsubscribe();
+    }
+
+    public void toast(String text) {
+        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
     }
 }
 
