@@ -17,10 +17,10 @@
 
 // Time between turn on AFE wake circuit to power off
 // (must be LED_BLINKING_PERIOD multiple)
-#define WAKE_PREPARATION_TIME 6000
+#define WAKE_PREPARATION_TIME 18000
 
 // LED blinking period in adertsing mode
-#define LED_BLINKING_PERIOD 6000
+#define LED_BLINKING_PERIOD 18000
 
 const char* const HandwavingService::LAUNCHABLE_NAME = "SampleA";
 #define SAMPLE_RATE 13
@@ -274,11 +274,12 @@ void HandwavingService::onNotify(whiteboard::ResourceId resourceId, const whiteb
                 previousAcc[j] = previousAcc[j-1];
                 earlier += previousAcc[j];
             }
-            previousAcc[0] = (earlier + accelerationSq) / ACCELERATION_AVERAGING_SIZE; 
-            if (mMaxAccelerationSq < previousAcc[0])
+            previousAcc[0] = accelerationSq;
+            float hereNow = earlier*(ACCELERATION_AVERAGING_SIZE-1)/ACCELERATION_AVERAGING_SIZE + accelerationSq / ACCELERATION_AVERAGING_SIZE;
+            if (mMaxAccelerationSq < hereNow)
             {
                 DEBUGLOG("D/SENSOR/New value!");
-                mMaxAccelerationSq = previousAcc[0];
+                mMaxAccelerationSq = hereNow;
                 if (dataSubscription)     {
                     DEBUGLOG("D/SENSORNotifying subscribers");
                     updateResource(WB_RES::LOCAL::FYSSA_HANDWAVING_DATA(),

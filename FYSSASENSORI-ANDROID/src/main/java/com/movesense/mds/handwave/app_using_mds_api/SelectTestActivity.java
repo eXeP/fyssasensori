@@ -35,7 +35,6 @@ public class SelectTestActivity extends AppCompatActivity {
     private boolean closeApp = false;
     private boolean disconnect = false;
     private ImageButton startButton;
-    private ImageButton updateButton;
 
     private final String TAG = SelectTestActivity.class.getSimpleName();
 
@@ -65,17 +64,8 @@ public class SelectTestActivity extends AppCompatActivity {
                 })
                 .create();
 
-        updateButton = (ImageButton) findViewById(R.id.update_button);
         startButton = (ImageButton) findViewById(R.id.start_button);
 
-        updateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("ONCLICK", "Update activity");
-                startActivity(new Intent(SelectTestActivity.this, FyssaSensorUpdateActivity.class)
-                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
-            }
-        });
 
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,9 +121,6 @@ public class SelectTestActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(final MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.dfu_mode:
-                startActivity(new Intent(SelectTestActivity.this, DfuActivity.class));
-                return true;
 
             case R.id.update:
                 startActivity(new Intent(SelectTestActivity.this, FyssaSensorUpdateActivity.class));

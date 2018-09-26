@@ -20,5 +20,10 @@ public class HandwaveResponse {
     }
 
     public String getHandwave() {return this.body;}
-
+    public String getHandwaveClean() {
+        String s = getHandwave();
+        int i = s.indexOf('.');
+        if (i > 0) s = s.substring(0, i);
+        return s;
+    }
 }

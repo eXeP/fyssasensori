@@ -7,7 +7,7 @@
 
 #include "wb-resources/resources.h"
 
-static const int ACCELERATION_AVERAGING_SIZE = 3;
+static const int ACCELERATION_AVERAGING_SIZE = 100;
 
 class HandwavingService FINAL : private whiteboard::ResourceClient,
                                          private whiteboard::ResourceProvider,

@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements ScanFragment.Devi
         super.onCreate(savedInstanceState);
 
         String version = BuildConfig.VERSION_NAME;
-        getSupportActionBar().setTitle("FyssaApp"+ version);
+        getSupportActionBar().setTitle("FyssaHeilutus "+ version);
 
 
         setContentView(R.layout.activity_main);
