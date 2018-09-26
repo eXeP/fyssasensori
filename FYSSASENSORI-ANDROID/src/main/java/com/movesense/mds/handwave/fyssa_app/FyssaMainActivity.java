@@ -265,6 +265,7 @@ public class FyssaMainActivity extends AppCompatActivity {
                         HandwaveResponse response = new Gson().fromJson(s, HandwaveResponse.class);
 
                         currentScore = (int)Float.parseFloat(response.getHandwave());
+                        if (currentScore > 1000) sendData();
                         if (currentScore > 4000) {
                             sendData();
                             connectionInfoTv.setText(response.getHandwaveClean() + "\n\nEntäpä jos lopettaisit.. tai edes vähentäisit!");

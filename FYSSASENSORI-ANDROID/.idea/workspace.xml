@@ -86,8 +86,8 @@
       <file leaf-file-name="FyssaMainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/fyssa_app/FyssaMainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="269" column="88" lean-forward="false" selection-start-line="269" selection-start-column="88" selection-end-line="269" selection-end-column="88" />
+            <state relative-caret-position="272">
+              <caret line="267" column="60" lean-forward="false" selection-start-line="267" selection-start-column="60" selection-end-line="267" selection-end-column="60" />
               <folding>
                 <element signature="e#8668#8669#0" expanded="true" />
                 <element signature="e#8742#8743#0" expanded="true" />
@@ -97,10 +97,10 @@
                 <element signature="e#9366#9367#0" expanded="true" />
                 <element signature="e#9737#9738#0" expanded="true" />
                 <element signature="e#9798#9799#0" expanded="true" />
-                <element signature="e#14024#14255#0" expanded="true" />
-                <element signature="e#14254#14255#0" expanded="true" />
-                <element signature="e#14277#14518#0" expanded="true" />
-                <element signature="e#14517#14518#0" expanded="true" />
+                <element signature="e#14085#14316#0" expanded="true" />
+                <element signature="e#14315#14316#0" expanded="true" />
+                <element signature="e#14338#14579#0" expanded="true" />
+                <element signature="e#14578#14579#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2843,8 +2843,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/fyssa_app/FyssaMainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="269" column="88" lean-forward="false" selection-start-line="269" selection-start-column="88" selection-end-line="269" selection-end-column="88" />
+        <state relative-caret-position="272">
+          <caret line="267" column="60" lean-forward="false" selection-start-line="267" selection-start-column="60" selection-end-line="267" selection-end-column="60" />
           <folding>
             <element signature="e#8668#8669#0" expanded="true" />
             <element signature="e#8742#8743#0" expanded="true" />
@@ -2854,10 +2854,10 @@
             <element signature="e#9366#9367#0" expanded="true" />
             <element signature="e#9737#9738#0" expanded="true" />
             <element signature="e#9798#9799#0" expanded="true" />
-            <element signature="e#14024#14255#0" expanded="true" />
-            <element signature="e#14254#14255#0" expanded="true" />
-            <element signature="e#14277#14518#0" expanded="true" />
-            <element signature="e#14517#14518#0" expanded="true" />
+            <element signature="e#14085#14316#0" expanded="true" />
+            <element signature="e#14315#14316#0" expanded="true" />
+            <element signature="e#14338#14579#0" expanded="true" />
+            <element signature="e#14578#14579#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -275,7 +275,7 @@ void HandwavingService::onNotify(whiteboard::ResourceId resourceId, const whiteb
                 earlier += previousAcc[j];
             }
             previousAcc[0] = accelerationSq;
-            float hereNow = earlier*(ACCELERATION_AVERAGING_SIZE-1)/ACCELERATION_AVERAGING_SIZE + accelerationSq / ACCELERATION_AVERAGING_SIZE;
+            float hereNow = earlier/ACCELERATION_AVERAGING_SIZE + accelerationSq / ACCELERATION_AVERAGING_SIZE;
             if (mMaxAccelerationSq < hereNow)
             {
                 DEBUGLOG("D/SENSOR/New value!");
