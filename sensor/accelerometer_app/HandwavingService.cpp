@@ -3,7 +3,6 @@
 #include "common/core/debug.h"
 #include "meas_acc/resources.h"
 #include "whiteboard/builtinTypes/UnknownStructure.h"
-#include "whiteboard/integration/bsp/shared/debug.h"
 #include "component_max3000x/resources.h"
 #include "system_mode/resources.h"
 #include "ui_ind/resources.h"
