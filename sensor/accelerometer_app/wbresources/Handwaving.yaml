@@ -35,6 +35,11 @@ paths:
           required: true
           schema:
             $ref: '#/definitions/HandwaveConfig'
+      responses:
+        200:
+          description: Success
+        204:
+          description: Source unavailable
   /Fyssa/Handwaving/Data/Subscription:
     post:
       description: |

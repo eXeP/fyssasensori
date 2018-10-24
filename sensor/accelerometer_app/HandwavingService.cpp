@@ -131,6 +131,11 @@ void HandwavingService::onPutRequest(const whiteboard::Request& request,
     {
         runningTime  = 60000*WB_RES::LOCAL::FYSSA_HANDWAVING_DATA::PUT::ParameterListRef(parameters).getHandwaveConfig().time;
         startRunning(mRemoteRequestId);
+        return returnResult(request, whiteboard::HTTP_CODE_OK);
+    }
+    default:
+        // Return error
+        return returnResult(request, whiteboard::HTTP_CODE_NOT_IMPLEMENTED);
     }
 }
 void HandwavingService::onSubscribe(const whiteboard::Request& request,
