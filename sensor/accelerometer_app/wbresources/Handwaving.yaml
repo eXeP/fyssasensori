@@ -27,6 +27,14 @@ paths:
 
         204:
           description: Measurement source is unavailable
+    put:
+      description: Measure handwaving for time given.
+      parameters:
+        - name: handwaveConfig
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/HandwaveConfig'
   /Fyssa/Handwaving/Data/Subscription:
     post:
       description: |
@@ -54,6 +62,15 @@ paths:
         x-std-errors:
           description: See common error codes http://developer.suunto.com/api/std-errors#unsubscribe
 definitions:
+  HandwaveConfig:
+    required:
+      - Time
+    properties:
+      Time:
+        description: Time for measuring.
+        type: integer
+        format: uint32
+        xunit: minute
   SampleDataValue:
     required:
       - RelativeTime

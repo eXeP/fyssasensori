@@ -45,7 +45,9 @@ private:
     virtual void onGetRequest(const whiteboard::Request& request,
                               const whiteboard::ParameterList& parameters) OVERRIDE;
 
-
+    virtual void onPutRequest(const whiteboard::Request& request,
+                          const whiteboard::ParameterList& parameters) OVERRIDE;
+    
     /**
     *	Subscribe notification callback.
     *
@@ -140,6 +142,8 @@ private:
     whiteboard::RequestMap<2, void> mOngoingRequests; // For storing relations of incoming & outgoing requests
 
     bool isRunning;
+    bool keepRunning=false;
+    uint32_t runningTime;
     bool dataSubscription;
     float previousAcc[ACCELERATION_AVERAGING_SIZE] = {0.0};
     float mMaxAccelerationSq;

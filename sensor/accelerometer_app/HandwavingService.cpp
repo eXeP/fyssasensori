@@ -36,7 +36,8 @@ HandwavingService::HandwavingService()
       ResourceProvider(WBDEBUG_NAME(__FUNCTION__), sExecutionContextId),
       LaunchableModule(LAUNCHABLE_NAME, sExecutionContextId),
       isRunning(false),
-      dataSubscription(false)
+      dataSubscription(false),
+      runningTime(1)
 {
 
     mTimer = whiteboard::ID_INVALID_TIMER;
@@ -114,7 +115,24 @@ void HandwavingService::onGetRequest(const whiteboard::Request& request,
     }
 }
 
+void HandwavingService::onPutRequest(const whiteboard::Request& request,
+                                      const whiteboard::ParameterList& parameters)
+{
+ DEBUGLOG("D/SENSOR/HandwavingService::onPutRequest() called.");
 
+    if (mModuleState != WB_RES::ModuleStateValues::STARTED)
+    {
+        return returnResult(request, wb::HTTP_CODE_SERVICE_UNAVAILABLE);
+    }
+
+    switch (request.getResourceConstId())
+    {
+    case WB_RES::LOCAL::FYSSA_HANDWAVING_DATA::ID:
+    {
+        runningTime  = 60000*WB_RES::LOCAL::FYSSA_HANDWAVING_DATA::PUT::ParameterListRef(parameters).getHandwaveConfig().time;
+        startRunning(mRemoteRequestId);
+    }
+}
 void HandwavingService::onSubscribe(const whiteboard::Request& request,
                                      const whiteboard::ParameterList& parameters)
 {
@@ -299,9 +317,10 @@ void HandwavingService::onTimer(whiteboard::TimerId timerId)
     }
     if (!dataSubscription) shutdownCounter = shutdownCounter + LED_BLINKING_PERIOD;
     else shutdownCounter = 0;
-    if (shutdownCounter >= AVAILABILITY_TIME) 
+    if (shutdownCounter >= AVAILABILITY_TIME && !keepRunning) 
     {
-            // Prepare AFE to wake-up mode
+        stopRunning();    
+        // Prepare AFE to wake-up mode
         asyncPut(WB_RES::LOCAL::COMPONENT_MAX3000X_WAKEUP::ID,
                  AsyncRequestOptions(NULL, 0, true), (uint8_t)1);
 
@@ -313,8 +332,9 @@ void HandwavingService::onTimer(whiteboard::TimerId timerId)
     }
     else
     {
+        if (shutdownCounter >= runningTime) keepRunning = false;
     // Make PUT request to trigger led blink
-    asyncPut(WB_RES::LOCAL::UI_IND_VISUAL::ID, AsyncRequestOptions::Empty,(uint16_t) 2);
+        asyncPut(WB_RES::LOCAL::UI_IND_VISUAL::ID, AsyncRequestOptions::Empty,(uint16_t) 2);
     }
 
 
@@ -333,11 +353,11 @@ void HandwavingService::reset()
 void HandwavingService::onRemoteWhiteboardDisconnected(whiteboard::WhiteboardId whiteboardId)
 {
     DEBUGLOG("D/SENSOR/HandwavingService::onRemoteWhiteboardDisconnected()");
-    stopRunning();
+    if (!keepRunning) stopRunning();
 }
 
 void HandwavingService::onClientUnavailable(whiteboard::ClientId clientId)
 {
     DEBUGLOG("D/SENSOR/HandwavingService::onClientUnavailable()");
-    stopRunning();
+    if (!keepRunning) stopRunning();
 }
