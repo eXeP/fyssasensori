@@ -31,10 +31,9 @@
 
         <Switch
             android:id="@+id/subscription_switch"
-            android:layout_width="218dp"
-            android:layout_height="64dp"
+            android:layout_width="150dp"
+            android:layout_height="61dp"
             android:layout_marginBottom="8dp"
-            android:layout_marginEnd="32dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
             android:layout_weight="1"
@@ -46,8 +45,17 @@
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/timed_start"
+            android:layout_width="wrap_content"
+            android:layout_height="64dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/timed_start"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
     </android.support.constraint.ConstraintLayout>

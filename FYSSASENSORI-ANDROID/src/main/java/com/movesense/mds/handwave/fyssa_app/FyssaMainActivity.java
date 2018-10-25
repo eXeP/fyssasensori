@@ -1,6 +1,7 @@
 package com.movesense.mds.handwave.fyssa_app;
 
 
+import android.app.TimePickerDialog;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -17,6 +18,8 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.android.volley.Cache;
 import com.android.volley.Network;
@@ -46,6 +49,8 @@ import com.movesense.mds.handwave.ThrowableToastingAction;
 import com.movesense.mds.handwave.app_using_mds_api.model.InfoAppResponse;
 import com.movesense.mds.handwave.model.MdsConnectedDevice;
 import com.movesense.mds.handwave.tool.MemoryTools;
+
+import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -171,11 +176,14 @@ public class FyssaMainActivity extends AppCompatActivity {
         getHandwave();
     }
 
-    @OnClick({R.id.get_handwave_button, /*R.id.start_service_button, R.id.stop_service_button, R.id.post_button,*/ R.id.subscription_switch})
+    @OnClick({R.id.get_handwave_button, R.id.timed_start/*R.id.start_service_button, R.id.stop_service_button, R.id.post_button*/ })
     public void onViewClicked(View view) {
         switch(view.getId()) {
             case R.id.get_handwave_button:
                 getHandwave();
+                break;
+            case R.id.timed_start:
+                measureTimed();
                 break;
             /*case R.id.start_service_button:
                 subscribeDebug();
@@ -194,6 +202,32 @@ public class FyssaMainActivity extends AppCompatActivity {
             subscribeHandwaves();
         }
         else unSubscribeHandwave();
+    }
+
+    private void measureTimed() {
+        final Calendar c = Calendar.getInstance();
+        final int mHour = c.get(Calendar.HOUR_OF_DAY);
+        final int mMinute = c.get(Calendar.MINUTE);
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this,
+                new TimePickerDialog.OnTimeSetListener() {
+
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        int nHour = c.get(Calendar.HOUR_OF_DAY);
+                        int nMinute = c.get(Calendar.MINUTE);
+                        int time = (hourOfDay-nHour)*60 + (minute-nMinute);
+                        if (time > 0) startService(time);
+                        else toast("Invalid time.");
+
+                    }
+
+
+                }, mHour, mMinute, true);
+        timePickerDialog.show();
+    }
+
+    private void startService(int time) {
+        
     }
 
     private void getHandwave() {
@@ -320,6 +354,10 @@ public class FyssaMainActivity extends AppCompatActivity {
         subscriptions.unsubscribe();
     }
 
+    public void toast(String text) {
+        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+    }
+
     @Override
     public void onBackPressed() {
         unsubscribeDebug();
@@ -355,6 +393,7 @@ public class FyssaMainActivity extends AppCompatActivity {
             // Start the queue
             mRequestQueue.start();
         }
+
 
         void send(String url) {
             // Formulate the request and handle the response.
