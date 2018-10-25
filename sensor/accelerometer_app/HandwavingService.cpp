@@ -133,6 +133,7 @@ void HandwavingService::onPutRequest(const whiteboard::Request& request,
     {
         runningTime  = 60000*WB_RES::LOCAL::FYSSA_HANDWAVING_DATA::PUT::ParameterListRef(parameters).getHandwaveConfig().time;
         startRunning(mRemoteRequestId);
+        keepRunning = true;
         return returnResult(request, whiteboard::HTTP_CODE_OK);
     }
     default:
@@ -259,6 +260,7 @@ whiteboard::Result HandwavingService::stopRunning()
         DEBUGLOG("D/SENSOR/asyncUnsubscribe threw error: %u", result);
     }
     isRunning = false;
+    keepRunning = false;
     return whiteboard::HTTP_CODE_OK;
 }
 
@@ -285,26 +287,27 @@ void HandwavingService::onNotify(whiteboard::ResourceId resourceId, const whiteb
         const whiteboard::Array<whiteboard::FloatVector3D>& arrayData = linearAccelerationValue.arrayAcc;
         
         uint32_t relativeTime = linearAccelerationValue.timestamp;
-
-        for (size_t i = 0; i < arrayData.size(); i++)
+        whiteboard::FloatVector3D accValue = arrayData[0];
+        for (size_t i = 1; i < arrayData.size(); i++)
         {
-            whiteboard::FloatVector3D accValue = arrayData[i];
+          accValue += arrayData[i];
+        }
+        accValue /= arrayData.size();
  
-            float accelerationSq = (accValue.mX * accValue.mX +
-                                   accValue.mY * accValue.mY +
-                                   accValue.mZ * accValue.mZ) - (100);
+        float accelerationSq = (accValue.mX * accValue.mX +
+                               accValue.mY * accValue.mY +
+                               accValue.mZ * accValue.mZ) - (100);
             
-            previousAcc.push(accelerationSq);
-            float hereNow = previousAcc.average;
-            if (mMaxAccelerationSq < hereNow)
-            {
-                DEBUGLOG("D/SENSOR/New value!");
-                mMaxAccelerationSq = hereNow;
-                if (dataSubscription)     {
-                    DEBUGLOG("D/SENSORNotifying subscribers");
-                    updateResource(WB_RES::LOCAL::FYSSA_HANDWAVING_DATA(),
-                        ResponseOptions::Empty, mMaxAccelerationSq);
-                }
+        previousAcc.push(accelerationSq);
+        float hereNow = previousAcc.average;
+        if (mMaxAccelerationSq < hereNow)
+        {
+            DEBUGLOG("D/SENSOR/New value!");
+            mMaxAccelerationSq = hereNow;
+            if (dataSubscription)     {
+                DEBUGLOG("D/SENSORNotifying subscribers");
+                updateResource(WB_RES::LOCAL::FYSSA_HANDWAVING_DATA(),
+                    ResponseOptions::Empty, mMaxAccelerationSq);
             }
         }
     }
