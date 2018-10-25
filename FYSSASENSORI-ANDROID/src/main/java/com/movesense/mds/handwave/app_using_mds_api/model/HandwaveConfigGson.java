@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class HandwaveConfigGson {
 
-    @SerializedName("HandwaveConfig")
+    @SerializedName("handwaveConfig")
     private final HandwaveConfig handwaveConfig;
 
     public HandwaveConfigGson(HandwaveConfig handwaveConfig) {
@@ -12,7 +12,7 @@ public class HandwaveConfigGson {
     }
 
     public static class HandwaveConfig {
-        @SerializedName("Time")
+        @SerializedName("time")
         private final int time;
 
         public HandwaveConfig(int time){

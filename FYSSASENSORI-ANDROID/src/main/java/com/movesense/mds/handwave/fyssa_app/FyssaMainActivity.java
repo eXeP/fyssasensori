@@ -230,6 +230,7 @@ public class FyssaMainActivity extends AppCompatActivity {
 
     private void startService(int time) {
         HandwaveConfigGson fbc = new HandwaveConfigGson(new HandwaveConfigGson.HandwaveConfig(time));
+        Log.d(TAG, "Putting: " + new Gson().toJson(fbc));
         Mds.builder().build(this).put(MdsRx.SCHEME_PREFIX +
                         MovesenseConnectedDevices.getConnectedDevice(0).getSerial() + HANDWAVING_PATH_GET,
                 new Gson().toJson(fbc), new MdsResponseListener() {
