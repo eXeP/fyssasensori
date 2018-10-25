@@ -8,6 +8,7 @@
 #include "ui_ind/resources.h"
 #include <float.h>
 #include <math.h>
+#include "SLinkedList.h"
 
 #define ASSERT WB_DEBUG_ASSERT
 
@@ -37,7 +38,8 @@ HandwavingService::HandwavingService()
       LaunchableModule(LAUNCHABLE_NAME, sExecutionContextId),
       isRunning(false),
       dataSubscription(false),
-      runningTime(1)
+      runningTime(1),
+      previousAcc(sll::SLinkedList<float>(ACCELERATION_AVERAGING_SIZE, 0.0))
 {
 
     mTimer = whiteboard::ID_INVALID_TIMER;
@@ -291,13 +293,9 @@ void HandwavingService::onNotify(whiteboard::ResourceId resourceId, const whiteb
             float accelerationSq = (accValue.mX * accValue.mX +
                                    accValue.mY * accValue.mY +
                                    accValue.mZ * accValue.mZ) - (100);
-            float earlier = 0;
-            for (size_t j = ACCELERATION_AVERAGING_SIZE-1; j >= 1; j--) {
-                previousAcc[j] = previousAcc[j-1];
-                earlier += previousAcc[j];
-            }
-            previousAcc[0] = accelerationSq;
-            float hereNow = earlier/ACCELERATION_AVERAGING_SIZE + accelerationSq / ACCELERATION_AVERAGING_SIZE;
+            
+            previousAcc.push(accelerationSq);
+            float hereNow = previousAcc.average;
             if (mMaxAccelerationSq < hereNow)
             {
                 DEBUGLOG("D/SENSOR/New value!");
@@ -320,7 +318,7 @@ void HandwavingService::onTimer(whiteboard::TimerId timerId)
     {
         return;
     }
-    if (!dataSubscription) shutdownCounter = shutdownCounter + LED_BLINKING_PERIOD;
+    if (!dataSubscription || keepRunning) shutdownCounter = shutdownCounter + LED_BLINKING_PERIOD;
     else shutdownCounter = 0;
     if (shutdownCounter >= AVAILABILITY_TIME && !keepRunning) 
     {
@@ -348,9 +346,7 @@ void HandwavingService::onTimer(whiteboard::TimerId timerId)
 void HandwavingService::reset()
 {
     mMaxAccelerationSq = 0;
-    for (int i = 0; i < ACCELERATION_AVERAGING_SIZE; i++) {
-        previousAcc[i] = 0.0;
-    }
+    previousAcc.fill(0.0);
     shutdownCounter = 0;
     
 }

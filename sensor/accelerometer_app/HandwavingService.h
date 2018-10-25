@@ -4,10 +4,11 @@
 #include <whiteboard/ResourceClient.h>
 #include <whiteboard/ResourceProvider.h>
 #include <whiteboard/containers/RequestMap.h>
+#include "SLinkedList.h"
 
 #include "wb-resources/resources.h"
 
-static const int ACCELERATION_AVERAGING_SIZE = 100;
+static const int ACCELERATION_AVERAGING_SIZE = 200;
 
 class HandwavingService FINAL : private whiteboard::ResourceClient,
                                          private whiteboard::ResourceProvider,
@@ -145,7 +146,7 @@ private:
     bool keepRunning=false;
     uint32_t runningTime;
     bool dataSubscription;
-    float previousAcc[ACCELERATION_AVERAGING_SIZE] = {0.0};
+    sll::SLinkedList<float> previousAcc;
     float mMaxAccelerationSq;
     whiteboard::TimerId mTimer;
     uint32_t shutdownCounter;
