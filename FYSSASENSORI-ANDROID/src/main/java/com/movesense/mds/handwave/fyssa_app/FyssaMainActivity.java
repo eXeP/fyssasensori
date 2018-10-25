@@ -40,6 +40,7 @@ import com.movesense.mds.MdsSubscription;
 import com.movesense.mds.handwave.BleManager;
 import com.movesense.mds.handwave.app_using_mds_api.FyssaSensorUpdateActivity;
 import com.movesense.mds.handwave.app_using_mds_api.SelectTestActivity;
+import com.movesense.mds.handwave.app_using_mds_api.model.HandwaveConfigGson;
 import com.movesense.mds.handwave.app_using_mds_api.model.HandwaveGetResponse;
 import com.movesense.mds.handwave.app_using_mds_api.model.HandwaveResponse;
 import com.movesense.mds.handwave.app_using_mds_api.model.MovesenseConnectedDevices;
@@ -217,6 +218,7 @@ public class FyssaMainActivity extends AppCompatActivity {
                         int nMinute = c.get(Calendar.MINUTE);
                         int time = (hourOfDay-nHour)*60 + (minute-nMinute);
                         if (time > 0) startService(time);
+                        else  if (time < 0) startService(24*60+time);
                         else toast("Invalid time.");
 
                     }
@@ -227,7 +229,20 @@ public class FyssaMainActivity extends AppCompatActivity {
     }
 
     private void startService(int time) {
-        
+        HandwaveConfigGson fbc = new HandwaveConfigGson(new HandwaveConfigGson.HandwaveConfig(time));
+        Mds.builder().build(this).put(MdsRx.SCHEME_PREFIX +
+                        MovesenseConnectedDevices.getConnectedDevice(0).getSerial() + HANDWAVING_PATH_GET,
+                new Gson().toJson(fbc), new MdsResponseListener() {
+                    @Override
+                    public void onSuccess(String s) {
+                        Log.d(TAG, "Starting successfully");
+                    }
+
+                    @Override
+                    public void onError(MdsException e) {
+                        Log.e(TAG, "onError: ", e);
+                    }
+                });
     }
 
     private void getHandwave() {
