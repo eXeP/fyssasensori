@@ -69,7 +69,9 @@ private:
 			}
 			else res = res->getNext();
 		}
-		return res->value;
+		T val = res->value;
+		delete(res);
+		return val;
 	}
 };
 

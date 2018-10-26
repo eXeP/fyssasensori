@@ -104,6 +104,8 @@ public class FyssaMainActivity extends AppCompatActivity {
         }
         checkSensorSoftware();
         subscriptions = new CompositeSubscription();
+        currentScore = app.getMemoryTools().getScore();
+        Log.d(TAG, "Score when opening the app:" + currentScore);
     }
 
     private void checkSensorSoftware() {
@@ -166,8 +168,10 @@ public class FyssaMainActivity extends AppCompatActivity {
         super.onResume();
 
         try {
-            connectionInfoTv.setText("Serial: " + MovesenseConnectedDevices.getConnectedDevice(0).getSerial());
+            toast("Serial: " + MovesenseConnectedDevices.getConnectedDevice(0).getSerial());
+            connectionInfoTv.setText("" + currentScore);
         } catch (Exception e) {
+            Log.e(TAG, "Connection failed", e);
             startScanActivity();
             return;
         }
@@ -255,8 +259,12 @@ public class FyssaMainActivity extends AppCompatActivity {
                         Log.d(TAG, "Found a value from: " + MdsRx.SCHEME_PREFIX +
                                 MovesenseConnectedDevices.getConnectedDevice(0).getSerial() + HANDWAVING_PATH_GET);
                         String value = ( new Gson().fromJson(s, HandwaveGetResponse.class)).getHandwaveClean();
-                        connectionInfoTv.setText(value);
-                        currentScore = (int)Float.parseFloat(value);
+                        if (currentScore < (int)Float.parseFloat(value)) {
+                            connectionInfoTv.setText(value);
+                            currentScore = (int)Float.parseFloat(value);
+                            app.getMemoryTools().saveScore(currentScore);
+                        }
+
                     }
 
                     @Override
@@ -311,15 +319,19 @@ public class FyssaMainActivity extends AppCompatActivity {
                     @Override
                     public void onNotification(String s){
                         Log.d(TAG, s);
-                        //TODO: Fix Handwave response to not include "Content"
                         HandwaveResponse response = new Gson().fromJson(s, HandwaveResponse.class);
 
-                        currentScore = (int)Float.parseFloat(response.getHandwave());
-                        if (currentScore > 1000) sendData();
-                        if (currentScore > 4000) {
-                            sendData();
-                            connectionInfoTv.setText(response.getHandwaveClean() + "\n\nEntäpä jos lopettaisit.. tai edes vähentäisit!");
-                        } else connectionInfoTv.setText(response.getHandwaveClean());
+                        int tmp = (int)Float.parseFloat(response.getHandwave());
+                        if (tmp > currentScore) {
+                            app.getMemoryTools().saveScore(currentScore);
+                            currentScore = tmp;
+                            if (currentScore > 100) sendData();
+                            if (currentScore > 400) {
+                                sendData();
+                                connectionInfoTv.setText(response.getHandwaveClean() + "\n\nEntäpä jos lopettaisit.. tai edes vähentäisit!");
+                            } else connectionInfoTv.setText(response.getHandwaveClean());
+                        }
+
 
                     }
 
@@ -365,7 +377,6 @@ public class FyssaMainActivity extends AppCompatActivity {
         unsubscribeDebug();
         unSubscribeHandwave();
         super.onDestroy();
-
         subscriptions.clear();
         subscriptions.unsubscribe();
     }
