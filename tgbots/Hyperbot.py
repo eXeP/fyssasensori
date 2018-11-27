@@ -173,4 +173,8 @@ bot.message_loop(handler)
 while 1:
     time.sleep(10)
     for i in stored_id:
-        send_highscore(i, print_hs_data(True, 2))
+        try:
+            send_highscore(i, print_hs_data(True, 2))
+        except Exception as e:
+            print("{}".format(e.strerror))
+

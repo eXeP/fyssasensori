@@ -21,7 +21,7 @@ def handwave():
     print(query, params)                                #debug
 
     cursor_wave.execute(query, params)
-    pgsql_conn.commit()
+    pgsql_conn_wave.commit()
     return ('', 200)
 
 #Fyssa bailu app
@@ -61,7 +61,7 @@ def insertName():
       query = 'INSERT INTO bailutable (name, mac) VALUES (%s, %s)'
       print(query, params)  
       cursor_bailu.execute(query, params)
-    pgsql_conn.commit()
+    pgsql_conn_bailu.commit()
     return (serial, 200)
 
 if __name__ == '__main__':
