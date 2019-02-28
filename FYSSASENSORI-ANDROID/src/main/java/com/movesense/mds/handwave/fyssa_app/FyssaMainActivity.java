@@ -74,7 +74,7 @@ public class FyssaMainActivity extends AppCompatActivity {
     private FyssaApp app;
 
     private final String HANDWAVING_PATH_GET = "/Fyssa/Handwaving/Data";
-    private final String SERVER_URL = "http://tommi.la:5000/handwave";
+    private final String SERVER_URL = "http://82.130.33.5:5000/handwave";
 
     public static final String URI_EVENTLISTENER = "suunto://MDS/EventListener";
 
