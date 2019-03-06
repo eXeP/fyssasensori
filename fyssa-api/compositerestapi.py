@@ -1,12 +1,16 @@
 from flask import Flask, request
-from config import *
 from time import gmtime, strftime
 import psycopg2
 import configparser
 
+cp = configparser.ConfigParser()
+cp.read('bailu_config')
+
 app = Flask(__name__)
 
-pgsql_conn_wave = psycopg2.connect('dbname={} user={} host={} password={}'.format(PGSQL_DATABASE, PGSQL_USER, PGSQL_HOST, PGSQL_PASSWORD))
+pgsql_conn_wave = psycopg2.connect('dbname={} user={} host={} password={}'.format(\
+        cp['HANDWAVE']['PGSQL_DATABASE'], cp['HANDWAVE']['PGSQL_USER'],\
+        cp['HANDWAVE']['PGSQL_HOST'], cp['HANDWAVE']['PGSQL_PASSWORD']))
 cursor_wave = pgsql_conn_wave.cursor()
 
 @app.route('/handwave', methods=['POST'])
@@ -15,7 +19,7 @@ def handwave():
     amount = request.args.get('amount')
     timestamp = strftime("%Y-%m-%d %H:%M:%S %z", gmtime())
     
-    query = 'INSERT INTO testtable2(name, amount, date) VALUES (%s, %s, %s::TIMESTAMP WITH TIME ZONE);'
+    query = 'INSERT INTO handwavetable (name, amount, date) VALUES (%s, %s, %s::TIMESTAMP WITH TIME ZONE);'
     params = (name, int(amount), str(timestamp))
 
     print(query, params)                                #debug
@@ -25,27 +29,25 @@ def handwave():
     return ('', 200)
 
 #Fyssa bailu app
-cp = configparser.ConfigParser()
-cp.read('/opt/secrets/bailu_config')
 
-pgsql_conn_bailu = psycopg2.connect('dbname={} user={} host={} password={}'.format(cp['DEFAULT']['PGSQL_DATABASE'], cp['DEFAULT']['PGSQL_USER'], cp['DEFAULT']['PGSQL_HOST'], cp['DEFAULT']['PGSQL_PASSWORD']))
+pgsql_conn_bailu = psycopg2.connect('dbname={} user={} host={} password={}'.format(cp['BAILU']['PGSQL_DATABASE'], cp['BAILU']['PGSQL_USER'], cp['BAILU']['PGSQL_HOST'], cp['BAILU']['PGSQL_PASSWORD']))
 cursor_bailu = pgsql_conn_bailu.cursor()
 
 @app.route('/bailu/threshold', methods=['get'])
 def threshold():
-    return ('%s'%cp['DEFAULT']['TEMPERATURE_THRESHOLD'], 200)
+    return ('%s'%cp['BAILU']['TEMPERATURE_THRESHOLD'], 200)
 
 @app.route('/bailu/name/<name_id>', methods=['get'])
 def getName(name_id):
     query = 'SELECT name FROM bailutable WHERE mac=%s;'
     params = (name_id,)
-    print(query, params)  
+    print(query, params)
     cursor_bailu.execute(query, params)
     result = cursor_bailu.fetchone()
     if result is not None:
-      return (name_id + result[0], 200)
+      return ((name_id + result[0]).encode('utf-8'), 200)
     else:
-      return (name_id+'Anonymous partyer', 200)
+      return (name_id + u'Anonymous partyer', 200)
 
 @app.route('/bailu/name/insert', methods=['post'])
 def insertName():
@@ -54,7 +56,7 @@ def insertName():
     if name is None or serial is None or len(name) == 0 or len(serial) == 0:
         return 202
     query = 'UPDATE bailutable SET name=%s WHERE mac=%s;'
-    params = ( name, serial)
+    params = (name, serial)
     print(query, params)  
     cursor_bailu.execute(query, params)
     if cursor_bailu.rowcount == 0:
@@ -65,4 +67,4 @@ def insertName():
     return (serial, 200)
 
 if __name__ == '__main__':
-     app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0')
