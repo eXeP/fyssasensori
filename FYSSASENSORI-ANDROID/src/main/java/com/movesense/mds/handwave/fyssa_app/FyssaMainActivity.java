@@ -70,7 +70,7 @@ public class FyssaMainActivity extends AppCompatActivity {
 
     private final String TAG = FyssaMainActivity.class.getSimpleName();
 
-    private CompositeSubscription subscriptions;
+    private CompositeSubscription subscriptions = null;
     private FyssaApp app;
 
     private final String HANDWAVING_PATH_GET = "/Fyssa/Handwaving/Data";
@@ -78,8 +78,8 @@ public class FyssaMainActivity extends AppCompatActivity {
 
     public static final String URI_EVENTLISTENER = "suunto://MDS/EventListener";
 
-    private MdsSubscription mdsSubscription;
-    private MdsSubscription mHandwaveSubscription;
+    private MdsSubscription mdsSubscription = null;
+    private MdsSubscription mHandwaveSubscription = null;
 
     private Integer currentScore;
 
@@ -101,11 +101,12 @@ public class FyssaMainActivity extends AppCompatActivity {
             finish();
         } else {
             nimiTv.setText("Heiluttelija: " + app.getMemoryTools().getName());
+
+            checkSensorSoftware();
+            subscriptions = new CompositeSubscription();
+            currentScore = app.getMemoryTools().getScore();
+            Log.d(TAG, "Score when opening the app:" + currentScore);
         }
-        checkSensorSoftware();
-        subscriptions = new CompositeSubscription();
-        currentScore = app.getMemoryTools().getScore();
-        Log.d(TAG, "Score when opening the app:" + currentScore);
     }
 
     private void checkSensorSoftware() {
@@ -377,8 +378,7 @@ public class FyssaMainActivity extends AppCompatActivity {
         unsubscribeDebug();
         unSubscribeHandwave();
         super.onDestroy();
-        subscriptions.clear();
-        subscriptions.unsubscribe();
+        if (subscriptions != null) subscriptions.clear();
     }
 
     public void toast(String text) {
