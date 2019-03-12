@@ -1,5 +1,6 @@
 from flask import Flask, request
 from time import gmtime, strftime
+import datetime
 import psycopg2
 import configparser
 
@@ -75,17 +76,49 @@ pgsql_conn_parties = psycopg2.connect('dbname={} user={} host={} password={}'.fo
         cp['PARTIES']['PGSQL_HOST'], cp['PARTIES']['PGSQL_PASSWORD']))
 cursor_parties = pgsql_conn_bailu.cursor()
 
-def distanceInM(lat1, long1, lat2, long2):
-    R = 6371.0 * 1000
-    dlat = (lat2-lat1)*math.pi/180
-    dlon = (lat2-lat1)*math.pi/180
-    a = math.pow(math.sin(dlat/2), 2) +
-        math.pow(maht.sin(dlon/2), 2) * math.cos(lat1*math.pi/180)*math.cos(lat2*math.pi/180)
-    c = math.atan2(math.sqrt(a), math.sqrt(1-a)) * 2
-    return c*R
 
-#TODO: Check if parties are at within the same time interval in the same place.
+class Party:
+    def __init__(se, place, longitude, latitude, population, score, timestamp):
+        se.place = place
+        se.longitude = longitude
+        se.latitude = latitude
+        se.population = population
+        se.score = score
+        se.startedAt = timestamp
+        se.latestTime = timestamp
 
+    def distanceInM(lat1, long1, lat2, long2):
+        R = 6371.0 * 1000
+        dlat = (lat2-lat1)*math.pi/180
+        dlon = (lat2-lat1)*math.pi/180
+        a = math.pow(math.sin(dlat/2), 2) +
+            math.pow(maht.sin(dlon/2), 2) * math.cos(lat1*math.pi/180)*math.cos(lat2*math.pi/180)
+        c = math.atan2(math.sqrt(a), math.sqrt(1-a)) * 2
+        return c*R
+
+    def timeInBetween(another):
+        dif = another.latestTime - se.latestTime
+        return dif.total_seconds() 
+
+    def isSame(another):
+        return (distanceInM(se.latitude, se.longitude, 
+            another.latitude, another.longitude) < int(cp['PARTY']['DISTANCE_SEPARATOR'])) &&
+            timeInBetween(another)/60 < int(cp['PARTY']['TIME_SEPARATOR'])
+
+    def merge(another):
+        if isSame(another):
+            se.place = another.place
+            se.population = max(another.population, se.population)
+            se.score = max(another.score, se.score)
+            se.latitude = another.latitude
+            se.longitude = another.longitude
+            se.latestTime = another.latestTime
+            return True
+        else:
+            return False
+
+
+parties = []
 @app.route('/bailu/parties', methods=['post'])
 def insertParty():
     place = request.args.get('place')
@@ -94,17 +127,27 @@ def insertParty():
     population = request.args.get('population')
     score = request.args.get('score')
     timestamp = strftime("%Y-%m-%d %H:%M:%S %z", gmtime())
-    query = 'INSERT INTO partytable (place, population, score, longitude, latitude,'
-     ' timestamp) VALUES (%s, %s, %s, %s, %s, %s::TIMESTAMP WITH TIME ZONE);'
-    params = (place, int(population), int(score),float(longitude), float(latitude),
-            str(timestamp))
+    thisParty = Party(place, longitude, latitude, population, score, datetime.datetime.now()) 
 
-    print(query, params)
+    found = False
+    for p in parties:
+        if p.merge(thisParty):
+            found = True
+            break
 
-    cursor_wave.execute(query, params)
-    pgsql_conn_wave.commit()
+    if not found:
+        query = 'INSERT INTO ' + cp['PARTY']['PGSQL_TABLE']
+         ' (place, population, score, longitude, latitude,'
+         ' timestamp) VALUES (%s, %s, %s, %s, %s, %s::TIMESTAMP WITH TIME ZONE);'
+        params = (place, int(population), int(score),float(longitude), float(latitude),
+                str(timestamp))
+        print(query, params)
+        cursor_wave.execute(query, params)
+        pgsql_conn_wave.commit()
+        parties.append(thisParty)
+
     return ('', 200)
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='1.0.0.0')
