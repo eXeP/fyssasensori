@@ -33,35 +33,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.movesense.mds.handwave.app_using_mds_api.SelectTestActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.movesense.mds.handwave.app_using_mds_api.tests.LedTestActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.movesense.mds.handwave.app_using_mds_api.tests.LinearAccelerationTestActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.movesense.mds.handwave.app_using_mds_api.tests.HeartRateTestActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.movesense.mds.handwave.app_using_mds_api.tests.TemperatureTestActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.movesense.mds.handwave.app_using_mds_api.tests.MagneticFieldTestActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.movesense.mds.handwave.app_using_mds_api.tests.AngularVelocityActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.movesense.mds.handwave.app_using_mds_api.tests.MultiSubscribeActivity"
+            android:name="com.movesense.mds.handwave.fyssa_app.SelectTestActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
@@ -70,6 +42,19 @@
         </activity>
         <activity
             android:name="com.movesense.mds.handwave.fyssa_app.FyssaMainActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.movesense.mds.handwave.update_app.FyssaSensorUpdateActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name="com.movesense.mds.handwave.scanner.MainScanActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.movesense.mds.handwave.scanner.UpdateScanActivity"
             android:screenOrientation="portrait">
         </activity>
 
@@ -82,31 +67,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_provider_paths"/>
         </provider>
-
-        <activity
-            android:name="com.movesense.mds.handwave.app_using_mds_api.DfuActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.movesense.mds.handwave.app_using_mds_api.FyssaSensorUpdateActivity"
-            android:screenOrientation="portrait">
-        </activity>
-
-
-
-        <service
-            android:name="com.movesense.mds.handwave.app_using_mds_api.dfu.DfuService"
-            android:exported="true">
-        </service>
-
-        <receiver
-            android:name="com.movesense.mds.handwave.app_using_mds_api.adb.AdbBridge"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MOVESENSE"/>
-            </intent-filter>
-        </receiver>
 
         <!-- Mqtt Service -->
         <service android:name="org.eclipse.paho.android.service.MqttService">

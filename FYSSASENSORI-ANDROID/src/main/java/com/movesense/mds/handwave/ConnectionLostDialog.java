@@ -7,7 +7,8 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 
-import com.movesense.mds.handwave.app_using_mds_api.model.MovesenseConnectedDevices;
+import com.movesense.mds.handwave.bluetooth.BleManager;
+import com.movesense.mds.handwave.update_app.model.MovesenseConnectedDevices;
 
 public enum  ConnectionLostDialog {
     INSTANCE;

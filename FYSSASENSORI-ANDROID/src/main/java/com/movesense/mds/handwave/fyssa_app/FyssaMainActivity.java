@@ -2,11 +2,9 @@ package com.movesense.mds.handwave.fyssa_app;
 
 
 import android.app.TimePickerDialog;
-import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -15,7 +13,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -37,19 +34,16 @@ import com.movesense.mds.MdsException;
 import com.movesense.mds.MdsNotificationListener;
 import com.movesense.mds.MdsResponseListener;
 import com.movesense.mds.MdsSubscription;
-import com.movesense.mds.handwave.BleManager;
-import com.movesense.mds.handwave.app_using_mds_api.FyssaSensorUpdateActivity;
-import com.movesense.mds.handwave.app_using_mds_api.SelectTestActivity;
-import com.movesense.mds.handwave.app_using_mds_api.model.HandwaveConfigGson;
-import com.movesense.mds.handwave.app_using_mds_api.model.HandwaveGetResponse;
-import com.movesense.mds.handwave.app_using_mds_api.model.HandwaveResponse;
-import com.movesense.mds.handwave.app_using_mds_api.model.MovesenseConnectedDevices;
-import com.movesense.mds.handwave.MdsRx;
+import com.movesense.mds.handwave.bluetooth.BleManager;
+import com.movesense.mds.handwave.bluetooth.MdsRx;
+import com.movesense.mds.handwave.model.HandwaveConfigGson;
+import com.movesense.mds.handwave.model.HandwaveGetResponse;
+import com.movesense.mds.handwave.model.HandwaveResponse;
 import com.movesense.mds.handwave.R;
-import com.movesense.mds.handwave.ThrowableToastingAction;
-import com.movesense.mds.handwave.app_using_mds_api.model.InfoAppResponse;
-import com.movesense.mds.handwave.model.MdsConnectedDevice;
 import com.movesense.mds.handwave.tool.MemoryTools;
+import com.movesense.mds.handwave.update_app.FyssaSensorUpdateActivity;
+import com.movesense.mds.handwave.update_app.model.InfoAppResponse;
+import com.movesense.mds.handwave.update_app.model.MovesenseConnectedDevices;
 
 import java.util.Calendar;
 

@@ -3,10 +3,10 @@ package com.movesense.mds.handwave.fyssa_app;
 import android.app.Application;
 import android.content.Context;
 
-import com.movesense.mds.handwave.MdsRx;
 import com.movesense.mds.handwave.R;
-import com.movesense.mds.handwave.RxBle;
 import com.movesense.mds.handwave.Util;
+import com.movesense.mds.handwave.bluetooth.MdsRx;
+import com.movesense.mds.handwave.bluetooth.RxBle;
 import com.movesense.mds.handwave.tool.MemoryTools;
 
 import java.io.FileOutputStream;

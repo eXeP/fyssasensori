@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.movesense.mds.handwave.bluetooth.MdsRx;
 import com.movesense.mds.handwave.model.MdsConnectedDevice;
 
 import rx.Observable;
@@ -50,17 +51,14 @@ public class DeviceFragment extends Fragment {
         // Monitor for connected devices
         subscriptions.add(MdsRx.Instance.connectedDeviceObservable()
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Action1<MdsConnectedDevice>() {
-                    @Override
-                    public void call(MdsConnectedDevice mdsConnectedDevice) {
-                        // We have a new SdsDevice
-                        serial = mdsConnectedDevice.getSerial();
-                        serialTextView.setText(serial);
+                .subscribe(mdsConnectedDevice -> {
+                    // We have a new SdsDevice
+                    serial = mdsConnectedDevice.getSerial();
+                    serialTextView.setText(serial);
 
-                        // Stop refreshing
-                        swipeRefreshLayout.setRefreshing(false);
-                        swipeRefreshLayout.setEnabled(false);
-                    }
+                    // Stop refreshing
+                    swipeRefreshLayout.setRefreshing(false);
+                    swipeRefreshLayout.setEnabled(false);
                 }, new ThrowableToastingAction(getContext())));
 
         final EditText pathEditText = (EditText) view.findViewById(R.id.pathEditText);

@@ -1,84 +1,62 @@
-package com.movesense.mds.handwave;
+package com.movesense.mds.handwave.scanner;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+
+import com.movesense.mds.handwave.R;
+import com.movesense.mds.handwave.ThrowableToastingAction;
+import com.movesense.mds.handwave.bluetooth.BleManager;
 import com.movesense.mds.handwave.bluetooth.MdsRx;
+import com.movesense.mds.handwave.fyssa_app.FyssaApp;
 import com.movesense.mds.handwave.fyssa_app.SelectTestActivity;
-import com.movesense.mds.handwave.model.MdsConnectedDevice;
 import com.movesense.mds.handwave.model.MdsDeviceInfoNewSw;
 import com.movesense.mds.handwave.model.MdsDeviceInfoOldSw;
-import com.movesense.mds.handwave.scanner.ScanFragment;
 import com.movesense.mds.handwave.update_app.ConnectingDialog;
 import com.movesense.mds.handwave.update_app.model.MovesenseConnectedDevices;
 import com.movesense.mds.handwave.update_app.model.MovesenseDevice;
 import com.polidea.rxandroidble.RxBleDevice;
 
 import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
 import rx.subscriptions.CompositeSubscription;
 
-public class MainActivity extends AppCompatActivity implements ScanFragment.DeviceSelectionListener {
+public abstract class ScanActivity  extends AppCompatActivity implements ScanFragment.DeviceSelectionListener {
+    private final String TAG = ScanActivity.class.getSimpleName();
 
-    private static final String TAG = MainActivity.class.getSimpleName();
     private CompositeSubscription subscriptions;
-    private AlertDialog alertDialog;
-    private static SharedPreferences sharedPreferences;
-
-    public static SharedPreferences getSharedPreferences() {
-        return sharedPreferences;
-    }
-
+    FyssaApp app;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        app = (FyssaApp) getApplication();
 
-        String version = BuildConfig.VERSION_NAME;
-        getSupportActionBar().setTitle("FyssaHeilutus "+ version);
-
-
-        setContentView(R.layout.activity_main);
-
+        // Already connected!!
+        if (MovesenseConnectedDevices.getConnectedDevices().size()>=1) {
+            BleManager.INSTANCE.isReconnectToLastConnectedDeviceEnable = true;
+            continueToActivity();
+            return;
+        }
         subscriptions = new CompositeSubscription();
-        alertDialog = new AlertDialog.Builder(this)
-                .setTitle(R.string.close_app)
-                .setMessage(R.string.do_you_want_to_close_application)
-                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        if (Build.VERSION.SDK_INT >= 21) {
-                            finishAndRemoveTask();
-                        } else {
-                            finish();
-                        }
-                    }
-                })
-                .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        alertDialog.dismiss();
-                    }
-                })
-                .create();
+        setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
+            Log.d(TAG, "getting scanFragment");
             getSupportFragmentManager()
                     .beginTransaction()
                     .add(R.id.content, new ScanFragment(), ScanFragment.class.getSimpleName())
                     .commit();
         }
+
     }
+
+    protected abstract void continueToActivity();
 
     @Override
     public void onDeviceSelected(final RxBleDevice device) {
         Log.d(TAG, "onDeviceSelected: " + device.getName() + " (" + device.getMacAddress() + ")");
         MdsRx.Instance.connect(device, this);
-
+        BleManager.INSTANCE.isReconnectToLastConnectedDeviceEnable = true;
         ConnectingDialog.INSTANCE.showDialog(this);
 
         // Monitor for connected devices
@@ -87,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements ScanFragment.Devi
                 .subscribe(mdsConnectedDevice -> {
                     // Stop refreshing
                     if (mdsConnectedDevice.getConnection() != null) {
+                        Log.d(TAG, "onDeviceSelected found a connected device");
                         ConnectingDialog.INSTANCE.dismissDialog();
                         // Add connected device
                         // Fixme: this should be deleted after 1.0 SW release
@@ -107,13 +86,24 @@ public class MainActivity extends AppCompatActivity implements ScanFragment.Devi
                                     mdsDeviceInfoOldSw.getSw()));
                         }
                         // We have a new SdsDevice
-                        startActivity(new Intent(MainActivity.this, SelectTestActivity.class)
-                                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
+                        subscriptions.unsubscribe();
+                        subscriptions.clear();
+                        continueToActivity();
                     }
                 }, new ThrowableToastingAction(this)));
     }
     @Override
     public void onBackPressed() {
-        alertDialog.show();
+        subscriptions.clear();
+        ConnectingDialog.INSTANCE.dismissDialog();
+        startActivity(new Intent(ScanActivity.this, SelectTestActivity.class)
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
     }
+
+    @Override
+    protected void onDestroy() {
+        ConnectingDialog.INSTANCE.dismissDialog();
+        super.onDestroy();
+    }
+
 }
