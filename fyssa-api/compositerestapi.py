@@ -51,7 +51,7 @@ def getName(name_id):
 
 @app.route('/bailu/name/insert', methods=['post'])
 def insertName():
-    name = request.args.get('name')
+    name = request.args.get('name')[:20]
     serial = request.args.get('mac')
     if name is None or serial is None or len(name) == 0 or len(serial) == 0:
         return 202
