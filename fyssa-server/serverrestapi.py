@@ -96,16 +96,16 @@ class Party:
         c = math.atan2(math.sqrt(a), math.sqrt(1-a)) * 2
         return c*R
 
-    def timeInBetween(another):
+    def timeInBetween(se, another):
         dif = another.latestTime - se.latestTime
         return dif.total_seconds() 
 
-    def isSame(another):
+    def isSame(se, another):
         return (distanceInM(se.latitude, se.longitude, 
             another.latitude, another.longitude) < int(cp['PARTY']['DISTANCE_SEPARATOR'])) &&
             timeInBetween(another)/60 < int(cp['PARTY']['TIME_SEPARATOR'])
 
-    def merge(another):
+    def merge(se, another):
         if isSame(another):
             se.place = another.place
             se.population = max(another.population, se.population)
@@ -117,37 +117,55 @@ class Party:
         else:
             return False
 
+    def serialize(se):
+        return {
+                'place': se.place,
+                'population': se.population,
+                'score': se.score,
+                'timeStarted': se.startedAt,
+                'length': (se.latestTime-se.startedAt),
+                }
 
 parties = []
-@app.route('/bailu/parties', methods=['post'])
-def insertParty():
-    place = request.args.get('place')
-    longitude = request.args.get('longitude')
-    latitude = request.args.get('latitude')
-    population = request.args.get('population')
-    score = request.args.get('score')
-    timestamp = strftime("%Y-%m-%d %H:%M:%S %z", gmtime())
-    thisParty = Party(place, longitude, latitude, population, score, datetime.datetime.now()) 
+@app.route('/bailu/parties', methods=['post', 'get'])
+def partyHandle():
+    if method is 'post':
+        place = request.args.get('place')
+        longitude = request.args.get('longitude')
+        latitude = request.args.get('latitude')
+        population = request.args.get('population')
+        score = request.args.get('score')
+        timestamp = strftime("%Y-%m-%d %H:%M:%S %z", gmtime())
+        thisParty = Party(place, longitude, latitude, population, score, datetime.datetime.now()) 
 
-    found = False
-    for p in parties:
-        if p.merge(thisParty):
-            found = True
-            break
+        found = False
+        for p in parties:
+            if p.merge(thisParty):
+                found = True
+                break
 
-    if not found:
-        query = 'INSERT INTO ' + cp['PARTY']['PGSQL_TABLE']
-         ' (place, population, score, longitude, latitude,'
-         ' timestamp) VALUES (%s, %s, %s, %s, %s, %s::TIMESTAMP WITH TIME ZONE);'
-        params = (place, int(population), int(score),float(longitude), float(latitude),
-                str(timestamp))
-        print(query, params)
-        cursor_wave.execute(query, params)
-        pgsql_conn_wave.commit()
-        parties.append(thisParty)
+        if not found:
+            query = 'INSERT INTO ' + cp['PARTY']['PGSQL_TABLE']
+             ' (place, population, score, longitude, latitude,'
+             ' timestamp) VALUES (%s, %s, %s, %s, %s, %s::TIMESTAMP WITH TIME ZONE);'
+            params = (place, int(population), int(score),float(longitude), float(latitude),
+                    str(timestamp))
+            print(query, params)
+            cursor_wave.execute(query, params)
+            pgsql_conn_wave.commit()
+            parties.append(thisParty)
 
-    return ('', 200)
+        return ('', 200)
+    else:
+        if len(parties) is 0:
+            if !getParties():
+                return('', 500)
+        return jsonify(parties=[e.serialize() for e in parties])
+            
+            
 
+def getParties():
+    return False
 
 if __name__ == '__main__':
     app.run(host='1.0.0.0')
