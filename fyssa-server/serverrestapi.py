@@ -80,7 +80,7 @@ cursor_parties = pgsql_conn_parties.cursor()
 
 
 class Party:
-    def __init__(se, place, longitude, latitude, population, score, timestamp):
+    def __init__(se, place, longitude, latitude, population, score, timestamp, description):
         se.place = place
         se.longitude = float(longitude)
         se.latitude = float(latitude)
@@ -88,6 +88,7 @@ class Party:
         se.score = int(score)
         se.startedAt = timestamp
         se.latestTime = timestamp
+        se.description = str(description)
         assert(timestamp.tzinfo is not None and timestamp.tzinfo.utcoffset(timestamp) is not None)
 
     def distanceInM(se, another):
@@ -124,6 +125,8 @@ class Party:
             se.latitude = another.latitude
             se.longitude = another.longitude
             se.latestTime = another.latestTime
+            if another.description is not None and len(another.description) > 0:
+                se.description =  another.description
             return True
         else:
             return False
@@ -135,6 +138,7 @@ class Party:
                 'score': se.score,
                 'timeStarted': se.startedAt,
                 'length': (se.latestTime-se.startedAt).total_seconds(),
+                'description': se.description,
                 }
 
 parties = []
@@ -146,8 +150,9 @@ def partyHandle():
         latitude = request.args.get('latitude')
         population = request.args.get('population')
         score = request.args.get('score')
+        desc = request.args.get('description')
         timestamp = strftime("%Y-%m-%d %H:%M:%S %z", gmtime())
-        thisParty = Party(place, longitude, latitude, population, score, datetime.datetime.now().replace(tzinfo=psycopg2.tz.FixedOffsetTimezone(offset=120)))
+        thisParty = Party(place, longitude, latitude, population, score, datetime.datetime.now().replace(tzinfo=psycopg2.tz.FixedOffsetTimezone(offset=120)), desc)
 
         found = False
         for p in parties:
@@ -158,8 +163,8 @@ def partyHandle():
         if not found:
             query = 'INSERT INTO ' + cp['PARTIES']['PGSQL_TABLE'] + \
                 ' (place, longitude, latitude, population, score,' + \
-                ' timestamp) VALUES (%s, %s, %s, %s, %s, %s::TIMESTAMP WITH TIME ZONE);'
-            params = (place, float(longitude), float(latitude),int(population), int(score),str(timestamp))
+                ' timestamp, description) VALUES (%s, %s, %s, %s, %s, %s::TIMESTAMP WITH TIME ZONE, %s);'
+            params = (place, float(longitude), float(latitude),int(population), int(score),str(timestamp), str(desc))
             print(query % params)
             cursor_parties.execute(query, params)
 
@@ -191,7 +196,7 @@ def getParties():
     for party in result:
         print(party)
         dt = party[5]
-        parties.append(Party(party[0], party[1], party[2], party[3],party[4], dt))
+        parties.append(Party(party[0], party[1], party[2], party[3],party[4], dt, party[6]))
     return True
 getParties()
 
