@@ -137,6 +137,7 @@ class Party:
                 'population': se.population,
                 'score': se.score,
                 'timeStarted': se.startedAt,
+                'lastSeen': se.latestTime,
                 'length': (se.latestTime-se.startedAt).total_seconds(),
                 'description': se.description,
                 }
