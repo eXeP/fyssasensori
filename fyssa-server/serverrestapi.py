@@ -1,6 +1,8 @@
-from flask import Flask, request
-from time import gmtime, strftime
+from flask import Flask, request, jsonify
+from time import gmtime, strftime, mktime
+import math
 import datetime
+import pytz
 import psycopg2
 import configparser
 
@@ -32,15 +34,15 @@ def handwave():
 #Fyssa bailu app
 
 pgsql_conn_bailu = psycopg2.connect('dbname={} user={} host={} password={}'.format(\
-        cp['BAILU']['PGSQL_DATABASE'], cp['BAILU']['PGSQL_USER'], 
+        cp['BAILU']['PGSQL_DATABASE'], cp['BAILU']['PGSQL_USER'],
         cp['BAILU']['PGSQL_HOST'], cp['BAILU']['PGSQL_PASSWORD']))
 cursor_bailu = pgsql_conn_bailu.cursor()
 
-@app.route('/bailu/threshold', methods=['get'])
+@app.route('/bailu/threshold', methods=['GET'])
 def threshold():
     return ('%s'%cp['BAILU']['TEMPERATURE_THRESHOLD'], 200)
 
-@app.route('/bailu/name/<name_id>', methods=['get'])
+@app.route('/bailu/name/<name_id>', methods=['GET'])
 def getName(name_id):
     query = 'SELECT name FROM bailutable WHERE mac=%s;'
     params = (name_id,)
@@ -52,7 +54,7 @@ def getName(name_id):
     else:
       return (name_id + u'Anonymous partyer', 200)
 
-@app.route('/bailu/name/insert', methods=['post'])
+@app.route('/bailu/name/insert', methods=['POST'])
 def insertName():
     name = request.args.get('name')[:20]
     serial = request.args.get('mac')
@@ -74,39 +76,48 @@ def insertName():
 pgsql_conn_parties = psycopg2.connect('dbname={} user={} host={} password={}'.format(\
         cp['PARTIES']['PGSQL_DATABASE'], cp['PARTIES']['PGSQL_USER'],
         cp['PARTIES']['PGSQL_HOST'], cp['PARTIES']['PGSQL_PASSWORD']))
-cursor_parties = pgsql_conn_bailu.cursor()
+cursor_parties = pgsql_conn_parties.cursor()
 
 
 class Party:
     def __init__(se, place, longitude, latitude, population, score, timestamp):
         se.place = place
-        se.longitude = longitude
-        se.latitude = latitude
-        se.population = population
-        se.score = score
+        se.longitude = float(longitude)
+        se.latitude = float(latitude)
+        se.population = int(population)
+        se.score = int(score)
         se.startedAt = timestamp
         se.latestTime = timestamp
+        assert(timestamp.tzinfo is not None and timestamp.tzinfo.utcoffset(timestamp) is not None)
 
-    def distanceInM(lat1, long1, lat2, long2):
+    def distanceInM(se, another):
+        lat1 = float(se.latitude)
+        long1 = float(se.longitude)
+        lat2 = float(another.latitude)
+        long2 = float(another.longitude)
         R = 6371.0 * 1000
         dlat = (lat2-lat1)*math.pi/180
         dlon = (lat2-lat1)*math.pi/180
-        a = math.pow(math.sin(dlat/2), 2) +
-            math.pow(maht.sin(dlon/2), 2) * math.cos(lat1*math.pi/180)*math.cos(lat2*math.pi/180)
+        a = math.pow(math.sin(dlat/2), 2) +\
+            math.pow(math.sin(dlon/2), 2) * math.cos(lat1*math.pi/180)*math.cos(lat2*math.pi/180)
         c = math.atan2(math.sqrt(a), math.sqrt(1-a)) * 2
         return c*R
 
     def timeInBetween(se, another):
         dif = another.latestTime - se.latestTime
-        return dif.total_seconds() 
+        return dif.total_seconds()
 
     def isSame(se, another):
-        return (distanceInM(se.latitude, se.longitude, 
-            another.latitude, another.longitude) < int(cp['PARTY']['DISTANCE_SEPARATOR'])) &&
-            timeInBetween(another)/60 < int(cp['PARTY']['TIME_SEPARATOR'])
+        dist = se.distanceInM(another)
+        timeD = se.timeInBetween(another)/60
+
+        max_t = int(cp['PARTIES']['TIME_SEPARATOR'])
+        max_dist  = int(cp['PARTIES']['DISTANCE_SEPARATOR'])
+        print(dist, max_dist, timeD, max_t)
+        return (dist < max_dist and timeD < max_t)
 
     def merge(se, another):
-        if isSame(another):
+        if se.isSame(another):
             se.place = another.place
             se.population = max(another.population, se.population)
             se.score = max(another.score, se.score)
@@ -123,20 +134,20 @@ class Party:
                 'population': se.population,
                 'score': se.score,
                 'timeStarted': se.startedAt,
-                'length': (se.latestTime-se.startedAt),
+                'length': (se.latestTime-se.startedAt).total_seconds(),
                 }
 
 parties = []
-@app.route('/bailu/parties', methods=['post', 'get'])
+@app.route('/bailu/parties', methods=['POST', 'GET'])
 def partyHandle():
-    if method is 'post':
+    if request.method == 'POST':
         place = request.args.get('place')
         longitude = request.args.get('longitude')
         latitude = request.args.get('latitude')
         population = request.args.get('population')
         score = request.args.get('score')
         timestamp = strftime("%Y-%m-%d %H:%M:%S %z", gmtime())
-        thisParty = Party(place, longitude, latitude, population, score, datetime.datetime.now()) 
+        thisParty = Party(place, longitude, latitude, population, score, datetime.datetime.now().replace(tzinfo=psycopg2.tz.FixedOffsetTimezone(offset=120)))
 
         found = False
         for p in parties:
@@ -145,27 +156,44 @@ def partyHandle():
                 break
 
         if not found:
-            query = 'INSERT INTO ' + cp['PARTY']['PGSQL_TABLE']
-             ' (place, population, score, longitude, latitude,'
-             ' timestamp) VALUES (%s, %s, %s, %s, %s, %s::TIMESTAMP WITH TIME ZONE);'
-            params = (place, int(population), int(score),float(longitude), float(latitude),
-                    str(timestamp))
-            print(query, params)
-            cursor_wave.execute(query, params)
-            pgsql_conn_wave.commit()
-            parties.append(thisParty)
+            query = 'INSERT INTO ' + cp['PARTIES']['PGSQL_TABLE'] + \
+                ' (place, longitude, latitude, population, score,' + \
+                ' timestamp) VALUES (%s, %s, %s, %s, %s, %s::TIMESTAMP WITH TIME ZONE);'
+            params = (place, float(longitude), float(latitude),int(population), int(score),str(timestamp))
+            print(query % params)
+            cursor_parties.execute(query, params)
 
+            pgsql_conn_parties.commit()
+
+            parties.append(thisParty)
+            print ("\n\nCurrent Parties")
+        for party in parties:
+            print(party.serialize())
         return ('', 200)
-    else:
+    elif request.method == 'GET':
         if len(parties) is 0:
-            if !getParties():
-                return('', 500)
+            if not getParties():
+                return('', 202)
         return jsonify(parties=[e.serialize() for e in parties])
-            
-            
+    else:
+        return ('', 404)
+
+
 
 def getParties():
-    return False
+    query = 'SELECT * FROM '  + cp['PARTIES']['PGSQL_TABLE'] + ' WHERE timestamp >= %s;'
+    timeSince = datetime.datetime.now() - datetime.timedelta(hours = 10)
+    params =  (str(timeSince.strftime("%Y-%m-%d %H:%M:%S %z")),)
+    cursor_parties.execute(query, params)
+    result = cursor_parties.fetchall()
+    if len(result) <= 0:
+        return False
+    for party in result:
+        print(party)
+        dt = party[5]
+        parties.append(Party(party[0], party[1], party[2], party[3],party[4], dt))
+    return True
+getParties()
 
 if __name__ == '__main__':
-    app.run(host='1.0.0.0')
+    app.run(host='0.0.0.0')
