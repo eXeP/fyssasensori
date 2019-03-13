@@ -120,12 +120,12 @@ class Party:
     def merge(se, another):
         if se.isSame(another):
             se.place = another.place
-            se.population = max(another.population, se.population)
+            se.population = another.population
             se.score = max(another.score, se.score)
             se.latitude = another.latitude
             se.longitude = another.longitude
             se.latestTime = another.latestTime
-            if another.description is not None and len(another.description) > 0:
+            if another.description is not None and len(another.description) > 0 and another.description != 'None':
                 se.description =  another.description
             return True
         else:
@@ -170,11 +170,10 @@ def partyHandle():
             cursor_parties.execute(query, params)
 
             pgsql_conn_parties.commit()
-
-            parties.append(thisParty)
-            print ("\n\nCurrent Parties")
-        for party in parties:
-            print(party.serialize())
+            if len(parties) < 100:
+                parties.append(thisParty)
+            else:
+                getParties()
         return ('', 200)
     elif request.method == 'GET':
         if len(parties) is 0:
@@ -185,8 +184,8 @@ def partyHandle():
         return ('', 404)
 
 
-
 def getParties():
+    del parties[:]
     query = 'SELECT * FROM '  + cp['PARTIES']['PGSQL_TABLE'] + ' WHERE timestamp >= %s;'
     timeSince = datetime.datetime.now() - datetime.timedelta(hours = 10)
     params =  (str(timeSince.strftime("%Y-%m-%d %H:%M:%S %z")),)
