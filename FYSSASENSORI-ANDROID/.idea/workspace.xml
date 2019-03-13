@@ -9,73 +9,8 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e98fc75-eddf-4b71-9001-fa246658a5cb" name="Default" comment="Versiofixi">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/bluetooth/MdsRx.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/model/FyssaDeviceInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/scanner/MainScanActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/scanner/ScanActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/scanner/ScannedDevicesAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/scanner/UpdateScanActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/update_app/FyssaSensorUpdateActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/update_app/model/DebugResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="3e98fc75-eddf-4b71-9001-fa246658a5cb" name="Default" comment="Update ei toimi. Muuten siirrett hommat">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/BleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/bluetooth/BleManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/ConnectedDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/bluetooth/ConnectedDevice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/ConnectionLostDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/ConnectionLostDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/DeviceFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/DeviceFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/MdsRx.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/RxBle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/bluetooth/RxBle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/ScanFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/scanner/ScanFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/ThrowableLoggingAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/bluetooth/ThrowableLoggingAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/BleConnectionMonitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/update_app/BleConnectionMonitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/ConnectingDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/update_app/ConnectingDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/ConnectionStateDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/update_app/ConnectionStateDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/DfuActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/FormatHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/update_app/FormatHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/FyssaSensorUpdateActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/SelectTestActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/fyssa_app/SelectTestActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/_README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/adb/AdbBridge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/update_app/adb/AdbBridge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/dfu/DfuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/update_app/dfu/DfuService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/dfu/NotificationActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/update_app/dfu/NotificationActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/dfu/ScannerFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/scanner/ScannerFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/logs/LogsListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/update_app/logs/LogsListAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/logs/LogsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/update_app/logs/LogsManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/model/AngularVelocity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/model/FvcResult.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/model/HandwaveConfigGson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/model/HandwaveConfigGson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/model/HandwaveGetResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/model/HandwaveGetResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/model/HandwaveResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/model/HandwaveResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/model/HeartRate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/model/InfoAppResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/update_app/model/InfoAppResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/model/InfoResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/update_app/model/InfoResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/model/LinearAcceleration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/model/MagneticField.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/model/MovesenseConnectedDevices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/update_app/model/MovesenseConnectedDevices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/model/MovesenseDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/update_app/model/MovesenseDevice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/model/PeriodicityDetect.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/model/Temperature.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/model/TestItemList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/tests/AngularVelocityActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/tests/HeartRateTestActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/tests/LedTestActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/tests/LinearAccelerationTestActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/tests/MagneticFieldTestActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/tests/MultiSubscribeActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/app_using_mds_api/tests/TemperatureTestActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/fyssa_app/DataSender.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/fyssa_app/FyssaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/fyssa_app/FyssaApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/fyssa_app/FyssaMainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/fyssa_app/FyssaMainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/model/MdsConnectedDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/model/MdsConnectedDevice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/model/MdsConnectedDeviceNewSw.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/model/MdsConnectedDeviceNewSw.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/model/MdsConnectedDeviceOldSw.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/model/MdsConnectedDeviceOldSw.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_sensor_update.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_sensor_update.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -99,6 +34,7 @@
     <session id="-171494392">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -123,7 +59,7 @@
         <counts>
           <entry key="gradle" value="16" />
           <entry key="java" value="38" />
-          <entry key="txt" value="13" />
+          <entry key="txt" value="58" />
           <entry key="xml" value="71" />
         </counts>
       </usages-collector>
@@ -131,7 +67,7 @@
         <counts>
           <entry key="Groovy" value="16" />
           <entry key="JAVA" value="38" />
-          <entry key="PLAIN_TEXT" value="13" />
+          <entry key="PLAIN_TEXT" value="58" />
           <entry key="XML" value="71" />
         </counts>
       </usages-collector>
@@ -180,10 +116,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/scanner/ScannerFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="-697">
               <caret line="122" column="38" selection-start-line="122" selection-start-column="38" selection-end-line="122" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -192,7 +128,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/scanner/UpdateScanActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
@@ -2720,12 +2656,18 @@
       <option name="project" value="LOCAL" />
       <updated>1552402832670</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update ei toimi. Muuten siirrett hommat">
+      <created>1552408050179</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1552408050179</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1644" height="1047" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.239899" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -2742,10 +2684,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Build" order="7" visible="true" weight="0.32201535" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.32201535" />
       <window_info anchor="bottom" id="Android Profiler" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Logcat" order="10" weight="0.30887187" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="10" visible="true" weight="0.30887187" />
       <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="12" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -2796,7 +2738,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Versiofixi" />
-    <option name="LAST_COMMIT_MESSAGE" value="Versiofixi" />
+    <MESSAGE value="Update ei toimi. Muuten siirrett hommat" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update ei toimi. Muuten siirrett hommat" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/settings.gradle">
@@ -3165,16 +3108,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/scanner/ScannerFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="122" column="38" selection-start-line="122" selection-start-column="38" selection-end-line="122" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/model/FyssaDeviceInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -3218,6 +3151,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/scanner/ScannerFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-697">
+          <caret line="122" column="38" selection-start-line="122" selection-start-column="38" selection-end-line="122" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
