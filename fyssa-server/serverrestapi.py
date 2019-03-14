@@ -178,7 +178,7 @@ def partyHandle():
     elif request.method == 'GET':
         if len(parties) is 0:
             getParties()
-        filterParties():
+        filterParties()
         if len(parties) > 0:
             return jsonify(parties=[e.serialize() for e in parties])
         else: 
@@ -187,7 +187,7 @@ def partyHandle():
         return ('', 404)
 
 def filterParties():
-    for p in parties
+    for p in parties:
         if p.latestTime < datetime.datetime.now().replace(tzinfo=psycopg2.tz.FixedOffsetTimezone(offset=120)) - datetime.timedelta(hours = 3):
             parties.remove(p)
 
