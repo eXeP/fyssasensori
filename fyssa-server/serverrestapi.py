@@ -194,7 +194,7 @@ def filterParties():
 def getParties():
     del parties[:]
     query = 'SELECT * FROM '  + cp['PARTIES']['PGSQL_TABLE'] + ' WHERE timestamp >= %s;'
-    timeSince = datetime.datetime.now() - datetime.timedelta(hours = 10)
+    timeSince = datetime.datetime.now() - datetime.timedelta(hours = 3)
     params =  (str(timeSince.strftime("%Y-%m-%d %H:%M:%S %z")),)
     cursor_parties.execute(query, params)
     result = cursor_parties.fetchall()
