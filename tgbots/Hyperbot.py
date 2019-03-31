@@ -267,8 +267,10 @@ def partyScoreToText(score):
         return 'Aika kova meno!'
     elif score < 200:
         return 'Kova meno!'
-    elif score < 500:
+    elif score < 350:
         return 'Mayhemit!'
+    elif score < 500:
+        return 'Full bläst!!'
     else:
         return 'Ihan älytön meininki!!'
 
@@ -375,7 +377,6 @@ def handler(msg):
         elif not respondHandwave(msg):
             respondParty(msg)
     except Exception as e:
-        print('Exception')
         print(e)
 
 
