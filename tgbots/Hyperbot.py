@@ -320,20 +320,36 @@ def respondParty(msg):
                         "bileiden laadusta",
                         reply_to_message_id=msg['message_id']
                         )
+    elif "mis" in text.lower() and "bileet" in text.lower():
+        updateParties()
+        bot.sendMessage(chat_id,
+                        "Missäkö bileet? " + advertisePartiesText(),
+                        reply_to_message_id=msg['message_id']
+                        )
+
     elif "etkot" in text.lower():
         updateParties()
+        if len(parties) == 0:
+            if random.randint(0, 10) < 9:
+                return
         bot.sendMessage(chat_id,
                         "Jaa etkot? " + advertisePartiesText(),
                         reply_to_message_id=msg['message_id']
                         )
     elif "bileet" in text.lower() or "bailu" in text.lower():
         updateParties()
+        if len(parties) == 0:
+            if random.randint(0, 10) < 9:
+                return
         bot.sendMessage(chat_id,
                         "Jaa bileet? " + advertisePartiesText(),
                         reply_to_message_id=msg['message_id']
                         )
     elif "menoo" in text.lower():
         updateParties()
+        if len(parties) == 0:
+            if random.randint(0, 10) < 9:
+                return
         bot.sendMessage(chat_id,
                         "Jaa menoo? " + advertisePartiesText(),
                         reply_to_message_id=msg['message_id']
