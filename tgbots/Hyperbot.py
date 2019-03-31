@@ -92,7 +92,7 @@ Saavutus  tehtiin %s.' % (result.name, score, time)
     else:
         if not dbEmpty:
             dbEmpty = True
-            return 'Tietokanta on tyhjä.'
+            return ''
         else:
             return ''
 
