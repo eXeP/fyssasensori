@@ -80,16 +80,15 @@ cursor_parties = pgsql_conn_parties.cursor()
 
 
 class Party:
-    def __init__(se, place, longitude, latitude, population, score, timestamp, description):
+    def __init__(se, place, longitude, latitude, population, score, started, lastseen, description):
         se.place = place
         se.longitude = float(longitude)
         se.latitude = float(latitude)
         se.population = int(population)
         se.score = int(score)
-        se.startedAt = timestamp
-        se.latestTime = timestamp
+        se.startedAt = started
+        se.latestTime = lastseen
         se.description = str(description)
-        assert(timestamp.tzinfo is not None and timestamp.tzinfo.utcoffset(timestamp) is not None)
 
     def distanceInM(se, another):
         lat1 = float(se.latitude)
@@ -153,22 +152,27 @@ def partyHandle():
         score = request.args.get('score')
         desc = request.args.get('description')
         timestamp = strftime("%Y-%m-%d %H:%M:%S %z", gmtime())
-        thisParty = Party(place, longitude, latitude, population, score, datetime.datetime.now().replace(tzinfo=psycopg2.tz.FixedOffsetTimezone(offset=120)), desc)
+        dt =datetime.datetime.now().replace(tzinfo=psycopg2.tz.FixedOffsetTimezone(offset=180))
+        thisParty = Party(place, longitude, latitude, population, score, dt,dt, desc)
 
         found = False
         for p in parties:
             if p.merge(thisParty):
                 found = True
+                query='UPDATE ' + cp['PARTIES']['PGSQL_TABLE'] + ' SET description=%s, score=%s, lastseen=%s WHERE started=%s;'
+                params=(thisParty.description, int(p.score), thisParty.latestTime, p.startedAt,)
+                print (query % params)
+                cursor_parties.execute(query, params)
+                pgsql_conn_parties.commit()
                 break
 
         if not found:
             query = 'INSERT INTO ' + cp['PARTIES']['PGSQL_TABLE'] + \
                 ' (place, longitude, latitude, population, score,' + \
-                ' timestamp, description) VALUES (%s, %s, %s, %s, %s, %s::TIMESTAMP WITH TIME ZONE, %s);'
-            params = (place, float(longitude), float(latitude),int(population), int(score),str(timestamp), str(desc))
+                ' started, lastseen, description) VALUES (%s, %s, %s, %s, %s, %s::TIMESTAMP WITH TIME ZONE, %s::TIMESTAMP WITH TIME ZONE, %s);'
+            params = (place, float(longitude), float(latitude),int(population), int(score),str(timestamp),str(timestamp), str(desc))
             print(query % params)
             cursor_parties.execute(query, params)
-
             pgsql_conn_parties.commit()
             if len(parties) < 100:
                 parties.append(thisParty)
@@ -181,20 +185,20 @@ def partyHandle():
         filterParties()
         if len(parties) > 0:
             return jsonify(parties=[e.serialize() for e in parties])
-        else: 
+        else:
             return('', 202)
     else:
         return ('', 404)
 
 def filterParties():
     for p in parties:
-        if p.latestTime < datetime.datetime.now().replace(tzinfo=psycopg2.tz.FixedOffsetTimezone(offset=120)) - datetime.timedelta(hours = 3):
+        if p.latestTime < datetime.datetime.now().replace(tzinfo=psycopg2.tz.FixedOffsetTimezone(offset=180)) - datetime.timedelta(hours = 3):
             parties.remove(p)
 
 def getParties():
     del parties[:]
-    query = 'SELECT * FROM '  + cp['PARTIES']['PGSQL_TABLE'] + ' WHERE timestamp >= %s;'
-    timeSince = datetime.datetime.now() - datetime.timedelta(hours = 10)
+    query = 'SELECT * FROM '  + cp['PARTIES']['PGSQL_TABLE'] + ' WHERE lastseen >= %s;'
+    timeSince = datetime.datetime.now() - datetime.timedelta(hours = 3)
     params =  (str(timeSince.strftime("%Y-%m-%d %H:%M:%S %z")),)
     cursor_parties.execute(query, params)
     result = cursor_parties.fetchall()
@@ -202,8 +206,7 @@ def getParties():
         return False
     for party in result:
         print(party)
-        dt = party[5]
-        parties.append(Party(party[0], party[1], party[2], party[3],party[4], dt, party[6]))
+        parties.append(Party(party[0], party[1], party[2], party[3],party[4], party[5],party[6], party[7]))
     return True
 getParties()
 
