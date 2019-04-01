@@ -355,6 +355,15 @@ def respondParty(msg, command):
                         "Jaa menoo? " + advertisePartiesText(),
                         reply_to_message_id=msg['message_id']
                         )
+    elif ("tuleeko" in text.lower() or "aikooko" in text.lower()\
+            or "aikooks" in text.lower() or "tuleeks" in text.lower()) and "joku" in text.lower():
+        if len(parties) == 0:
+            if random.randint(0, 10) < 9:
+                return
+        bot.sendMessage(chat_id,
+                        "Minä!",
+                        reply_to_message_id=msg['message_id']
+                        )
 
 
 # ------ BOT STUFF -----
