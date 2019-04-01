@@ -96,7 +96,7 @@ Saavutus  tehtiin %s.' % (result.name, score, time)
         else:
             return ''
 
-def respondHandwave(msg):
+def respondHandwave(msg, command):
     global stored_id
     global highscore
     text = msg['text']
@@ -128,7 +128,7 @@ def respondHandwave(msg):
                                 reply_to_message_id=msg['message_id']
                                 )
         return True
-    elif text == '/liikemittari_lista':
+    elif command == '/liikemittari_lista':
         wavers = get_all()
         if wavers is None or len(wavers) == 0:
             bot.sendMessage(chat_id, "En  löytäny yhtään mitään servulta.",
@@ -139,12 +139,13 @@ def respondHandwave(msg):
                 res_text += str(t.name) + ": " + str(t.amount) + "\n"
             bot.sendMessage(chat_id, res_text, reply_to_message_id=msg['message_id'])
         return True
-    elif text == '/liikemittari_heilutus_help':
+    elif command == '/heilutus_help':
         bot.sendMessage(chat_id,
                         "Käsienheiluttelun ennätyksen kuulette mainitsemalla käsien "
                         "heiluttelijan, ja nimellä voitte hakea "
                         "palttiarallaa näin: Kuinka paljon 'K Kekkonen' "
-                        "heiluttelee käsiä?",
+                        "heiluttelee käsiä? "
+                        "Kovimmat heiluttelijat saa myös komennolla /liikemittari_lista.",
                             reply_to_message_id=msg['message_id']
                             )
         return True
@@ -309,11 +310,11 @@ def advertiseBest():
                 bot.sendMessage(id, text)
 
 
-def respondParty(msg):
+def respondParty(msg, command):
     global stored_id
     text = msg['text']
     chat_id = msg['chat']['id']
-    if text == '/liikemittari_bailu_help':
+    if command == '/bailu_help':
         bot.sendMessage(chat_id,
                         "Mis bileet? Kerron kaikista tietämistäni bileistä"
                         " kun vaan kysytte asiaa. Saatan myös mainita jotain "
@@ -365,7 +366,25 @@ def handler(msg):
         # For python 3:
         text = msg['text']
         chat_id = msg['chat']['id']
-        if text == '/(^^)':
+        command = None
+        try:
+            command, command_target_username = text.split("@")
+            command = command.strip();
+            command_target_username = command_target_username.strip()
+
+            if (
+                # is the command aimed at someone else?
+                (len(command.split()) == 1 and
+                len(command_target_username.split()) == 1) and
+                command_target_username.lower() != 'liikemittari_bot'
+                ):
+              # We are in a group but the command is not aimed at us. Return.
+              return
+
+        except ValueError:
+            if text[0] == '/':
+                command = text
+        if command == '/start' or text == '/(^^)':
             print('Initialising into ' + str(chat_id))
             with open('./stored_id.txt', 'w+') as memory:
                 text = memory.read()
@@ -375,23 +394,26 @@ def handler(msg):
                                 'Moro!',
                                 reply_to_message_id=msg['message_id']
                                 )
-        elif text == '/Stahp':
+        elif command == '/stop' or text == '/stahp':
             stored_id.remove(chat_id)
             bot.sendMessage(chat_id,
                             "Ookoo.",
                             reply_to_message_id=msg['message_id']
                             )
-        elif text == '/liikemittari_help':
+        elif command == '/help':
             bot.sendMessage(chat_id,
                             "Hei. Olen fyssasensoreiden ohessa toimiva botti, "
-                            "ja tarkoisukseni on löristä satunnaisia noihin "
-                            "liittyviä asioita. Tarkempia tietoja saa "
-                            "'/liikemittari_bailu_help'- ja"
-                            "'/liikemittari_heilutus_help'-komennoilla.",
+                            "ja tarkoisukseni on löristä satunnaisia niihin "
+                            "liittyviä asioita.\n"
+                            "/start - Aloitan lörinän.\n"
+                            "/stop - Lopetan. Ehkä.\n"
+                            "Tarkempia tietoja saa komennoilla\n"
+                            "/bailu_help - Jelppiä bailututkaominaisuuksiin.\n"
+                            "/heilutus_help - Helppiä käsienheilutteluun.",
                             reply_to_message_id=msg['message_id']
                             )
-        elif not respondHandwave(msg):
-            respondParty(msg)
+        elif not respondHandwave(msg, command):
+            respondParty(msg, command)
     except Exception as e:
         print(e)
 
