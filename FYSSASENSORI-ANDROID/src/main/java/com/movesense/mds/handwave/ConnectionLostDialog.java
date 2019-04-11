@@ -1,13 +1,13 @@
-package com.movesense.mds.handwave;
+package com.movesense.mds.fyssabailu;
 
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
+import androidx.appcompat.app.AlertDialog;
 import android.util.Log;
 
-import com.movesense.mds.handwave.app_using_mds_api.model.MovesenseConnectedDevices;
+import com.movesense.mds.fyssabailu.bluetooth.BleManager;
+import com.movesense.mds.fyssabailu.update_app.model.MovesenseConnectedDevices;
 
 public enum  ConnectionLostDialog {
     INSTANCE;
@@ -22,16 +22,13 @@ public enum  ConnectionLostDialog {
                     .setTitle("Connection Lost")
                     .setMessage("Appliaction will connect automatically with Movesense device" +
                             " when it will be available.")
-                    .setPositiveButton("Connect with other Movesense", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            BleManager.INSTANCE.isReconnectToLastConnectedDeviceEnable = false;
+                    .setPositiveButton("Ok", (dialog, which) -> {
+                        BleManager.INSTANCE.isReconnectToLastConnectedDeviceEnable = false;
 
-                            BleManager.INSTANCE.disconnect(MovesenseConnectedDevices.getConnectedRxDevice(0));
+                        BleManager.INSTANCE.disconnect(MovesenseConnectedDevices.getConnectedRxDevice(0));
 
-                            context.startActivity(new Intent(context, MainActivity.class)
-                                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
-                        }
+                        context.startActivity(new Intent(context, MainActivity.class)
+                                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
                     });
 
             mAlertDialog = builder.show();

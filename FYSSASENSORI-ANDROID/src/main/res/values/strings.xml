@@ -4,12 +4,19 @@
     <string name="title_location_permission">Location permission</string>
     <string name="text_location_permission">Bluetooth LE scanning requires location permission</string>
     <string name="btn_ok">Ok</string>
+    <string-array name="dfu_files">
+        <item>movesense_dfu</item>
+        <item>movesense_dfu_w_bootloader</item>
+    </string-array>
+    <string-array name="dfu_file_titles">
+        <item>Handwave guard</item>
+    </string-array>
 
     <string name="serial">Serial</string>
     <string name="path">Path</string>
     <string name="contract">Contract</string>
     <string name="result">Result</string>
-
+    <string name="ok">OK</string>
     <string name="btn_get">Get</string>
     <string name="btn_post">Post</string>
     <string name="btn_del">Del</string>
@@ -99,4 +106,11 @@
     <string name="subs_switch">Initiate hand-waving guard</string>
     <string name="post_result">Post to server</string>
     <string name="timed_start">Start timed</string>
+    <string name="text_location_on">Location services have to be turned on for the app to work. Go to settings?</string>
+    <string name="title_location_on">Enable location services</string>
+    <string name="uploading_bootloader">Uploading with bootloader. \nThis will take about 4 minutes. \nDo not close the application!</string>
+    <string name="reconnecting_to">"Reconnecting to the device…"</string>
+    <string name="connected_after_update">Connected.</string>
+    <string name="connected_after_bootloader">Connected. Booting sensor.</string>
+    <string name="connect_for_update">Is the red LED on?</string>
 </resources>

@@ -20,23 +20,21 @@ public class MemoryTools {
     private static final String SHARED_PREF_NAME = "SHARED_PREFS";
     private static final String NAME_SHARED_PREF = "NAME_PREFS";
     private static final String SERIAL_SHARED_PREF = "SERIAL_PREFS";
-    private static final String SCORE_PREF_NAME = "SCORE_PREFS";
 
     private final static int BUFFER_SIZE = 1024;
 
 
-    private Application app;
     private SharedPreferences sharedPref;
 
     public MemoryTools(Application app) {
-        this.app = app;
+        Application app1 = app;
         sharedPref = app.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
     }
 
     public void saveName(String name) {
         SharedPreferences.Editor edit = sharedPref.edit();
         edit.putString(NAME_SHARED_PREF, name);
-        edit.commit();
+        edit.apply();
     }
 
     public String getName() {
@@ -46,16 +44,7 @@ public class MemoryTools {
     public void saveSerial(String name) {
         SharedPreferences.Editor edit = sharedPref.edit();
         edit.putString(SERIAL_SHARED_PREF, name);
-        edit.commit();
-    }
-
-    public void saveScore(int score) {
-        SharedPreferences.Editor edit = sharedPref.edit();
-        edit.putInt(SCORE_PREF_NAME, score);
-        edit.commit();
-    }
-    public int getScore() {
-        return sharedPref.getInt(SCORE_PREF_NAME, 0);
+        edit.apply();
     }
 
     public String getSerial() {

@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.movesense.mds.handwave">
 
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -24,46 +25,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.movesense.mds.handwave.MainActivity"
+            android:name="com.movesense.mds.handwave.fyssa_app.SelectTestActivity"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+        </activity>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.movesense.mds.handwave.app_using_mds_api.SelectTestActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.movesense.mds.handwave.app_using_mds_api.tests.LedTestActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.movesense.mds.handwave.app_using_mds_api.tests.LinearAccelerationTestActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.movesense.mds.handwave.app_using_mds_api.tests.HeartRateTestActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.movesense.mds.handwave.app_using_mds_api.tests.TemperatureTestActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.movesense.mds.handwave.app_using_mds_api.tests.MagneticFieldTestActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.movesense.mds.handwave.app_using_mds_api.tests.AngularVelocityActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.movesense.mds.handwave.app_using_mds_api.tests.MultiSubscribeActivity"
-            android:screenOrientation="portrait">
-        </activity>
         <activity
         android:name="com.movesense.mds.handwave.fyssa_app.FyssaInfoActivity"
         android:screenOrientation="portrait">
@@ -84,33 +49,23 @@
         </provider>
 
         <activity
-            android:name="com.movesense.mds.handwave.app_using_mds_api.DfuActivity"
+            android:name="com.movesense.mds.handwave.update_app.FyssaSensorUpdateActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="com.movesense.mds.handwave.app_using_mds_api.FyssaSensorUpdateActivity"
+            android:name="com.movesense.mds.handwave.scanner.MainScanActivity"
             android:screenOrientation="portrait">
         </activity>
-
-
-
+        <activity
+            android:name="com.movesense.mds.handwave.scanner.UpdateScanActivity"
+            android:screenOrientation="portrait">
+        </activity>
         <service
-            android:name="com.movesense.mds.handwave.app_using_mds_api.dfu.DfuService"
-            android:exported="true">
+            android:name="com.movesense.mds.handwave.update_app.dfu.DfuService"
+            android:exported="true"
+            android:permission="">
         </service>
 
-        <receiver
-            android:name="com.movesense.mds.handwave.app_using_mds_api.adb.AdbBridge"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MOVESENSE"/>
-            </intent-filter>
-        </receiver>
-
-        <!-- Mqtt Service -->
-        <service android:name="org.eclipse.paho.android.service.MqttService">
-        </service>
     </application>
 
 </manifest>

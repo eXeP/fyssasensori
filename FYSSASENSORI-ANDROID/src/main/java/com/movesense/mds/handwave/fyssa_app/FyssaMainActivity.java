@@ -2,11 +2,10 @@ package com.movesense.mds.handwave.fyssa_app;
 
 
 import android.app.TimePickerDialog;
-import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
+
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -15,11 +14,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
+
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+import com.movesense.mds.fyssabailu.update_app.model.MovesenseConnectedDevices;
 
 import com.android.volley.Cache;
 import com.android.volley.Network;
@@ -37,19 +37,18 @@ import com.movesense.mds.MdsException;
 import com.movesense.mds.MdsNotificationListener;
 import com.movesense.mds.MdsResponseListener;
 import com.movesense.mds.MdsSubscription;
-import com.movesense.mds.handwave.BleManager;
-import com.movesense.mds.handwave.app_using_mds_api.FyssaSensorUpdateActivity;
-import com.movesense.mds.handwave.app_using_mds_api.SelectTestActivity;
+
 import com.movesense.mds.handwave.app_using_mds_api.model.HandwaveConfigGson;
 import com.movesense.mds.handwave.app_using_mds_api.model.HandwaveGetResponse;
 import com.movesense.mds.handwave.app_using_mds_api.model.HandwaveResponse;
-import com.movesense.mds.handwave.app_using_mds_api.model.MovesenseConnectedDevices;
-import com.movesense.mds.handwave.MdsRx;
+
 import com.movesense.mds.handwave.R;
-import com.movesense.mds.handwave.ThrowableToastingAction;
+
 import com.movesense.mds.handwave.app_using_mds_api.model.InfoAppResponse;
-import com.movesense.mds.handwave.model.MdsConnectedDevice;
-import com.movesense.mds.handwave.tool.MemoryTools;
+import com.movesense.mds.handwave.bluetooth.MdsRx;
+import com.movesense.mds.handwave.update_app.FyssaSensorUpdateActivity;
+import com.movesense.mds.handwave.update_app.model.MovesenseConnectedDevices;
+
 
 import java.util.Calendar;
 
@@ -96,7 +95,7 @@ public class FyssaMainActivity extends AppCompatActivity {
             getSupportActionBar().setTitle("Fyssasensori");
         }
 
-        if (app.getMemoryTools().getName().equals(MemoryTools.DEFAULT_STRING)) {
+        if (app.getMemoryTools().getName().equals(com.movesense.mds.handwave.tool.MemoryTools.DEFAULT_STRING)) {
             startInfoActivity();
             finish();
         } else {
@@ -112,7 +111,7 @@ public class FyssaMainActivity extends AppCompatActivity {
     private void checkSensorSoftware() {
         Log.d(TAG, "Checking software");
         Mds.builder().build(this).get(MdsRx.SCHEME_PREFIX +
-                        MovesenseConnectedDevices.getConnectedDevice(0).getSerial() + "/Info/App",
+                        com.movesense.mds.handwave.update_app.model.MovesenseConnectedDevices.getConnectedDevice(0).getSerial() + "/Info/App",
                 null, new MdsResponseListener() {
 
                     @Override
@@ -150,11 +149,14 @@ public class FyssaMainActivity extends AppCompatActivity {
                 });
     }
 
-    private void removeAndDisconnectFromDevice(){
-        if(MovesenseConnectedDevices.getConnectedDevices().size() > 0) {
-            BleManager.INSTANCE.disconnect(MovesenseConnectedDevices.getConnectedRxDevice(0));
-            BleManager.INSTANCE.isReconnectToLastConnectedDeviceEnable = false;
-            MovesenseConnectedDevices.removeRxConnectedDevice(MovesenseConnectedDevices.getConnectedRxDevice(0));
+    public static void removeAndDisconnectFromDevices() {
+        com.movesense.mds.handwave.bluetooth.BleManager.INSTANCE.isReconnectToLastConnectedDeviceEnable = false;
+        while (com.movesense.mds.handwave.update_app.model.MovesenseConnectedDevices.getConnectedDevices().size() > 0) {
+            com.movesense.mds.handwave.update_app.model.MovesenseConnectedDevices.removeConnectedDevice((com.movesense.mds.handwave.update_app.model.MovesenseConnectedDevices.getConnectedDevice(0)));
+        }
+        while (com.movesense.mds.handwave.update_app.model.MovesenseConnectedDevices.getRxMovesenseConnectedDevices().size() > 0) {
+            com.movesense.mds.handwave.bluetooth.BleManager.INSTANCE.disconnect(com.movesense.mds.handwave.update_app.model.MovesenseConnectedDevices.getConnectedRxDevice(0));
+            com.movesense.mds.handwave.update_app.model.MovesenseConnectedDevices.removeRxConnectedDevice(com.movesense.mds.handwave.update_app.model.MovesenseConnectedDevices.getConnectedRxDevice(0));
         }
     }
 
@@ -169,7 +171,7 @@ public class FyssaMainActivity extends AppCompatActivity {
         super.onResume();
 
         try {
-            toast("Serial: " + MovesenseConnectedDevices.getConnectedDevice(0).getSerial());
+            toast("Serial: " + com.movesense.mds.handwave.update_app.model.MovesenseConnectedDevices.getConnectedDevice(0).getSerial());
             connectionInfoTv.setText("" + currentScore);
         } catch (Exception e) {
             Log.e(TAG, "Connection failed", e);
@@ -237,7 +239,7 @@ public class FyssaMainActivity extends AppCompatActivity {
         HandwaveConfigGson fbc = new HandwaveConfigGson(new HandwaveConfigGson.HandwaveConfig(time));
         Log.d(TAG, "Putting: " + new Gson().toJson(fbc));
         Mds.builder().build(this).put(MdsRx.SCHEME_PREFIX +
-                        MovesenseConnectedDevices.getConnectedDevice(0).getSerial() + HANDWAVING_PATH_GET,
+                        com.movesense.mds.handwave.update_app.model.MovesenseConnectedDevices.getConnectedDevice(0).getSerial() + HANDWAVING_PATH_GET,
                 new Gson().toJson(fbc), new MdsResponseListener() {
                     @Override
                     public void onSuccess(String s) {
