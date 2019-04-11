@@ -41,7 +41,7 @@ public class MemoryTools {
         return sharedPref.getString(NAME_SHARED_PREF, DEFAULT_STRING);
     }
 
-    public void saveSerial(String name) {
+    public void saveMac(String name) {
         SharedPreferences.Editor edit = sharedPref.edit();
         edit.putString(SERIAL_SHARED_PREF, name);
         edit.apply();

@@ -4,7 +4,6 @@ package com.movesense.mds.handwave.fyssa_app;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 
 import android.util.Log;
@@ -15,15 +14,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.android.volley.Cache;
 import com.android.volley.Network;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.BasicNetwork;
 import com.android.volley.toolbox.DiskBasedCache;
 import com.android.volley.toolbox.HurlStack;
@@ -100,7 +96,7 @@ public class FyssaMainActivity extends AppCompatActivity {
             checkSensorSoftware();
             subscriptions = new CompositeSubscription();
             currentScore = app.getMemoryTools().getScore();
-            app.getMemoryTools().saveSerial(MovesenseConnectedDevices.getConnectedDevice(0).getSerial());
+            app.getMemoryTools().saveMac(MovesenseConnectedDevices.getConnectedDevice(0).getMacAddress());
             Log.d(TAG, "Score when opening the app:" + currentScore);
             subscriptions.add(MdsRx.Instance.connectedDeviceObservable()
                     .observeOn(AndroidSchedulers.mainThread())

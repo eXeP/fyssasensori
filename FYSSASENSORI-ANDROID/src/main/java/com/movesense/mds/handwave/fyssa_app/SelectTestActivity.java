@@ -2,7 +2,6 @@ package com.movesense.mds.handwave.fyssa_app;
 
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -10,8 +9,6 @@ import android.view.MenuItem;
 
 import android.widget.ImageButton;
 import android.widget.Toast;
-
-import com.movesense.mds.handwave.bluetooth.BleManager;
 
 import com.movesense.mds.handwave.R;
 
@@ -52,8 +49,8 @@ public class SelectTestActivity extends AppCompatActivity {
                 .setTitle(R.string.close_app)
                 .setMessage(R.string.do_you_want_to_close_application)
                 .setPositiveButton(R.string.yes, (dialog, which) -> {
-                    closeApp = true;
-                    BleManager.INSTANCE.disconnect(com.movesense.mds.handwave.update_app.model.MovesenseConnectedDevices.getConnectedRxDevice(0));
+                    removeAndDisconnectFromDevices();
+                    finishAndRemoveTask();
                 })
                 .setNegativeButton(R.string.no, (dialog, which) -> alertDialog.dismiss())
                 .create();
@@ -95,7 +92,7 @@ public class SelectTestActivity extends AppCompatActivity {
                 return true;
 
             case R.id.reset_serial:
-                app.getMemoryTools().saveSerial(MemoryTools.DEFAULT_STRING);
+                app.getMemoryTools().saveMac(MemoryTools.DEFAULT_STRING);
                 removeAndDisconnectFromDevices();
                 toast("Known macs forgotten and disconnected.");
                 return true;
