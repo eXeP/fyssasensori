@@ -90,6 +90,7 @@ public class SelectTestActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.reset_name:
                 app.getMemoryTools().saveName(MemoryTools.DEFAULT_STRING);
+                app.getMemoryTools().saveScore(0);
                 toast("Your username has been reset.");
                 return true;
 

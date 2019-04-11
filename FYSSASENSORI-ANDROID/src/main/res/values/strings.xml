@@ -105,12 +105,12 @@
     <string name="manage_class_data">Manage class data</string>
     <string name="teaching">Teaching</string>
     <string name="sensor_version">null</string>
-    <string name="get_current_calue">Get current hand-waving value</string>
+    <string name="get_current_calue">Get current highscore</string>
     <string name="start_service">Start debugging</string>
     <string name="stop_service">Stop</string>
-    <string name="subs_switch">Initiate hand-waving guard</string>
+    <string name="subs_switch">Subscribe to values</string>
     <string name="post_result">Post to server</string>
-    <string name="timed_start">Set timer</string>
+    <string name="timed_start">Start measuring</string>
     <string name="text_location_on">Location services have to be turned on for the app to work. Go to settings?</string>
     <string name="title_location_on">Enable location services</string>
     <string name="uploading_bootloader">Uploading with bootloader. \nThis will take about 4 minutes. \nDo not close the application!</string>
@@ -122,7 +122,7 @@
     <string name="update_text">Update</string>
     <string name="select_dfu">Select dfu device</string>
     <string name="start_update_text">Start</string>
-    <string name="reset_name_button">Reset username</string>
+    <string name="reset_name_button">Reset user</string>
     <string name="reset_serial">Forget your device</string>
 
 </resources>

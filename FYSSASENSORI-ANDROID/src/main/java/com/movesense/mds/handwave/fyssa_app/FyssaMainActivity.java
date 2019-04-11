@@ -100,21 +100,23 @@ public class FyssaMainActivity extends AppCompatActivity {
             checkSensorSoftware();
             subscriptions = new CompositeSubscription();
             currentScore = app.getMemoryTools().getScore();
+            app.getMemoryTools().saveSerial(MovesenseConnectedDevices.getConnectedDevice(0).getSerial());
             Log.d(TAG, "Score when opening the app:" + currentScore);
-        }
-        subscriptions.add(MdsRx.Instance.connectedDeviceObservable()
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(mdsConnectedDevice -> {
-                    if (MovesenseConnectedDevices.getConnectedDevices().size()<= 0) {
-                        // Stop refreshing
-                        toast("Disconnected");
-                        disableButtons();
-                        startNormalActivity();
-                    } else {
-                        enableButtons();
-                    }
+            subscriptions.add(MdsRx.Instance.connectedDeviceObservable()
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(mdsConnectedDevice -> {
+                        if (mdsConnectedDevice.getConnection() == null) {
+                            // Stop refreshing
+                            toast("Disconnected");
+                            disableButtons();
+                            startNormalActivity();
+                        } else {
+                            enableButtons();
+                        }
 
-                }, new com.movesense.mds.handwave.ThrowableToastingAction(this)));
+                    }, new com.movesense.mds.handwave.ThrowableToastingAction(this)));
+        }
+
     }
 
     private void checkSensorSoftware() {
@@ -415,6 +417,7 @@ public class FyssaMainActivity extends AppCompatActivity {
     }
 
     private void startNormalActivity() {
+        if (subscriptions != null) subscriptions.clear();
         startActivity(new Intent(FyssaMainActivity.this, SelectTestActivity.class)
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
     }
