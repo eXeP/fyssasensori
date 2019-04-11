@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FYSSASENSORI-ANDROID.iml" filepath="$PROJECT_DIR$/FYSSASENSORI-ANDROID.iml" />
+      <module fileurl="file://$PROJECT_DIR$/org.eclipse.paho.android.service/org.eclipse.paho.android.service.iml" filepath="$PROJECT_DIR$/org.eclipse.paho.android.service/org.eclipse.paho.android.service.iml" />
     </modules>
   </component>
 </project>

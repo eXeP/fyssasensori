@@ -22,7 +22,7 @@ public class MemoryTools {
     private static final String SERIAL_SHARED_PREF = "SERIAL_PREFS";
 
     private final static int BUFFER_SIZE = 1024;
-
+    private static final String SCORE_PREF_NAME = "SCORE_PREFS";
 
     private SharedPreferences sharedPref;
 
@@ -69,6 +69,14 @@ public class MemoryTools {
                 return null;
         }
         return new File(Environment.getExternalStorageDirectory() + "/" + assetsFile);
+    }
+    public void saveScore(int score) {
+        SharedPreferences.Editor edit = sharedPref.edit();
+        edit.putInt(SCORE_PREF_NAME, score);
+        edit.commit();
+    }
+    public int getScore() {
+        return sharedPref.getInt(SCORE_PREF_NAME, 0);
     }
 
     private void copyFile(InputStream in, OutputStream out) throws IOException {
