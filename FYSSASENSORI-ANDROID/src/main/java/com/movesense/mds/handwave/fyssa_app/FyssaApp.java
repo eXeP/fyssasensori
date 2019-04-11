@@ -3,10 +3,9 @@ package com.movesense.mds.handwave.fyssa_app;
 import android.app.Application;
 import android.content.Context;
 
-import com.movesense.mds.handwave.MdsRx;
 import com.movesense.mds.handwave.R;
-import com.movesense.mds.handwave.RxBle;
-import com.movesense.mds.handwave.Util;
+import com.movesense.mds.handwave.bluetooth.MdsRx;
+import com.movesense.mds.handwave.bluetooth.RxBle;
 import com.movesense.mds.handwave.tool.MemoryTools;
 
 import java.io.FileOutputStream;
@@ -67,8 +66,8 @@ public class FyssaApp extends Application {
         } catch (IOException e) {
             throw new IllegalArgumentException("Could not copy configuration file to: " + fileName);
         } finally {
-            Util.safeClose(out);
-            Util.safeClose(in);
+            com.movesense.mds.handwave.Util.safeClose(out);
+            com.movesense.mds.handwave.Util.safeClose(in);
         }
     }
 }

@@ -28,7 +28,7 @@ import com.movesense.mds.Mds;
 import com.movesense.mds.MdsException;
 import com.movesense.mds.MdsResponseListener;
 import com.movesense.mds.handwave.R;
-import com.movesense.mds.fyssabailu.ThrowableToastingAction;
+import com.movesense.mds.handwave.ThrowableToastingAction;
 import com.movesense.mds.handwave.fyssa_app.FyssaApp;
 import com.movesense.mds.handwave.bluetooth.BleManager;
 import com.movesense.mds.handwave.bluetooth.MdsRx;

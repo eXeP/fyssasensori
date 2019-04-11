@@ -8,8 +8,9 @@ import android.util.Log;
 import com.movesense.mds.handwave.bluetooth.BleManager;
 import com.movesense.mds.handwave.bluetooth.MdsRx;
 import com.movesense.mds.handwave.R;
-import com.movesense.mds.fyssabailu.ThrowableToastingAction;
+import com.movesense.mds.handwave.ThrowableToastingAction;
 import com.movesense.mds.handwave.fyssa_app.FyssaApp;
+import com.movesense.mds.handwave.fyssa_app.SelectTestActivity;
 import com.movesense.mds.handwave.model.MdsDeviceInfoNewSw;
 import com.movesense.mds.handwave.model.MdsDeviceInfoOldSw;
 import com.movesense.mds.handwave.update_app.ConnectingDialog;
@@ -72,14 +73,14 @@ public abstract class ScanActivity  extends AppCompatActivity implements com.mov
 
                         if (mdsConnectedDevice.getDeviceInfo() instanceof MdsDeviceInfoNewSw) {
                             MdsDeviceInfoNewSw mdsDeviceInfoNewSw = (MdsDeviceInfoNewSw) mdsConnectedDevice.getDeviceInfo();
-                            MovesenseConnectedDevices.addConnectedDevice(new com.movesense.mds.fyssabailu.update_app.model.MovesenseDevice(
+                            MovesenseConnectedDevices.addConnectedDevice(new com.movesense.mds.handwave.update_app.model.MovesenseDevice(
                                     device.getMacAddress(),
                                     mdsDeviceInfoNewSw.getDescription(),
                                     mdsDeviceInfoNewSw.getSerial(),
                                     mdsDeviceInfoNewSw.getSw()));
                         } else if (mdsConnectedDevice.getDeviceInfo() instanceof MdsDeviceInfoOldSw) {
                             MdsDeviceInfoOldSw mdsDeviceInfoOldSw = (MdsDeviceInfoOldSw) mdsConnectedDevice.getDeviceInfo();
-                            MovesenseConnectedDevices.addConnectedDevice(new com.movesense.mds.fyssabailu.update_app.model.MovesenseDevice(
+                            MovesenseConnectedDevices.addConnectedDevice(new com.movesense.mds.handwave.update_app.model.MovesenseDevice(
                                     device.getMacAddress(),
                                     mdsDeviceInfoOldSw.getDescription(),
                                     mdsDeviceInfoOldSw.getSerial(),
@@ -97,7 +98,7 @@ public abstract class ScanActivity  extends AppCompatActivity implements com.mov
         subscriptions.clear();
         ConnectingDialog.INSTANCE.dismissDialog();
         removeAndDisconnectFromDevices();
-        startActivity(new Intent(ScanActivity.this, MainActivity.class)
+        startActivity(new Intent(ScanActivity.this, SelectTestActivity.class)
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
     }
 

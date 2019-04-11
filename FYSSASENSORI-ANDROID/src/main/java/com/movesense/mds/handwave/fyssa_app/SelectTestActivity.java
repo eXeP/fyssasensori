@@ -4,8 +4,6 @@ package com.movesense.mds.handwave.fyssa_app;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,15 +15,19 @@ import com.movesense.mds.handwave.bluetooth.BleManager;
 
 import com.movesense.mds.handwave.R;
 
-import com.movesense.mds.handwave.bluetooth.MdsRx;
 
 import com.movesense.mds.handwave.scanner.MainScanActivity;
+import com.movesense.mds.handwave.tool.MemoryTools;
+import com.movesense.mds.handwave.update_app.FyssaSensorUpdateActivity;
 
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import butterknife.ButterKnife;
 
-import rx.android.schedulers.AndroidSchedulers;
 import rx.subscriptions.CompositeSubscription;
+
+import static com.movesense.mds.handwave.fyssa_app.FyssaMainActivity.removeAndDisconnectFromDevices;
 
 public class SelectTestActivity extends AppCompatActivity {
 
@@ -37,6 +39,7 @@ public class SelectTestActivity extends AppCompatActivity {
 
     private final String TAG = SelectTestActivity.class.getSimpleName();
 
+    FyssaApp app;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +60,7 @@ public class SelectTestActivity extends AppCompatActivity {
 
         startButton = (ImageButton) findViewById(R.id.start_button);
 
+        app = (FyssaApp) getApplication();
 
         startButton.setOnClickListener(v -> {
             Log.d("ONCLICK", "Start the app");
@@ -65,27 +69,7 @@ public class SelectTestActivity extends AppCompatActivity {
 
         });
 
-        subscriptions.add(MdsRx.Instance.connectedDeviceObservable()
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(mdsConnectedDevice -> {
-                    // Stop refreshing
-                    if (mdsConnectedDevice.getConnection() == null) {
-                        Log.e(TAG, "call: Rx Disconnect");
-                        if (closeApp) {
-                            if (Build.VERSION.SDK_INT >= 21) {
-                                finishAndRemoveTask();
-                            } else {
-                                finish();
-                            }
-                        } else if (disconnect) {
-                        } else {
-                            com.movesense.mds.fyssabailu.ConnectionLostDialog.INSTANCE.showDialog(SelectTestActivity.this);
-                        }
-                    } else {
-                        com.movesense.mds.fyssabailu.ConnectionLostDialog.INSTANCE.dismissDialog();
-                        Log.e(TAG, "call: Rx Connect");
-                    }
-                }, new com.movesense.mds.fyssabailu.ThrowableToastingAction(this)));
+
 
 
     }
@@ -104,15 +88,21 @@ public class SelectTestActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(final MenuItem item) {
         switch (item.getItemId()) {
-
-            case R.id.update:
-                startActivity(new Intent(SelectTestActivity.this, com.movesense.mds.handwave.update_app.FyssaSensorUpdateActivity.class));
+            case R.id.reset_name:
+                app.getMemoryTools().saveName(MemoryTools.DEFAULT_STRING);
+                toast("Your username has been reset.");
                 return true;
 
-            case R.id.disconnect:
-                BleManager.INSTANCE.disconnect(com.movesense.mds.handwave.update_app.model.MovesenseConnectedDevices.getConnectedRxDevice(0));
-                disconnect = true;
+            case R.id.reset_serial:
+                app.getMemoryTools().saveSerial(MemoryTools.DEFAULT_STRING);
+                removeAndDisconnectFromDevices();
+                toast("Known macs forgotten and disconnected.");
                 return true;
+            case R.id.update_sensor:
+                startActivity(new Intent(SelectTestActivity.this, FyssaSensorUpdateActivity.class)
+                );
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }

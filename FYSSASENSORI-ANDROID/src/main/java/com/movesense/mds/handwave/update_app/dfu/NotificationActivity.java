@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 
+import com.movesense.mds.handwave.fyssa_app.SelectTestActivity;
 import com.movesense.mds.handwave.update_app.FyssaSensorUpdateActivity;
 
 /**
@@ -26,7 +27,7 @@ public class NotificationActivity extends Activity {
             Log.e(TAG, "isTaskRoot()");
             // Start the app before finishing
             // Start the app before finishing
-            final Intent parentIntent = new Intent(this, MainActivity.class);
+            final Intent parentIntent = new Intent(this, SelectTestActivity.class);
             parentIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             final Intent startAppIntent = new Intent(this, FyssaSensorUpdateActivity.class);
             startAppIntent.putExtras(getIntent().getExtras());

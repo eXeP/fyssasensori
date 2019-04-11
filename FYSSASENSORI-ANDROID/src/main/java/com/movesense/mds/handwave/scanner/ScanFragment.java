@@ -27,7 +27,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.movesense.mds.handwave.R;
-import com.movesense.mds.fyssabailu.ThrowableToastingAction;
+import com.movesense.mds.handwave.ThrowableToastingAction;
 import com.movesense.mds.handwave.fyssa_app.FyssaApp;
 import com.movesense.mds.handwave.bluetooth.RxBle;
 import com.movesense.mds.handwave.tool.MemoryTools;

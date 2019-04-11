@@ -72,3 +72,4 @@ sensor/buildtempfolder
 sensor/buildtempfolder2
 sensor/_build
 
+*.idea

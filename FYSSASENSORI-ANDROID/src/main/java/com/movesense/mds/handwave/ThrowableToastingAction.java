@@ -1,4 +1,4 @@
-package com.movesense.mds.fyssabailu;
+package com.movesense.mds.handwave;
 
 import android.content.Context;
 import android.util.Log;

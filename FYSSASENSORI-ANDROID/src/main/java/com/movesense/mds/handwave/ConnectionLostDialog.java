@@ -1,4 +1,4 @@
-package com.movesense.mds.fyssabailu;
+package com.movesense.mds.handwave;
 
 
 import android.content.Context;
@@ -6,8 +6,9 @@ import android.content.Intent;
 import androidx.appcompat.app.AlertDialog;
 import android.util.Log;
 
-import com.movesense.mds.fyssabailu.bluetooth.BleManager;
-import com.movesense.mds.fyssabailu.update_app.model.MovesenseConnectedDevices;
+import com.movesense.mds.handwave.bluetooth.BleManager;
+import com.movesense.mds.handwave.fyssa_app.SelectTestActivity;
+import com.movesense.mds.handwave.update_app.model.MovesenseConnectedDevices;
 
 public enum  ConnectionLostDialog {
     INSTANCE;
@@ -27,7 +28,7 @@ public enum  ConnectionLostDialog {
 
                         BleManager.INSTANCE.disconnect(MovesenseConnectedDevices.getConnectedRxDevice(0));
 
-                        context.startActivity(new Intent(context, MainActivity.class)
+                        context.startActivity(new Intent(context, SelectTestActivity.class)
                                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
                     });
 

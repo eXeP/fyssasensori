@@ -13,7 +13,7 @@ buildscript {
 
 ext {
 
-    compileSdkVersion = 27
+    compileSdkVersion = 28
     buildToolsVersion = '28.0.3'
 
     clientVersion = '1.1.0'
@@ -69,6 +69,10 @@ android {
             // 2. USER EXAMPLE How to add debug.keystore in gradle
             //  signingConfig signingConfigs.config
         }
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
     }
 }
 

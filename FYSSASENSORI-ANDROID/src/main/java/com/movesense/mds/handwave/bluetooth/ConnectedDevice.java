@@ -2,7 +2,7 @@ package com.movesense.mds.handwave.bluetooth;
 
 import android.bluetooth.BluetoothGattCharacteristic;
 
-import com.movesense.mds.fyssabailu.Util;
+import com.movesense.mds.handwave.Util;
 import com.polidea.rxandroidble.RxBleDevice;
 
 import java.util.ArrayList;

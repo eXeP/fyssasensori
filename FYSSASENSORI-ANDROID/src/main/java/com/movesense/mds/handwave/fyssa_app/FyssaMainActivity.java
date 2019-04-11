@@ -4,22 +4,19 @@ package com.movesense.mds.handwave.fyssa_app;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
-import com.movesense.mds.fyssabailu.update_app.model.MovesenseConnectedDevices;
 
 import com.android.volley.Cache;
 import com.android.volley.Network;
@@ -37,25 +34,24 @@ import com.movesense.mds.MdsException;
 import com.movesense.mds.MdsNotificationListener;
 import com.movesense.mds.MdsResponseListener;
 import com.movesense.mds.MdsSubscription;
-
+import com.movesense.mds.handwave.R;
 import com.movesense.mds.handwave.app_using_mds_api.model.HandwaveConfigGson;
 import com.movesense.mds.handwave.app_using_mds_api.model.HandwaveGetResponse;
 import com.movesense.mds.handwave.app_using_mds_api.model.HandwaveResponse;
-
-import com.movesense.mds.handwave.R;
-
 import com.movesense.mds.handwave.app_using_mds_api.model.InfoAppResponse;
 import com.movesense.mds.handwave.bluetooth.MdsRx;
 import com.movesense.mds.handwave.update_app.FyssaSensorUpdateActivity;
 import com.movesense.mds.handwave.update_app.model.MovesenseConnectedDevices;
 
-
 import java.util.Calendar;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
+import rx.android.schedulers.AndroidSchedulers;
 import rx.subscriptions.CompositeSubscription;
 
 
@@ -64,6 +60,7 @@ public class FyssaMainActivity extends AppCompatActivity {
     @BindView(R.id.fyssa_conn_infoTV) TextView connectionInfoTv;
     @BindView(R.id.get_handwave_button) Button getButton;
     @BindView(R.id.subscription_switch) Switch subSwitch;
+    @BindView(R.id.timed_start) Button timeButton;
 
     @BindView(R.id.nimi_tv) TextView nimiTv;
 
@@ -81,7 +78,6 @@ public class FyssaMainActivity extends AppCompatActivity {
     private MdsSubscription mHandwaveSubscription = null;
 
     private Integer currentScore;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,6 +102,19 @@ public class FyssaMainActivity extends AppCompatActivity {
             currentScore = app.getMemoryTools().getScore();
             Log.d(TAG, "Score when opening the app:" + currentScore);
         }
+        subscriptions.add(MdsRx.Instance.connectedDeviceObservable()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(mdsConnectedDevice -> {
+                    if (MovesenseConnectedDevices.getConnectedDevices().size()<= 0) {
+                        // Stop refreshing
+                        toast("Disconnected");
+                        disableButtons();
+                        startNormalActivity();
+                    } else {
+                        enableButtons();
+                    }
+
+                }, new com.movesense.mds.handwave.ThrowableToastingAction(this)));
     }
 
     private void checkSensorSoftware() {
@@ -126,14 +135,11 @@ public class FyssaMainActivity extends AppCompatActivity {
                         }
                         if (!infoAppResponse.getContent().getVersion().equals(FyssaApp.deviceVersion)) {
                             AlertDialog.Builder builder = new AlertDialog.Builder(FyssaMainActivity.this);
-                            builder.setMessage("Update?").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    switch (which) {
-                                        case DialogInterface.BUTTON_POSITIVE:
-                                            updateSensorSoftware();
-                                            break;
-                                    }
+                            builder.setMessage("Update?").setPositiveButton("Yes", (dialog, which) -> {
+                                switch (which) {
+                                    case DialogInterface.BUTTON_POSITIVE:
+                                        updateSensorSoftware();
+                                        break;
                                 }
                             }).show();
                         }
@@ -160,10 +166,21 @@ public class FyssaMainActivity extends AppCompatActivity {
         }
     }
 
+    private void disableButtons() {
+        getButton.setEnabled(false);
+        subSwitch.setEnabled(false);
+        timeButton.setEnabled(false);
+    }
+
+    private void enableButtons() {
+        getButton.setEnabled(true);
+        subSwitch.setEnabled(true);
+        timeButton.setEnabled(true);
+    }
+
     private void updateSensorSoftware() {
         //removeAndDisconnectFromDevice();
-        startActivity(new Intent(FyssaMainActivity.this, FyssaSensorUpdateActivity.class)
-                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
+        startActivity(new Intent(FyssaMainActivity.this, FyssaSensorUpdateActivity.class));
     }
 
     @Override
@@ -175,7 +192,7 @@ public class FyssaMainActivity extends AppCompatActivity {
             connectionInfoTv.setText("" + currentScore);
         } catch (Exception e) {
             Log.e(TAG, "Connection failed", e);
-            startScanActivity();
+            startNormalActivity();
             return;
         }
 
@@ -217,19 +234,13 @@ public class FyssaMainActivity extends AppCompatActivity {
         final int mHour = c.get(Calendar.HOUR_OF_DAY);
         final int mMinute = c.get(Calendar.MINUTE);
         TimePickerDialog timePickerDialog = new TimePickerDialog(this,
-                new TimePickerDialog.OnTimeSetListener() {
-
-                    @Override
-                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        int nHour = c.get(Calendar.HOUR_OF_DAY);
-                        int nMinute = c.get(Calendar.MINUTE);
-                        int time = (hourOfDay-nHour)*60 + (minute-nMinute);
-                        if (time > 0) startService(time);
-                        else  if (time < 0) startService(24*60+time);
-                        else toast("Invalid time.");
-
-                    }
-
+                (view, hourOfDay, minute) -> {
+                    int nHour = c.get(Calendar.HOUR_OF_DAY);
+                    int nMinute = c.get(Calendar.MINUTE);
+                    int time = (hourOfDay-nHour)*60 + (minute-nMinute);
+                    if (time > 0) startService(time);
+                    else  if (time < 0) startService(24*60+time);
+                    else toast("Invalid time.");
 
                 }, mHour, mMinute, true);
         timePickerDialog.show();
@@ -366,13 +377,20 @@ public class FyssaMainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.remove_device) {
-            subscriptions.clear();
-            app.getMemoryTools().saveSerial(app.getMemoryTools().DEFAULT_STRING);
-            startScanActivity();
-            return true;
+
+        switch (item.getItemId()) {
+
+            case R.id.update:
+                subscriptions.clear();
+                startActivity(new Intent(FyssaMainActivity.this, FyssaSensorUpdateActivity.class));
+                return true;
+
+            case R.id.remove_device:
+                removeAndDisconnectFromDevices();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return false;
     }
 
     @Override
@@ -389,13 +407,14 @@ public class FyssaMainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        if (subscriptions != null) subscriptions.clear();
         unsubscribeDebug();
         unSubscribeHandwave();
         startActivity(new Intent(FyssaMainActivity.this, SelectTestActivity.class)
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
     }
 
-    private void startScanActivity() {
+    private void startNormalActivity() {
         startActivity(new Intent(FyssaMainActivity.this, SelectTestActivity.class)
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
     }
@@ -427,18 +446,8 @@ public class FyssaMainActivity extends AppCompatActivity {
         void send(String url) {
             // Formulate the request and handle the response.
             StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-                    new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-                            Log.d(TAG, response);
-                        }
-                    },
-                    new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            Log.e(TAG, "Fail!", error);
-                        }
-                    });
+                    response -> Log.d(TAG, response),
+                    error -> Log.e(TAG, "Fail!", error));
 
 
             // Add the request to the RequestQueue.
