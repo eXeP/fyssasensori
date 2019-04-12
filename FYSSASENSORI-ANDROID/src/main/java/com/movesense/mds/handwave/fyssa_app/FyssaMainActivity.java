@@ -371,6 +371,7 @@ public class FyssaMainActivity extends AppCompatActivity {
     private void sendData() {
         Long t = System.currentTimeMillis();
         if (lastSentStamp + SEND_WAIT_INTERVAL_MSECONDS < t) {
+            Log.d(TAG, "Sending");
             DataSender sender = new DataSender();
             sender.send(SERVER_URL + "?name=" + app.getMemoryTools().getName() + "&amount=" + currentScore);
             lastSentStamp = t;
