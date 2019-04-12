@@ -373,13 +373,16 @@ public class FyssaMainActivity extends AppCompatActivity {
         if (lastSentStamp + SEND_WAIT_INTERVAL_MSECONDS < t) {
             DataSender sender = new DataSender();
             sender.send(SERVER_URL + "?name=" + app.getMemoryTools().getName() + "&amount=" + currentScore);
+            lastSentStamp = t;
         } else {
+            Log.d(TAG, "Gonna wait first");
             Integer scoreNow = currentScore;
             final Handler handler = new Handler();
             handler.postDelayed(() -> {
                 if (scoreNow == currentScore)  {
                     DataSender sender = new DataSender();
                     sender.send(SERVER_URL + "?name=" + app.getMemoryTools().getName() + "&amount=" + currentScore);
+                    lastSentStamp = System.currentTimeMillis();
                 }
             }, SEND_WAIT_INTERVAL_MSECONDS);
         }
