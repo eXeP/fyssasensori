@@ -9,12 +9,9 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea7d97c6-f4eb-4902-831a-3770f95be963" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="ea7d97c6-f4eb-4902-831a-3770f95be963" name="Default Changelist" comment="Ny toimii oikeesti.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/fyssa_app/FyssaMainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/fyssa_app/FyssaMainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/fyssa_app/SelectTestActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/fyssa_app/SelectTestActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/tool/MemoryTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/tool/MemoryTools.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,8 +30,10 @@
     <session id="-171494392">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.91" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -42,7 +41,7 @@
           <entry key="gradle" value="2" />
           <entry key="java" value="25" />
           <entry key="properties" value="4" />
-          <entry key="xml" value="30" />
+          <entry key="xml" value="31" />
           <entry key="zip" value="1" />
         </counts>
       </usages-collector>
@@ -53,22 +52,22 @@
           <entry key="JAVA" value="25" />
           <entry key="Properties" value="3" />
           <entry key="Scratch" value="1" />
-          <entry key="XML" value="30" />
+          <entry key="XML" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gradle" value="2" />
-          <entry key="java" value="477" />
-          <entry key="txt" value="7" />
+          <entry key="java" value="763" />
+          <entry key="txt" value="35" />
           <entry key="xml" value="196" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="2" />
-          <entry key="JAVA" value="477" />
-          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="JAVA" value="763" />
+          <entry key="PLAIN_TEXT" value="35" />
           <entry key="XML" value="196" />
         </counts>
       </usages-collector>
@@ -79,8 +78,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/fyssa_app/FyssaMainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="98" column="104" selection-start-line="98" selection-start-column="104" selection-end-line="98" selection-end-column="104" />
+            <state relative-caret-position="850">
+              <caret line="381" column="116" selection-start-line="381" selection-start-column="116" selection-end-line="381" selection-end-column="116" />
+              <folding>
+                <element signature="e#16255#16256#0" expanded="true" />
+                <element signature="e#16324#16325#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -88,7 +91,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/update_app/dfu/NotificationActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
+            <state relative-caret-position="374">
               <caret line="29" column="75" selection-start-line="29" selection-start-column="75" selection-end-line="29" selection-end-column="75" />
             </state>
           </provider>
@@ -106,7 +109,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/fyssa_app/FyssaApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-340">
+            <state relative-caret-position="119">
               <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
             </state>
           </provider>
@@ -115,7 +118,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/fyssa_app/SelectTestActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
+            <state relative-caret-position="493">
               <caret line="52" column="42" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -136,16 +139,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/tool/MemoryTools.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="46" column="21" lean-forward="true" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+            <state relative-caret-position="561">
+              <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1238#1239#0" expanded="true" />
                 <element signature="e#1315#1316#0" expanded="true" />
-                <element signature="e#1528#1529#0" expanded="true" />
-                <element signature="e#1607#1608#0" expanded="true" />
-                <element signature="e#2547#2548#0" expanded="true" />
-                <element signature="e#2607#2608#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -154,7 +153,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
+            <state relative-caret-position="1870">
               <caret line="110" column="47" selection-start-line="110" selection-start-column="47" selection-end-line="110" selection-end-column="47" />
             </state>
           </provider>
@@ -162,15 +161,12 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_fyssa_main.xml">
-          <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-372">
+            <state relative-caret-position="765">
               <caret line="45" column="37" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
-              <folding>
-                <element signature="e#4447#4468#0" expanded="true" />
-              </folding>
             </state>
           </provider>
+          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
     </leaf>
@@ -183,6 +179,7 @@
       <find>sub_s</find>
       <find>Get current</find>
       <find>set timer</find>
+      <find>send</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -230,8 +227,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -315,7 +310,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -423,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555018698492</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Ny toimii oikeesti.">
+      <created>1555019180117</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1555019180117</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -444,18 +447,18 @@
       <window_info id="Build Variants" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Capture Tool" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.23507462" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.23507462" />
       <window_info id="Image Layers" order="6" />
       <window_info id="Structure" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Build" order="0" weight="0.3264642" />
       <window_info anchor="bottom" id="Run" order="1" />
-      <window_info anchor="bottom" id="Android Profiler" order="2" />
+      <window_info anchor="bottom" id="Android Profiler" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="bottom" id="TODO" order="4" weight="0.329718" />
-      <window_info anchor="bottom" id="Logcat" order="5" visible="true" weight="0.26681128" />
+      <window_info anchor="bottom" id="Logcat" order="5" weight="0.26681128" />
       <window_info anchor="bottom" id="Version Control" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.329718" />
-      <window_info anchor="bottom" id="Find" order="8" weight="0.329718" />
+      <window_info active="true" anchor="bottom" id="Find" order="8" visible="true" weight="0.329718" />
       <window_info anchor="bottom" id="Debug" order="9" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Device File Explorer" order="1" side_tool="true" />
@@ -471,7 +474,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Shit donwe Works to a degree." />
     <MESSAGE value="Shit donwe Works to a better degree." />
-    <option name="LAST_COMMIT_MESSAGE" value="Shit donwe Works to a better degree." />
+    <MESSAGE value="Ny toimii oikeesti." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ny toimii oikeesti." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.properties">
@@ -508,9 +512,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="30" column="84" selection-start-line="30" selection-start-column="84" selection-end-line="30" selection-end-column="84" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -532,9 +533,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -546,28 +544,25 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
           <caret line="53" column="19" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
         </state>
       </provider>
+      <provider editor-type-id="android-manifest" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/xml/preferences.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/xml/preferences.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_select_test.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_scan.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="74" selection-start-line="10" selection-start-column="74" selection-end-line="10" selection-end-column="74" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/raw/movesense_dfu.zip">
       <provider selected="true" editor-type-id="apk-viewer" />
@@ -580,8 +575,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/scanned_device_item.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/values/dimens.xml">
       <provider selected="true" editor-type-id="text-editor" />
@@ -593,51 +588,47 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="74" selection-start-line="6" selection-start-column="74" selection-end-line="6" selection-end-column="74" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_sensor_update.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_fyssa_info.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/menu/menu.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="37" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="37" />
-          <folding>
-            <element signature="e#175#202#0" expanded="true" />
-            <element signature="e#277#299#0" expanded="true" />
-          </folding>
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/menu/fyssa_main_menu.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="38" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="38" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/ThrowableToastingAction.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -683,35 +674,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/fyssa_app/FyssaApp.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/fyssa_app/FyssaMainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-340">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_fyssa_main.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-372">
-          <caret line="45" column="37" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
+        <state relative-caret-position="850">
+          <caret line="381" column="116" selection-start-line="381" selection-start-column="116" selection-end-line="381" selection-end-column="116" />
           <folding>
-            <element signature="e#4447#4468#0" expanded="true" />
+            <element signature="e#16255#16256#0" expanded="true" />
+            <element signature="e#16324#16325#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/values/strings.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/update_app/dfu/NotificationActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="110" column="47" selection-start-line="110" selection-start-column="47" selection-end-line="110" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/scanner/MainScanActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="374">
+          <caret line="29" column="75" selection-start-line="29" selection-start-column="75" selection-end-line="29" selection-end-column="75" />
         </state>
       </provider>
     </entry>
@@ -722,16 +699,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/update_app/dfu/NotificationActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/fyssa_app/FyssaApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="29" column="75" selection-start-line="29" selection-start-column="75" selection-end-line="29" selection-end-column="75" />
+        <state relative-caret-position="119">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/fyssa_app/SelectTestActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
+        <state relative-caret-position="493">
           <caret line="52" column="42" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -739,28 +716,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/scanner/MainScanActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/tool/MemoryTools.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="46" column="21" lean-forward="true" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+        <state relative-caret-position="561">
+          <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1238#1239#0" expanded="true" />
             <element signature="e#1315#1316#0" expanded="true" />
-            <element signature="e#1528#1529#0" expanded="true" />
-            <element signature="e#1607#1608#0" expanded="true" />
-            <element signature="e#2547#2548#0" expanded="true" />
-            <element signature="e#2607#2608#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/movesense/mds/handwave/fyssa_app/FyssaMainActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="98" column="104" selection-start-line="98" selection-start-column="104" selection-end-line="98" selection-end-column="104" />
+        <state relative-caret-position="1870">
+          <caret line="110" column="47" selection-start-line="110" selection-start-column="47" selection-end-line="110" selection-end-column="47" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_fyssa_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="37" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
   </component>
 </project>
