@@ -57,7 +57,8 @@ def get_user(input_name):
         return result
 
 def get_all():
-    cur.execute("SELECT * FROM " + table)
+    cur.execute("SELECT * FROM " + table + " ORDER "
+        "BY {} DESC, date LIMIT 10".format(mname,))
     result = cur.fetchall()
     if len(result) == 0:
         return []
@@ -82,7 +83,7 @@ def print_hs_data(conditional, t_index):
                 return ''
         score = result[1]
         highscore = score
-        time = result[2] + timedelta(hours=2)
+        time = result[2]
         if t_index == 1:
             text = 'Kovin heiluttelija on %s indeksin arvolla %s.\n \
 Saavutus  tehtiin %s.' % (result[0], score, time)
@@ -134,7 +135,7 @@ def respondHandwave(msg, command):
             bot.sendMessage(chat_id, "En  löytäny yhtään mitään servulta.",
                     reply_to_message_id=msg['message_id'])
         else:
-            res_text = "Tässä heiluttelijat:\n"
+            res_text = "Kovimmat heiluttelijat:\n"
             for t in wavers:
                 res_text += str(t[0]) + ": " + str(t[1]) + "\n"
             bot.sendMessage(chat_id, res_text, reply_to_message_id=msg['message_id'])
