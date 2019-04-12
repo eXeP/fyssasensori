@@ -42,14 +42,14 @@ cur = connection.cursor()
 
 
 def get_highscore():
-    cur.execute("SELECT * FROM {} ORDER \
-                BY {} DESC, date LIMIT 1".format(table, mname))
+    cur.execute("SELECT * FROM " + table + " ORDER \
+                BY {} DESC, date LIMIT 1".format(mname,))
     return cur.fetchone()
 
 
 def get_user(input_name):
-    cur.execute("SELECT * FROM {} WHERE name = '{}' \
-                ORDER BY {} DESC LIMIT 1".format(table, '{' +input_name +'}', mname))
+    cur.execute("SELECT * FROM " + table + " WHERE name = {} \
+                ORDER BY {} DESC LIMIT 1".format( input_name , mname))
     result = cur.fetchone()
     if result is None:
         return -1
@@ -57,7 +57,7 @@ def get_user(input_name):
         return result
 
 def get_all():
-    cur.execute("SELECT * FROM {}".format(table))
+    cur.execute("SELECT * FROM " + table)
     result = cur.fetchall()
     if len(result) == 0:
         return []
@@ -78,16 +78,16 @@ def print_hs_data(conditional, t_index):
     result = get_highscore()
     if result is not None:
         if conditional:
-            if highscore >= result.amount:
+            if highscore >= result[1]:
                 return ''
-        score = result.amount
+        score = result[1]
         highscore = score
-        time = result.date + timedelta(hours=2)
+        time = result[2] + timedelta(hours=2)
         if t_index == 1:
             text = 'Kovin heiluttelija on %s indeksin arvolla %s.\n \
-Saavutus  tehtiin %s.' % (result.name, score, time)
+Saavutus  tehtiin %s.' % (result[0], score, time)
         else:
-            text = texts[random.randint(0, 2)] % (result.name, score, time)
+            text = texts[random.randint(0, 2)] % (result[0], score, time)
         return text
     else:
         if not dbEmpty:
@@ -136,7 +136,7 @@ def respondHandwave(msg, command):
         else:
             res_text = "Tässä heiluttelijat:\n"
             for t in wavers:
-                res_text += str(t.name) + ": " + str(t.amount) + "\n"
+                res_text += str(t[0]) + ": " + str(t[1]) + "\n"
             bot.sendMessage(chat_id, res_text, reply_to_message_id=msg['message_id'])
         return True
     elif command == '/heilutus_help':
