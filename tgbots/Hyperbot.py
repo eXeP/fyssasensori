@@ -48,7 +48,7 @@ def get_highscore():
 
 
 def get_user(input_name):
-    cur.execute("SELECT * FROM " + table + " WHERE name = {} \
+    cur.execute("SELECT * FROM " + table + " WHERE name = '{}' \
                 ORDER BY {} DESC LIMIT 1".format( input_name , mname))
     result = cur.fetchone()
     if result is None:
@@ -121,8 +121,8 @@ def respondHandwave(msg, command):
                                 reply_to_message_id=msg['message_id']
                                 )
             else:
-                message = value.name + ' on parhaimmillaan heilutellut \
-                        käsiänsä ' + str(value.amount) + ' yksikköä.'
+                message = value[0] + ' on parhaimmillaan heilutellut \
+                        käsiänsä ' + str(value[1]) + ' yksikköä.'
                 bot.sendMessage(chat_id,
                                 message,
                                 reply_to_message_id=msg['message_id']
