@@ -276,11 +276,13 @@ public class FyssaMainActivity extends AppCompatActivity {
                 new Gson().toJson(fbc), new MdsResponseListener() {
                     @Override
                     public void onSuccess(String s) {
+                        toast("Measuring started!");
                         Log.d(TAG, "Starting successfully");
                     }
 
                     @Override
                     public void onError(MdsException e) {
+                        toast("Failed to start measuring!");
                         Log.e(TAG, "onError: ", e);
                     }
                 });
